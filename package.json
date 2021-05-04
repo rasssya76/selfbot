@@ -1,5 +1,5 @@
 {
-  "name": "Zitsraa-BOT",
+  "name": "Ikyy-Ads",
   "version": "1.0.0",
   "description": "No comment",
   "main": "index.js",
@@ -11,11 +11,11 @@
     "start": "node index.js"
   },
   "keywords": [
-    "Zitsraa",
+    "Ikyy-ads",
     "whatsapp",
     "bot"
   ],
-  "author": "Zitsraa",
+  "author": "Ikyy-ads",
   "license": "ISC",
   "dependencies": {
     "@adiwajshing/baileys": "^3.5.0",
@@ -47,10 +47,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Zitsraaaxyz/self-wabot.git"
+    "url": "git+https://github.com/rizkiadiasa/selfbot.git"
   },
   "bugs": {
-    "url": "https://github.com/Zitsraaaxyz/self-wabot/issues"
+    "url": "https://github.com/rizkiadiasa/selfbot/issues"
   },
-  "homepage": "https://github.com/Zitsraaaxyz/self-wabot#readme"
+  "homepage": "https://github.com/rizkiadiasa/selfbot#readme"
 }
