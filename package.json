@@ -24,7 +24,7 @@
     "axios": "^0.21.1",
     "base64-img": "^1.0.4",
     "cfonts": "^2.9.0",
-    "cheerio": "*",
+    "cheerio": "^1.0.0-rc.5",
     "escape-string-regexp": "^4.0.0",
     "fake-useragent": "^1.0.1",
     "ffmpeg": "0.0.4",
