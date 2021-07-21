@@ -18,7 +18,7 @@
   "author": "Ikyy-ads",
   "license": "ISC",
   "dependencies": {
-    "@adiwajshing/baileys": "^3.5.0",
+    "@adiwajshing/baileys": "^3.5.1",
     "@vitalets/google-translate-api": "^7.0.0",
     "async": "^3.2.0",
     "awesome-phonenumber": "^2.48.0",
