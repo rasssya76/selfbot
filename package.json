@@ -2,7 +2,7 @@
   "name": "Ikyy ads",
   "version": "1.0.0",
   "description": "ikyy",
-  "main": "main.js",
+  "main": "index.js",
   "directories": {
     "lib": "lib"
   },
