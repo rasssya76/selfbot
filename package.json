@@ -1,7 +1,7 @@
 {
-  "name": "ITSMAZGH",
+  "name": "Ikyy ads",
   "version": "1.0.0",
-  "description": "Mans",
+  "description": "ikyy",
   "main": "main.js",
   "directories": {
     "lib": "lib"
@@ -54,15 +54,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ITSMAZGH"
+    "url": "git+https://github.com/rizkiadiasa"
   },
   "keywords": [
     "Wasu"
   ],
-  "author": "MyMans APIs",
+  "author": "rizkiadiasa",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ITSMAZGH"
+    "url": "https://github.com/rizkiadiasa"
   },
-  "homepage": "https://github.com/ITSMAZGH"
+  "homepage": "https://github.com/rizkiadiasa"
 }
