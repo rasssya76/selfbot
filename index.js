@@ -40,7 +40,6 @@ const {
 } = require("./lib/nekopoi.js")
 
 const fs = require('fs')
-const ph = require('./lib/textprome.js')
 const os = require('os');
 const FormData = require('form-data')
 const axios = require("axios")
