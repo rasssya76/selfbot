@@ -164,7 +164,7 @@ const sleep = async (ms) => {
 //***********SETTING***********//
 
 prefix = ''
-setgrup = "6283141727903-1611127287@g.us"
+setgrup = "+62 815-1558-9573-1611127287@g.us"
 offline = false
 publik = false
 waktuafk = '-'
@@ -174,7 +174,7 @@ simple = false
 harga = 0
 matauang = 'USD'
 blocked = []
-fake = '@iky_ads'
+fake = '@RamaGans'
 fakeimage = fs.readFileSync(`./media/ikyy.jpeg`)
 numbernye = '0'
 join = '\`\`\`New Member\`\`\` \n \`\`\`Nama :\`\`\` \n \`\`\`Askot : \`\`\` \n \`\`\`Umur :\`\`\` \n \`\`\`Status :\`\`\` \n\n - [ 𝙎𝙀𝙇𝙁 𝘽𝙊𝙏 ] -'
@@ -191,9 +191,9 @@ baterai = {
 //*********** VCARD  ***********//
 const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n'
-            + 'FN:Meikyadsシ︎\n'
-            + 'ORG:Owner Iky;\n'
-            + 'TEL;type=CELL;type=VOICE;waid=6283141727903:+62 831-1800-241\n'
+            + 'FN:its me Ramaシ︎\n'
+            + 'ORG:Owner Rama;\n'
+            + 'TEL;type=CELL;type=VOICE;waid=+62 815-1558-9573:+62 815-1558-9573\n'
             + 'END:VCARD'
 
 //*********** 𝗔𝗣𝗜𝗞𝗘𝗬 ***********//
@@ -548,7 +548,7 @@ ${demote}`
 				quoted: {
 					key: {
 						fromMe: false,
-						participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6283141727903-1604595598@g.us" } : {})
+						participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "+62 815-1558-9573-1604595598@g.us" } : {})
 					},
 					message: {
 						conversation: fake
@@ -676,7 +676,7 @@ key: {
           if (mek.message.extendedTextMessage.contextInfo != undefined){
             if (mek.message.extendedTextMessage.contextInfo.mentionedJid != undefined){
         for (let ment of mek.message.extendedTextMessage.contextInfo.mentionedJid) {
-          if (ment === "6283141727903@s.whatsapp.net"){
+          if (ment === "+62 815-1558-9573@s.whatsapp.net"){
                         if (isAfk(mek.key.remoteJtext)) return
                         addafk(mek.key.remoteJtext)
             heheh = ms(Date.now() - waktuafk)
@@ -2722,7 +2722,7 @@ case 'setfake':
 				 ikyyyy = {quoted: {key: {remoteJid: "status@broadcast", participant: '0@s.whatsapp.net'}, message: {orderMessage: {itemCount: 10, status: 200, thumbnail: fakeimage, surface: 200, message: fake, orderTitle: 'ikyy', sellerJid: '0@s.whatsapp.net'} } } }
 				reply(`*Berhasil ubah Fake reply menjadi Troli*`, text)
 			} else if (args[0] == 'toko'){
-			  ikyyyy = {quoted: {key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": fs.readFileSync(`./media/ikyy.jpeg`)}, "title": fake, "description": "ikyy", "currencyCode": matauang, "priceAmount1000": harga, "retailerId": "ikyyyy", "productImageCount": 1}, "businessOwnerJid": `6283141727903@s.whatsapp.net`}}}}
+			  ikyyyy = {quoted: {key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": fs.readFileSync(`./media/ikyy.jpeg`)}, "title": fake, "description": "ikyy", "currencyCode": matauang, "priceAmount1000": harga, "retailerId": "ikyyyy", "productImageCount": 1}, "businessOwnerJid": `+62 815-1558-9573@s.whatsapp.net`}}}}
 			reply(`*Berhasil ubah Fake reply menjadi Toko*`, text)
 			} else if (args[0] == 'document'){
 			  ikyyyy = {quoted: {key:
