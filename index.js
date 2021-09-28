@@ -458,7 +458,7 @@ ${demote}`
 			
             const totalchat = await ikyy.chats.all()
 			const botNumber = ikyy.user.jid
-			const ownerNumber = ["6285215319934@s.whatsapp.net"] 
+			const ownerNumber = ["6281515589573@s.whatsapp.net"] 
 			const copid = await covid()
             const isGroup = from.endsWith('@g.us')
             const isAntiLink = isGroup ? antilink.includes(from) : false
@@ -882,168 +882,170 @@ break
            const statuss = public ? 'PUBLIC': 'SELF'
 		if (simple == false) inimenu = `「 *${statuss}BOT - WA* 」
 
-*INFORMASI BOT*
-
- *WA Version : ${ikyy.user.phone.wa_version}*
- *Baterai : ${baterai.battery}*
- *Hit Today : ${hit_today.length}*
- *Host : Phone*
- *MODE : ${statuss}*
- *Jam  : ${jam} WIB*
- 
-*Kasus Covid-19 Indonesia*  
-*Terinfeksi :* ${copid[0].kasus}
-*Kematian :* ${copid[0].kematian}
-*Sembuh :* ${copid[0].sembuh}
-  
-*◪* 𝗠𝗔𝗞𝗘𝗥
-
-⇒ ${prefix}ꜱᴛɪᴄᴋᴇʀ ʀᴇᴘʟʏ ɪᴍɢ
-⇒ ${prefix}ʀꜱᴛɪᴄᴋᴇʀ ʀᴇᴘʟʏ ɪᴍɢ
-⇒ ${prefix}ꜱᴛɪᴄᴋᴇʀɢɪꜰ ʀᴇᴘʟʏ ᴠɪᴅᴇᴏ
-⇒ ${prefix}ꜱᴛɪᴄᴋᴇʀᴡᴀ Qᴜᴇʀʏ
-⇒ ${prefix}ꜱᴛɪᴄᴋᴇʀᴡᴍ ɴᴀᴍᴀ|ᴀᴜᴛʜᴏʀ
-⇒ ${prefix}ꜱᴛɪᴄᴋᴍᴇᴍᴇ ᴛᴇᴋꜱ
-⇒ ${prefix}ꜱᴛɪᴄᴋᴍᴇᴍᴇ2 ᴛᴇᴋꜱ
-⇒ ${prefix}ꜱᴛɪᴄᴋᴍᴇᴍᴇ3 ᴛᴋꜱ ᴀᴛꜱ|ᴛᴋꜱ ʙᴡʜ
-⇒ ${prefix}ꜱᴛɪᴄᴋᴡᴀꜱᴛᴇᴅ ʀᴘʟʏ ꜱᴛᴋ
-⇒ ${prefix}ꜱᴛɪᴄᴋꜰʟɪᴘ ʀᴘʟʏ ꜱᴛᴋ
-⇒ ${prefix}ꜱᴛɪᴄᴋɴᴏʙɢ 
-⇒ ${prefix}ɴᴏʙɢ ʀᴇᴘʟʏ ɪᴍɢ
-⇒ ${prefix}ᴛᴛᴘ ᴛᴇxᴛ
-⇒ ${prefix}ᴛᴛᴘ1ᴛᴇxᴛ
-⇒ ${prefix}ᴛᴀᴋᴇ ɴᴀᴍᴀ|ᴀᴜᴛʜᴏʀ
-⇒ ${prefix}ᴇxɪꜰ ɴᴀᴍᴀ|ᴀᴜᴛʜᴏʀ
-⇒ ${prefix}ᴄᴏʟᴏɴɢ
-
-*◪* *ᴄᴏɴᴠᴇʀᴛ*
-⇒ ${prefix}ᴛᴇxᴛᴍᴀᴋᴇʀ ᴀᴛᴀꜱ|ʙᴀᴡᴀʜ
-⇒ ${prefix}ꜰᴅᴇꜰᴀᴄᴇ ᴜʀʟ|ᴛɪᴛʟᴇ|ᴅᴇꜱᴋ
-⇒ ${prefix}ꜰᴀᴋᴇ ᴜʀʟ|ᴛɪᴛʟᴇ|ᴅᴇꜱᴋ
-⇒ ${prefix}ᴛᴏɢɪꜰ ʀᴇᴘʟʏ ꜱᴛɪᴄᴋᴇʀɢɪꜰ
-⇒ ${prefix}ᴛᴏᴠɪᴅᴇᴏ ʀᴇᴘʟʏ ꜱᴛɪᴄᴋᴇʀ
-⇒ ${prefix}ᴛᴏɪᴍɢ ʀᴇᴘʟʏ ꜱᴛɪᴄᴋᴇʀ
-⇒ ${prefix}ᴛᴏɪᴍᴀɢᴇ ʀᴇᴘʟʏ ꜱᴛɪᴄᴋᴇʀ
-
-*◪* 𝗦𝗬𝗦𝗧𝗘𝗠
-⇒ ${prefix}ꜱᴛᴀᴛᴜꜱ
-⇒ ${prefix}ꜱᴇʟꜰ
-⇒ ${prefix}ᴘᴜʙʟɪᴄ
-⇒ ${prefix}ᴏɴ
-⇒ ${prefix}ᴏꜰꜰ ᴀʟᴀꜱᴀɴ
-⇒ ${prefix}ʀᴜɴᴛɪᴍᴇ
-⇒ ${prefix}ᴘɪɴɢ
-⇒ ${prefix}ᴛᴇʀᴍ
-⇒ ${prefix}ʙʟᴏᴄᴋʟɪꜱᴛ
-⇒ ${prefix}ʀᴜɴ
-⇒ ${prefix}ᴄʜᴀᴛʟɪꜱᴛ
-⇒ ${prefix}ᴊᴏɪɴ ʟɪɴᴋɢʀᴏᴜᴘ
-⇒ ${prefix}ɢᴇᴛᴘɪᴄ @ᴛᴀɢ
-⇒ ${prefix}ɢᴇᴛʙɪᴏ @ᴛᴀɢ
-
-*◪* 𝗔𝗗𝗩𝗔𝗡𝗖𝗘
-⇒ ${prefix}ʙᴄ
-⇒ ${prefix}ᴘɪɴ
-⇒ ${prefix}ᴜɴᴘɪɴ
-⇒ ${prefix}ᴀʀᴄʜɪᴠᴇ
-⇒ ${prefix}ᴜɴᴀʀᴄʜɪᴠᴇᴀʟʟ
-⇒ ${prefix}ʀᴇᴀᴅᴀʟʟ
-⇒ ${prefix}ᴜɴʀᴇᴀᴅᴀʟʟ
-⇒ ${prefix}ᴅᴇʟᴛʜɪꜱᴄʜᴀᴛ
-⇒ ${prefix}ꜱʜᴜᴛᴅᴏᴡɴ
-⇒ ${prefix}ᴊᴀᴅɪʙᴏᴛ
-⇒ ${prefix}ʀᴇꜱᴛᴀʀᴛ
-
-*◪* 𝗧𝗔𝗚
-⇒ ${prefix}ꜱᴇɴᴅᴋᴏɴᴛᴀɢ ɴᴀᴍᴀ
-⇒ ${prefix}ʜɪᴅᴇᴛᴀɢ ᴛᴇxᴛ
-⇒ ${prefix}ꜱᴛᴄᴛᴀɢ ᴛᴀɢ ꜱᴛᴄ
-⇒ ${prefix}ɪᴍɢᴛᴀɢ ᴛᴀɢ ɪᴍɢ
-⇒ ${prefix}ᴋᴏɴᴛᴀᴋ ɴᴀᴍᴀ|ɴᴏᴍᴏʀ
-⇒ ${prefix}ᴋᴏɴᴛᴀɢ ɴᴀᴍᴀ|ɴᴏᴍᴏʀ
-
-*◪* 𝗖𝗥𝗘𝗔𝗧𝗢𝗥
-⇒ ${prefix}ꜱᴇᴛꜰᴀᴋᴇ
-⇒ ${prefix}ꜱᴇᴛᴍᴇɴᴜ
-⇒ ${prefix}ꜱᴇᴛᴛʜᴜᴍʙ
-⇒ ${prefix}ꜱᴇᴛᴛʜᴜᴍʙᴍᴇɴᴜ
-⇒ ${prefix}ꜱᴇᴛʀᴇᴘʟʏ
-⇒ ${prefix}ꜱᴇᴛᴍᴀᴛᴀᴜᴀɴɢ
-⇒ ${prefix}ꜱᴇᴛʜᴀʀɢᴀ
-⇒ ${prefix}ꜱᴇᴛʙᴏᴅʏᴍᴇɴᴜ
-⇒ ${prefix}ꜱᴇᴛᴡᴇʟᴄᴏᴍᴇ
-⇒ ${prefix}ꜱᴇᴛʟᴇᴀᴠᴇ
-⇒ ${prefix}ꜱᴇᴛᴘʀᴏᴍᴏᴛᴇ
-⇒ ${prefix}ꜱᴇᴛᴅᴇᴍᴏᴛᴇ
-
-*◪* 𝗨𝗣𝗦𝗪
-⇒ ${prefix}ᴜᴘꜱᴡᴛᴇxᴛ
-⇒ ${prefix}ᴜᴘꜱᴡɪᴍɢ
-⇒ ${prefix}ᴜᴘꜱᴡᴠɪᴅᴇᴏ
-
-*◪* 𝗚𝗥𝗢𝗨𝗣
-⇒ ${prefix}ᴡᴇʟᴄᴏᴍᴇ 1/0
-⇒ ${prefix}ʟɪɴᴋɢʀᴏᴜᴘ
-⇒ ${prefix}ɢʀᴏᴜᴘ ᴛᴜᴛᴜᴘ/ʙᴜᴋᴀ
-⇒ ${prefix}ᴀᴅᴅ 6281xxx
-⇒ ${prefix}ᴋɪᴄᴋ @ᴛᴀɢ
-⇒ ${prefix}ᴘʀᴏᴍᴏᴛᴇ @ᴛᴀɢ
-⇒ ${prefix}ᴅᴇᴍᴏᴛᴇ @ᴛᴀɢᴀᴅᴍɪɴ
-⇒ ${prefix}ᴅᴇᴍᴏᴛᴇᴀʟʟ
-⇒ ${prefix}ᴇᴅᴏᴛᴇɴꜱᴇɪ @ᴛᴀɢ
-⇒ ${prefix}ʟɪꜱᴛᴀᴅᴍɪɴ
-⇒ ${prefix}ɢᴄɪɴɢꜰᴏ
-⇒ ${prefix}ᴏɴʟɪɴᴇ
-⇒ ${prefix}ɪɴꜰᴏᴀʟʟ
-⇒ ${prefix}ɴᴏᴛɪꜰ
-⇒ ${prefix}ʟᴇᴀᴠᴇ
-
-*◪* *KHUSUS OWNER*
-⇒ ${prefix}ᴀᴅᴅꜱᴛɪᴋ ᴏᴘᴛɪᴏɴᴀʟ
-⇒ ${prefix}ᴀᴅɪᴍɢ ᴏᴘᴛɪᴏɴᴀʟ
-⇒ ${prefix}ᴀᴅᴅᴠɪᴅ ᴏᴘᴛɪᴏɴᴀʟ
-⇒ ${prefix}ᴀᴅᴅᴠɴ ᴏᴘᴛɪᴏɴᴀʟ
-⇒ ${prefix}ɢᴇᴛꜱᴛɪᴋ Qᴜᴇʀʏ
-⇒ ${prefix}ɢᴇᴛɪᴍɢ Qᴜᴇʀʏ
-⇒ ${prefix}ɢᴇᴛᴠɪᴅ Qᴜᴇʀʏ
-⇒ ${prefix}ɢᴇᴛᴠɴ Qᴜᴇʀʏ
-⇒ ${prefix}ʟɪꜱᴛꜱᴛɪᴄᴋ
-⇒ ${prefix}ʟɪꜱᴛɪᴍɢ
-⇒ ${prefix}ʟɪꜱᴛᴠɪᴅ
-⇒ ${prefix}ʟɪꜱᴛᴠɴ
-
-*◪* 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
-⇒ ${prefix}ᴘʟᴀʏ Qᴜᴇʀʏ
-⇒ ${prefix}ᴘʟᴀʏ2 Qᴜᴇʀʏ
-⇒ ${prefix}ꜱᴇᴀʀᴄʜᴍᴜꜱɪᴄ ᴛᴀɢ ᴀᴜᴅɪᴏ
-⇒ ${prefix}ɪɢ2ᴜʀʟ
-⇒ ${prefix}ꜰʙ ᴜʀʟ
-⇒ ${prefix}ᴛɪᴋᴛᴏᴋ ᴜʀʟ
-⇒ ${prefix}ᴛɪᴋᴛᴏᴋɴᴏᴡᴍ ᴜʀʟ
-⇒ ${prefix}ʏᴛᴍᴘ3 ᴜʀʟ
-⇒ ${prefix}ʏᴛᴍᴘ4 ᴜʀʟ
-
-*◪*  *ᴛᴀᴍʙᴀʜᴀɴ*
-⇒ ${prefix}ɪɢ
-⇒ ${prefix}ᴏᴄʀ
-⇒ ${prefix}ɢɪᴍᴀɢᴇ
-⇒ ${prefix}ɢᴏᴏɢʟᴇꜱᴇᴀʀᴄʜ
-⇒ ${prefix}ʏᴛꜱ
-⇒ ${prefix}ᴍᴀᴋᴇʀ
-⇒ ${prefix}loli
-⇒ ${prefix}tahta
-⇒ ${prefix}nulis
-⇒ ${prefix}igstalk
-⇒ ${prefix}ghstalk
-⇒ ${prefix}tiktokstalk
-
-
-*◪*ᴛq ᴛq*
-⇒ ᴍʜᴀɴᴋʙᴀʀʙᴀʀ
-⇒ ɢᴀʟᴀɴɢ ʏᴀɴᴜᴀʀ
-⇒ ᴢɪᴛꜱʀᴀᴀ
-⇒ ᴀɴᴜ ᴛᴇᴀᴍ
-
+╭─❒ 「 User Info 」 ❒
+│◦➛*WA Version : ${ikyy.user.phone.wa_version}*
+│◦➛*Baterai : ${baterai.battery}*
+│◦➛*Hit Today : ${hit_today.length}*
+│◦➛*Host : Phone*
+│◦➛*Jam  : ${jam} WIB*
+│◦➛*MODE : ${statuss}*
+└❏
+┌❏ 「 Info Covid 」 
+│◦➛*Kasus Covid-19 Indonesia*  
+│◦➛*Terinfeksi :* ${copid[0].kasus}
+│◦➛*Kematian :* ${copid[0].kematian}
+│◦➛*Sembuh :* ${copid[0].sembuh}*
+└❏                    
+┏━━━•   
+┣◪ 𝗠𝗔𝗞𝗘𝗥
+┃
+┣❒ ${prefix}ꜱᴛɪᴄᴋᴇʀ ʀᴇᴘʟʏ ɪᴍɢ
+┣❒ ${prefix}ʀꜱᴛɪᴄᴋᴇʀ ʀᴇᴘʟʏ ɪᴍɢ
+┣❒ ${prefix}ꜱᴛɪᴄᴋᴇʀɢɪꜰ ʀᴇᴘʟʏ ᴠɪᴅᴇᴏ
+┣❒ ${prefix}ꜱᴛɪᴄᴋᴇʀᴡᴀ Qᴜᴇʀʏ
+┣❒ ${prefix}ꜱᴛɪᴄᴋᴇʀᴡᴍ ɴᴀᴍᴀ|ᴀᴜᴛʜᴏʀ
+┣❒ ${prefix}ꜱᴛɪᴄᴋᴍᴇᴍᴇ ᴛᴇᴋꜱ
+┣❒ ${prefix}ꜱᴛɪᴄᴋᴍᴇᴍᴇ2 ᴛᴇᴋꜱ
+┣❒ ${prefix}ꜱᴛɪᴄᴋᴍᴇᴍᴇ3 ᴛᴋꜱ ᴀᴛꜱ|ᴛᴋꜱ ʙᴡʜ
+┣❒ ${prefix}ꜱᴛɪᴄᴋᴡᴀꜱᴛᴇᴅ ʀᴘʟʏ ꜱᴛᴋ
+┣❒ ${prefix}ꜱᴛɪᴄᴋꜰʟɪᴘ ʀᴘʟʏ ꜱᴛᴋ
+┣❒ ${prefix}ꜱᴛɪᴄᴋɴᴏʙɢ 
+┣❒ ${prefix}ɴᴏʙɢ ʀᴇᴘʟʏ ɪᴍɢ
+┣❒ ${prefix}ᴛᴛᴘ ᴛᴇxᴛ
+┣❒ ${prefix}ᴛᴛᴘ1ᴛᴇxᴛ
+┣❒ ${prefix}ᴛᴀᴋᴇ ɴᴀᴍᴀ|ᴀᴜᴛʜᴏʀ
+┣❒ ${prefix}ᴇxɪꜰ ɴᴀᴍᴀ|ᴀᴜᴛʜᴏʀ
+┣❒ ${prefix}ᴄᴏʟᴏɴɢ
+┃
+┣◪ *ᴄᴏɴᴠᴇʀᴛ*
+┣❒ ${prefix}ᴛᴇxᴛᴍᴀᴋᴇʀ ᴀᴛᴀꜱ|ʙᴀᴡᴀʜ
+┣❒ ${prefix}ꜰᴅᴇꜰᴀᴄᴇ ᴜʀʟ|ᴛɪᴛʟᴇ|ᴅᴇꜱᴋ
+┣❒ ${prefix}ꜰᴀᴋᴇ ᴜʀʟ|ᴛɪᴛʟᴇ|ᴅᴇꜱᴋ
+┣❒ ${prefix}ᴛᴏɢɪꜰ ʀᴇᴘʟʏ ꜱᴛɪᴄᴋᴇʀɢɪꜰ
+┣❒ ${prefix}ᴛᴏᴠɪᴅᴇᴏ ʀᴇᴘʟʏ ꜱᴛɪᴄᴋᴇʀ
+┣❒ ${prefix}ᴛᴏɪᴍɢ ʀᴇᴘʟʏ ꜱᴛɪᴄᴋᴇʀ
+┣❒ ${prefix}ᴛᴏɪᴍᴀɢᴇ ʀᴇᴘʟʏ ꜱᴛɪᴄᴋᴇʀ
+┃
+┣◪ 𝗦𝗬𝗦𝗧𝗘𝗠
+┣❒ ${prefix}ꜱᴛᴀᴛᴜꜱ
+┣❒ ${prefix}ꜱᴇʟꜰ
+┣❒ ${prefix}ᴘᴜʙʟɪᴄ
+┣❒ ${prefix}ᴏɴ
+┣❒ ${prefix}ᴏꜰꜰ ᴀʟᴀꜱᴀɴ
+┣❒ ${prefix}ʀᴜɴᴛɪᴍᴇ
+┣❒ ${prefix}ᴘɪɴɢ
+┣❒ ${prefix}ᴛᴇʀᴍ
+┣❒ ${prefix}ʙʟᴏᴄᴋʟɪꜱᴛ
+┣❒ ${prefix}ʀᴜɴ
+┣❒ ${prefix}ᴄʜᴀᴛʟɪꜱᴛ
+┣❒ ${prefix}ᴊᴏɪɴ ʟɪɴᴋɢʀᴏᴜᴘ
+┣❒ ${prefix}ɢᴇᴛᴘɪᴄ @ᴛᴀɢ
+┣❒ ${prefix}ɢᴇᴛʙɪᴏ @ᴛᴀɢ
+┃
+┣◪ 𝗔𝗗𝗩𝗔𝗡𝗖𝗘
+┣❒ ${prefix}ʙᴄ
+┣❒ ${prefix}ᴘɪɴ
+┣❒ ${prefix}ᴜɴᴘɪɴ
+┣❒ ${prefix}ᴀʀᴄʜɪᴠᴇ
+┣❒ ${prefix}ᴜɴᴀʀᴄʜɪᴠᴇᴀʟʟ
+┣❒ ${prefix}ʀᴇᴀᴅᴀʟʟ
+┣❒ ${prefix}ᴜɴʀᴇᴀᴅᴀʟʟ
+┣❒ ${prefix}ᴅᴇʟᴛʜɪꜱᴄʜᴀᴛ
+┣❒ ${prefix}ꜱʜᴜᴛᴅᴏᴡɴ
+┣❒ ${prefix}ᴊᴀᴅɪʙᴏᴛ
+┣❒ ${prefix}ʀᴇꜱᴛᴀʀᴛ
+┃
+┣◪ 𝗧𝗔𝗚
+┣❒ ${prefix}ꜱᴇɴᴅᴋᴏɴᴛᴀɢ ɴᴀᴍᴀ
+┣❒ ${prefix}ʜɪᴅᴇᴛᴀɢ ᴛᴇxᴛ
+┣❒ ${prefix}ꜱᴛᴄᴛᴀɢ ᴛᴀɢ ꜱᴛᴄ
+┣❒ ${prefix}ɪᴍɢᴛᴀɢ ᴛᴀɢ ɪᴍɢ
+┣❒ ${prefix}ᴋᴏɴᴛᴀᴋ ɴᴀᴍᴀ|ɴᴏᴍᴏʀ
+┣❒ ${prefix}ᴋᴏɴᴛᴀɢ ɴᴀᴍᴀ|ɴᴏᴍᴏʀ
+┃
+┣◪ 𝗖𝗥𝗘𝗔𝗧𝗢𝗥
+┣❒ ${prefix}ꜱᴇᴛꜰᴀᴋᴇ
+┣❒ ${prefix}ꜱᴇᴛᴍᴇɴᴜ
+┣❒ ${prefix}ꜱᴇᴛᴛʜᴜᴍʙ
+┣❒ ${prefix}ꜱᴇᴛᴛʜᴜᴍʙᴍᴇɴᴜ
+┣❒ ${prefix}ꜱᴇᴛʀᴇᴘʟʏ
+┣❒ ${prefix}ꜱᴇᴛᴍᴀᴛᴀᴜᴀɴɢ
+┣❒ ${prefix}ꜱᴇᴛʜᴀʀɢᴀ
+┣❒ ${prefix}ꜱᴇᴛʙᴏᴅʏᴍᴇɴᴜ
+┣❒ ${prefix}ꜱᴇᴛᴡᴇʟᴄᴏᴍᴇ
+┣❒ ${prefix}ꜱᴇᴛʟᴇᴀᴠᴇ
+┣❒ ${prefix}ꜱᴇᴛᴘʀᴏᴍᴏᴛᴇ
+┣❒ ${prefix}ꜱᴇᴛᴅᴇᴍᴏᴛᴇ
+┃
+┣◪ 𝗨𝗣𝗦𝗪
+┣❒ ${prefix}ᴜᴘꜱᴡᴛᴇxᴛ
+┣❒ ${prefix}ᴜᴘꜱᴡɪᴍɢ
+┣❒ ${prefix}ᴜᴘꜱᴡᴠɪᴅᴇᴏ
+┃
+┣◪ 𝗚𝗥𝗢𝗨𝗣
+┣❒ ${prefix}ᴡᴇʟᴄᴏᴍᴇ 1/0
+┣❒ ${prefix}ʟɪɴᴋɢʀᴏᴜᴘ
+┣❒ ${prefix}ɢʀᴏᴜᴘ ᴛᴜᴛᴜᴘ/ʙᴜᴋᴀ
+┣❒ ${prefix}ᴀᴅᴅ 6281xxx
+┣❒ ${prefix}ᴋɪᴄᴋ @ᴛᴀɢ
+┣❒ ${prefix}ᴘʀᴏᴍᴏᴛᴇ @ᴛᴀɢ
+┣❒ ${prefix}ᴅᴇᴍᴏᴛᴇ @ᴛᴀɢᴀᴅᴍɪɴ
+┣❒ ${prefix}ᴅᴇᴍᴏᴛᴇᴀʟʟ
+┣❒ ${prefix}ᴇᴅᴏᴛᴇɴꜱᴇɪ @ᴛᴀɢ
+┣❒ ${prefix}ʟɪꜱᴛᴀᴅᴍɪɴ
+┣❒ ${prefix}ɢᴄɪɴɢꜰᴏ
+┣❒ ${prefix}ᴏɴʟɪɴᴇ
+┣❒ ${prefix}ɪɴꜰᴏᴀʟʟ
+┣❒ ${prefix}ɴᴏᴛɪꜰ
+┣❒ ${prefix}ʟᴇᴀᴠᴇ
+┃
+┣◪ *KHUSUS OWNER*
+┣❒ ${prefix}ᴀᴅᴅꜱᴛɪᴋ ᴏᴘᴛɪᴏɴᴀʟ
+┣❒ ${prefix}ᴀᴅɪᴍɢ ᴏᴘᴛɪᴏɴᴀʟ
+┣❒ ${prefix}ᴀᴅᴅᴠɪᴅ ᴏᴘᴛɪᴏɴᴀʟ
+┣❒ ${prefix}ᴀᴅᴅᴠɴ ᴏᴘᴛɪᴏɴᴀʟ
+┣❒ ${prefix}ɢᴇᴛꜱᴛɪᴋ Qᴜᴇʀʏ
+┣❒ ${prefix}ɢᴇᴛɪᴍɢ Qᴜᴇʀʏ
+┣❒ ${prefix}ɢᴇᴛᴠɪᴅ Qᴜᴇʀʏ
+┣❒ ${prefix}ɢᴇᴛᴠɴ Qᴜᴇʀʏ
+┣❒ ${prefix}ʟɪꜱᴛꜱᴛɪᴄᴋ
+┣❒ ${prefix}ʟɪꜱᴛɪᴍɢ
+┣❒ ${prefix}ʟɪꜱᴛᴠɪᴅ
+┣❒ ${prefix}ʟɪꜱᴛᴠɴ
+┃
+┣◪ 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
+┣❒ ${prefix}ᴘʟᴀʏ Qᴜᴇʀʏ
+┣❒ ${prefix}ᴘʟᴀʏ2 Qᴜᴇʀʏ
+┣❒ ${prefix}ꜱᴇᴀʀᴄʜᴍᴜꜱɪᴄ ᴛᴀɢ ᴀᴜᴅɪᴏ
+┣❒ ${prefix}ɪɢ2ᴜʀʟ
+┣❒ ${prefix}ꜰʙ ᴜʀʟ
+┣❒ ${prefix}ᴛɪᴋᴛᴏᴋ ᴜʀʟ
+┣❒ ${prefix}ᴛɪᴋᴛᴏᴋɴᴏᴡᴍ ᴜʀʟ
+┣❒ ${prefix}ʏᴛᴍᴘ3 ᴜʀʟ
+┣❒ ${prefix}ʏᴛᴍᴘ4 ᴜʀʟ
+┃
+┣◪ *ᴛᴀᴍʙᴀʜᴀɴ*
+┣❒ ${prefix}ɪɢ
+┣❒ ${prefix}ᴏᴄʀ
+┣❒ ${prefix}ɢɪᴍᴀɢᴇ
+┣❒ ${prefix}ɢᴏᴏɢʟᴇꜱᴇᴀʀᴄʜ
+┣❒ ${prefix}ʏᴛꜱ
+┣❒ ${prefix}ᴍᴀᴋᴇʀ
+┣❒ ${prefix}loli
+┣❒ ${prefix}tahta
+┣❒ ${prefix}nulis
+┣❒ ${prefix}igstalk
+┣❒ ${prefix}ghstalk
+┣❒ ${prefix}tiktokstalk
+┃
+┃
+┣◪ *ᴛq ᴛq*
+┣❒ ᴍʜᴀɴᴋʙᴀʀʙᴀʀ
+┣❒ ɢᴀʟᴀɴɢ ʏᴀɴᴜᴀʀ
+┣❒ ᴢɪᴛꜱʀᴀᴀ
+┣❒ ɢᴡ sᴇɴᴅɪʀɪ
+┣❒ ᴀɴᴜ ᴛᴇᴀᴍ
+┗━━━•
 `
  
 if (simple == true) inimenu = `「 *${statuss}BOT - WA* 」`
@@ -1055,175 +1057,175 @@ case 'maker':
 ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
 				
    menumaker = `
-   
-𝗠𝗔𝗞𝗘𝗥
-
-> ${prefix}freefire
-> ${prefix}silverplaybutton
-> ${prefix}goldplaybutton
-> ${prefix}birthdayday
-> ${prefix}snow3d
-> ${prefix}galaxybat
-> ${prefix}writegalacy
-> ${prefix}textbyname
-> ${prefix}wooden3d
-> ${prefix}starsnight
-> ${prefix}textcake
-> ${prefix}glittergold
-> ${prefix}noeltext
-> ${prefix}metallogo
-> ${prefix}greenbush
-> ${prefix}glossychrome
-> ${prefix}greenneon
-> ${prefix}galaxystyle
-> ${prefix}hologram3d
-> ${prefix}birthdaycake
-> ${prefix}heartshaped
-> ${prefix}puppycute
-> ${prefix}beautifulflower
-> ${prefix}lighttext
-> ${prefix}galaxywallpaper
-> ${prefix}luxurygold
-> ${prefix}watercolor
-> ${prefix}multicolor3d
-> ${prefix}wetglass
-> ${prefix}mltourserti5
-> ${prefix}mltourserti4
-> ${prefix}mltourserti3
-> ${prefix}mltourserti2
-> ${prefix}mltourserti
-> ${prefix}pubgtourserti5
-> ${prefix}pubgtourserti4
-> ${prefix}pubgtourserti3
-> ${prefix}pubgtourserti2
-> ${prefix}pubgtourserti
-> ${prefix}fftourserti5
-> ${prefix}fftourserti4
-> ${prefix}fftourserti3
-> ${prefix}fftourserti2
-> ${prefix}fftourserti
-> ${prefix}wanted
-> ${prefix}ktpmaker
-> ${prefix}ffbaner
-> ${prefix}candy
-> ${prefix}wolf
-> ${prefix}heart
-> ${prefix}glowing
-> ${prefix}onesilk
-> ${prefix}smoke
-> ${prefix}loveone
-> ${prefix}smoke2
-> ${prefix}orchids
-> ${prefix}funnycup
-> ${prefix}embroidery
-> ${prefix}grandient
-> ${prefix}flower
-> ${prefix}summer
-> ${prefix}glow
-> ${prefix}neon
-> ${prefix}coffecup2
-> ${prefix}coffecup
-> ${prefix}royallock
-> ${prefix}cemetery
-> ${prefix}underglass
-> ${prefix}nature3d
-> ${prefix}rosegold
-> ${prefix}nature
-> ${prefix}textsky
-> ${prefix}textonecup
-> ${prefix}hentaipict
-> ${prefix}burnpaper
-> ${prefix}gabut
-> ${prefix}blackpink
-> ${prefix}randomwp
-> ${prefix}googlesearch
-> ${prefix}bikinquote
-> ${prefix}glitchtext
-> ${prefix}gemboktext
-> ${prefix}pornhub
-> ${prefix}firework
-> ${prefix}lava
-> ${prefix}blood
-> ${prefix}sumery
-> ${prefix}toxic
-> ${prefix}neontext
-> ${prefix}grenneon
-> ${prefix}dropwater
-> ${prefix}metaldark
-> ${prefix}sandwrite
-> ${prefix}vinta
-> ${prefix}avengers
-> ${prefix}summer
-> ${prefix}blackpink text
-> ${prefix}neon text
-> ${prefix}greenneon text
-> ${prefix}advanceglow text
-> ${prefix}futureneon text
-> ${prefix}sandwriting text
-> ${prefix}sandsummer text
-> ${prefix}sandengraved text
-> ${prefix}metaldark text
-> ${prefix}neonlight text
-> ${prefix}holographic text
-> ${prefix}text1917 text
-> ${prefix}minion text
-> ${prefix}deluxesilver text
-> ${prefix}newyearcard text
-> ${prefix}bloodfrosted text
-> ${prefix}halloween text
-> ${prefix}jokerlogo text
-> ${prefix}fireworksparkle text
-> ${prefix}natureleaves text
-> ${prefix}bokeh text
-> ${prefix}toxic text
-> ${prefix}strawberry text
-> ${prefix}box3d text
-> ${prefix}roadwarning text
-> ${prefix}breakwall text
-> ${prefix}icecold text
-> ${prefix}luxury text
-> ${prefix}cloud text
-> ${prefix}summersand text
-> ${prefix}horrorblood text
-> ${prefix}thunder text
-> ${prefix}pornhub text1 text2
-> ${prefix}glitch text1 text2
-> ${prefix}avenger text1 text2
-> ${prefix}space text1 text2
-> ${prefix}ninjalogo text1 text2
-> ${prefix}marvelstudio text1 text2
-> ${prefix}lionlogo text1 text2
-> ${prefix}wolflogo text1 text2
-> ${prefix}steel3d text1 text2
-> ${prefix}wallgravity text1 text2
-• ${prefix}shadow text
-> ${prefix}cup text
-> ${prefix}cup1 text
-> ${prefix}romance text
-> ${prefix}smoke text
-> ${prefix}burnpaper text
-> ${prefix}lovemessage text
-> ${prefix}undergrass text
-> ${prefix}love text
-> ${prefix}coffe text
-> ${prefix}woodheart text
-> ${prefix}woodenboard text
-> ${prefix}summer3d text
-> ${prefix}wolfmetal text
-> ${prefix}nature3d text
-> ${prefix}underwater text
-> ${prefix}golderrose text
-> ${prefix}summernature text
-> ${prefix}letterleaves text
-> ${prefix}glowingneon text
-> ${prefix}fallleaves text
-> ${prefix}flamming text
-> ${prefix}harrypotter text
-> ${prefix}carvedwood text
-> ${prefix}tiktok text1 text2
-> ${prefix}arcade8bit text1 text2
-> ${prefix}battlefield4 text1 text2
-> ${prefix}pubg text1 text2
+┏━━━•  
+┣◪ 𝗠𝗔𝗞𝗘𝗥
+┣❒ ${prefix}freefire
+┣❒ ${prefix}silverplaybutton
+┣❒ ${prefix}goldplaybutton
+┣❒ ${prefix}birthdayday
+┣❒ ${prefix}snow3d
+┣❒ ${prefix}galaxybat
+┣❒ ${prefix}writegalacy
+┣❒ ${prefix}textbyname
+┣❒ ${prefix}wooden3d
+┣❒ ${prefix}starsnight
+┣❒ ${prefix}textcake
+┣❒ ${prefix}glittergold
+┣❒ ${prefix}noeltext
+┣❒ ${prefix}metallogo
+┣❒ ${prefix}greenbush
+┣❒ ${prefix}glossychrome
+┣❒ ${prefix}greenneon
+┣❒ ${prefix}galaxystyle
+┣❒ ${prefix}hologram3d
+┣❒ ${prefix}birthdaycake
+┣❒ ${prefix}heartshaped
+┣❒ ${prefix}puppycute
+┣❒ ${prefix}beautifulflower
+┣❒ ${prefix}lighttext
+┣❒ ${prefix}galaxywallpaper
+┣❒ ${prefix}luxurygold
+┣❒ ${prefix}watercolor
+┣❒ ${prefix}multicolor3d
+┣❒ ${prefix}wetglass
+┣❒ ${prefix}mltourserti5
+┣❒ ${prefix}mltourserti4
+┣❒ ${prefix}mltourserti3
+┣❒ ${prefix}mltourserti2
+┣❒ ${prefix}mltourserti
+┣❒ ${prefix}pubgtourserti5
+┣❒ ${prefix}pubgtourserti4
+┣❒ ${prefix}pubgtourserti3
+┣❒ ${prefix}pubgtourserti2
+┣❒ ${prefix}pubgtourserti
+┣❒ ${prefix}fftourserti5
+┣❒ ${prefix}fftourserti4
+┣❒ ${prefix}fftourserti3
+┣❒ ${prefix}fftourserti2
+┣❒ ${prefix}fftourserti
+┣❒ ${prefix}wanted
+┣❒ ${prefix}ktpmaker
+┣❒ ${prefix}ffbaner
+┣❒ ${prefix}candy
+┣❒ ${prefix}wolf
+┣❒ ${prefix}heart
+┣❒ ${prefix}glowing
+┣❒ ${prefix}onesilk
+┣❒ ${prefix}smoke
+┣❒ ${prefix}loveone
+┣❒ ${prefix}smoke2
+┣❒ ${prefix}orchids
+┣❒ ${prefix}funnycup
+┣❒ ${prefix}embroidery
+┣❒ ${prefix}grandient
+┣❒ ${prefix}flower
+┣❒ ${prefix}summer
+┣❒ ${prefix}glow
+┣❒ ${prefix}neon
+┣❒ ${prefix}coffecup2
+┣❒ ${prefix}coffecup
+┣❒ ${prefix}royallock
+┣❒ ${prefix}cemetery
+┣❒ ${prefix}underglass
+┣❒ ${prefix}nature3d
+┣❒ ${prefix}rosegold
+┣❒ ${prefix}nature
+┣❒ ${prefix}textsky
+┣❒ ${prefix}textonecup
+┣❒ ${prefix}hentaipict
+┣❒ ${prefix}burnpaper
+┣❒ ${prefix}gabut
+┣❒ ${prefix}blackpink
+┣❒ ${prefix}randomwp
+┣❒ ${prefix}googlesearch
+┣❒ ${prefix}bikinquote
+┣❒ ${prefix}glitchtext
+┣❒ ${prefix}gemboktext
+┣❒ ${prefix}pornhub
+┣❒ ${prefix}firework
+┣❒ ${prefix}lava
+┣❒ ${prefix}blood
+┣❒ ${prefix}sumery
+┣❒ ${prefix}toxic
+┣❒ ${prefix}neontext
+┣❒ ${prefix}grenneon
+┣❒ ${prefix}dropwater
+┣❒ ${prefix}metaldark
+┣❒ ${prefix}sandwrite
+┣❒ ${prefix}vinta
+┣❒ ${prefix}avengers
+┣❒ ${prefix}summer
+┣❒ ${prefix}blackpink text
+┣❒ ${prefix}neon text
+┣❒ ${prefix}greenneon text
+┣❒ ${prefix}advanceglow text
+┣❒ ${prefix}futureneon text
+┣❒ ${prefix}sandwriting text
+┣❒ ${prefix}sandsummer text
+┣❒ ${prefix}sandengraved text
+┣❒ ${prefix}metaldark text
+┣❒ ${prefix}neonlight text
+┣❒ ${prefix}holographic text
+┣❒ ${prefix}text1917 text
+┣❒ ${prefix}minion text
+┣❒ ${prefix}deluxesilver text
+┣❒ ${prefix}newyearcard text
+┣❒ ${prefix}bloodfrosted text
+┣❒ ${prefix}halloween text
+┣❒ ${prefix}jokerlogo text
+┣❒ ${prefix}fireworksparkle text
+┣❒ ${prefix}natureleaves text
+┣❒ ${prefix}bokeh text
+┣❒ ${prefix}toxic text
+┣❒ ${prefix}strawberry text
+┣❒ ${prefix}box3d text
+┣❒ ${prefix}roadwarning text
+┣❒ ${prefix}breakwall text
+┣❒ ${prefix}icecold text
+┣❒ ${prefix}luxury text
+┣❒ ${prefix}cloud text
+┣❒ ${prefix}summersand text
+┣❒ ${prefix}horrorblood text
+┣❒ ${prefix}thunder text
+┣❒ ${prefix}pornhub text1 text2
+┣❒ ${prefix}glitch text1 text2
+┣❒ ${prefix}avenger text1 text2
+┣❒ ${prefix}space text1 text2
+┣❒ ${prefix}ninjalogo text1 text2
+┣❒ ${prefix}marvelstudio text1 text2
+┣❒ ${prefix}lionlogo text1 text2
+┣❒ ${prefix}wolflogo text1 text2
+┣❒ ${prefix}steel3d text1 text2
+┣❒ ${prefix}wallgravity text1 text2
+•    ${prefix}shadow text
+┣❒ ${prefix}cup text
+┣❒ ${prefix}cup1 text
+┣❒ ${prefix}romance text
+┣❒ ${prefix}smoke text
+┣❒ ${prefix}burnpaper text
+┣❒ ${prefix}lovemessage text
+┣❒ ${prefix}undergrass text
+┣❒ ${prefix}love text
+┣❒ ${prefix}coffe text
+┣❒ ${prefix}woodheart text
+┣❒ ${prefix}woodenboard text
+┣❒ ${prefix}summer3d text
+┣❒ ${prefix}wolfmetal text
+┣❒ ${prefix}nature3d text
+┣❒ ${prefix}underwater text
+┣❒ ${prefix}golderrose text
+┣❒ ${prefix}summernature text
+┣❒ ${prefix}letterleaves text
+┣❒ ${prefix}glowingneon text
+┣❒ ${prefix}fallleaves text
+┣❒ ${prefix}flamming text
+┣❒ ${prefix}harrypotter text
+┣❒ ${prefix}carvedwood text
+┣❒ ${prefix}tiktok text1 text2
+┣❒ ${prefix}arcade8bit text1 text2
+┣❒ ${prefix}battlefield4 text1 text2
+┣❒ ${prefix}pubg text1 text2
+┗━━━•
 
 THANKS TO :
 Mhankbarbar
@@ -3861,34 +3863,39 @@ case 'listvid':
 				}
 				break
 				case 'addvn':
-				if (!isQuotedAudio) return reply('Reply vnnya')
-				svst = body.slice(7)
-				if (!svst) return reply('Nama audionya apa')
-				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-				delb = await ikyy.downloadMediaMessage(boij)
-				audionye.push(`${svst}`)
-				fs.writeFileSync(`./temp/audio/${svst}.mp3`, delb)
-				fs.writeFileSync('./temp/vn.json', JSON.stringify(audionye))
-				ikyy.sendMessage(from, `Sukses Menambahkan Audio\nCek dengan cara ${prefix}listvn`, MessageType.text, { quoted: troli })
-				break
-case 'getvn':
-				namastc = body.slice(7)
-				try {
-				buffer = fs.readFileSync(`./temp/audio/${namastc}.mp3`)
-				ikyy.sendMessage(from, buffer, audio, { mimetype: 'audio/mp4', quoted: troli, ptt: true })
-				} catch {
-				  reply('Pack tidak terdaftar')
-				}
-				break
+					if (!isOwner) return reply(mess.only.ownerB)
+					if (!isQuotedAudio) return reply('ʀᴇᴘʟʏ ᴛᴏ ᴀᴜᴅɪᴏ')
+					nm = body.slice(7)
+					if (!nm) return reply('ɴᴀᴍᴇ ᴏғ ᴛʜᴇ ᴀᴜᴅɪᴏ?')
+					boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
+					delb = await ikyy.downloadMediaMessage(boij)
+					vien.push(`${nm}`)
+					fs.writeFileSync(`./media/vn/${nm}.mp3`, delb)
+					fs.writeFileSync('./database/vien.json', JSON.stringify(vien))
+					ikyy.sendMessage(from, `Success, please check with *${prefix}listvn*`, MessageType.text, { quoted: mek })
+					break
+					case 'delvn':
+					if (!isOwner) return reply(mess.only.ownerB)
+					try {
+					 nmm = body.slice(7)
+					 wanu = vien.indexOf(nmm)
+					 vien.splice(wanu, 1)
+					 fs.unlinkSync(`./media/vn/${nmm}.mp3`)
+					sendFakeStatus(from, 'Success', fake)
+					} catch (err){
+						console.log(err)
+						reply(mess.error.api)
+					}
+					break
+				case 'vnlist':
 				case 'listvn':
-			case 'vnlist':
-				teks = '*List Vn:*\n\n'
-				for (let awokwkwk of audionye) {
-					teks += `- ${awokwkwk}\n`
-				}
-				teks += `\n*Total : ${audionye.length}*`
-				ikyy.sendMessage(from, teks.trim(), extendedText, { quoted: troli, contextInfo: { "mentionedJid": audionye } })
-				break
+					teks = '*ᴀᴜᴅɪᴏ ʟɪsᴛ:*\n\n'
+					for (let awokwkwk of vien) {
+						teks += `- ${awokwkwk}\n`
+					}
+					teks += `\n*ᴛᴏᴛᴀʟ : ${vien.length}*\n\n*To retrieve vn please reply to this message with the caption name vn*`
+					ikyy.sendMessage(from, teks.trim(), extendedText, { quoted: mek, contextInfo: { "mentionedJid": vien } })
+					break
 				
 				//********** DOWNLOAD **********//
 
