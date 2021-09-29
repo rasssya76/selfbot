@@ -3862,41 +3862,33 @@ case 'listvid':
 				  reply('Pack tidak terdaftar')
 				}
 				break
-				case 'addvn':
-					if (!isOwner) return reply(mess.only.ownerB)
-					if (!isQuotedAudio) return reply('ʀᴇᴘʟʏ ᴛᴏ ᴀᴜᴅɪᴏ')
-					nm = body.slice(7)
-					if (!nm) return reply('ɴᴀᴍᴇ ᴏғ ᴛʜᴇ ᴀᴜᴅɪᴏ?')
-					boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-					delb = await ikyy.downloadMediaMessage(boij)
-					vien.push(`${nm}`)
-					fs.writeFileSync(`./media/vn/${nm}.mp3`, delb)
-					fs.writeFileSync('./database/vien.json', JSON.stringify(vien))
-					ikyy.sendMessage(from, `Success, please check with *${prefix}listvn*`, MessageType.text, { quoted: mek })
-					break
-					case 'delvn':
-					if (!isOwner) return reply(mess.only.ownerB)
-					try {
-					 nmm = body.slice(7)
-					 wanu = vien.indexOf(nmm)
-					 vien.splice(wanu, 1)
-					 fs.unlinkSync(`./media/vn/${nmm}.mp3`)
-					sendFakeStatus(from, 'Success', fake)
-					} catch (err){
-						console.log(err)
-						reply(mess.error.api)
-					}
-					break
-				case 'vnlist':
-				case 'listvn':
-					teks = '*ᴀᴜᴅɪᴏ ʟɪsᴛ:*\n\n'
-					for (let awokwkwk of vien) {
-						teks += `- ${awokwkwk}\n`
-					}
-					teks += `\n*ᴛᴏᴛᴀʟ : ${vien.length}*\n\n*To retrieve vn please reply to this message with the caption name vn*`
-					ikyy.sendMessage(from, teks.trim(), extendedText, { quoted: mek, contextInfo: { "mentionedJid": vien } })
-					break
-				
+				case 'addvn':  
+			    	if (!isQuotedAudio) return reply('Reply vnnya blokk!')
+			    	svst = args.join(' ')
+		    		if (!svst) return reply('Nama audionya apa su?')
+			    	boij = JSON.parse(JSON.stringify(nay).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
+			    	delb = await ikyy.downloadMediaMessage(boij)
+			    	audionye.push(`${svst}`)
+			     	fs.writeFileSync(`./src/audio/${svst}.mp3`, delb)
+			     	fs.writeFileSync('./src/audio.json', JSON.stringify(audionye))
+			     	ikyy.sendMessage(from, `Sukses Menambahkan Audio\nCek dengan cara ${prefix}listvn`, MessageType.text, { quoted: troli })
+			      	break
+         case 'getvn':  
+			        if (args.length < 1) return reply('Masukan nama yang terdaftar di list vn')
+			     	namastc = args.join(' ')
+				    buffer = fs.readFileSync(`./src/audio/${namastc}.mp3`)
+			    	ikyy.sendMessage(from, buffer, audio, { mimetype: 'audio/mp4', quoted: troli, ptt: true })
+			     	break
+                	case 'listvn':
+			      case 'vnlist':
+				teks = '*List Vn:*\n\n'
+				for (let awokwkwk of audionye) {
+					teks += `- ${awokwkwk}\n`
+				}
+				teks += `\n*Total : ${audionye.length}*`
+				ikyy.sendMessage(from, teks.trim(), extendedText, { quoted: troli, contextInfo: { "mentionedJid": audionye } })
+				break
+		    		
 				//********** DOWNLOAD **********//
 
 case 'ig':
