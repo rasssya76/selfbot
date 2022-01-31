@@ -239,7 +239,10 @@ const addafk = (from) => {
     })
     return status
     }
-
+const katalog = (teks) => {
+             res = ikyy.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "Maker", "thumbnail": thumbnail, "surface": 'CATALOG' }}, {quoted:ftoko})
+             ikyy.relayWAMessage(res)
+        }
 
     function kyun(seconds){
     function pad(s){
@@ -884,7 +887,7 @@ if (!mek.key.fromMe && !isOwner) return
 if (banChats === true) return
 uptime = process.uptime()
 banChats = true
-freply(`「 *SELF-MODE* 」`)
+reply(`「 *SELF-MODE* 」`)
 break   
 ////////
 //////
@@ -1067,9 +1070,7 @@ break
 ikyy.sendButLocation(from, menu, menu2, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'CREATOR'}, type: 1},{buttonId: '.menumaker', buttonText:{displayText: 'MENUMAKER'}, type: 1}],{quoted:freply})
 break
 case 'menumaker':
-case 'maker':
-ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
-				
+case 'maker':			
    menumaker = `
 ┏━━━•  
 ┣◪ 𝗠𝗔𝗞𝗘𝗥
@@ -1211,7 +1212,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 ┣❒ ${prefix}wolflogo text1 text2
 ┣❒ ${prefix}steel3d text1 text2
 ┣❒ ${prefix}wallgravity text1 text2
-•    ${prefix}shadow text
+┣❒ ${prefix}shadow text
 ┣❒ ${prefix}cup text
 ┣❒ ${prefix}cup1 text
 ┣❒ ${prefix}romance text
@@ -1245,7 +1246,7 @@ THANKS TO :
 Mhankbarbar
 Lolhuman
 `
-return reply(menumaker, text)
+katalog(menumaker)
 break
 ////////FITUR DARI BANG GALANG
 case 'loli':
