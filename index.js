@@ -78,7 +78,6 @@ const {
   NumberRandom,
   
 } = require('./lib/functions')
-const { Utils_1 } = require('./node_modules/@adiwajshing/baileys/lib/WAConnection/Utils')
 
 const { 
   jagoKata
