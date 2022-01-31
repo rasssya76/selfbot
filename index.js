@@ -1249,7 +1249,7 @@ THANKS TO :
 Mhankbarbar
 Lolhuman
 `
-return katalog(menumaker, text)
+return reply(menumaker, text)
 break
 ////////FITUR DARI BANG GALANG
 case 'loli':
