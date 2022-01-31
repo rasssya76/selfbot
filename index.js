@@ -78,6 +78,7 @@ const {
   NumberRandom,
   
 } = require('./lib/functions')
+const { Utils_1 } = require('./node_modules/@adiwajshing/baileys/lib/WAConnection/Utils')
 
 const { 
   jagoKata
@@ -609,7 +610,7 @@ headerType: 5
 }
 ikyy.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 }
-const sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) => {
+async function sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) => {
 					them = gam1
 					mediaxxaa = await ikyy.prepareMessage(id, them, MessageType.location, {thumbnail: them})
 					locmhan = mediaxxaa.message["ephemeralMessage"] ? mediaxxaa.message.ephemeralMessage : mediaxxaa
