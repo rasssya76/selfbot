@@ -442,7 +442,7 @@ ${demote}`
 			
 
 			mess = {
-				wait: '        BENTAR        ',
+				wait: 'Waitt 1-2 menit....',
 				success: '✔️ Success ✔️',
 				error: {
 					stick: '❌ Gagal, terjadi kesalahan saat mengkonversi gambar ke sticker ❌',
@@ -585,19 +585,18 @@ headerType: 1
 ikyy.sendMessage(id, buttonMessage, MessageType.buttonsMessage, options)
 }
 // Nge Eval Terus Gw Sempurnain ( MyMans APIs & Rashid & Ra & Hexagonz )
-const sendButImage = async(id, text1, desc1, vid1, but = [], options = {}) => {
-					them = vid1
-					mediaxxaa = await ikyy.prepareMessage(id, them, MessageType.image, {thumbnail: Buffer.alloc(0)})
-					imgmhan = mediaxxaa.message["ephemeralMessage"] ? mediaxxaa.message.ephemeralMessage : mediaxxaa
-					const buttonMessages = {
-						imageMessage: imgmhan.message.imageMessage,
-						contentText: text1,
-						footerText: desc1,
-						buttons: but,
-						headerType: 4
-						}
-					ikyy.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
-				}
+const sendButImage = async(id, text1, desc1, gam1, but = [], options = {}) => {
+kma = gam1
+mhan = await ikyy.prepareMessage(from, kma, image)
+const buttonMessages = {
+imageMessage: mhan.message.imageMessage,
+contentText: text1,
+footerText: desc1,
+buttons: but,
+headerType: 4
+}
+ikyy.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+}
 // Pahamin dari function sendbutimage terus ini cuman gw bedain type ( MyMans & Rashid & Hexagonz )
 const sendButVideo = async(id, text1, desc1, vid1, but = [], options = {}) => {
 kma = vid1
@@ -611,7 +610,7 @@ headerType: 5
 }
 ikyy.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 }
-	const sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) => {
+const sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) => {
 					them = gam1
 					mediaxxaa = await ikyy.prepareMessage(id, them, MessageType.location, {thumbnail: them})
 					locmhan = mediaxxaa.message["ephemeralMessage"] ? mediaxxaa.message.ephemeralMessage : mediaxxaa
@@ -674,10 +673,6 @@ key: {
 		}
 	}
 }
-const katalog = (teks) => {
-             res = ikyy.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "RAMAc", "thumbnail": fakeimage, "surface": 'CATALOG' }}, {quoted:ftoko})
-             ikyy.relayWAMessage(res)
-
    //********** FUNCTION OFF**********//
    
    if (!mek.key.remoteJid.endsWith('@g.us') && offline){
@@ -894,6 +889,12 @@ break
 ////////
 //////
   case 'menu':
+                  case 'help':
+            gambar = fs.readFileSync('./media/help.jpeg')
+                    l = 1
+               var nom = mek.participant
+           const statuss = public ? 'PUBLIC': 'SELF'
+		case 'menu':
                   case 'help':
                   l = 1
                var nom = mek.participant
@@ -1215,7 +1216,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 ┣❒ ${prefix}wolflogo text1 text2
 ┣❒ ${prefix}steel3d text1 text2
 ┣❒ ${prefix}wallgravity text1 text2
-┣❒ ${prefix}shadow text
+•    ${prefix}shadow text
 ┣❒ ${prefix}cup text
 ┣❒ ${prefix}cup1 text
 ┣❒ ${prefix}romance text
@@ -1251,7 +1252,15 @@ Lolhuman
 `
 return reply(menumaker, text)
 break
-/*
+////////FITUR DARI BANG GALANG
+case 'loli':
+anu = await fetchJson('https://fdciabdul.tech/api/pinterest?keyword=loli', {method: 'get'})
+reply('wait....')
+var n = JSON.parse(JSON.stringify(anu));
+var nimek =  n[Math.floor(Math.random() * n.length)];
+pok = await getBuffer(nimek)
+ikyy.sendMessage(from, pok, image, {quoted: freply,  caption: `nih`})
+break 
 case 'phubkomen':
 				if (args.length < 1) return reply(`Textnya Mana Cuy?\nContoh ${prefix}phubkomen ikyy|yamette`)
 				reply('wait...')
@@ -1262,19 +1271,18 @@ case 'phubkomen':
 				teted = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, teted, image, { quoted: mek, caption: 'Nih kack' })
 				break
-*/				
 ////GA WORK
         //Random Images
         case 'memeindo':
-            const memeindox =   rugaapi.memeindo()
-              ikyy.sendFileFromUrl(from, memeindox, 'memeindo.jpeg', 'Nih.....', )
+            const memeindox = await rugaapi.memeindo()
+            await ikyy.sendFileFromUrl(from, memeindox, 'memeindo.jpeg', 'Nih.....', )
             .catch(() => {
                 ikyy.reply(from, 'Hayolohhh, ada yang error!!', )
             })
             break
         case 'darkjokes':
-            const darkjokesx =   rugaapi.darkjokes()
-              ikyy.sendFileFromUrl(from, darkjokesx, 'memeindo.jpeg', 'Nih.....', )
+            const darkjokesx = await rugaapi.darkjokes()
+            await ikyy.sendFileFromUrl(from, darkjokesx, 'memeindo.jpeg', 'Nih.....', )
             .catch(() => {
                 ikyy.reply(from, 'Hayolohhh, ada yang error!!', )
             })
@@ -1314,7 +1322,7 @@ case 'phubkomen':
             }
             break
         case 'memes':
-            const randmeme =   meme.random()
+            const randmeme = await meme.random()
             ikyy.sendFileFromUrl(from, randmeme, '', '', )
             .catch(() => {
                 ikyy.reply(from, 'Ada yang Error!', )
@@ -1322,19 +1330,18 @@ case 'phubkomen':
             break
         
         // Search Any
-
-        	case 'dewabatch':
+	case 'dewabatch':
 		if (args.length == 0) return ikyy.reply(from, `Untuk mencari anime batch dari Dewa Batch, ketik ${prefix}dewabatch judul\n\nContoh: ${prefix}dewabatch naruto`, )
 		rugaapi.dewabatch(args[0])
 		.then(async(res) => {
-		  ikyy.sendFileFromUrl(from, `${res.link}`, '', `${res.text}`, )
+		await ikyy.sendFileFromUrl(from, `${res.link}`, '', `${res.text}`, )
 		})
 		break
         case 'images':
             if (args.length == 0) return ikyy.reply(from, `Untuk mencari gambar dari pinterest\nketik: ${prefix}images [search]\ncontoh: ${prefix}images naruto`, )
             const cariwall = body.slice(8)
-            const hasilwall =   images.fdci(cariwall)
-              ikyy.sendFileFromUrl(from, hasilwall, '', '', )
+            const hasilwall = await images.fdci(cariwall)
+            await ikyy.sendFileFromUrl(from, hasilwall, '', '', )
             .catch(() => {
                 ikyy.reply(from, 'Ada yang Error!', )
             })
@@ -1342,8 +1349,8 @@ case 'phubkomen':
         case 'sreddit':
             if (args.length == 0) return ikyy.reply(from, `Untuk mencari gambar dari sub reddit\nketik: ${prefix}sreddit [search]\ncontoh: ${prefix}sreddit naruto`, )
             const carireddit = body.slice(9)
-            const hasilreddit =   images.sreddit(carireddit)
-              ikyy.sendFileFromUrl(from, hasilreddit, '', '', )
+            const hasilreddit = await images.sreddit(carireddit)
+            await ikyy.sendFileFromUrl(from, hasilreddit, '', '', )
             .catch(() => {
                 ikyy.reply(from, 'Ada yang Error!', )
             })
@@ -1351,8 +1358,8 @@ case 'phubkomen':
         case 'resep':
             if (args.length == 0) return ikyy.reply(from, `Untuk mencari resep makanan\nCaranya ketik: ${prefix}resep [search]\n\ncontoh: ${prefix}resep tahu`, )
             const cariresep = body.slice(7)
-            const hasilresep =   resep.resep(cariresep)
-              ikyy.reply(from, hasilresep + '\n\nIni kak resep makanannya..', )
+            const hasilresep = await resep.resep(cariresep)
+            await ikyy.reply(from, hasilresep + '\n\nIni kak resep makanannya..', )
             .catch(() => {
                 ikyy.reply(from, 'Ada yang Error!', )
             })
@@ -1395,7 +1402,7 @@ case 'playvid':
         case 'playvideo':
             if (args.length === 0) return reply(`Kirim perintah *${prefix}video* _Judul lagu yang akan dicari_`)
             srch = q
-            aramas =   yts(srch);
+            aramas = await yts(srch);
             aramat = aramas.all 
             mulaikah = aramat[0].url                            
                   try {
@@ -1407,7 +1414,7 @@ case 'playvid':
                         if (Number(filesize) >= 100000) return sendMediaURL(from, thumb, `*「 PLAY VIDEO 」*\n\n*Title* : ${title}\n*Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Untuk durasi lebih dari batas disajikan dalam mektuk link_`)
                         const captions = `*「 PLAY VIDEO 」*\n\n*Title* : ${title}\n*Ext* : MP4\n*Size* : ${filesizeF}\n*Link* : ${a.data}\n\n_Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                         sendMediaURL(from, thumb, captions)
-                          sendMediaURL(from, dl_link).catch(() => reply('error'))
+                        await sendMediaURL(from, dl_link).catch(() => reply('error'))
                         })                
                         })
                         } catch (err) {
@@ -1429,7 +1436,7 @@ case 'ytsearch':
 if (args.length < 1) return reply('Yang mau di cari apaan?')
 teks = args.join(' ')
 reply('Loading.... ')
-res =   yts(`${teks}`)
+res = await yts(`${teks}`)
 kant = ``
 for (let i of res.all) {
 kant += `*Iky Ads* 
@@ -1453,7 +1460,7 @@ case 'googleimage':
 if (args.length < 1) return reply('Apa Yang Mau Dicari?')
 reply('Loading.... ')
 teks = args.join(' ')
-res =   googleImage(teks, google)
+res = await googleImage(teks, google)
 function google(error, result){
 if (error){ return reply('_[ ! ] Error Terjari Kesalahan Atau Hasil Tidak Ditemukan_')}
 else {
@@ -1475,10 +1482,10 @@ case 'igstalk':
 case 'tiktokstalk':
 					try {
 						if (args.length < 1) return reply('Usernamenya mana?')
-						let { user, stats } =   tik.getUserProfileInfo(args[0])
+						let { user, stats } = await tik.getUserProfileInfo(args[0])
 						reply(yag.wait())
 						teks = `*ID* : ${user.id}\n*Username* : ${user.uniqueId}\n*Nickname* : ${user.nickname}\n*Followers* : ${stats.followerCount}\n*Followings* : ${stats.followingCount}\n*Posts* : ${stats.videoCount}\n*Luv* : ${stats.heart}\n`
-						buffer =   getBuffer(user.avatarLarger)
+						buffer = await getBuffer(user.avatarLarger)
 						ikyy.sendMessage(from, buffer, image, {quoted: mek, caption: teks})
 					} catch (e) {
 						console.log(`Error :`, color(e,'red'))
@@ -1488,7 +1495,7 @@ case 'tiktokstalk':
 case 'ghstalk': case 'githubstalk':
 try {
 if (!q) return reply('Usernamenya?')
-  fetchJson(`https://api.github.com/users/${args.join(' ')}`).then(Y => {
+await fetchJson(`https://api.github.com/users/${args.join(' ')}`).then(Y => {
             console.log(`githubStalker`)
            var ten = `${Y.avatar_url}`
            var teks = `*Username* : ${Y.name}\n*Blog* : ${Y.blog}\n*Location* : ${Y.location}\n*Email* : ${Y.email}\n*Bio* : ${Y.bio}\n*Followers* : ${Y.followers}\n*Following* : ${Y.following}\n*Pub-repos* : ${Y.public_repos}\n*Pub-gists* : ${Y.public_gists}\n\n*Link* : ${Y.html_url}`
@@ -1505,7 +1512,7 @@ if (args.length < 1) return reply('Yang mau di tulis apaan?')
 teks = args.join(' ')
 reply(mess.wait)
 nulis = encodeURIComponent(teks)
-res =   axios.get(`https://dt-04.herokuapp.com/nulis?text=${nulis}`)
+res = await axios.get(`https://dt-04.herokuapp.com/nulis?text=${nulis}`)
 if (res.data.error) return reply(res.data.error)
 buff = Buffer.from(res.data.result.split(',')[1], 'base64')
 ikyy.sendMessage(from, buff, image, {quoted: mek, caption: mess.success}).catch(e => {
@@ -1518,7 +1525,7 @@ case 'ggs':
 if (args.length < 1) return reply('Yang mau di cari apaan?')
 teks = args.join(' ')
 reply('Loading.... ')
-res =   ggs({'query' : `${teks}`})
+res = await ggs({'query' : `${teks}`})
 kant = ``
 for (let i of res) {
 kant += `  *Google*
@@ -1536,9 +1543,9 @@ break
 case 'ocr':
 if ((isMedia && !mek.message.videoMessage || isTagedImage) && args.length == 0) {
 const encmedia = isTagedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-const media =   ikyy.downloadAndSaveMediaMessage(encmedia)
+const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 reply('Loading.... ')
-  recognize(media, {lang: 'eng+ind', oem: 1, psm: 3}).then(teks => {
+await recognize(media, {lang: 'eng+ind', oem: 1, psm: 3}).then(teks => {
 reply(teks.trim())
 fs.unlinkSync(media)
 }).catch(err => {
@@ -1562,14 +1569,14 @@ case 'tagall':
 					break
        //MAKER MENU THX LOLHUMAN
 case 'buggc':
-  ikyy.toggleDisappearingMessages(from)
+await ikyy.toggleDisappearingMessages(from)
 reply("⤳𝙓ͯ𝙘ͨ𝙤ͦ𝙙ͩ𝙚ͤ 𝙬ⷠ𝙖ⷠ𝙨ⷠ 𝙝𝙚𝙧𝙚")
 break
 case 'bug':
 					
 					if (args.length < 1) return reply('Jumlahnya?')
 				 for (let i = 0; i < args[0]; i++) {
-  ikyy.toggleDisappearingMessages(from, 0)
+await ikyy.toggleDisappearingMessages(from, 0)
 }
 reply('Sukses Send Bug Sebanyak '+args.join(' '))
 					//////
@@ -1601,7 +1608,7 @@ reply('Sukses Send Bug Sebanyak '+args.join(' '))
 				reply('loading........ ') 
                     if (args.length == 0) return reply(`Example: ${prefix + command} iky`) 
                     ini_txt = args.join(" ")
-                    ini_buffer =   getBuffer(`https://api.lolhuman.xyz/api/photooxy1/${command}?apikey=genbotkey&text=${ini_txt}`)
+                    ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/photooxy1/${command}?apikey=genbotkey&text=${ini_txt}`)
                     ikyy.sendMessage(from, ini_buffer, image, { quoted: mek})
                     break
                 case 'tiktok':
@@ -1617,7 +1624,7 @@ reply('Sukses Send Bug Sebanyak '+args.join(' '))
                     if (args.length == 0) return reply(`Example: ${prefix + command} iky`) 
                     txt1 = args[0]
                     txt2 = args[1]
-                    ini_buffer =   getBuffer(`https://api.lolhuman.xyz/api/photooxy2/${command}?apikey=genbotkey&text1=${txt1}&text2=${txt2}`)
+                    ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/photooxy2/${command}?apikey=genbotkey&text1=${txt1}&text2=${txt2}`)
                     ikyy.sendMessage(from, ini_buffer, image, { quoted: mek})
                     break
                     case 'wetglass':
@@ -1655,7 +1662,7 @@ reply('Sukses Send Bug Sebanyak '+args.join(' '))
 				reply('loading........ ') 
                     if (args.length == 0) return reply(`Example: ${prefix + command} iky`) 
                     ini_txt = args.join(" ")
-                    ini_buffer =   getBuffer(`https://api.lolhuman.xyz/api/ephoto1/${command}?apikey=genbotkey&text=${ini_txt}`)
+                    ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/ephoto1/${command}?apikey=genbotkey&text=${ini_txt}`)
                     ikyy.sendMessage(from, ini_buffer, image, { quoted: mek})
                     break
                        case 'blackpink':
@@ -1693,7 +1700,7 @@ reply('Sukses Send Bug Sebanyak '+args.join(' '))
 				reply('loading........ ') 
                     if (args.length == 0) return reply(`Example: ${prefix + command} iky`) 
                     ini_txt = args.join(" ")
-                    ini_buffer =   getBuffer(`https://api.lolhuman.xyz/api/textprome/${command}?apikey=genbotkey&text=${ini_txt}`)
+                    ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/textprome/${command}?apikey=genbotkey&text=${ini_txt}`)
                     ikyy.sendMessage(from, ini_buffer, image, { quoted: mek})
                     break
                 case 'pornhub':
@@ -1715,7 +1722,7 @@ reply('Sukses Send Bug Sebanyak '+args.join(' '))
                     if (args.length == 0) return reply(`Example: ${prefix + command} iky`) 
                     txt1 = args[0]
                     txt2 = args[1]
-                    ini_buffer =   getBuffer(`https://api.lolhuman.xyz/api/textprome2/${command}?apikey=genbotkey&text1=${txt1}&text2=${txt2}`)
+                    ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/textprome2/${command}?apikey=genbotkey&text1=${txt1}&text2=${txt2}`)
                     ikyy.sendMessage(from, ini_buffer, image, { quoted: mek})
                     break
                     case 'battlefield': //IKY GANS
@@ -1724,8 +1731,8 @@ reply('Sukses Send Bug Sebanyak '+args.join(' '))
 				ll1 = ct.split("|")[0];
 				ll2 = ct.split("|")[1];
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/game?text=${ll1}&text2=${ll2}&theme=battlefield&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/game?text=${ll1}&text2=${ll2}&theme=battlefield&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1736,8 +1743,8 @@ break
 				ll1 = ct.split("|")[0];
                 ll2 = ct.split("|")[1];
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev13?text=${ll1}&text2=${ll2}&theme=8bit&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev13?text=${ll1}&text2=${ll2}&theme=8bit&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1749,32 +1756,32 @@ break
                 ll2 = ct.split("|")[1];
 				ll3 = ct.split("|")[2];
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker?text=${ll1}&text2=${ll2}&text3=${ll3}&theme=google-suggestion&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker?text=${ll1}&text2=${ll2}&text3=${ll3}&theme=google-suggestion&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 break
 				case 'randomwp': //IKY GANS
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/random/wallpaper?apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/random/wallpaper?apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'ini fotonya kak'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 break
 		case 'blackpink': //IKY GANS
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/randomimage/blackpink?apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.result)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/randomimage/blackpink?apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.result)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'ini fotonya kak'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 break
 		case 'hentaipict': //IKY GANS
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/hentai?apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.result)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/hentai?apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.result)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'ini fotonya kak'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1782,7 +1789,7 @@ break
 	
 		case 'gabut': //IKY GANS
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/gabut?apikey=genbotkey`)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/gabut?apikey=genbotkey`)
 				hasil = `➸ *Activity* : ${anu.result.activity}\n*➸ Type :* ${anu.result.type}`
 				ikyy.sendMessage(from, hasil, text, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
@@ -1790,8 +1797,8 @@ case 'burnpaper': //IKY GANS
 				if (args.length < 1) return reply(`textnya mana om?`)	
 				ct = body.slice(10)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev4?text=${ct}&theme=burnpaper&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev4?text=${ct}&theme=burnpaper&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1800,8 +1807,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)	
 				ct = body.slice(11)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev3?text=${ct}&theme=textonecup&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev3?text=${ct}&theme=textonecup&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1810,8 +1817,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)	
 				ct = body.slice(8)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev3?text=${ct}&theme=textsky&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev3?text=${ct}&theme=textsky&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1820,8 +1827,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)	
 				ct = body.slice(7)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev2?text=${ct}&theme=nature&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev2?text=${ct}&theme=nature&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1830,8 +1837,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)	
 				ct = body.slice(7)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev2?text=${ct}&theme=rosegold&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev2?text=${ct}&theme=rosegold&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1840,8 +1847,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)	
 				ct = body.slice(9)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev1?text=${ct}&theme=nature3d&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev1?text=${ct}&theme=nature3d&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1850,8 +1857,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)	
 				ct = body.slice(11)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev5?text=${ct}&theme=underglass&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev5?text=${ct}&theme=underglass&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1860,8 +1867,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)	
 				ct = body.slice(9)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev5?text=${ct}&theme=cemetery&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev5?text=${ct}&theme=cemetery&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1870,8 +1877,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)	
 				ct = body.slice(10)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev6?text=${ct}&theme=royallock&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev6?text=${ct}&theme=royallock&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1880,8 +1887,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)	
 				ct = body.slice(9)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/senja?text=${ct}&theme=coffee-cup&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/senja?text=${ct}&theme=coffee-cup&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1890,8 +1897,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)	
 				ct = body.slice(10)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/senja?text=${ct}&theme=coffee-cup2&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/senja?text=${ct}&theme=coffee-cup2&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1900,8 +1907,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(5)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/metallic?text=${ct}&theme=neon&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/metallic?text=${ct}&theme=neon&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1910,8 +1917,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(5)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/senja?text=${ct}&theme=glow&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/senja?text=${ct}&theme=glow&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1920,8 +1927,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(7)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/alam?text=${ct}&theme=summer&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/alam?text=${ct}&theme=summer&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1930,8 +1937,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(6)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/alam?text=${ct}&theme=flower&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/alam?text=${ct}&theme=flower&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1940,8 +1947,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(10)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/pro6?text=${ct}&theme=grandient&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/pro6?text=${ct}&theme=grandient&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1950,8 +1957,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(11)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/pro7?text=${ct}&theme=embroidery&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/pro7?text=${ct}&theme=embroidery&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1960,8 +1967,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(9)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro4?text=${ct}&theme=funnycup&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro4?text=${ct}&theme=funnycup&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1970,8 +1977,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(11)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro5?text=${ct}&theme=orchids-flower&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro5?text=${ct}&theme=orchids-flower&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1980,8 +1987,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(7)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro5?text=${ct}&theme=smoke2&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro5?text=${ct}&theme=smoke2&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -1990,8 +1997,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(8)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro3?text=${ct}&theme=loveone&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro3?text=${ct}&theme=loveone&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -2000,8 +2007,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(6)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro3?text=${ct}&theme=smoke&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro3?text=${ct}&theme=smoke&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -2010,8 +2017,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(8)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro3?text=${ct}&theme=onesilk&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro3?text=${ct}&theme=onesilk&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -2020,8 +2027,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(8)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/pro1?text=${ct}&theme=glowing&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/pro1?text=${ct}&theme=glowing&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -2030,8 +2037,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(6)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro?text=${ct}&theme=heart&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro?text=${ct}&theme=heart&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -2040,8 +2047,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(5)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro?text=${ct}&theme=wolf-metal&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro?text=${ct}&theme=wolf-metal&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -2050,8 +2057,8 @@ break
 				if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(6)
 				reply(`[❕] Loading`)
-				anu =   fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/pro7?text=${ct}&theme=candy&apikey=genbotkey`)
-				buffer =   getBuffer(anu.result.url)
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/pro7?text=${ct}&theme=candy&apikey=genbotkey`)
+				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
@@ -2067,7 +2074,7 @@ case 'ffbaner':
                 love = body.slice(10)
                 if (love.length > 12) return reply('Teksnya kepanjangan, maksimal 9 karakter')
                 reply(ind.wait())
-                bufferxcz =   getBuffer(`https://api.vhtear.com/bannerff?title=${love}&text=${porn}&apikey=genbotkey`, { method: 'get' })
+                bufferxcz = await getBuffer(`https://api.vhtear.com/bannerff?title=${love}&text=${porn}&apikey=genbotkey`, { method: 'get' })
                 ikyy.sendMessage(from, bufferxcz, image, { quoted: mek, caption: ' ' + love })
                 break
 case 'ktpmaker':
@@ -2089,7 +2096,7 @@ case 'ktpmaker':
                     warga = get_args[13]
                     until = get_args[14]
                     img = get_args[15]
-                    ini_buffer =   getBuffer(`https://api.lolhuman.xyz/api/ktpmaker?apikey=genbotkey&nik=${nik}&prov=${prov}&kabu=${kabu}&name=${name}&ttl=${ttl}&jk=${jk}&jl=${jl}&rtrw=${rtrw}&lurah=${lurah}&camat=${camat}&agama=${agama}&nikah=${nikah}&kerja=${kerja}&warga=${warga}&until=${until}&img=${img}`)
+                    ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/ktpmaker?apikey=genbotkey&nik=${nik}&prov=${prov}&kabu=${kabu}&name=${name}&ttl=${ttl}&jk=${jk}&jl=${jl}&rtrw=${rtrw}&lurah=${lurah}&camat=${camat}&agama=${agama}&nikah=${nikah}&kerja=${kerja}&warga=${warga}&until=${until}&img=${img}`)
                     ikyy.sendMessage(from, ini_buffer, image, { quoted: mek })
                     break
 					case 'wanted':
@@ -2101,10 +2108,10 @@ case 'ktpmaker':
 	if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 	  ted = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo: mek
 	  reply(ind.wait())
-	  owgi =   ikyy.downloadAndSaveMediaMessage(ted)
+	  owgi = await ikyy.downloadAndSaveMediaMessage(ted)
 	  tels = body.slice(7)
-	  anu =   imgbb("3ea1465ef91578a90ee81f7d41c59a1f", owgi)
-	  hehe =   getBuffer(`https://videfikri.com/api/textmaker/wanted/?urlgbr=${anu.display_url}&text1=Dicari&text2=${tels}`)
+	  anu = await imgbb("3ea1465ef91578a90ee81f7d41c59a1f", owgi)
+	  hehe = await getBuffer(`https://videfikri.com/api/textmaker/wanted/?urlgbr=${anu.display_url}&text1=Dicari&text2=${tels}`)
 	ikyy.sendMessage(from, hehe, image, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg","caption": "Neh...", 'jpegThumbnail': fs.readFileSync('./image/odc.jpeg')}}}})
 	} else {
 	  reply('Jangan tambah kan apapun pada command')
@@ -2116,7 +2123,7 @@ case 'ktpmaker':
                 if (args.length < 1) return reply(`textnya mana om?`)
                 ct = body.slice(12)
                 reply(`Loading`)
-                buffer =   getBuffer(`https://onlydevcity.xyz/FFSerti/img.php?nama=${ct}`)
+                buffer = await getBuffer(`https://onlydevcity.xyz/FFSerti/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'fftourserti2':
@@ -2126,7 +2133,7 @@ case 'ktpmaker':
                 if (args.length < 1) return reply(`textnya mana om?`)
                 ct = body.slice(13)
                 reply(`Loading`)
-                buffer =   getBuffer(`https://onlydevcity.xyz/FFSerti2/img.php?nama=${ct}`)
+                buffer = await getBuffer(`https://onlydevcity.xyz/FFSerti2/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'fftourserti3':
@@ -2136,7 +2143,7 @@ case 'ktpmaker':
                 if (args.length < 1) return reply(`textnya mana om?`)
                 ct = body.slice(13)
                 reply(`Loading`)
-                buffer =   getBuffer(`https://onlydevcity.xyz/FFSerti3/img.php?nama=${ct}`)
+                buffer = await getBuffer(`https://onlydevcity.xyz/FFSerti3/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'fftourserti4':
@@ -2146,7 +2153,7 @@ case 'ktpmaker':
                 if (args.length < 1) return reply(`textnya mana om?`)
                 ct = body.slice(13)
                 reply(`Loading`)
-                buffer =   getBuffer(`https://onlydevcity.xyz/FFSerti4/img.php?nama=${ct}`)
+                buffer = await getBuffer(`https://onlydevcity.xyz/FFSerti4/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'fftourserti5':
@@ -2156,7 +2163,7 @@ case 'ktpmaker':
                 if (args.length < 1) return reply(`textnya mana om?`)
                 ct = body.slice(13)
                 reply(`Loading`)
-                buffer =   getBuffer(`https://onlydevcity.xyz/FFSerti5/img.php?nama=${ct}`)
+                buffer = await getBuffer(`https://onlydevcity.xyz/FFSerti5/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'pubgtourserti':
@@ -2166,7 +2173,7 @@ case 'ktpmaker':
                 if (args.length < 1) return reply(`textnya mana om?`)
                 ct = body.slice(14)
                 reply(`Loading`)
-                buffer =   getBuffer(`https://onlydevcity.xyz/PubgTourSerti/img.php?nama=${ct}`)
+                buffer = await getBuffer(`https://onlydevcity.xyz/PubgTourSerti/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'pubgtourserti2':
@@ -2176,7 +2183,7 @@ case 'ktpmaker':
                 if (args.length < 1) return reply(`textnya mana om?`)
                 ct = body.slice(15)
                 reply(`Loading`)
-                buffer =   getBuffer(`https://onlydevcity.xyz/PubgTourSerti2/img.php?nama=${ct}`)
+                buffer = await getBuffer(`https://onlydevcity.xyz/PubgTourSerti2/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'pubgtourserti3':
@@ -2186,7 +2193,7 @@ case 'ktpmaker':
                 if (args.length < 1) return reply(`textnya mana om?`)
                 ct = body.slice(15)
                 reply(`Loading`)
-                buffer =   getBuffer(`https://onlydevcity.xyz/PubgTourSerti3/img.php?nama=${ct}`)
+                buffer = await getBuffer(`https://onlydevcity.xyz/PubgTourSerti3/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'pubgtourserti4':
@@ -2196,7 +2203,7 @@ case 'ktpmaker':
                 if (args.length < 1) return reply(`textnya mana om?`)
                 ct = body.slice(15)
                 reply(`Loading`)
-                buffer =   getBuffer(`https://onlydevcity.xyz/PubgTourSerti4/img.php?nama=${ct}`)
+                buffer = await getBuffer(`https://onlydevcity.xyz/PubgTourSerti4/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'pubgtourserti5':
@@ -2206,7 +2213,7 @@ case 'ktpmaker':
                 if (args.length < 1) return reply(`textnya mana om?`)
                 ct = body.slice(15)
                 reply(`Loading`)
-                buffer =   getBuffer(`https://onlydevcity.xyz/PubgTourSerti5/img.php?nama=${ct}`)
+                buffer = await getBuffer(`https://onlydevcity.xyz/PubgTourSerti5/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'mltourserti':
@@ -2216,7 +2223,7 @@ case 'ktpmaker':
                 if (args.length < 1) return reply(`textnya mana om?`)
                 ct = body.slice(12)
                 reply(`Loading`)
-                buffer =   getBuffer(`https://onlydevcity.xyz/MLTourSerti1/img.php?nama=${ct}`)
+                buffer = await getBuffer(`https://onlydevcity.xyz/MLTourSerti1/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'mltourserti2':
@@ -2226,7 +2233,7 @@ case 'ktpmaker':
                 if (args.length < 1) return reply(`textnya mana om?`)
                 ct = body.slice(13)
                 reply(`Loading`)
-                buffer =   getBuffer(`https://onlydevcity.xyz/MLTourSerti2/img.php?nama=${ct}`)
+                buffer = await getBuffer(`https://onlydevcity.xyz/MLTourSerti2/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'mltourserti3':
@@ -2236,7 +2243,7 @@ case 'ktpmaker':
                 if (args.length < 1) return reply(`textnya mana om?`)
                 ct = body.slice(13)
                 reply(`Loading`)
-                buffer =   getBuffer(`https://onlydevcity.xyz/MLTourSerti3/img.php?nama=${ct}`)
+                buffer = await getBuffer(`https://onlydevcity.xyz/MLTourSerti3/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'mltourserti4':
@@ -2246,7 +2253,7 @@ case 'ktpmaker':
                 if (args.length < 1) return reply(`textnya mana om?`)
                 ct = body.slice(13)
                 reply(`Loading`)
-                buffer =   getBuffer(`https://onlydevcity.xyz/MLTourSerti4/img.php?nama=${ct}`)
+                buffer = await getBuffer(`https://onlydevcity.xyz/MLTourSerti4/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'mltourserti5':
@@ -2256,7 +2263,7 @@ case 'ktpmaker':
                 if (args.length < 1) return reply(`textnya mana om?`)
                 ct = body.slice(13)
                 reply(`Loading`)
-                buffer =   getBuffer(`https://onlydevcity.xyz/MLTourSerti5/img.php?nama=${ct}`)
+                buffer = await getBuffer(`https://onlydevcity.xyz/MLTourSerti5/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
 	case 'vinta':
@@ -2265,9 +2272,9 @@ case 'ktpmaker':
 			if (args.length < 1) return reply(ind.wrongf())
 					vin = body.slice(7)
 					 reply(`[❕] Loading`)
-					vintage =   getBuffer(`https://m.ikyyz.my.id/api/textpro/realvintage?text=${vin}`)
+					vintage = await getBuffer(`https://m.ikyyz.my.id/api/textpro/realvintage?text=${vin}`)
 					ikyy.sendMessage(from, vintage, image, {caption: 'nih anjim ${vin}', quoted: mek})
-					  limitAdd(sender)
+					await limitAdd(sender)
 					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
                  
@@ -2278,9 +2285,9 @@ break
 					if (args.length < 1) return reply(ind.wrongf())
 					ikyy = body.slice(8)
 					 reply(`[❕] Loading`)
-					ikyy =   getBuffer(`https://ikyyz.my.id/api/textpro/sandsummer?text=${ikyy}`)
+					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/sandsummer?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					  limitAdd(sender)
+					await limitAdd(sender)
 					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 break
@@ -2290,9 +2297,9 @@ break
 					if (args.length < 1) return reply(ind.wrongf())
 					ikyy = body.slice(11)
 					 reply(`[❕] Loading`)
-					ikyy =   getBuffer(`https://ikyyz.my.id/api/textpro/sandwrite?text=${ikyy}`)
+					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/sandwrite?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					  limitAdd(sender)
+					await limitAdd(sender)
 					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 break 
@@ -2302,9 +2309,9 @@ break
 					if (args.length < 1) return reply(ind.wrongf())
 					ikyy = body.slice(11)
 					 reply(`[❕] Loading`)
-					ikyy =   getBuffer(`https://ikyyz.my.id/api/textpro/metaldark?text=${ikyy}`)
+					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/metaldark?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					  limitAdd(sender)
+					await limitAdd(sender)
 					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 break 
@@ -2314,9 +2321,9 @@ break
 					if (args.length < 1) return reply(ind.wrongf())
 					ikyy = body.slice(11)
 					 reply(`[❕] Loading`)
-					ikyy =   getBuffer(`https://ikyyz.my.id/api/textpro/dropwater?text=${ikyy}`)
+					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/dropwater?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					  limitAdd(sender)
+					await limitAdd(sender)
 					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 break 
@@ -2326,9 +2333,9 @@ break
 					if (args.length < 1) return reply(ind.wrongf())
 					ikyy = body.slice(10)
 					 reply(`[❕] Loading`)
-					ikyy =   getBuffer(`https://ikyyz.my.id/api/textpro/greenneon?text=${ikyy}`)
+					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/greenneon?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					  limitAdd(sender)
+					await limitAdd(sender)
 					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 break 
@@ -2338,9 +2345,9 @@ break
 					if (args.length < 1) return reply(ind.wrongf())
 					ikyy = body.slice(10)
 					 reply(`[❕] Loading`)
-					ikyy =   getBuffer(`https://ikyyz.my.id/api/textpro/neontext?text=${ikyy}`)
+					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/neontext?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					  limitAdd(sender)
+					await limitAdd(sender)
 					ikyy.sendMessage(from, ikyy, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 break 
@@ -2350,9 +2357,9 @@ break
 					if (args.length < 1) return reply(ind.wrongf())
 					ikyy = body.slice(7)
 					 reply(`[❕] Loading`)
-					ikyy =   getBuffer(`https://ikyyz.my.id/api/textpro/toxictext?text=${ikyy}`)
+					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/toxictext?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					  limitAdd(sender)
+					await limitAdd(sender)
 					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 break
@@ -2362,9 +2369,9 @@ break
 					if (args.length < 1) return reply(ind.wrongf())
 					ikyy = body.slice(8)
 					 reply(`[❕] Loading`)
-					ikyy =   getBuffer(`https://ikyyz.my.id/api/textpro/sandsummery?text=${ikyy}`)
+					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/sandsummery?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					  limitAdd(sender)
+					await limitAdd(sender)
 					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 break
@@ -2374,9 +2381,9 @@ break
 					if (args.length < 1) return reply(ind.wrongf())
 					ikyy = body.slice(7)
 					 reply(`[❕] Loading`)
-					ikyy =   getBuffer(`https://ikyyz.my.id/api/textpro/bloodtext?text=${ikyy}`)
+					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/bloodtext?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					  limitAdd(sender)
+					await limitAdd(sender)
 					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 break
@@ -2386,9 +2393,9 @@ break
 					if (args.length < 1) return reply(ind.wrongf())
 					ikyyzzz = body.slice(10)
 					 reply(`[❕] Loading`)
-					ikyyzzz =   getBuffer(`https://ikyyz.my.id/api/textpro/firework?text=${ikyyzzz}`)
+					ikyyzzz = await getBuffer(`https://ikyyz.my.id/api/textpro/firework?text=${ikyyzzz}`)
 					ikyy.sendMessage(from, ikyyzzz, image, {caption: 'Nih kak', quoted: mek})
-					  limitAdd(sender)
+					await limitAdd(sender)
 					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 break
@@ -2398,9 +2405,9 @@ break
 					if (args.length < 1) return reply(ind.wrongf())
 					ikyy = body.slice(6)
 					 reply(`[❕] Loading`)
-					ikyy =   getBuffer(`https://ikyyz.my.id/api/textpro/lavatext?text=${ikyy}`)
+					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/lavatext?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					  limitAdd(sender)
+					await limitAdd(sender)
 					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 break
@@ -2413,9 +2420,9 @@ break
 				var hub = gh.split("|")[1];
 				if (args.length < 1) return reply('「❗」Contoh : ${prefix}pornhub IKY & Hub')
 				 reply(`[❕] Loading`)
-				buffer =   getBuffer(`https://api.vhtear.com/pornlogo?text1=${porn}&text2=${hub}&apikey=genbotkey`)
+				buffer = await getBuffer(`https://api.vhtear.com/pornlogo?text1=${porn}&text2=${hub}&apikey=genbotkey`)
 				ikyy.sendMessage(from, buffer, image, {quoted: mek})
-				  limitAdd(sender)
+				await limitAdd(sender)
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 break
@@ -2429,9 +2436,9 @@ break
 					var bok = gh.split("&")[1];
 					if (args.length < 1) return reply('[❗] Contoh : ${prefix}gemboktext 11 01 2021 & IKY dan Nadia')
 					 reply(`[❕] Loading`)
-					buffer =   getBuffer(`https://api.vhtear.com/padlock?text1=${gem}&text2=${bok}&apikey=genbotkey`)
+					buffer = await getBuffer(`https://api.vhtear.com/padlock?text1=${gem}&text2=${bok}&apikey=genbotkey`)
 					ikyy.sendMessage(from, buffer, image, {quoted: mek})
-					  limitAdd(sender)
+					await limitAdd(sender)
 					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 break
@@ -2445,9 +2452,9 @@ break
 					var tch = gh.split("&")[1];
 					if (args.length < 1) return reply('[❗] Contoh : ${prefix}glitchtext IKY & Gans')
 					 reply(`[❕] Loading`)
-					buffer =   getBuffer(`https://api.vhtear.com/glitchtext?text1=${gli}&text2=${tch}%20&apikey=genbotkey`)
+					buffer = await getBuffer(`https://api.vhtear.com/glitchtext?text1=${gli}&text2=${tch}%20&apikey=genbotkey`)
 					ikyy.sendMessage(from, buffer, image, {quoted: mek})
-					  limitAdd(sender)
+					await limitAdd(sender)
 					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 break
@@ -2461,10 +2468,10 @@ case 'bikinquote':
 					const pref = `yang mau dijadiin quote apaan, titit?\n\ncontoh : ${prefix}bikinquote aku bukan boneka & Kata IKY`
 					if (args.length < 1) return reply(pref)
 					 reply(`[❕] Loading`)
-					anu =   fetchJson(`https://terhambar.com/aw/qts/?kata=${quote}&author=${wm}&tipe=random`, {method: 'get'})
-					buffer =   getBuffer(anu.result)
+					anu = await fetchJson(`https://terhambar.com/aw/qts/?kata=${quote}&author=${wm}&tipe=random`, {method: 'get'})
+					buffer = await getBuffer(anu.result)
 					ikyy.sendMessage(from, buffer, image, {caption: 'Nih kak >_<', quoted: mek})
-					  limitAdd(sender)
+					await limitAdd(sender)
 					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 
 
@@ -2517,23 +2524,23 @@ case 'bikinquote':
                 break
             case 'unreadall':
                 if (!mek.key.fromMe) return reply('*Ente owner?_*')
-                var chats =   ikyy.chats.all()
+                var chats = await ikyy.chats.all()
                 chats.map( async ({ jid }) => {
-                  ikyy.chatRead(jid, 'unread')
+                await ikyy.chatRead(jid, 'unread')
                     })
 		    var teks = `\`\`\`Successfully unread ${chats.length} chats !\`\`\``
-		      ikyy.sendMessage(from, teks, text, {quoted: troli})
+		    await ikyy.sendMessage(from, teks, text, {quoted: troli})
 		    console.log(chats.length)
 	        break
 	        
             case 'readall':
                 if (!mek.key.fromMe) return reply('*Ente owner?_*')
-                var chats =   ikyy.chats.all()
+                var chats = await ikyy.chats.all()
                 chats.map( async ({ jid }) => {
-                  ikyy.chatRead(jid)
+                await ikyy.chatRead(jid)
                 })
 		var teks = `\`\`\`Successfully read ${chats.length} chats !\`\`\``
-	          ikyy.sendMessage(from, teks, text, {quoted: troli})
+	        await ikyy.sendMessage(from, teks, text, {quoted: troli})
 		console.log(chats.length)
 		break
 		
@@ -2541,7 +2548,7 @@ case 'bikinquote':
                 if (!mek.key.fromMe) return reply('*Ente owner?_*')
                 reply('*succes unarchive all chat*')
                 console.log('succes unarchive chat = ' + from)
-                anu =   ikyy.chats.all()
+                anu = await ikyy.chats.all()
                 for (let _ of anu) {
                 ikyy.modifyChat(_.jid, ChatModification.unarchive)
                 }
@@ -2551,7 +2558,7 @@ case 'bikinquote':
                 if (!mek.key.fromMe) return reply('*Ente owner?_*')
                 reply('*okey wait..*')
                 console.log('succes archive chat = ' + from)
-                  sleep(3000)
+                await sleep(3000)
                 ikyy.modifyChat(from, ChatModification.archive)
                 break
                 
@@ -2559,14 +2566,14 @@ case 'bikinquote':
                 if (!mek.key.fromMe) return reply('*Ente owner?_*')
                 reply('*succes delete this chat*')
                 console.log('succes delete chat = ' + from)
-                  sleep(4000)
+                await sleep(4000)
                 ikyy.modifyChat(from, ChatModification.delete)
                 break
                 
                 case 'shutdown':
                 if (!mek.key.fromMe) return reply('*Ente owner?_*')
-	          ikyy.sendMessage(from, `_Bye..._\n_ikyy off dulu yaa.._`, text,{quoted : freply})
-		  sleep(1000)
+	        await ikyy.sendMessage(from, `_Bye..._\n_ikyy off dulu yaa.._`, text,{quoted : freply})
+		await sleep(1000)
                 ikyy.close()
 		break
 		
@@ -2648,7 +2655,7 @@ case 'bikinquote':
 				  if (!mek.key.fromMe) return reply('*Ente owner?_*')
 				if (!isQuotedImage) return reply('Reply imagenya')
 				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-				delb =   ikyy.downloadMediaMessage(boij)
+				delb = await ikyy.downloadMediaMessage(boij)
 				fs.writeFileSync(`./media/ikyy.jpeg`, delb)
 				fs.writeFileSync('./media/img.json', JSON.stringify(imagenye))
 				reply(`\`\`\`Sukses Mengganti Thumbnail\`\`\``,text)
@@ -2656,7 +2663,7 @@ case 'bikinquote':
 				
 				case 'getbio':
                 var yy = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
-                var p =   ikyy.getStatus(`${yy}`, MessageType.text)
+                var p = await ikyy.getStatus(`${yy}`, MessageType.text)
                 reply(p.status)
                 if (p.status == 401) {
                 reply("Status Profile Not Found")
@@ -2667,11 +2674,11 @@ case 'bikinquote':
 				if (mek.message.extendedTextMessage != undefined){
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					try {
-						pic =   ikyy.getProfilePicture(mentioned[0])
+						pic = await ikyy.getProfilePicture(mentioned[0])
 					} catch {
 						pic = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 					}
-					thumb =   getBuffer(pic)
+					thumb = await getBuffer(pic)
 					ikyy.sendMessage(from, thumb, MessageType.image)
 				{quoted : freply}}
 				break
@@ -2681,7 +2688,7 @@ case 'bikinquote':
                            if (!q) return reply('Masukan link group')
                            var codeInvite = body.slice(6).split('https://chat.whatsapp.com/')[1]
                            if (!codeInvite) return reply ('pastikan link sudah benar!')
-                           var response =   ikyy.acceptInvite(codeInvite);
+                           var response = await ikyy.acceptInvite(codeInvite);
                            console.log(response);
                            reply('*Udah masuk gan_*')
                            break
@@ -2690,10 +2697,10 @@ case 'bikinquote':
                            case 'bc':
 					if (!mek.key.fromMe) return reply('*Ente owner?_*')
 					if (args.length < 1) return reply('.......')
-					anu =   ikyy.chats.all()
+					anu = await ikyy.chats.all()
 					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : freply
-						bc =   ikyy.downloadMediaMessage(encmedia)
+						bc = await ikyy.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
 							ikyy.sendMessage(_.jid, bc, image, {caption: `*「 ZBROADCAST 」*\n\n${body.slice(4)}`})
 						}
@@ -2774,7 +2781,7 @@ case 'setfake':
 				case 'setthumbmenu':
 				if (!isQuotedImage) return reply('Reply imagenya')
 				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-				delb =   ikyy.downloadMediaMessage(boij)
+				delb = await ikyy.downloadMediaMessage(boij)
 				imagenye.push(`help`)
 				fs.writeFileSync(`./media/help.jpeg`, delb)
 				fs.writeFileSync('./media/img.json', JSON.stringify(imagenye))
@@ -2815,16 +2822,16 @@ break
                     if (code.includes("--silent") && code.includes("--async")) {
                     code = code.replace("--async", "").replace("--silent", "");
     
-                    return   eval(`(async () => { ${code} })()`)
+                    return await eval(`(async () => { ${code} })()`)
                     } else if (code.includes("--async")) {
                     code = code.replace("--async", "");
             
-                    evaled =   eval(`(async () => { ${code} })()`);
+                    evaled = await eval(`(async () => { ${code} })()`);
                     } else if (code.includes("--silent")) {
                     code = code.replace("--silent", "");
             
-                    return   eval(code);
-                    } else evaled =   eval(code);
+                    return await eval(code);
+                    } else evaled = await eval(code);
     
                   if (typeof evaled !== "string")
                 evaled = require("util").inspect(evaled, { depth: 0 });
@@ -2880,7 +2887,7 @@ break
 	        case 'colong':
 		if (!isQuotedSticker) return reply(`Reply sticker dengan caption *${prefix}colong*`)
 		const encmediia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-	        const meidia =   ikyy.downloadAndSaveMediaMessage(encmediia, `./sticker/${sender}`)
+	        const meidia = await ikyy.downloadAndSaveMediaMessage(encmediia, `./sticker/${sender}`)
 		    exec(`webpmux -set exif ./sticker/data.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
 		    if (error) return reply('error')
 		    ikyy.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), MessageType.sticker, {quoted: troli})
@@ -2893,7 +2900,7 @@ break
 					if (!isQuotedSticker) return reply(`Reply sticker dengan caption *${prefix}takestick nama|author*`)
 					var pembawm = body.slice(6)
 					var encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-					var media =   ikyy.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
+					var media = await ikyy.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
 					var packname = pembawm.split('|')[0]
 					var author = pembawm.split('|')[1]
 					exif.create(packname, author, `takestick_${sender}`)
@@ -2912,10 +2919,10 @@ break
                                         reply('Loading.... ')
                                         if (mek.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.isAnimated === true){
                                         const encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        const media =   ikyy.downloadAndSaveMediaMessage(encmedia)
-                                        const upload =   uploadimg(media, Date.now() + '.webp')
-                                        const rume =   axios.get(`https://nzcha-apii.herokuapp.com/webp-to-mp4?url=${upload.result.image}`)
-                                        const buff =   getBuffer(rume.data.result)
+                                        const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
+                                        const upload = await uploadimg(media, Date.now() + '.webp')
+                                        const rume = await axios.get(`https://nzcha-apii.herokuapp.com/webp-to-mp4?url=${upload.result.image}`)
+                                        const buff = await getBuffer(rume.data.result)
                                         ikyy.sendMessage(from, buff, video, { mimetype: Mimetype.gif, caption: 'Nih', quoted: troli})
                                 }
                            
@@ -2929,10 +2936,10 @@ break
                                         ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
 				
                                         const encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        const media =   ikyy.downloadAndSaveMediaMessage(encmedia)
-                                        const upload =   uploadimg(media, Date.now() + '.webp')
-                                        const rume =   axios.get(`https://nzcha-apii.herokuapp.com/webp-to-mp4?url=${upload.result.image}`)
-                                        const buff =   getBuffer(rume.data.result)
+                                        const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
+                                        const upload = await uploadimg(media, Date.now() + '.webp')
+                                        const rume = await axios.get(`https://nzcha-apii.herokuapp.com/webp-to-mp4?url=${upload.result.image}`)
+                                        const buff = await getBuffer(rume.data.result)
 						ikyy.sendMessage(from, buff, video, { quoted: troli, caption: fake })
 					}
 					break
@@ -2945,8 +2952,8 @@ break
 				imgbbb = require('imgbb-uploader')
 				run = getRandom('.jpeg')
 				encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-				media =   ikyy.downloadAndSaveMediaMessage(encmedia)
-				ddatae =   imageToBase64(JSON.stringify(media).replace(/\"/gi, ''))
+				media = await ikyy.downloadAndSaveMediaMessage(encmedia)
+				ddatae = await imageToBase64(JSON.stringify(media).replace(/\"/gi, ''))
 
 				ikyy.sendMessage(from, {
 
@@ -2971,7 +2978,7 @@ break
 					var urlnye = nn.split("|")[0];
 					var titlenye = nn.split("|")[1];
 					var descnye = nn.split("|")[2];
-					ddatae =   imageToBase64(JSON.stringify('./media/ikyy.jpeg').replace(/\"/gi, ''))
+					ddatae = await imageToBase64(JSON.stringify('./media/ikyy.jpeg').replace(/\"/gi, ''))
 
 					ikyy.sendMessage(from, {
 
@@ -2995,10 +3002,10 @@ break
 if ((isMedia && !mek.videoMessage || isQuotedImage)) {
     reply('Loading.... ')
 var encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace("quotedM", "m")).message.extendedTextMessage.contextInfo : mek
-var media =   ikyy.downloadAndSaveMediaMessage(encmedia)
-anu =   imgbb("3ea1465ef91578a90ee81f7d41c59a1f", media)
+var media = await ikyy.downloadAndSaveMediaMessage(encmedia)
+anu = await imgbb("3ea1465ef91578a90ee81f7d41c59a1f", media)
 getUrl = `${anu.display_url}`
-buff =   getBuffer(`https://lolhuman.herokuapp.com/api/removebg?apikey=${LolKey}&img=${getUrl}`)
+buff = await getBuffer(`https://lolhuman.herokuapp.com/api/removebg?apikey=${LolKey}&img=${getUrl}`)
 ikyy.sendMessage(from, buff, image, {quoted: troli})
 }
 break
@@ -3009,7 +3016,7 @@ break
 												 if (mek.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.isAnimated) return reply('Reply sticker gambar!')
 ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 ran = getRandom('.png')
-ehgmediabi =   ikyy.downloadAndSaveMediaMessage(ger)
+ehgmediabi = await ikyy.downloadAndSaveMediaMessage(ger)
 exec(`ffmpeg -i ${ehgmediabi} ${ran}`, (err) => {
 	fs.writeFileSync('sticknobg.png', fs.readFileSync(ran))
 						if (err) return reply('Error om')
@@ -3039,16 +3046,16 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 									if ((isMedia || isQuotedImage) && args.length == 0) {
 										   ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
                                         reply('Loading.... ')
-					owgi =   ikyy.downloadAndSaveMediaMessage(ger)
-					 var uploade =   uploadimg(owgi, Date.now() + '.jpg')
+					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
+					 var uploade = await uploadimg(owgi, Date.now() + '.jpg')
                                         teks = `${uploade.result.image}`
 										buffer = `https://api.lolhuman.xyz/api/editor/flip?apikey=${LolKey}&img=${teks}`
 										sendStickerUrl(from, buffer)
 									 } else if (isQuotedSticker && args.length == 0) {
 										   ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
                                         reply('Loading.... ')
-					owgi =   ikyy.downloadAndSaveMediaMessage(ger)
-					 var uploade =   uploadimg(owgi, Date.now() + '.webp')
+					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
+					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
 										buffer = `https://api.lolhuman.xyz/api/editor/flip?apikey=VevekKuda&img=${teks}`
 										sendStickerUrl(from, buffer)
@@ -3060,16 +3067,16 @@ case 'stickwasted':
 									if ((isMedia || isQuotedImage) && args.length == 0) {
 										   ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
                                         reply('Loading.... ')
-					owgi =   ikyy.downloadAndSaveMediaMessage(ger)
-					 var uploade =   uploadimg(owgi, Date.now() + '.jpg')
+					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
+					 var uploade = await uploadimg(owgi, Date.now() + '.jpg')
                                         teks = `${uploade.result.image}`
 										buffer = `https://lolhuman.herokuapp.com/api/editor/wasted?apikey=${LolKey}&img=${teks}`
 										sendStickerUrl(from, buffer)
 									 } else if (isQuotedSticker && args.length == 0) {
 										   ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
                                         reply('Loading.... ')
-					owgi =   ikyy.downloadAndSaveMediaMessage(ger)
-					 var uploade =   uploadimg(owgi, Date.now() + '.webp')
+					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
+					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
 										buffer = `https://lolhuman.herokuapp.com/api/editor/wasted?apikey=${LolKey}&img=${teks}`
 										sendStickerUrl(from, buffer)
@@ -3082,8 +3089,8 @@ bottom = arg.split('|')[1]
 var imgbb = require('imgbb-uploader')
 if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedSticker) && args.length > 0) {
 ger = isQuotedImage || isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
-owgi =    ikyy.downloadAndSaveMediaMessage(ger)
-anu =   imgbb("cedeb44b8d204947a6833ca1412ca77d", owgi)
+owgi = await  ikyy.downloadAndSaveMediaMessage(ger)
+anu = await imgbb("cedeb44b8d204947a6833ca1412ca77d", owgi)
 teks = `${anu.display_url}`
 ranp = getRandom('.gif')
 rano = getRandom('.webp')
@@ -3100,8 +3107,8 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 									 if (mek.message.extendedTextMessage != undefined || mek.message.extendedTextMessage != null) {
                                           ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
                                         reply('Loading.... ')
-					owgi =   ikyy.downloadAndSaveMediaMessage(ger)
-					 var uploade =   uploadimg(owgi, Date.now() + '.webp')
+					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
+					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
 										buffer = `https://api.memegen.link/images/custom/_/${ghs}.png?background=${teks}`
 										sendStickerUrl(from, buffer)
@@ -3113,8 +3120,8 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 									 if (mek.message.extendedTextMessage != undefined || mek.message.extendedTextMessage != null) {
                                           ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
                                         reply('Loading.... ')
-					owgi =   ikyy.downloadAndSaveMediaMessage(ger)
-					 var uploade =   uploadimg(owgi, Date.now() + '.webp')
+					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
+					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
 										buffer = `https://api-self.herokuapp.com/api/memegen3?teks=${ghs}&img_url=${teks}`
 										sendStickerUrl(from, buffer)
@@ -3130,8 +3137,8 @@ if (!tex2) return reply('Format salah!')
 									 if (mek.message.extendedTextMessage != undefined || mek.message.extendedTextMessage != null) {
                                           ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
                                         reply('Loading.... ')
-					owgi =   ikyy.downloadAndSaveMediaMessage(ger)
-					 var uploade =   uploadimg(owgi, Date.now() + '.webp')
+					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
+					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
 										buffer = `https://api-self.herokuapp.com/api/memegen2?teks1=${tex1}&teks2=${tex2}&img_url=${teks}`
 										sendStickerUrl(from, buffer)
@@ -3151,10 +3158,10 @@ var tex2 = body.slice(11).split('|')[1]
 if (!tex2) return reply('Format salah!')
     reply('Loading.... ')
 var encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace("quotedM", "m")).message.extendedTextMessage.contextInfo : mek
-var media =   ikyy.downloadAndSaveMediaMessage(encmedia)
-anu =   imgbb("3ea1465ef91578a90ee81f7d41c59a1f", media)
+var media = await ikyy.downloadAndSaveMediaMessage(encmedia)
+anu = await imgbb("3ea1465ef91578a90ee81f7d41c59a1f", media)
 getUrl = `${anu.display_url}`
-buff =   getBuffer(`https://lolhuman.herokuapp.com/api/memegen?apikey=${LolKey}&texttop=${tex1}&textbottom=${tex2}&img=${getUrl}`)
+buff = await getBuffer(`https://lolhuman.herokuapp.com/api/memegen?apikey=${LolKey}&texttop=${tex1}&textbottom=${tex2}&img=${getUrl}`)
 ikyy.sendMessage(from, buff, image, {quoted: troli})
 }
 break
@@ -3182,7 +3189,7 @@ sendStickerUrl(from, res.result)
 break
 		case 'ttp1':
 				if (args.length < 1) return reply(`_Teksnya Mana Boss_\n*Contoh ${prefix}ttp ikyy Ganteng*`)
-				ttp =   getBuffer(`https://lolhuman.herokuapp.com/api/ttp?apikey=${LolKey}&text=${body.slice(6)}`)
+				ttp = await getBuffer(`https://lolhuman.herokuapp.com/api/ttp?apikey=${LolKey}&text=${body.slice(6)}`)
 				ikyy.sendMessage(from, ttp, sticker, {quoted: troli})
 				break
 					
@@ -3191,10 +3198,10 @@ break
 				
                     if (args.length == 0) return reply(`Example: ${prefix + command} Koceng Imot`)
                     query = args.join(" ")
-                    get_result =   fetchJson(`https://api.lolhuman.xyz/api/stickerwa?apikey=${LolKey}&query=${query}`)
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/stickerwa?apikey=${LolKey}&query=${query}`)
                     get_result = get_result.result[0].stickers
                     for (var x of get_result) {
-                        ini_buffer =   getBuffer(`https://api.lolhuman.xyz/api/convert/towebp?apikey=${LolKey}&img=${x}`)
+                        ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/convert/towebp?apikey=${LolKey}&img=${x}`)
                         ikyy.sendMessage(from, ini_buffer, sticker)
                     }
                     break
@@ -3203,7 +3210,7 @@ break
                       case 'rsticker':
                     if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
                         const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : lol
-                        filePath =   ikyy.downloadAndSaveMediaMessage(encmedia)
+                        filePath = await ikyy.downloadAndSaveMediaMessage(encmedia)
                         file_name = getRandom('.webp')
                         request({
                             url: `https://api.lolhuman.xyz/api/convert/towebpwround?apikey=${LolKey}`,
@@ -3233,10 +3240,10 @@ var kls = body.slice(5)
 var pack = kls.split("|")[0];
 var author = kls.split("|")[1];
 const getbuff = isTagedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-const dlfile =   ikyy.downloadMediaMessage(getbuff)
+const dlfile = await ikyy.downloadMediaMessage(getbuff)
 reply('Loading.... ')
 const bas64 = `data:image/jpeg;base64,${dlfile.toString('base64')}`
-var mantap =   convertSticker(bas64, `${author}`, `${pack}`)
+var mantap = await convertSticker(bas64, `${author}`, `${pack}`)
 var imageBuffer = new Buffer.from(mantap, 'base64');
 ikyy.sendMessage(from, imageBuffer, MessageType.sticker, {quoted: fdocu})
 } else {
@@ -3250,9 +3257,9 @@ break
 				  case 'stiker':
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media =   ikyy.downloadAndSaveMediaMessage(encmedia)
+						const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 						ran = getRandom('.webp')
-						  ffmpeg(`./${media}`)
+						await ffmpeg(`./${media}`)
 							.input(media)
 							.on('start', function (cmd) {
 								console.log(`Started : ${cmd}`)
@@ -3274,10 +3281,10 @@ break
 							.save(ran)
 					} else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
 						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media =   ikyy.downloadAndSaveMediaMessage(encmedia)
+						const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 						ran = getRandom('.webp')
 						reply('Loading.... ')
-						  ffmpeg(`./${media}`)
+						await ffmpeg(`./${media}`)
 							.inputFormat(media.split('.')[1])
 							.on('start', function (cmd) {
 								console.log(`Started : ${cmd}`)
@@ -3300,12 +3307,12 @@ break
 							.save(ran)
 					} else if ((isMedia || isQuotedImage) && args[0] == 'nobg') {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media =   ikyy.downloadAndSaveMediaMessage(encmedia)
+						const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 						ranw = getRandom('.webp')
 						ranp = getRandom('.png')
 						reply('Loading.... ')
 						keyrmbg = '5LXrQ1MAYDnE1iib6B6NaHMv'
-						  removeBackgroundFromImageFile({path: media, apiKey: keyrmbg.result, size: 'auto', type: 'auto', ranp}).then(res => {
+						await removeBackgroundFromImageFile({path: media, apiKey: keyrmbg.result, size: 'auto', type: 'auto', ranp}).then(res => {
 							fs.unlinkSync(media)
 							let buffer = Buffer.from(res.base64img, 'base64')
 							fs.writeFileSync(ranp, buffer, (err) => {
@@ -3326,7 +3333,7 @@ break
 					case 'toimg':
                                         var b = fs.readFileSync(`./media/ikyy.jpeg`)
                                         var encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        var media =   ikyy.downloadMediaMessage(encmedia)
+                                        var media = await ikyy.downloadMediaMessage(encmedia)
                                         if (!isQuotedSticker) return reply('Reply Stikernya su!')
                                         ikyy.sendMessage(from, media, MessageType.image, { thumbnail: b, caption: 'NEHH...', quoted: troli})
                                         break
@@ -3334,7 +3341,7 @@ break
 					case 'toimage':
 					if (!isQuotedSticker) return reply(' reply stickernya gan')
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-					media =   ikyy.downloadAndSaveMediaMessage(encmedia)
+					media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 					ran= getRandom('.png')
 					exec(`ffmpeg -i ${media} ${ran}`, (err) => {
 						fs.unlinkSync(media)
@@ -3352,7 +3359,7 @@ break
 					  const statusss = public ? 'PUBLIC': 'SELF'
 					  var groups = ikyy.chats.array.filter(v => v.jid.endsWith('g.us'))
 					  var private = ikyy.chats.array.filter(v => v.jid.endsWith('s.whatsapp.net'))
-					  const chatsIds =   ikyy.chats.all()
+					  const chatsIds = await ikyy.chats.all()
                 const timestamp = speed();
                 const latensi = speed() - timestamp 
                 p0 =` \`\`\`Loaded Message\`\`\`
@@ -3423,7 +3430,7 @@ const pepek = body.slice(8)
 const adan = pepek.split("|")[0]
 const nuahh = pepek.split("|")[1]
 const trot = 'BEGIN:VCARD\n' + 'VERSION:3.0\n' + 'FN:' + adan + '\n' + 'ORG:Kontak\n' + 'TEL;type=CELL;type=VOICE;waid=' + nuahh + ':+' + nuahh + '\n' + 'END:VCARD'
-let taih =   ikyy.groupMetadata(from)
+let taih = await ikyy.groupMetadata(from)
 	let setan = taih.participants
 	let bruy = []
 	for (let go of setan){
@@ -3438,7 +3445,7 @@ let taih =   ikyy.groupMetadata(from)
 					if (args[0] === '') {
 					var jl = `*CONTACT TAG*`
 					}
-					var group =   ikyy.groupMetadata(from)
+					var group = await ikyy.groupMetadata(from)
 					   var member = group['participants']
 					   var mem = []
 					   member.map(async adm => {
@@ -3492,7 +3499,7 @@ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMes
         case 'hidetag':
 					if (!isGroup) return reply(mess.only.group)
 					var value = body.slice(9)
-					var group =   ikyy.groupMetadata(from)
+					var group = await ikyy.groupMetadata(from)
 					var member = group['participants']
 					var mem = []
 					member.map( async adm => {
@@ -3509,9 +3516,9 @@ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMes
 			           case 'stctag':
                                         if (!isQuotedSticker) return reply('Ini sticker?')
                                         boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-                                        delb =   ikyy.downloadMediaMessage(boij)
-                                          fs.writeFileSync(`stctagg.webp`, delb)
-                                        var group =   ikyy.groupMetadata(from)
+                                        delb = await ikyy.downloadMediaMessage(boij)
+                                        await fs.writeFileSync(`stctagg.webp`, delb)
+                                        var group = await ikyy.groupMetadata(from)
                                         var member = group['participants']
                                         var mem = []
                                         member.map(async adm => {
@@ -3531,15 +3538,15 @@ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMes
 					}
 					result = fs.readFileSync(`stctagg.webp`)
                                         ikyy.sendMessage(from, result, sticker, selepbot)
-					  fs.unlinkSync(`stctagg.webp`)
+					await fs.unlinkSync(`stctagg.webp`)
 					break
 					
 					case 'imgtag':
                     if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
                         const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : lol
-                        filePath =   ikyy.downloadAndSaveMediaMessage(encmedia, filename = getRandom())
+                        filePath = await ikyy.downloadAndSaveMediaMessage(encmedia, filename = getRandom())
                         var value = args.join(" ")
-                        var group =   ikyy.groupMetadata(from)
+                        var group = await ikyy.groupMetadata(from)
                         var member = group['participants']
                         var mem = []
                         member.map(async adm => {
@@ -3563,7 +3570,7 @@ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMes
 				case 'linkgc':
 				    if (!isGroup) return reply(mess.only.group)
 				    if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-				    linkgc =   ikyy.groupInviteCode (from)
+				    linkgc = await ikyy.groupInviteCode (from)
 				    yeh = `https://chat.whatsapp.com/${linkgc}\n\nlink Group *${groupName}*`
 				    ikyy.sendMessage(from, yeh, text, {quoted: troli})
 			        break
@@ -3603,8 +3610,8 @@ case 'gcingfo':
   case 'gcinfo':
 	ikyy.updatePresence(from, Presence.composing)
 	if (!isGroup) return reply(mess.only.group)
-	ppUrl =   ikyy.getProfilePicture(from) // leave empty to get your own
-	buffer =   getBuffer(ppUrl)
+	ppUrl = await ikyy.getProfilePicture(from) // leave empty to get your own
+	buffer = await getBuffer(ppUrl)
 	ikyy.sendMessage(from, buffer, image, {quoted: troli, caption: `*Name* : ${groupName}\n*Member* : ${groupMembers.length}\n*Admin* : ${groupAdmins.length}\n*Desc* : ${groupDesc}`})
 	break
 					
@@ -3759,7 +3766,7 @@ case 'gcingfo':
 					  if (!isGroupAdmins && !mek.key.fromMe) return reply('*Ente siapa?_*')
 if (!isGroup) return reply(mess.only.group)
 teks = `Notif dari @${sender.split("@")[0]}\n*Pesan : ${body.slice(7)}*`
-group =   ikyy.groupMetadata(from);
+group = await ikyy.groupMetadata(from);
 member = group['participants']
 jids = [];
 member.map(async adm => {
@@ -3772,15 +3779,15 @@ mentionedJid: jids
   },
   quoted: troli
 }
-  ikyy.sendMessage(from, options, text)
+await ikyy.sendMessage(from, options, text)
 break
 
       case 'leave': 
         if (!mek.key.fromMe) return reply('*Ente owner?_*')
 				    if (!isGroup) return reply(mess.only.group)
 			    	reply(`Akan keluar dari group ${groupMetadata.subject} dalam 3 detik`)
-                      sleep(3000)
-                      ikyy.groupLeave(from)
+                    await sleep(3000)
+                    await ikyy.groupLeave(from)
                 break
 
 
@@ -3791,7 +3798,7 @@ case 'addstik':
 				svst = body.slice(9)
 				if (!svst) return reply('Nama sticker nya apa?')
 				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-				delb =   ikyy.downloadMediaMessage(boij)
+				delb = await ikyy.downloadMediaMessage(boij)
 				setiker.push(`${svst}`)
 				fs.writeFileSync(`./temp/stick/${svst}.webp`, delb)
 				fs.writeFileSync('./temp/stik.json', JSON.stringify(setiker))
@@ -3822,7 +3829,7 @@ case 'getstik':
 				svst = body.slice(8)
 				if (!svst) return reply('Nama imagenya apa')
 				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-				delb =   ikyy.downloadMediaMessage(boij)
+				delb = await ikyy.downloadMediaMessage(boij)
 				imagenye.push(`${svst}`)
 				fs.writeFileSync(`./temp/foto/${svst}.jpeg`, delb)
 				fs.writeFileSync('./temp/image.json', JSON.stringify(imagenye))
@@ -3851,7 +3858,7 @@ case 'getstik':
 				svst = body.slice(8)
 				if (!svst) return reply('Nama vidionya apa')
 				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-				delb =   ikyy.downloadMediaMessage(boij)
+				delb = await ikyy.downloadMediaMessage(boij)
 				imagenye.push(`${svst}`)
 				fs.writeFileSync(`./temp/video/${svst}.mp4`, delb)
 				fs.writeFileSync('./temp/video.json', JSON.stringify(imagenye))
@@ -3880,7 +3887,7 @@ case 'listvid':
 					nm = body.slice(7)
 					if (!nm) return reply('ɴᴀᴍᴇ ᴏғ ᴛʜᴇ ᴀᴜᴅɪᴏ?')
 					boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-					delb =   ikyy.downloadMediaMessage(boij)
+					delb = await ikyy.downloadMediaMessage(boij)
 					vien.push(`${nm}`)
 					fs.writeFileSync(`./media/vn/${nm}.mp3`, delb)
 					fs.writeFileSync('./database/vien.json', JSON.stringify(vien))
@@ -3920,14 +3927,14 @@ if (!teks.endsWith('-video') && !teks.endsWith('-foto')) return reply('Ketik -fo
 reply(mess.wait)
 if (teks.endsWith('-foto')) {
 igl = teks.replace('-foto',"") 
-res =   fotoIg(igl).catch(e => {
+res = await fotoIg(igl).catch(e => {
   reply('_[ ! ] Error Gagal Dalam Masuk Web Atau Link Error_')
 })
 sendFileFromUrl(res[0].foto, image, {quoted: ftoko})
 }
 if (teks.endsWith('-video')) {
 igl = teks.replace('-video',"")
-res =   videoIg(teks).catch(e => {
+res = await videoIg(teks).catch(e => {
   reply('_[ ! ] Error Gagal Dalam Masuk Web Atau Link Error')
 })
 sendFileFromUrl(res[0].video, video, {mimetype: 'video/mp4', quoted: ftoko})
@@ -3939,7 +3946,7 @@ if (args.length < 1) return reply('Apa Yang Mau Dicari?')
 teks = args.join(' ')
 reply(mess.wait)
 if (!teks.endsWith("-doc")){
-res =   yts(`${teks}`).catch(e => {
+res = await yts(`${teks}`).catch(e => {
 reply('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
 })
 reply(` Playing ${res.all[0].title}`)
@@ -3955,14 +3962,14 @@ let thumbInfo = ` *Youtube Search*
 *_Tunggu Proses Upload....._*
 `
 sendFileFromUrl(res.all[0].image, image, {quoted: ftoko, caption: thumbInfo})
-res =   y2mateA(res.all[0].url).catch(e => {
+res = await y2mateA(res.all[0].url).catch(e => {
 reply('_[ ! ] Error Saat Memasuki Web Y2mate_')
 })
 sendFileFromUrl(res[0].link, audio, {quoted: ftoko, mimetype: 'audio/mp4', filename: res[0].output})
 }
 if (teks.endsWith("-doc")){
 const tec = teks.split("-doc")
-res =   yts(`${tec}`).catch(e => {
+res = await yts(`${tec}`).catch(e => {
 reply('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
 })
 reply(`.Playing ${res.all[0].title}`)
@@ -3978,7 +3985,7 @@ let thumbInfo = `*${botname}*
 *_Tunggu Proses Upload....._*
 `
 sendFileFromUrl(res.all[0].image, image, {quoted: ftoko, caption: thumbInfo})
-res =   y2mateA(res.all[0].url).catch(e => {
+res = await y2mateA(res.all[0].url).catch(e => {
 reply('_[ ! ] Error Saat Memasuki Web Y2mate_')
 })
 sendFileFromUrl(res[0].link, document, {quoted: ftoko, mimetype: 'audio/mp3', filename: res[0].output})
@@ -3989,7 +3996,7 @@ break
 				  if (args.length < 1) return reply('*Masukan judul nya?*')
                 reply('Loading.... ')
 				play = args.join(" ")
-				anu =   fetchJson(`https://api.zeks.xyz/api/ytplaymp4?q=${play}&apikey=apivinz`)
+				anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp4?q=${play}&apikey=apivinz`)
 				if (anu.error) return reply(anu.error)
 				infomp3 = `*「 PLAY VIDEO 」*
 				
@@ -3997,8 +4004,8 @@ Judul : ${anu.result.title}
 Source : ${anu.result.source}
 				
 *[Wait] Tunggu Sebentar..*`
-				buffer =   getBuffer(anu.result.thumbnail)
-				buffer1 =   getBuffer(anu.result.url_video)
+				buffer = await getBuffer(anu.result.thumbnail)
+				buffer1 = await getBuffer(anu.result.url_video)
 				ikyy.sendMessage(from, buffer, image, {quoted: troli, caption: infomp3})
 				ikyy.sendMessage(from, buffer1, video, {mimetype: 'video/mp4', filename: `${anu.result.video}.mp4`, quoted:freply, caption: 'Nih Gan'})
 					break 
@@ -4006,36 +4013,36 @@ Source : ${anu.result.source}
         case 'ig2':
           if (args.length < 1) return reply('*Masukan Url nya?*')
           query = args.join(" ")
-					anu =   fetchJson(`https://api.zeks.xyz/api/ig?url=${query}&apikey=apivinz`, {method: 'get'})
+					anu = await fetchJson(`https://api.zeks.xyz/api/ig?url=${query}&apikey=apivinz`, {method: 'get'})
 					tods = ` Instagram DOWNLOADER
 
 Username : ${anu.owner}
 Caption : ${anu.caption}
 `
 					reply('Loading.... ')
-					buffer =   getBuffer(anu.result[0].url)
+					buffer = await getBuffer(anu.result[0].url)
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result[0].url}.mp4`, quoted: troli, caption : tods})
 					break 
 					
 case 'fb':
   if (args.length < 1) return reply('*Masukan Url nya?*')
   query = args.join(" ")
-					anu =   fetchJson(`https://videfikri.com/api/fbdl/?urlfb=${query}`, {method: 'get'})
+					anu = await fetchJson(`https://videfikri.com/api/fbdl/?urlfb=${query}`, {method: 'get'})
 					wing = ` *F A C E B O O K DOWNLOADER*
 					
 *Judul :* ${anu.result.judul}`
 					
 					reply('Loading.... ')
-					buffer =   getBuffer(anu.result.url)
+					buffer = await getBuffer(anu.result.url)
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.url}.mp4`, quoted: troli, caption: wing})
 					break 
 					
 case 'tiktok':
   if (args.length < 1) return reply('*Masukan Url nya?*')
 					query = args.join(" ")
-					anu =   fetchJson(`https://api.xteam.xyz/dl/tiktok?url=${query}&APIKEY=${XteamKey}`, {method: 'get'})
+					anu = await fetchJson(`https://api.xteam.xyz/dl/tiktok?url=${query}&APIKEY=${XteamKey}`, {method: 'get'})
 					reply('Loading.... ')
-					buffer =   getBuffer(`https://lolhuman.herokuapp.com/api/tiktokwm?apikey=${LolKey}&url=${query}`)
+					buffer = await getBuffer(`https://lolhuman.herokuapp.com/api/tiktokwm?apikey=${LolKey}&url=${query}`)
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', quoted: troli})
 					break
 					
@@ -4043,21 +4050,21 @@ case 'tiktok':
   if (args.length < 1) return reply('*Masukan Url nya?*')
 					query = args.join(" ")
 					reply('Loading.... ')
-					anu =   fetchJson(`https://lolhuman.herokuapp.com/api/tiktok?apikey=${LolKey}&url=${query}`, {method: 'get'})
+					anu = await fetchJson(`https://lolhuman.herokuapp.com/api/tiktok?apikey=${LolKey}&url=${query}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					tt = `「 *TIKTOK NO WM* 」
 					
 *Judul:* ${anu.result.title}
 *Keywords:* ${anu.result.keywords}
 *Desc:* ${anu.result.description}`
- buff =   getBuffer(anu.result.link)
+ buff = await getBuffer(anu.result.link)
  ikyy.sendMessage(from, buff, video, {mimetype: 'video/mp4', quoted: troli,caption : tt})
 					break
 					
 				case 'ytmp4':
 				  if (args.length < 1) return reply('*Masukan Url nya?*')
 ini_link = args[0]
-					anu =   fetchJson(`https://api.xteam.xyz/dl/ytmp4?url=${ini_link}&APIKEY=${XteamKey}`, {method: 'get'})
+					anu = await fetchJson(`https://api.xteam.xyz/dl/ytmp4?url=${ini_link}&APIKEY=${XteamKey}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					ytt = `「 *YOUTUBE MP4* 」
 					
@@ -4065,9 +4072,9 @@ ini_link = args[0]
 *Size:* ${anu.size}
 					 
 *[ Wait ]Tunggu Sebentar kak...*`
-					 buff =   getBuffer(anu.thumbnail)
+					 buff = await getBuffer(anu.thumbnail)
 					reply('Loading.... ')
-					buffer =   getBuffer(anu.url)
+					buffer = await getBuffer(anu.url)
 					ikyy.sendMessage(from, buff, image, {quoted: troli, caption: ytt})
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.url}.mp4`, quoted: troli, caption: 'Nih Gan'})
 					break 
@@ -4075,23 +4082,23 @@ ini_link = args[0]
 				case 'ytmp3':
 				  if (args.length < 1) return reply('*Masukan Url nya?*')
                     ini_link = args[0]
-                    anu =   fetchJson(`https://api.xteam.xyz/dl/ytmp3?url=${ini_link}&APIKEY=${XteamKey}`)
+                    anu = await fetchJson(`https://api.xteam.xyz/dl/ytmp3?url=${ini_link}&APIKEY=${XteamKey}`)
                     					ytt = `「 *YOUTUBE MP3* 」
 					
 *Judul:* ${anu.judul}
 *Size:* ${anu.size}
 					 
 *[Wait]Tunggu Sebentar kak...*`
-					 buff =   getBuffer(anu.thumbnail)
+					 buff = await getBuffer(anu.thumbnail)
 					reply('Loading.... ')
-					buffer =   getBuffer(anu.url)
+					buffer = await getBuffer(anu.url)
 					ikyy.sendMessage(from, buff, image, {quoted: troli, caption: ytt})
 					ikyy.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.url}.mp3`, quoted: troli})
 				break
 
 case 'searchmusic':
 				if (isQuotedAudio){
-				const dlfile =   ikyy.downloadMediaMessage(JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo)
+				const dlfile = await ikyy.downloadMediaMessage(JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo)
 				const bodyForm = new FormData()
 			        bodyForm.append('audio', dlfile, 'music.mp3')
            			bodyForm.append('apikey', 'apivinz')
@@ -4126,7 +4133,7 @@ case 'upswtext':
 					ikyy.updatePresence(from, Presence.composing)
 					if (isQuotedImage) {
 						const swsw = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-						cihcih =   ikyy.downloadMediaMessage(swsw)
+						cihcih = await ikyy.downloadMediaMessage(swsw)
 						ikyy.sendMessage('status@broadcast', cihcih, image, { caption: `${q}` })
 					}
 					bur = `Sukses Upload Story Image dengan Caption: ${q}`
@@ -4138,7 +4145,7 @@ case 'upswtext':
 					ikyy.updatePresence(from, Presence.composing)
 					if (isQuotedVideo) {
 						const swsw = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-						cihcih =   ikyy.downloadMediaMessage(swsw)
+						cihcih = await ikyy.downloadMediaMessage(swsw)
 						ikyy.sendMessage('status@broadcast', cihcih, video, { caption: `${q}` })
 					}
 					bur = `Sukses Upload Story Video dengan Caption: ${q}`
@@ -4194,7 +4201,7 @@ break
         } 
 case 'jadibot':
 				sesid = Math.floor(Math.random() * 99999)
-                const qrdata =    qrcodes.toDataURL(sender, { scale: 8 })
+                const qrdata =  await qrcodes.toDataURL(sender, { scale: 8 })
    const bufferqr = new Buffer.from(qrdata.replace('data:image/png;base64,', ''), 'base64')
    ikyy.sendMessage(from, bufferqr, image, {caption: `*Scan QR ini untuk Menjadikan ada BOT!!*\n\nSession id: ${sesid}\nNotifikasi:\nQR ini hanya berlaku selama 20 Detik!!\n\n_NOTE : INI HANYA NUMPANG!_`})
 				break
@@ -4223,7 +4230,7 @@ reply(stdout)
 })
 }
 					if (isSimi && budy != undefined){
- res =   axios.get(`https://st4rz.herokuapp.com/api/simsimi?kata=${budy}`)
+ res = await axios.get(`https://st4rz.herokuapp.com/api/simsimi?kata=${budy}`)
  reply(res.data.result)
 }
 if (budy.startsWith('$')){
@@ -4275,3 +4282,16 @@ return
 	})
 }
 starts()
+/* 
+*
+*JANGAN DI JUAL YA OM SC NYA GW KASIH GERATIS
+*BUAT ANAK JEBE YG SUKA JUAL SC TOBAT GOBLOK
+*
+*          THANKS TO :
+*               - MHANKBARBAR$
+*               - ZITSRA
+*               - Veanz
+*               -ANU TIM NASWARI SEMUA DAH POKONYA
+*               -GALANG
+* MON MAAF KALO ADA SALAH YA OM🙏
+*/ 
