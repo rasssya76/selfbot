@@ -176,6 +176,7 @@ matauang = 'USD'
 blocked = []
 fake = '@RamaGans'
 fakeimage = fs.readFileSync(`./media/ikyy.jpeg`)
+let thumbnail = fs.readFileSync(`./media/ikyy.jpeg`)
 numbernye = '0'
 join = '\`\`\`New Member\`\`\` \n \`\`\`Nama :\`\`\` \n \`\`\`Askot : \`\`\` \n \`\`\`Umur :\`\`\` \n \`\`\`Status :\`\`\` \n\n - [ 𝙎𝙀𝙇𝙁 𝘽𝙊𝙏 ] -'
 leave = '\`\`\`Sayonaraa👋\`\`\`'
@@ -441,7 +442,7 @@ ${demote}`
 			
 
 			mess = {
-				wait: 'Waitt 1-2 menit....',
+				wait: '        BENTAR        ',
 				success: '✔️ Success ✔️',
 				error: {
 					stick: '❌ Gagal, terjadi kesalahan saat mengkonversi gambar ke sticker ❌',
@@ -584,18 +585,19 @@ headerType: 1
 ikyy.sendMessage(id, buttonMessage, MessageType.buttonsMessage, options)
 }
 // Nge Eval Terus Gw Sempurnain ( MyMans APIs & Rashid & Ra & Hexagonz )
-const sendButImage = async(id, text1, desc1, gam1, but = [], options = {}) => {
-kma = gam1
-mhan = await ikyy.prepareMessage(from, kma, image)
-const buttonMessages = {
-imageMessage: mhan.message.imageMessage,
-contentText: text1,
-footerText: desc1,
-buttons: but,
-headerType: 4
-}
-ikyy.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
-}
+const sendButImage = async(id, text1, desc1, vid1, but = [], options = {}) => {
+					them = vid1
+					mediaxxaa = await ikyy.prepareMessage(id, them, MessageType.image, {thumbnail: Buffer.alloc(0)})
+					imgmhan = mediaxxaa.message["ephemeralMessage"] ? mediaxxaa.message.ephemeralMessage : mediaxxaa
+					const buttonMessages = {
+						imageMessage: imgmhan.message.imageMessage,
+						contentText: text1,
+						footerText: desc1,
+						buttons: but,
+						headerType: 4
+						}
+					ikyy.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+				}
 // Pahamin dari function sendbutimage terus ini cuman gw bedain type ( MyMans & Rashid & Hexagonz )
 const sendButVideo = async(id, text1, desc1, vid1, but = [], options = {}) => {
 kma = vid1
@@ -609,6 +611,19 @@ headerType: 5
 }
 ikyy.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 }
+	const sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) => {
+					them = gam1
+					mediaxxaa = await ikyy.prepareMessage(id, them, MessageType.location, {thumbnail: them})
+					locmhan = mediaxxaa.message["ephemeralMessage"] ? mediaxxaa.message.ephemeralMessage : mediaxxaa
+					const buttonMessages = {
+						locationMessage: locmhan.message.locationMessage,
+						contentText: text1,
+						footerText: desc1,
+						buttons: but,
+						headerType: 6
+						}
+						ikyy.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+						}
                         
     //////FAKE FAKE 
     const fgclink = {
@@ -659,6 +674,9 @@ key: {
 		}
 	}
 }
+const katalog = (teks) => {
+             res = ikyy.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "RAMAc", "thumbnail": fakeimage, "surface": 'CATALOG' }}, {quoted:ftoko})
+             ikyy.relayWAMessage(res)
    //********** FUNCTION OFF**********//
    
    if (!mek.key.remoteJid.endsWith('@g.us') && offline){
@@ -876,11 +894,10 @@ break
 //////
   case 'menu':
                   case 'help':
-            gambar = fs.readFileSync('./media/help.jpeg')
-                    l = 1
+                  l = 1
                var nom = mek.participant
            const statuss = public ? 'PUBLIC': 'SELF'
-		if (simple == false) inimenu = `「 *${statuss}BOT - WA* 」
+		menu = `「 *${statuss} SELFBOT* 」
 
 ╭─❒ 「 User Info 」 ❒
 │◦➛*WA Version : ${ikyy.user.phone.wa_version}*
@@ -894,8 +911,11 @@ break
 │◦➛*Kasus Covid-19 Indonesia*  
 │◦➛*Terinfeksi :* ${copid[0].kasus}
 │◦➛*Kematian :* ${copid[0].kematian}
-│◦➛*Sembuh :* ${copid[0].sembuh}*
-└❏                    
+│◦➛*Sembuh :* ${copid[0].sembuh}
+└❏ 
+`
+
+ menu2 = `                                 
 ┏━━━•   
 ┣◪ 𝗠𝗔𝗞𝗘𝗥
 ┃
@@ -1047,10 +1067,8 @@ break
 ┣❒ ᴀɴᴜ ᴛᴇᴀᴍ
 ┗━━━•
 `
- 
-if (simple == true) inimenu = `「 *${statuss}BOT - WA* 」`
 
-ikyy.sendMessage(from, gambar, image,{quoted:freply, caption:inimenu})
+ikyy.sendButLocation(from, menu, menu2, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'CREATOR'}, type: 1},{buttonId: '.menumaker', buttonText:{displayText: 'MENUMAKER'}, type: 1}],{quoted:freply})
 break
 case 'menumaker':
 case 'maker':
@@ -1197,7 +1215,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 ┣❒ ${prefix}wolflogo text1 text2
 ┣❒ ${prefix}steel3d text1 text2
 ┣❒ ${prefix}wallgravity text1 text2
-•    ${prefix}shadow text
+┣❒ ${prefix}shadow text
 ┣❒ ${prefix}cup text
 ┣❒ ${prefix}cup1 text
 ┣❒ ${prefix}romance text
@@ -1231,7 +1249,7 @@ THANKS TO :
 Mhankbarbar
 Lolhuman
 `
-return reply(menumaker, text)
+return katalog(menumaker, text)
 break
 ////////FITUR DARI BANG GALANG
 case 'loli':
