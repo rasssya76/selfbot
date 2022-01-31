@@ -239,10 +239,7 @@ const addafk = (from) => {
     })
     return status
     }
-const katalog = (teks) => {
-             res = ikyy.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "Maker", "thumbnail": thumbnail, "surface": 'CATALOG' }}, {quoted:ftoko})
-             ikyy.relayWAMessage(res)
-        }
+
 
     function kyun(seconds){
     function pad(s){
@@ -419,6 +416,10 @@ ${demote}`
       infomek.splice(0, 4300)
       fs.writeFileSync('./database/off.json', JSON.stringify(infomek, null, 2))
     }
+    const katalog = (teks) => {
+             res = ikyy.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "Maker", "thumbnail": thumbnail, "surface": 'CATALOG' }}, {quoted:ftoko})
+             ikyy.relayWAMessage(res)
+        }
     		global.prefix
     		mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
   			global.blocked
@@ -1056,8 +1057,12 @@ break
 ┣❒ ᴀɴᴜ ᴛᴇᴀᴍ
 ┗━━━•
 `
+but = [
+   { buttonId: '.owner', buttonText: {displayText: 'CREATOR'}, type: 1 },
+   { buttonId: '.menumaker', buttonText:{displayText: 'MENUMAKER'}, type: 1 }
+    ],
 
-ikyy.sendButLocation(from, menu, menu2, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'CREATOR'}, type: 1},{buttonId: '.menumaker', buttonText:{displayText: 'MENUMAKER'}, type: 1}],{quoted:freply})
+ sendButLocation(from, menu, menu2, thumbnail, but)
 break
 case 'menumaker':
 case 'maker':			
@@ -2677,31 +2682,10 @@ case 'bikinquote':
                            var response = await ikyy.acceptInvite(codeInvite);
                            console.log(response);
                            reply('*Udah masuk gan_*')
-                           break
-                           
-                           
-                           case 'bc':
-					if (!mek.key.fromMe) return reply('*Ente owner?_*')
-					if (args.length < 1) return reply('.......')
-					anu = await ikyy.chats.all()
-					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : freply
-						bc = await ikyy.downloadMediaMessage(encmedia)
-						for (let _ of anu) {
-							ikyy.sendMessage(_.jid, bc, image, {caption: `*「 ZBROADCAST 」*\n\n${body.slice(4)}`})
-						}
-						reply('Suksess broadcast')
-					} else {
-						for (let _ of anu) {
-							sendMess(_.jid, `*「 ZBROADCAST 」*\n\n${body.slice(4)}`)
-						}
-						reply('Suksess broadcast')
-					}
-					break
-					
+                           break                        					
 					case 'restart':
 if (!mek.key.fromMe) return reply('*Ente owner?_*')
-reply('_Restarting BOT_')
+reply('_Restarting_')
 exec(`node main`)
 setTimeout( () => {
 					ikyy.sendMessage(from, '_1_', text) // ur cods
