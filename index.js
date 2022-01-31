@@ -1265,15 +1265,15 @@ case 'phubkomen':
 ////GA WORK
         //Random Images
         case 'memeindo':
-            const memeindox = await rugaapi.memeindo()
-            await ikyy.sendFileFromUrl(from, memeindox, 'memeindo.jpeg', 'Nih.....', )
+            const memeindox =   rugaapi.memeindo()
+              ikyy.sendFileFromUrl(from, memeindox, 'memeindo.jpeg', 'Nih.....', )
             .catch(() => {
                 ikyy.reply(from, 'Hayolohhh, ada yang error!!', )
             })
             break
         case 'darkjokes':
-            const darkjokesx = await rugaapi.darkjokes()
-            await ikyy.sendFileFromUrl(from, darkjokesx, 'memeindo.jpeg', 'Nih.....', )
+            const darkjokesx =   rugaapi.darkjokes()
+              ikyy.sendFileFromUrl(from, darkjokesx, 'memeindo.jpeg', 'Nih.....', )
             .catch(() => {
                 ikyy.reply(from, 'Hayolohhh, ada yang error!!', )
             })
@@ -1313,7 +1313,7 @@ case 'phubkomen':
             }
             break
         case 'memes':
-            const randmeme = await meme.random()
+            const randmeme =   meme.random()
             ikyy.sendFileFromUrl(from, randmeme, '', '', )
             .catch(() => {
                 ikyy.reply(from, 'Ada yang Error!', )
