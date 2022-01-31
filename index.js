@@ -1250,7 +1250,7 @@ Lolhuman
 `
 return reply(menumaker, text)
 break
-////////FITUR DARI BANG GALANG 
+/*
 case 'phubkomen':
 				if (args.length < 1) return reply(`Textnya Mana Cuy?\nContoh ${prefix}phubkomen ikyy|yamette`)
 				reply('wait...')
@@ -1261,6 +1261,7 @@ case 'phubkomen':
 				teted = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, teted, image, { quoted: mek, caption: 'Nih kack' })
 				break
+*/				
 ////GA WORK
         //Random Images
         case 'memeindo':
