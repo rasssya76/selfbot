@@ -1051,7 +1051,6 @@ break
 ┣❒ ${prefix}ɢᴏᴏɢʟᴇꜱᴇᴀʀᴄʜ
 ┣❒ ${prefix}ʏᴛꜱ
 ┣❒ ${prefix}ᴍᴀᴋᴇʀ
-┣❒ ${prefix}loli
 ┣❒ ${prefix}tahta
 ┣❒ ${prefix}nulis
 ┣❒ ${prefix}igstalk
@@ -1251,15 +1250,7 @@ Lolhuman
 `
 return reply(menumaker, text)
 break
-////////FITUR DARI BANG GALANG
-case 'loli':
-anu = await fetchJson('https://fdciabdul.tech/api/pinterest?keyword=loli', {method: 'get'})
-reply('wait....')
-var n = JSON.parse(JSON.stringify(anu));
-var nimek =  n[Math.floor(Math.random() * n.length)];
-pok = await getBuffer(nimek)
-ikyy.sendMessage(from, pok, image, {quoted: freply,  caption: `nih`})
-break 
+////////FITUR DARI BANG GALANG 
 case 'phubkomen':
 				if (args.length < 1) return reply(`Textnya Mana Cuy?\nContoh ${prefix}phubkomen ikyy|yamette`)
 				reply('wait...')
