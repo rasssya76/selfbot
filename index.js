@@ -888,14 +888,9 @@ freply(`「 *SELF-MODE* 」`)
 break   
 ////////
 //////
-  case 'menu':
+                  case 'menu':
                   case 'help':
-            gambar = fs.readFileSync('./media/help.jpeg')
-                    l = 1
-               var nom = mek.participant
-           const statuss = public ? 'PUBLIC': 'SELF'
-		case 'menu':
-                  case 'help':
+                  case 'rm':
                   l = 1
                var nom = mek.participant
            const statuss = public ? 'PUBLIC': 'SELF'
