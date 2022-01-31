@@ -613,20 +613,10 @@ headerType: 5
 }
 ikyy.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 }
-async function sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) => {
-					them = gam1
-					mediaxxaa = await ikyy.prepareMessage(id, them, MessageType.location, {thumbnail: them})
-					locmhan = mediaxxaa.message["ephemeralMessage"] ? mediaxxaa.message.ephemeralMessage : mediaxxaa
-					const buttonMessages = {
-						locationMessage: locmhan.message.locationMessage,
-						contentText: text1,
-						footerText: desc1,
-						buttons: but,
-						headerType: 6
-						}
-						ikyy.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
-						}
-                        
+ async function sendButLocation(id, text1, desc1, gam1, but = [], options = {}) {
+        const buttonMessages = { locationMessage: { jpegThumbnail: gam1 }, contentText: text1, footerText: desc1, buttons: but, headerType: 6 }
+        return ikyy.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+        }                     
     //////FAKE FAKE 
     const fgclink = {
 	"key": {
