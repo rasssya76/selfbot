@@ -933,7 +933,7 @@ break
 					uptime = process.uptime()
 					const timestampu = speed();
 					const totalChat = await ikyy.chats.all()
-					const latensi = speed() - timestampu
+					const latennsi = speed() - timestampu
 					var total = math(`${groups.length} ${privat.length}`)
 					const { wa_version, mcc, mnc, os_version, device_manufacturer, device_model } = ikyy.user.phone				
            const statuss = public ? 'PUBLIC': 'SELF'
@@ -951,7 +951,7 @@ MODE : ${statuss}
 Private Chat : ${privat.length}
 Group Chat : ${groups.length}
 Total Chat : ${totalChat.length}
-Speed : ${latensi.toFixed(4)} second
+Speed : ${latennsi.toFixed(4)} second
 Runtime : ${kyun(uptime)}
 Hit Today : ${hit_today.length}
 Baterai : ${baterai.battery}
