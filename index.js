@@ -433,7 +433,7 @@ ${demote}`
 			body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
 			budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
 				const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
-				hit_today.push(katalog)
+				hit_today.push(reply)
 			const args = body.trim().split(/ +/).slice(1)
 			const isCmd = body.startsWith(prefix)
 			chats = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
@@ -502,7 +502,7 @@ ${demote}`
 		    ikyy.sendMessage(from, audio, mp3, {quoted:frply})
 		    }
 			
-			const katalog = (teks) => {
+			const reply = (teks) => {
 				ikyy.sendMessage(from, teks, text, ikyyyy)
 			}
 			
@@ -861,7 +861,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 			}
 
 const isBtMsg = (type == 'buttonsResponseMessage') ? mek.message.buttonsResponseMessage.selectedButtonId : ''
-const isStMsg = (type == 'listResponseMessage') ? mek.message.listResponseMessage.singleSelectkatalog.selectedRowId : ''
+const isStMsg = (type == 'listResponseMessage') ? mek.message.listResponseMessage.singleSelectreply.selectedRowId : ''
 
 			// Cmd Button Msg
 
