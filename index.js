@@ -54,7 +54,6 @@ const qrcode = require("qrcode-terminal")
 const request = require('request')
 const imgbb = require('imgbb-uploader')
 const toMs = require('ms')
-const os = require('os')
 const ig = require('insta-fetcher')
 const screenshotmachine = require('screenshotmachine');
 const translate = require('./lib/translate')
