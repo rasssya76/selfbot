@@ -731,7 +731,7 @@ const katalog = (teks) => {
 
             addafk(mek.key.remoteJtext)
       heheh = ms(Date.now() - waktuafk) 
-      ikyy.sendMessage(mek.key.remoteJid,`*Mohon Maaf Saya sedang off !*\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik lalu\n\nSilahkan hubungi lagi nanti`,{ quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ?  { remoteJid: "6281515589573-1617740713@g.us" } : {})  }, message: { "videoMessage": { "title": `OFFLINE`,"h": `GUA OFF BRO👎🥴`,'duration': '19283', 'gifPlayback': 'true', 'caption': `GUA OFF BRO👎🥴`,'jpegThumbnail': fs.readFileSync(`./media/ikyy.jpeg`))}}}}) 
+      ikyy.sendMessage(mek.key.remoteJid,`*Mohon Maaf Saya sedang off !*\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik lalu\n\nSilahkan hubungi lagi nanti`,{ quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ?  { remoteJid: "6281515589573-1617740713@g.us" } : {})  }, message: { "videoMessage": { "title": `OFFLINE`,"h": `GUA OFF BRO👎🥴`,'duration': '19283', 'gifPlayback': 'true', 'caption': `GUA OFF BRO👎🥴`,'jpegThumbnail': fs.readFileSync(`./media/ikyy.jpeg`)}}}}) 
     }   
     if (mek.key.remoteJid.endsWith('@g.us') && offline) {
       if (!mek.key.fromMe){
@@ -743,7 +743,7 @@ const katalog = (teks) => {
                         if (isAfk(mek.key.remoteJtext)) return
                         addafk(mek.key.remoteJtext)
             heheh = ms(Date.now() - waktuafk)
-            ikyy.sendMessage(mek.key.remoteJid,`*Mohon Maaf Gw Sedang Offline!*\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik lalu\n\nSilahkan hubungi lagi nanti`,{ quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ?  { remoteJid: "6281515589573-1617740713@g.us" } : {})  }, message: { "videoMessage": { "title": `OFFLINE`,"h": `GUA OFF BRO👎🥴`,'duration': '19283', 'gifPlayback': 'true', 'caption': `GUA OFF BRO👎🥴`,'jpegThumbnail': fs.readFileSync(`./media/ikyy.jpeg`))}}}}) 
+            ikyy.sendMessage(mek.key.remoteJid,`*Mohon Maaf Gw Sedang Offline!*\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik lalu\n\nSilahkan hubungi lagi nanti`,{ quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ?  { remoteJid: "6281515589573-1617740713@g.us" } : {})  }, message: { "videoMessage": { "title": `OFFLINE`,"h": `GUA OFF BRO👎🥴`,'duration': '19283', 'gifPlayback': 'true', 'caption': `GUA OFF BRO👎🥴`,'jpegThumbnail': fs.readFileSync(`./media/ikyy.jpeg`)}}}}) 
           }   
             }
           }
