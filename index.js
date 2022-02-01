@@ -69,7 +69,7 @@ const loli = new lolis()
 const Exif = require('./lib/exif');
 const exif = new Exif();
 const util = require('util')
-const xa = require('xfarr-api')
+const hx = require('hxz-api')
 const emoji = require('node-emoji')
 const {
   newsCnn
@@ -141,6 +141,7 @@ const { help } = require('./src/help')
 const { wait, weton, week, jmn, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const { fetchJson, fetchText } = require('./lib/fetcher')
 const { recognize } = require('./lib/ocr')
+const { yta, ytv, igdl, upload, formatDate } = require('./lib/ytdl')
 const { exec } = require('child_process')
 const { uploadimg } = require('./lib/uploadimg')
 const { addbot, addBot } = require('./lib/addbot')
@@ -1315,7 +1316,7 @@ case 'yts':
 case 'ytsearch':
 if (args.length < 1) return reply('Yang mau di cari apaan?')
 teks = args.join(' ')
-reply('Loading.... ')
+reply(mess.wait)
 res = await yts(`${teks}`)
 kant = ``
 for (let i of res.all) {
@@ -1338,7 +1339,7 @@ break
 case 'gimage':
 case 'googleimage':
 if (args.length < 1) return reply('Apa Yang Mau Dicari?')
-reply('Loading.... ')
+reply(mess.wait)
 teks = args.join(' ')
 res = await googleImage(teks, google)
 function google(error, result){
@@ -1404,7 +1405,7 @@ case 'googlesearch':
 case 'ggs':
 if (args.length < 1) return reply('Yang mau di cari apaan?')
 teks = args.join(' ')
-reply('Loading.... ')
+reply(mess.wait)
 res = await ggs({'query' : `${teks}`})
 kant = ``
 for (let i of res) {
@@ -1424,7 +1425,7 @@ case 'ocr':
 if ((isMedia && !mek.message.videoMessage || isTagedImage) && args.length == 0) {
 const encmedia = isTagedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
-reply('Loading.... ')
+reply(mess.wait)
 await recognize(media, {lang: 'eng+ind', oem: 1, psm: 3}).then(teks => {
 reply(teks.trim())
 fs.unlinkSync(media)
@@ -1953,7 +1954,7 @@ break
 				ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
 				
                                         if (!isQuotedSticker) return reply('Reply stiker nya')
-                                        reply('Loading.... ')
+                                        reply(mess.wait)
                                         if (mek.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.isAnimated === true){
                                         const encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
                                         const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
@@ -2037,7 +2038,7 @@ break
 					ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
 				
 if ((isMedia && !mek.videoMessage || isQuotedImage)) {
-    reply('Loading.... ')
+    reply(mess.wait)
 var encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace("quotedM", "m")).message.extendedTextMessage.contextInfo : mek
 var media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 anu = await imgbb("3ea1465ef91578a90ee81f7d41c59a1f", media)
@@ -2064,7 +2065,7 @@ exec(`ffmpeg -i ${ehgmediabi} ${ran}`, (err) => {
 								let buffur = Buffer.from(res.base64img, 'base64')
 								fs.writeFileSync(ranp, buffur)
 								var imgbb = require('imgbb-uploader')
-								reply('Loading.... ')
+								reply(mess.wait)
 								imgbb("68cb5bee517bce4f74b0e910a5d96346", ranp)
 								.then(anu => {
 								sendStickerUrl(from, anu.display_url)
@@ -2082,7 +2083,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
  var ghs = body.slice(11)
 									if ((isMedia || isQuotedImage) && args.length == 0) {
 										   ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-                                        reply('Loading.... ')
+                                        reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.jpg')
                                         teks = `${uploade.result.image}`
@@ -2090,7 +2091,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 										sendStickerUrl(from, buffer)
 									 } else if (isQuotedSticker && args.length == 0) {
 										   ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                        reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -2103,7 +2104,7 @@ case 'stickwasted':
 									 var ghs = body.slice(13)
 									if ((isMedia || isQuotedImage) && args.length == 0) {
 										   ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-                                        reply('Loading.... ')
+                                        reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.jpg')
                                         teks = `${uploade.result.image}`
@@ -2111,7 +2112,7 @@ case 'stickwasted':
 										sendStickerUrl(from, buffer)
 									 } else if (isQuotedSticker && args.length == 0) {
 										   ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                        reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -2120,7 +2121,7 @@ case 'stickwasted':
 									 }
 									break
 case 'smeme': 
-reply('Loading.... ')
+reply(mess.wait)
 top = arg.split('|')[0]
 bottom = arg.split('|')[1]
 var imgbb = require('imgbb-uploader')
@@ -2143,7 +2144,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 									 var ghs = body.slice(11)
 									 if (mek.message.extendedTextMessage != undefined || mek.message.extendedTextMessage != null) {
                                           ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                        reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -2156,7 +2157,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 									 var ghs = body.slice(12)
 									 if (mek.message.extendedTextMessage != undefined || mek.message.extendedTextMessage != null) {
                                           ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                        reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -2173,7 +2174,7 @@ var tex2 = body.slice(12).split('|')[1]
 if (!tex2) return reply('Format salah!')
 									 if (mek.message.extendedTextMessage != undefined || mek.message.extendedTextMessage != null) {
                                           ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                        reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -2193,7 +2194,7 @@ if ((isMedia && !mek.videoMessage || isQuotedImage)) {
 var tex1 = body.slice(11).split('|')[0]
 var tex2 = body.slice(11).split('|')[1]
 if (!tex2) return reply('Format salah!')
-    reply('Loading.... ')
+    reply(mess.wait)
 var encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace("quotedM", "m")).message.extendedTextMessage.contextInfo : mek
 var media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 anu = await imgbb("3ea1465ef91578a90ee81f7d41c59a1f", media)
@@ -2278,7 +2279,7 @@ var pack = kls.split("|")[0];
 var author = kls.split("|")[1];
 const getbuff = isTagedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 const dlfile = await ikyy.downloadMediaMessage(getbuff)
-reply('Loading.... ')
+reply(mess.wait)
 const bas64 = `data:image/jpeg;base64,${dlfile.toString('base64')}`
 var mantap = await convertSticker(bas64, `${author}`, `${pack}`)
 var imageBuffer = new Buffer.from(mantap, 'base64');
@@ -2320,7 +2321,7 @@ break
 						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 						ran = getRandom('.webp')
-						reply('Loading.... ')
+						reply(mess.wait)
 						await ffmpeg(`./${media}`)
 							.inputFormat(media.split('.')[1])
 							.on('start', function (cmd) {
@@ -2347,7 +2348,7 @@ break
 						const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 						ranw = getRandom('.webp')
 						ranp = getRandom('.png')
-						reply('Loading.... ')
+						reply(mess.wait)
 						keyrmbg = '5LXrQ1MAYDnE1iib6B6NaHMv'
 						await removeBackgroundFromImageFile({path: media, apiKey: keyrmbg.result, size: 'auto', type: 'auto', ranp}).then(res => {
 							fs.unlinkSync(media)
@@ -3005,7 +3006,7 @@ sendButLocation(from, captions, '©', thumbyt, [{buttonId: `.ytmp4 ${mulaikah}`,
 				
 				case 'play2':   
 				  if (args.length < 1) return reply('*Masukan judul nya?*')
-                reply('Loading.... ')
+                reply(mess.wait)
 				play = args.join(" ")
 				anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp4?q=${play}&apikey=apivinz`)
 				if (anu.error) return reply(anu.error)
@@ -3030,7 +3031,7 @@ Source : ${anu.result.source}
 Username : ${anu.owner}
 Caption : ${anu.caption}
 `
-					reply('Loading.... ')
+					reply(mess.wait)
 					buffer = await getBuffer(anu.result[0].url)
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result[0].url}.mp4`, quoted: ftroli, caption : tods})
 					break 
@@ -3043,67 +3044,28 @@ case 'fb':
 					
 *Judul :* ${anu.result.judul}`
 					
-					reply('Loading.... ')
+					reply(mess.wait)
 					buffer = await getBuffer(anu.result.url)
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.url}.mp4`, quoted: ftroli, caption: wing})
-					break 
-					
+					break 					
+case 'tiktokdl':
 case 'tiktok':
-sendButLocation(from, 'Silahkan pilih media yang ingin kamu download', '©RamaXGans ', thumbnail, [{buttonId: `.tiktokwm ${q}`, buttonText: {displayText: 'WM'}, type: 1},{buttonId: `.tiktoknowm ${q}`, buttonText:{displayText: 'NOWM'}, type: 1},{buttonId: `.tiktokmusic ${q}`, buttonText:{displayText: 'AUDIO'}, type: 1}], {quoted: mek})
-						
-             break
-					
-					case 'tiktoknowm':   
-			if (!q) return reply('Linknya?')
-			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
-			reply(mess.wait)
-			let nowem = q
-			hx.ttdownloader(nowem)
-			.then(result => {
-				const { wm, nowm, audio } = result
-				axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
-				.then(async (a) => {
-					me = `*Link* : ${a.data}`
-					noweem = await getBuffer(nowm)
-					ikyy.sendMessage(from,noweem , MessageType.document, {mimetype: 'video/mp4',filename: `Tiktok Download.mp4`,quoted: ftroli})
-					})
-				}).catch((err) => reply(`Link tidak valid`))
-			
-             break 
-case 'tiktokwm':
-			if (!q) return reply('Linknya?')
-			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
-			reply(mess.wait)
-			let wem = args.join(' ')
-			hx.ttdownloader(wem)
-			.then(result => {
-				const { wm, nowm, audio } = result
-				axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
-				.then(async (a) => {
-					me = `*Link* : ${a.data}`
-					weem = await getBuffer(wm)
-					ikyy.sendMessage(from,weem , MessageType.document, {mimetype: 'video/mp4',filename: `Tiktok Wm.mp4`,quoted: ftroli})
-					})
-				}).catch((err) => reply(`Link tidak valid`))
-			
-             break 
-case 'tiktokmusic': case 'tiktokaudio':  
-			if (!q) return reply('Linknya?')
-			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid Link')
-			reply(mess.wait)
-			let audi = q
-			hx.ttdownloader(audi)
-			.then(result => {
-				const { wm, nowm, audio } = result
-				axios.get(`https://tinyurl.com/api-create.php?url=${audio}`)
-				.then(async (a) => {
-					audnha = await getBuffer(audio)
-					ikyy.sendMessage(from,audnha , MessageType.document, {mimetype: 'audio/mp4',filename: `Tiktok Music.mp3`,quoted: ftroli})
-					})
-				}).catch((err) => reply(`Link tidak valid`))
-			
-             break
-					
+ 	case 'ttdl':
+ 	case 'tiktokmp4':
+ 		if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply(mess.Iv)
+ 		if (!q) return fakegroup('Linknya?')
+ 		sticWait(from)
+		hx.ttdownloader(`${args[0]}`)
+    		.then(result => {
+    		const { wm, nowm, audio } = result
+    		axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
+    		.then(async (a) => {
+    		me = `*Link* : ${a.data}`
+		pebz.sendMessage(from,{url:`${nowm}`},video,{mimetype:'video/mp4',quoted:mek,caption:me})
+		})
+		})
+     		.catch(e => console.log(e))
+     		break	
 				case 'ytmp4':
 				  if (args.length < 1) return reply('*Masukan Url nya?*')
 ini_link = args[0]
@@ -3116,7 +3078,7 @@ ini_link = args[0]
 					 
 *[ Wait ]Tunggu Sebentar kak...*`
 					 buff = await getBuffer(anu.thumbnail)
-					reply('Loading.... ')
+					reply(mess.wait)
 					buffer = await getBuffer(anu.url)
 					ikyy.sendMessage(from, buff, image, {quoted: ftroli, caption: ytt})
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.url}.mp4`, quoted: ftroli, caption: 'Nih Gan'})
@@ -3133,7 +3095,7 @@ ini_link = args[0]
 					 
 *[Wait]Tunggu Sebentar kak...*`
 					 buff = await getBuffer(anu.thumbnail)
-					reply('Loading.... ')
+					reply(mess.wait)
 					buffer = await getBuffer(anu.url)
 					ikyy.sendMessage(from, buff, image, {quoted: ftroli, caption: ytt})
 					ikyy.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.url}.mp3`, quoted: ftroli})
@@ -3165,14 +3127,14 @@ case 'searchmusic':
 
 //********** UPLOAD **********
 case 'upswtext':
-  if (!mek.key.fromMe) return reply('*Ente owner?')
+  if (!mek.key.fromMe) return reply(only.ownerG)
 					ikyy.updatePresence(from, Presence.composing)
 					ikyy.sendMessage('status@broadcast', `${q}`, extendedText)
 					ikyy.sendMessage(from, `Sukses Up story wea teks ${q}`, text,{quoted : freply})
 					break
 					
 				case 'upswimg':
-				  if (!mek.key.fromMe) return reply('*Ente owner?')
+				  if (!mek.key.fromMe) return reply(only.ownerG)
 					ikyy.updatePresence(from, Presence.composing)
 					if (isQuotedImage) {
 						const swsw = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
@@ -3184,7 +3146,7 @@ case 'upswtext':
 					break
 					
 				case 'upswvideo':
-				  if (!mek.key.fromMe) return reply('*Ente owner?')
+				  if (!mek.key.fromMe) return reply(only.ownerG)
 					ikyy.updatePresence(from, Presence.composing)
 					if (isQuotedVideo) {
 						const swsw = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
