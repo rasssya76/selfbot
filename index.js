@@ -415,11 +415,7 @@ ${demote}`
         if (urutan_pesan === 5000) {
       infomek.splice(0, 4300)
       fs.writeFileSync('./database/off.json', JSON.stringify(infomek, null, 2))
-    }
-    const katalog = (teks) => {
-             res = ikyy.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "Maker", "thumbnail": thumbnail, "surface": 'CATALOG' }}, {quoted:ftoko})
-             ikyy.relayWAMessage(res)
-        }
+    }    
     		global.prefix
     		mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
   			global.blocked
@@ -437,7 +433,7 @@ ${demote}`
 			body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
 			budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
 				const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
-				hit_today.push(command)
+				hit_today.push(katalog)
 			const args = body.trim().split(/ +/).slice(1)
 			const isCmd = body.startsWith(prefix)
 			chats = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
@@ -495,7 +491,7 @@ ${demote}`
 			}
 			
 				const sendImage = (teks) => {
-		    ikyy.sendMessage(from, teks, image, {quoted:freply})
+		    ikyy.sendMessage(from, teks, image, {quoted:frply})
 		    }
 		    
 		    const costum = (pesan, tipe, target, target2) => {
@@ -503,15 +499,15 @@ ${demote}`
 			}
 			
 		    const sendPtt = (teks) => {
-		    ikyy.sendMessage(from, audio, mp3, {quoted:freply})
+		    ikyy.sendMessage(from, audio, mp3, {quoted:frply})
 		    }
 			
-			const reply = (teks) => {
+			const katalog = (teks) => {
 				ikyy.sendMessage(from, teks, text, ikyyyy)
 			}
 			
 			const sendMess = (hehe, teks) => {
-				ikyy.sendMessage(hehe, teks, text,{quoted : freply})
+				ikyy.sendMessage(hehe, teks, text,{quoted : frply})
 			}
 			
 			const sendMediaURL = async(to, url, text="", mids=[]) =>{
@@ -638,11 +634,11 @@ ikyy.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
     
 const fdocu = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "documentMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "title": fake, "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('media/ikyy.jpeg')}}}
   
-          
+const ftroli ={"key": {   "fromMe": false,"participant":"0@s.whatsapp.net",   "remoteJid": "6289523258649-1604595598@g.us"  }, "message": {orderMessage: {itemCount: 128,status: 200, thumbnail: thumbnail, surface: 200, message: `ᴄᴍᴅ ᴇxᴇᴄ : ${command}`, orderTitle: 'zeeoneofc', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}        
 
 const troli =  {key: { fromMe: false,remoteJid: "status@broadcast", participant: '0@s.whatsapp.net'}, message: {orderMessage: {itemCount: 999999, status: 200, thumbnail: fakeimage, surface: 200, message: fake, orderTitle: 'ikyy', sellerJid: '0@s.whatsapp.net'} } } 
 
-const freply = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": fake, "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync(`media/ikyy.jpeg`)} } }
+const frply = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": fake, "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync(`media/ikyy.jpeg`)} } }
 
 const ftoko = {
 key: {
@@ -667,6 +663,10 @@ key: {
 		}
 	}
 }
+const katalog = (teks) => {
+             res = ikyy.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 986, "message": teks, "footerText": "RamaGans", "thumbnail": thumbnail, "surface": 'CATALOG' }}, {quoted:ftroli})
+             ikyy.relayWAMessage(res)
+        }
    //********** FUNCTION OFF**********//
    
    if (!mek.key.remoteJid.endsWith('@g.us') && offline){
@@ -777,7 +777,7 @@ const sendFileFromUrl = async(link, type, options) => {
 	fetch(link).then((hasil) => {
 	ikyy.sendMessage(from, hasil, type, options).catch(e => {
 	ikyy.sendMessage(from, { url : link }, type, options).catch(e => {
-	  reply('_[ ! ] Error Gagal Dalam Mendownload Dan Mengirim Media_')
+	  katalog('_[ ! ] Error Gagal Dalam Mendownload Dan Mengirim Media_')
 	  console.log(e)
 	})
 	})
@@ -861,7 +861,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 			}
 
 const isBtMsg = (type == 'buttonsResponseMessage') ? mek.message.buttonsResponseMessage.selectedButtonId : ''
-const isStMsg = (type == 'listResponseMessage') ? mek.message.listResponseMessage.singleSelectReply.selectedRowId : ''
+const isStMsg = (type == 'listResponseMessage') ? mek.message.listResponseMessage.singleSelectkatalog.selectedRowId : ''
 
 			// Cmd Button Msg
 
@@ -871,14 +871,14 @@ if (!mek.key.fromMe && !isOwner) return
 if (banChats === false) return
 uptime = process.uptime()
 banChats = false
-freply(`「 *PUBLIC-MODE* 」`)
+frply(`「 *PUBLIC-MODE* 」`)
 break
 case 'selfmans':
 if (!mek.key.fromMe && !isOwner) return
 if (banChats === true) return
 uptime = process.uptime()
 banChats = true
-reply(`「 *SELF-MODE* 」`)
+katalog(`「 *SELF-MODE* 」`)
 break   
 ////////
 //////
@@ -1246,15 +1246,15 @@ break
 ////////FITUR DARI BANG GALANG
 case 'loli':
 anu = await fetchJson('https://fdciabdul.tech/api/pinterest?keyword=loli', {method: 'get'})
-reply('wait....')
+katalog('wait....')
 var n = JSON.parse(JSON.stringify(anu));
 var nimek =  n[Math.floor(Math.random() * n.length)];
 pok = await getBuffer(nimek)
-ikyy.sendMessage(from, pok, image, {quoted: freply,  caption: `nih`})
+ikyy.sendMessage(from, pok, image, {quoted: frply,  caption: `nih`})
 break 
 case 'phubkomen':
-				if (args.length < 1) return reply(`Textnya Mana Cuy?\nContoh ${prefix}phubkomen ikyy|yamette`)
-				reply('wait...')
+				if (args.length < 1) return katalog(`Textnya Mana Cuy?\nContoh ${prefix}phubkomen ikyy|yamette`)
+				katalog('wait...')
 				ct = body.slice(10)
 				teks1 = ct.split("|")[0];
                 teks2 = ct.split("|")[1];
@@ -1268,18 +1268,18 @@ case 'phubkomen':
             const memeindox = await rugaapi.memeindo()
             await ikyy.sendFileFromUrl(from, memeindox, 'memeindo.jpeg', 'Nih.....', )
             .catch(() => {
-                ikyy.reply(from, 'Hayolohhh, ada yang error!!', )
+                ikyy.katalog(from, 'Hayolohhh, ada yang error!!', )
             })
             break
         case 'darkjokes':
             const darkjokesx = await rugaapi.darkjokes()
             await ikyy.sendFileFromUrl(from, darkjokesx, 'memeindo.jpeg', 'Nih.....', )
             .catch(() => {
-                ikyy.reply(from, 'Hayolohhh, ada yang error!!', )
+                ikyy.katalog(from, 'Hayolohhh, ada yang error!!', )
             })
             break
         case 'anime':
-            if (args.length == 0) return ikyy.reply(from, `Untuk menggunakan ${prefix}anime\nSilahkan ketik: ${prefix}anime [query]\nContoh: ${prefix}anime random\n\nquery yang tersedia:\nrandom, waifu, husbu, neko`, )
+            if (args.length == 0) return ikyy.katalog(from, `Untuk menggunakan ${prefix}anime\nSilahkan ketik: ${prefix}anime [query]\nContoh: ${prefix}anime random\n\nquery yang tersedia:\nrandom, waifu, husbu, neko`, )
             if (args[0] == 'random' || args[0] == 'waifu' || args[0] == 'husbu' || args[0] == 'neko') {
                 fetch('https://raw.githubusercontent.com/ikyyZ/grabbed-results/main/random/anime/' + args[0] + '.txt')
                 .then(res => res.text())
@@ -1289,14 +1289,14 @@ case 'phubkomen':
                     ikyy.sendFileFromUrl(from, randomnimex, '', 'Nee..', )
                 })
                 .catch(() => {
-                    reply(from, 'Ada yang Error!', )
+                    katalog(from, 'Ada yang Error!', )
                 })
             } else {
-                reply(from, `Maaf query tidak tersedia. Silahkan ketik ${prefix}anime untuk melihat list query`)
+                katalog(from, `Maaf query tidak tersedia. Silahkan ketik ${prefix}anime untuk melihat list query`)
             }
             break
         case 'kpop':
-            if (args.length == 0) return ikyy.reply(from, `Untuk menggunakan ${prefix}kpop\nSilahkan ketik: ${prefix}kpop [query]\nContoh: ${prefix}kpop bts\n\nquery yang tersedia:\nblackpink, exo, bts`, )
+            if (args.length == 0) return ikyy.katalog(from, `Untuk menggunakan ${prefix}kpop\nSilahkan ketik: ${prefix}kpop [query]\nContoh: ${prefix}kpop bts\n\nquery yang tersedia:\nblackpink, exo, bts`, )
             if (args[0] == 'blackpink' || args[0] == 'exo' || args[0] == 'bts') {
                 fetch('https://raw.githubusercontent.com/ikyyZ/grabbed-results/main/random/kpop/' + args[0] + '.txt')
                 .then(res => res.text())
@@ -1306,53 +1306,53 @@ case 'phubkomen':
                     ikyy.sendFileFromUrl(from, randomkpopx, '', 'Nee..', )
                 })
                 .catch(() => {
-                    ikyy.reply(from, 'Ada yang Error!', )
+                    ikyy.katalog(from, 'Ada yang Error!', )
                 })
             } else {
-                ikyy.reply(from, `Maaf query tidak tersedia. Silahkan ketik ${prefix}kpop untuk melihat list query`)
+                ikyy.katalog(from, `Maaf query tidak tersedia. Silahkan ketik ${prefix}kpop untuk melihat list query`)
             }
             break
         case 'memes':
             const randmeme = await meme.random()
             ikyy.sendFileFromUrl(from, randmeme, '', '', )
             .catch(() => {
-                ikyy.reply(from, 'Ada yang Error!', )
+                ikyy.katalog(from, 'Ada yang Error!', )
             })
             break
         
         // Search Any
 	case 'dewabatch':
-		if (args.length == 0) return ikyy.reply(from, `Untuk mencari anime batch dari Dewa Batch, ketik ${prefix}dewabatch judul\n\nContoh: ${prefix}dewabatch naruto`, )
+		if (args.length == 0) return ikyy.katalog(from, `Untuk mencari anime batch dari Dewa Batch, ketik ${prefix}dewabatch judul\n\nContoh: ${prefix}dewabatch naruto`, )
 		rugaapi.dewabatch(args[0])
 		.then(async(res) => {
 		await ikyy.sendFileFromUrl(from, `${res.link}`, '', `${res.text}`, )
 		})
 		break
         case 'images':
-            if (args.length == 0) return ikyy.reply(from, `Untuk mencari gambar dari pinterest\nketik: ${prefix}images [search]\ncontoh: ${prefix}images naruto`, )
+            if (args.length == 0) return ikyy.katalog(from, `Untuk mencari gambar dari pinterest\nketik: ${prefix}images [search]\ncontoh: ${prefix}images naruto`, )
             const cariwall = body.slice(8)
             const hasilwall = await images.fdci(cariwall)
             await ikyy.sendFileFromUrl(from, hasilwall, '', '', )
             .catch(() => {
-                ikyy.reply(from, 'Ada yang Error!', )
+                ikyy.katalog(from, 'Ada yang Error!', )
             })
             break
         case 'sreddit':
-            if (args.length == 0) return ikyy.reply(from, `Untuk mencari gambar dari sub reddit\nketik: ${prefix}sreddit [search]\ncontoh: ${prefix}sreddit naruto`, )
+            if (args.length == 0) return ikyy.katalog(from, `Untuk mencari gambar dari sub reddit\nketik: ${prefix}sreddit [search]\ncontoh: ${prefix}sreddit naruto`, )
             const carireddit = body.slice(9)
             const hasilreddit = await images.sreddit(carireddit)
             await ikyy.sendFileFromUrl(from, hasilreddit, '', '', )
             .catch(() => {
-                ikyy.reply(from, 'Ada yang Error!', )
+                ikyy.katalog(from, 'Ada yang Error!', )
             })
 	    break
         case 'resep':
-            if (args.length == 0) return ikyy.reply(from, `Untuk mencari resep makanan\nCaranya ketik: ${prefix}resep [search]\n\ncontoh: ${prefix}resep tahu`, )
+            if (args.length == 0) return ikyy.katalog(from, `Untuk mencari resep makanan\nCaranya ketik: ${prefix}resep [search]\n\ncontoh: ${prefix}resep tahu`, )
             const cariresep = body.slice(7)
             const hasilresep = await resep.resep(cariresep)
-            await ikyy.reply(from, hasilresep + '\n\nIni kak resep makanannya..', )
+            await ikyy.katalog(from, hasilresep + '\n\nIni kak resep makanannya..', )
             .catch(() => {
-                ikyy.reply(from, 'Ada yang Error!', )
+                ikyy.katalog(from, 'Ada yang Error!', )
             })
             break
         case 'nekopoi':
@@ -1364,34 +1364,34 @@ case 'phubkomen':
                     for (let i = 0; i < res.links.length; i++) {
                         heheq += `${res.links[i]}\n`
                     }
-                    ikyy.reply(from, `Title: ${res.title}\n\nLink:\n${heheq}\nmasih tester bntr :v`)
+                    ikyy.katalog(from, `Title: ${res.title}\n\nLink:\n${heheq}\nmasih tester bntr :v`)
                 })
             })
             .catch(() => {
-                ikyy.reply(from, 'Ada yang Error!', )
+                ikyy.katalog(from, 'Ada yang Error!', )
             })
             break
 case 'antilink':
-if (!isGroup) return reply(mess.only.group)
-if (!isGroupAdmins) return reply(mess.only.admin)
-if (args.length < 1) return reply('hmm')
+if (!isGroup) return katalog(mess.only.group)
+if (!isGroupAdmins) return katalog(mess.only.admin)
+if (args.length < 1) return katalog('hmm')
 if (Number(args[0]) === 1) {
-if (isAntiLink) return reply('Mode Antilink sudah aktif')
+if (isAntiLink) return katalog('Mode Antilink sudah aktif')
 antilenk.push(from)
 fs.writeFileSync('./src/antilink.json', JSON.stringify(antilenk))
-reply('Sukses mengaktifkan mode anti link di group ini')
+katalog('Sukses mengaktifkan mode anti link di group ini')
 } else if (Number(args[0]) === 0) {
 antilenk.splice(from, 1)
 fs.writeFileSync('./src/antilink.json', JSON.stringify(antilenk))
-reply('Sukes menonaktifkan mode anti link di group ini')
+katalog('Sukes menonaktifkan mode anti link di group ini')
 } else {
-reply('1 untuk mengaktifkan, 0 untuk menonaktifkan')
+katalog('1 untuk mengaktifkan, 0 untuk menonaktifkan')
 }
 break
 
 case 'playvid':  
         case 'playvideo':
-            if (args.length === 0) return reply(`Kirim perintah *${prefix}video* _Judul lagu yang akan dicari_`)
+            if (args.length === 0) return katalog(`Kirim perintah *${prefix}video* _Judul lagu yang akan dicari_`)
             srch = q
             aramas = await yts(srch);
             aramat = aramas.all 
@@ -1405,11 +1405,11 @@ case 'playvid':
                         if (Number(filesize) >= 100000) return sendMediaURL(from, thumb, `*「 PLAY VIDEO 」*\n\n*Title* : ${title}\n*Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Untuk durasi lebih dari batas disajikan dalam mektuk link_`)
                         const captions = `*「 PLAY VIDEO 」*\n\n*Title* : ${title}\n*Ext* : MP4\n*Size* : ${filesizeF}\n*Link* : ${a.data}\n\n_Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                         sendMediaURL(from, thumb, captions)
-                        await sendMediaURL(from, dl_link).catch(() => reply('error'))
+                        await sendMediaURL(from, dl_link).catch(() => katalog('error'))
                         })                
                         })
                         } catch (err) {
-                        reply(mess.error.api)
+                        katalog(mess.error.api)
                         }
                    break 
 case 'emo':
@@ -1424,9 +1424,9 @@ console. log(teks8)
 break
 case 'yts':
 case 'ytsearch':
-if (args.length < 1) return reply('Yang mau di cari apaan?')
+if (args.length < 1) return katalog('Yang mau di cari apaan?')
 teks = args.join(' ')
-reply('Loading.... ')
+katalog('Loading.... ')
 res = await yts(`${teks}`)
 kant = ``
 for (let i of res.all) {
@@ -1448,12 +1448,12 @@ sendFileFromUrl(res.all[0].image, image, {quoted: ftoko, caption: akhir})
 break
 case 'gimage':
 case 'googleimage':
-if (args.length < 1) return reply('Apa Yang Mau Dicari?')
-reply('Loading.... ')
+if (args.length < 1) return katalog('Apa Yang Mau Dicari?')
+katalog('Loading.... ')
 teks = args.join(' ')
 res = await googleImage(teks, google)
 function google(error, result){
-if (error){ return reply('_[ ! ] Error Terjari Kesalahan Atau Hasil Tidak Ditemukan_')}
+if (error){ return katalog('_[ ! ] Error Terjari Kesalahan Atau Hasil Tidak Ditemukan_')}
 else {
 var gugIm = result
 var random =  gugIm[Math.floor(Math.random() * gugIm.length)].url
@@ -1462,7 +1462,7 @@ sendFileFromUrl(random, image, {quoted: ftoko, caption: `*Hasil Pencarian Dari :
 }
 break
 case 'igstalk':
-            if (!q) return reply('Usernamenya?')
+            if (!q) return katalog('Usernamenya?')
             ig.fetchUser(`${args.join(' ')}`).then(Y => {
             console.log(`${args.join(' ')}`)
             ten = `${Y.profile_pic_url_hd}`
@@ -1472,20 +1472,20 @@ case 'igstalk':
             break
 case 'tiktokstalk':
 					try {
-						if (args.length < 1) return reply('Usernamenya mana?')
+						if (args.length < 1) return katalog('Usernamenya mana?')
 						let { user, stats } = await tik.getUserProfileInfo(args[0])
-						reply(yag.wait())
+						katalog(yag.wait())
 						teks = `*ID* : ${user.id}\n*Username* : ${user.uniqueId}\n*Nickname* : ${user.nickname}\n*Followers* : ${stats.followerCount}\n*Followings* : ${stats.followingCount}\n*Posts* : ${stats.videoCount}\n*Luv* : ${stats.heart}\n`
 						buffer = await getBuffer(user.avatarLarger)
 						ikyy.sendMessage(from, buffer, image, {quoted: mek, caption: teks})
 					} catch (e) {
 						console.log(`Error :`, color(e,'red'))
-						reply('username tidak valid')
+						katalog('username tidak valid')
 					}
 					break
 case 'ghstalk': case 'githubstalk':
 try {
-if (!q) return reply('Usernamenya?')
+if (!q) return katalog('Usernamenya?')
 await fetchJson(`https://api.github.com/users/${args.join(' ')}`).then(Y => {
             console.log(`githubStalker`)
            var ten = `${Y.avatar_url}`
@@ -1494,28 +1494,28 @@ await fetchJson(`https://api.github.com/users/${args.join(' ')}`).then(Y => {
             }) 
 } catch (e) {
 						console.log(`Error :`, color(e,'red'))
-						reply('username tidak valid')
+						katalog('username tidak valid')
 					}
 					break
 case 'nulis':
 case 'tulis':
-if (args.length < 1) return reply('Yang mau di tulis apaan?')
+if (args.length < 1) return katalog('Yang mau di tulis apaan?')
 teks = args.join(' ')
-reply(mess.wait)
+katalog(mess.wait)
 nulis = encodeURIComponent(teks)
 res = await axios.get(`https://dt-04.herokuapp.com/nulis?text=${nulis}`)
-if (res.data.error) return reply(res.data.error)
+if (res.data.error) return katalog(res.data.error)
 buff = Buffer.from(res.data.result.split(',')[1], 'base64')
 ikyy.sendMessage(from, buff, image, {quoted: mek, caption: mess.success}).catch(e => {
-return reply('_[ ! ] Error Gagal Dalam Mendownload Dan Mengirim File_')
+return katalog('_[ ! ] Error Gagal Dalam Mendownload Dan Mengirim File_')
 })
 break
 case 'google':
 case 'googlesearch':
 case 'ggs':
-if (args.length < 1) return reply('Yang mau di cari apaan?')
+if (args.length < 1) return katalog('Yang mau di cari apaan?')
 teks = args.join(' ')
-reply('Loading.... ')
+katalog('Loading.... ')
 res = await ggs({'query' : `${teks}`})
 kant = ``
 for (let i of res) {
@@ -1528,27 +1528,27 @@ kant += `  *Google*
 `
 }
 var akhir = kant.trim()
-reply(akhir)
+katalog(akhir)
 break
 break
 case 'ocr':
 if ((isMedia && !mek.message.videoMessage || isTagedImage) && args.length == 0) {
 const encmedia = isTagedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
-reply('Loading.... ')
+katalog('Loading.... ')
 await recognize(media, {lang: 'eng+ind', oem: 1, psm: 3}).then(teks => {
-reply(teks.trim())
+katalog(teks.trim())
 fs.unlinkSync(media)
 }).catch(err => {
-reply(err.message)
+katalog(err.message)
 fs.unlinkSync(media)
 })
 } else {
-reply('Tag Foto Yang Mau Dijadikan Text!')
+katalog('Tag Foto Yang Mau Dijadikan Text!')
 }
 break
 case 'tagall':
-					if (!isGroup) return reply(mess.only.group)
+					if (!isGroup) return katalog(mess.only.group)
 					members_id = []
 					teks = (args.length > 1) ? body.slice(8).trim() : ''
 					teks += '\n\n'
@@ -1561,15 +1561,15 @@ case 'tagall':
        //MAKER MENU THX LOLHUMAN
 case 'buggc':
 await ikyy.toggleDisappearingMessages(from)
-reply("⤳𝙓ͯ𝙘ͨ𝙤ͦ𝙙ͩ𝙚ͤ 𝙬ⷠ𝙖ⷠ𝙨ⷠ 𝙝𝙚𝙧𝙚")
+katalog("⤳𝙓ͯ𝙘ͨ𝙤ͦ𝙙ͩ𝙚ͤ 𝙬ⷠ𝙖ⷠ𝙨ⷠ 𝙝𝙚𝙧𝙚")
 break
 case 'bug':
 					
-					if (args.length < 1) return reply('Jumlahnya?')
+					if (args.length < 1) return katalog('Jumlahnya?')
 				 for (let i = 0; i < args[0]; i++) {
 await ikyy.toggleDisappearingMessages(from, 0)
 }
-reply('Sukses Send Bug Sebanyak '+args.join(' '))
+katalog('Sukses Send Bug Sebanyak '+args.join(' '))
 					//////
                     
                 case 'shadow':
@@ -1596,8 +1596,8 @@ reply('Sukses Send Bug Sebanyak '+args.join(' '))
                 case 'harrypotter':
                 case 'carvedwood':
 		ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
-				reply('loading........ ') 
-                    if (args.length == 0) return reply(`Example: ${prefix + command} iky`) 
+				katalog('loading........ ') 
+                    if (args.length == 0) return katalog(`Example: ${prefix + command} iky`) 
                     ini_txt = args.join(" ")
                     ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/photooxy1/${command}?apikey=genbotkey&text=${ini_txt}`)
                     ikyy.sendMessage(from, ini_buffer, image, { quoted: mek})
@@ -1606,13 +1606,13 @@ reply('Sukses Send Bug Sebanyak '+args.join(' '))
                 case 'arcade8bit':
                 case 'battlefield4':
                 case 'pubg':
-		reply('loading........ ') 
+		katalog('loading........ ') 
 		ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
 				
                 cf = `${body.slice(8)}`
                     txt1 = cf.split("/")[0];
                     txt2 = cf.split("/")[1];
-                    if (args.length == 0) return reply(`Example: ${prefix + command} iky`) 
+                    if (args.length == 0) return katalog(`Example: ${prefix + command} iky`) 
                     txt1 = args[0]
                     txt2 = args[1]
                     ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/photooxy2/${command}?apikey=genbotkey&text1=${txt1}&text2=${txt2}`)
@@ -1650,8 +1650,8 @@ reply('Sukses Send Bug Sebanyak '+args.join(' '))
                 case 'freefire':
                 
 		ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
-				reply('loading........ ') 
-                    if (args.length == 0) return reply(`Example: ${prefix + command} iky`) 
+				katalog('loading........ ') 
+                    if (args.length == 0) return katalog(`Example: ${prefix + command} iky`) 
                     ini_txt = args.join(" ")
                     ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/ephoto1/${command}?apikey=genbotkey&text=${ini_txt}`)
                     ikyy.sendMessage(from, ini_buffer, image, { quoted: mek})
@@ -1688,8 +1688,8 @@ reply('Sukses Send Bug Sebanyak '+args.join(' '))
                 case 'horrorblood':
                 case 'thunder':
 		ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
-				reply('loading........ ') 
-                    if (args.length == 0) return reply(`Example: ${prefix + command} iky`) 
+				katalog('loading........ ') 
+                    if (args.length == 0) return katalog(`Example: ${prefix + command} iky`) 
                     ini_txt = args.join(" ")
                     ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/textprome/${command}?apikey=genbotkey&text=${ini_txt}`)
                     ikyy.sendMessage(from, ini_buffer, image, { quoted: mek})
@@ -1706,22 +1706,22 @@ reply('Sukses Send Bug Sebanyak '+args.join(' '))
                 case 'wallgravity':
 		
 		ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
-				reply('loading........ ') 
+				katalog('loading........ ') 
                 cf = `${body.slice(8)}`
                     txt1 = cf.split("/")[0];
                     txt2 = cf.split("/")[1];
-                    if (args.length == 0) return reply(`Example: ${prefix + command} iky`) 
+                    if (args.length == 0) return katalog(`Example: ${prefix + command} iky`) 
                     txt1 = args[0]
                     txt2 = args[1]
                     ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/textprome2/${command}?apikey=genbotkey&text1=${txt1}&text2=${txt2}`)
                     ikyy.sendMessage(from, ini_buffer, image, { quoted: mek})
                     break
                     case 'battlefield': //IKY GANS
-				if (args.length < 1) return reply(`textnya mana om?`)					
+				if (args.length < 1) return katalog(`textnya mana om?`)					
 				ct = body.slice(12)
 				ll1 = ct.split("|")[0];
 				ll2 = ct.split("|")[1];
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/game?text=${ll1}&text2=${ll2}&theme=battlefield&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1729,11 +1729,11 @@ reply('Sukses Send Bug Sebanyak '+args.join(' '))
 
 break
 		case '8bit': //IKY GANS				
-				if (args.length < 1) return reply(`textnya mana om?`)	
+				if (args.length < 1) return katalog(`textnya mana om?`)	
 				ct = body.slice(5)
 				ll1 = ct.split("|")[0];
                 ll2 = ct.split("|")[1];
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev13?text=${ll1}&text2=${ll2}&theme=8bit&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1741,12 +1741,12 @@ break
 
 break
 		case 'googlesearch': //IKY GANS				
-				if (args.length < 1) return reply(`textnya mana om?`)
+				if (args.length < 1) return katalog(`textnya mana om?`)
 				ct = body.slice(14)
 				ll1 = ct.split("|")[0];
                 ll2 = ct.split("|")[1];
 				ll3 = ct.split("|")[2];
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker?text=${ll1}&text2=${ll2}&text3=${ll3}&theme=google-suggestion&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1754,7 +1754,7 @@ break
 
 break
 				case 'randomwp': //IKY GANS
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/random/wallpaper?apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'ini fotonya kak'})
@@ -1762,7 +1762,7 @@ break
 
 break
 		case 'blackpink': //IKY GANS
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/randomimage/blackpink?apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.result)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'ini fotonya kak'})
@@ -1770,7 +1770,7 @@ break
 
 break
 		case 'hentaipict': //IKY GANS
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/hentai?apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.result)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'ini fotonya kak'})
@@ -1779,15 +1779,15 @@ break
 break
 	
 		case 'gabut': //IKY GANS
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/gabut?apikey=genbotkey`)
 				hasil = `➸ *Activity* : ${anu.result.activity}\n*➸ Type :* ${anu.result.type}`
 				ikyy.sendMessage(from, hasil, text, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
 				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
 case 'burnpaper': //IKY GANS				
-				if (args.length < 1) return reply(`textnya mana om?`)	
+				if (args.length < 1) return katalog(`textnya mana om?`)	
 				ct = body.slice(10)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev4?text=${ct}&theme=burnpaper&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1795,9 +1795,9 @@ case 'burnpaper': //IKY GANS
 
 break
 		case 'textonecup': //IKY GANS				
-				if (args.length < 1) return reply(`textnya mana om?`)	
+				if (args.length < 1) return katalog(`textnya mana om?`)	
 				ct = body.slice(11)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev3?text=${ct}&theme=textonecup&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1805,9 +1805,9 @@ break
 
 break
 		case 'textsky': //IKY GANS				
-				if (args.length < 1) return reply(`textnya mana om?`)	
+				if (args.length < 1) return katalog(`textnya mana om?`)	
 				ct = body.slice(8)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev3?text=${ct}&theme=textsky&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1815,9 +1815,9 @@ break
 
 break
 		case 'nature': //IKY GANS				
-				if (args.length < 1) return reply(`textnya mana om?`)	
+				if (args.length < 1) return katalog(`textnya mana om?`)	
 				ct = body.slice(7)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev2?text=${ct}&theme=nature&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1825,9 +1825,9 @@ break
 
 break
 		case 'rosegold': //IKY GANS				
-				if (args.length < 1) return reply(`textnya mana om?`)	
+				if (args.length < 1) return katalog(`textnya mana om?`)	
 				ct = body.slice(7)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev2?text=${ct}&theme=rosegold&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1835,9 +1835,9 @@ break
 
 break
 		case 'nature3d': //IKY GANS				
-				if (args.length < 1) return reply(`textnya mana om?`)	
+				if (args.length < 1) return katalog(`textnya mana om?`)	
 				ct = body.slice(9)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev1?text=${ct}&theme=nature3d&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1845,9 +1845,9 @@ break
 
                     break
 		case 'underglass': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)	
+				if (args.length < 1) return katalog(`textnya mana om?`)	
 				ct = body.slice(11)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev5?text=${ct}&theme=underglass&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1855,9 +1855,9 @@ break
 
 break
 		case 'cemetery': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)	
+				if (args.length < 1) return katalog(`textnya mana om?`)	
 				ct = body.slice(9)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev5?text=${ct}&theme=cemetery&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1865,9 +1865,9 @@ break
 
 break
 		case 'royallock': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)	
+				if (args.length < 1) return katalog(`textnya mana om?`)	
 				ct = body.slice(10)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev6?text=${ct}&theme=royallock&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1875,9 +1875,9 @@ break
 
 break
 		case 'coffecup': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)	
+				if (args.length < 1) return katalog(`textnya mana om?`)	
 				ct = body.slice(9)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/senja?text=${ct}&theme=coffee-cup&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1885,9 +1885,9 @@ break
 
 break
 		case 'coffecup2': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)	
+				if (args.length < 1) return katalog(`textnya mana om?`)	
 				ct = body.slice(10)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/senja?text=${ct}&theme=coffee-cup2&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1895,9 +1895,9 @@ break
 
 break
 		case 'neon': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
+				if (args.length < 1) return katalog(`textnya mana om?`)
 				ct = body.slice(5)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/metallic?text=${ct}&theme=neon&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1905,9 +1905,9 @@ break
 
 break
 		case 'glow': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
+				if (args.length < 1) return katalog(`textnya mana om?`)
 				ct = body.slice(5)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/senja?text=${ct}&theme=glow&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1915,9 +1915,9 @@ break
 
 break
 		case 'summer': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
+				if (args.length < 1) return katalog(`textnya mana om?`)
 				ct = body.slice(7)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/alam?text=${ct}&theme=summer&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1925,9 +1925,9 @@ break
 
 break
 		case 'flower': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
+				if (args.length < 1) return katalog(`textnya mana om?`)
 				ct = body.slice(6)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/alam?text=${ct}&theme=flower&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1935,9 +1935,9 @@ break
 
 break
 		case 'grandient': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
+				if (args.length < 1) return katalog(`textnya mana om?`)
 				ct = body.slice(10)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/pro6?text=${ct}&theme=grandient&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1945,9 +1945,9 @@ break
 
 break
 		case 'embroidery': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
+				if (args.length < 1) return katalog(`textnya mana om?`)
 				ct = body.slice(11)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/pro7?text=${ct}&theme=embroidery&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1955,9 +1955,9 @@ break
 
 break
 		case 'funnycup': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
+				if (args.length < 1) return katalog(`textnya mana om?`)
 				ct = body.slice(9)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro4?text=${ct}&theme=funnycup&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1965,9 +1965,9 @@ break
 
 break
 		case 'orchids': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
+				if (args.length < 1) return katalog(`textnya mana om?`)
 				ct = body.slice(11)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro5?text=${ct}&theme=orchids-flower&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1975,9 +1975,9 @@ break
 
 break
 		case 'smoke2': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
+				if (args.length < 1) return katalog(`textnya mana om?`)
 				ct = body.slice(7)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro5?text=${ct}&theme=smoke2&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1985,9 +1985,9 @@ break
 
 break
 		case 'loveone': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
+				if (args.length < 1) return katalog(`textnya mana om?`)
 				ct = body.slice(8)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro3?text=${ct}&theme=loveone&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -1995,9 +1995,9 @@ break
 
 break
 		case 'smoke': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
+				if (args.length < 1) return katalog(`textnya mana om?`)
 				ct = body.slice(6)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro3?text=${ct}&theme=smoke&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -2005,9 +2005,9 @@ break
 
 break
 		case 'onesilk': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
+				if (args.length < 1) return katalog(`textnya mana om?`)
 				ct = body.slice(8)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro3?text=${ct}&theme=onesilk&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -2015,9 +2015,9 @@ break
 
 break
 		case 'glowing': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
+				if (args.length < 1) return katalog(`textnya mana om?`)
 				ct = body.slice(8)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/pro1?text=${ct}&theme=glowing&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -2025,9 +2025,9 @@ break
 
 break
 		case 'heart': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
+				if (args.length < 1) return katalog(`textnya mana om?`)
 				ct = body.slice(6)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro?text=${ct}&theme=heart&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -2035,9 +2035,9 @@ break
 
 break
 		case 'wolf': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
+				if (args.length < 1) return katalog(`textnya mana om?`)
 				ct = body.slice(5)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro?text=${ct}&theme=wolf-metal&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -2045,9 +2045,9 @@ break
 
 break
 		case 'candy': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
+				if (args.length < 1) return katalog(`textnya mana om?`)
 				ct = body.slice(6)
-				reply(`[❕] Loading`)
+				katalog(`[❕] Loading`)
 				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/pro7?text=${ct}&theme=candy&apikey=genbotkey`)
 				buffer = await getBuffer(anu.result.url)
 				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
@@ -2055,21 +2055,21 @@ break
 
 break
 case 'ffbaner':
-                if (isBanned) return reply(ind.baned())
+                if (isBanned) return katalog(ind.baned())
                 
-                if (isLimit(sender)) return reply(limitend(pushname2))
+                if (isLimit(sender)) return katalog(limitend(pushname2))
                 var gh = body.slice(12)
                 var porn = gh.split("&")[0];
                 var hub = gh.split("&")[1];
-                if (args.length < 1) return reply('Teksnya mana um')
+                if (args.length < 1) return katalog('Teksnya mana um')
                 love = body.slice(10)
-                if (love.length > 12) return reply('Teksnya kepanjangan, maksimal 9 karakter')
-                reply(ind.wait())
+                if (love.length > 12) return katalog('Teksnya kepanjangan, maksimal 9 karakter')
+                katalog(ind.wait())
                 bufferxcz = await getBuffer(`https://api.vhtear.com/bannerff?title=${love}&text=${porn}&apikey=genbotkey`, { method: 'get' })
                 ikyy.sendMessage(from, bufferxcz, image, { quoted: mek, caption: ' ' + love })
                 break
 case 'ktpmaker':
-                    if (args.length == 0) return reply(`Usage: ${prefix + command} nik|provinsi|kabupaten|nama|tempat, tanggal lahir|jenis kelamin|jalan|rt/rw|kelurahan|kecamatan|agama|status nikah|pekerjaan|warga negara|berlaku sampai|url_image\n\nExample: ${prefix + command} 456127893132123|bumipertiwi|fatamorgana|LoL Human|mars, 99-99-9999|belum ditemukan|jl wardoyo|999/999|turese|imtuni|alhamdulillah islam|jomblo kack|mikirin dia|indo ori no kw|hari kiamat|https://i.ibb.co/Xb2pZ88/test.jpg`)
+                    if (args.length == 0) return katalog(`Usage: ${prefix + command} nik|provinsi|kabupaten|nama|tempat, tanggal lahir|jenis kelamin|jalan|rt/rw|kelurahan|kecamatan|agama|status nikah|pekerjaan|warga negara|berlaku sampai|url_image\n\nExample: ${prefix + command} 456127893132123|bumipertiwi|fatamorgana|LoL Human|mars, 99-99-9999|belum ditemukan|jl wardoyo|999/999|turese|imtuni|alhamdulillah islam|jomblo kack|mikirin dia|indo ori no kw|hari kiamat|https://i.ibb.co/Xb2pZ88/test.jpg`)
                     get_args = args.join(" ").split("|")
                     nik = get_args[0]
                     prov = get_args[1]
@@ -2091,178 +2091,178 @@ case 'ktpmaker':
                     ikyy.sendMessage(from, ini_buffer, image, { quoted: mek })
                     break
 					case 'wanted':
-	if (!isRegistered) return reply( ind.noregis())
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-				if (isBanned) return reply('Maaf kamu sudah terbenned!')
+	if (!isRegistered) return katalog( ind.noregis())
+				if (isLimit(sender)) return katalog(ind.limitend(pusname))
+				if (isLimit(sender)) return katalog(ind.limitend(pusname))
+				if (isBanned) return katalog('Maaf kamu sudah terbenned!')
 	var imgbb = require('imgbb-uploader')
 	if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 	  ted = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo: mek
-	  reply(ind.wait())
+	  katalog(ind.wait())
 	  owgi = await ikyy.downloadAndSaveMediaMessage(ted)
 	  tels = body.slice(7)
 	  anu = await imgbb("3ea1465ef91578a90ee81f7d41c59a1f", owgi)
 	  hehe = await getBuffer(`https://videfikri.com/api/textmaker/wanted/?urlgbr=${anu.display_url}&text1=Dicari&text2=${tels}`)
 	ikyy.sendMessage(from, hehe, image, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg","caption": "Neh...", 'jpegThumbnail': fs.readFileSync('./image/odc.jpeg')}}}})
 	} else {
-	  reply('Jangan tambah kan apapun pada command')
+	  katalog('Jangan tambah kan apapun pada command')
 	}
 	case 'fftourserti':
                 
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
+                if (isLimit(sender)) return katalog(ind.limitend(pusname))
+                if (isBanned) return katalog('Maaf kamu sudah terbenned!')
+                if (args.length < 1) return katalog(`textnya mana om?`)
                 ct = body.slice(12)
-                reply(`Loading`)
+                katalog(`Loading`)
                 buffer = await getBuffer(`https://onlydevcity.xyz/FFSerti/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'fftourserti2':
                 
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
+                if (isLimit(sender)) return katalog(ind.limitend(pusname))
+                if (isBanned) return katalog('Maaf kamu sudah terbenned!')
+                if (args.length < 1) return katalog(`textnya mana om?`)
                 ct = body.slice(13)
-                reply(`Loading`)
+                katalog(`Loading`)
                 buffer = await getBuffer(`https://onlydevcity.xyz/FFSerti2/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'fftourserti3':
                 
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
+                if (isLimit(sender)) return katalog(ind.limitend(pusname))
+                if (isBanned) return katalog('Maaf kamu sudah terbenned!')
+                if (args.length < 1) return katalog(`textnya mana om?`)
                 ct = body.slice(13)
-                reply(`Loading`)
+                katalog(`Loading`)
                 buffer = await getBuffer(`https://onlydevcity.xyz/FFSerti3/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'fftourserti4':
                 
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
+                if (isLimit(sender)) return katalog(ind.limitend(pusname))
+                if (isBanned) return katalog('Maaf kamu sudah terbenned!')
+                if (args.length < 1) return katalog(`textnya mana om?`)
                 ct = body.slice(13)
-                reply(`Loading`)
+                katalog(`Loading`)
                 buffer = await getBuffer(`https://onlydevcity.xyz/FFSerti4/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'fftourserti5':
                 
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
+                if (isLimit(sender)) return katalog(ind.limitend(pusname))
+                if (isBanned) return katalog('Maaf kamu sudah terbenned!')
+                if (args.length < 1) return katalog(`textnya mana om?`)
                 ct = body.slice(13)
-                reply(`Loading`)
+                katalog(`Loading`)
                 buffer = await getBuffer(`https://onlydevcity.xyz/FFSerti5/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'pubgtourserti':
                 
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
+                if (isLimit(sender)) return katalog(ind.limitend(pusname))
+                if (isBanned) return katalog('Maaf kamu sudah terbenned!')
+                if (args.length < 1) return katalog(`textnya mana om?`)
                 ct = body.slice(14)
-                reply(`Loading`)
+                katalog(`Loading`)
                 buffer = await getBuffer(`https://onlydevcity.xyz/PubgTourSerti/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'pubgtourserti2':
                 
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
+                if (isLimit(sender)) return katalog(ind.limitend(pusname))
+                if (isBanned) return katalog('Maaf kamu sudah terbenned!')
+                if (args.length < 1) return katalog(`textnya mana om?`)
                 ct = body.slice(15)
-                reply(`Loading`)
+                katalog(`Loading`)
                 buffer = await getBuffer(`https://onlydevcity.xyz/PubgTourSerti2/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'pubgtourserti3':
                 
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
+                if (isLimit(sender)) return katalog(ind.limitend(pusname))
+                if (isBanned) return katalog('Maaf kamu sudah terbenned!')
+                if (args.length < 1) return katalog(`textnya mana om?`)
                 ct = body.slice(15)
-                reply(`Loading`)
+                katalog(`Loading`)
                 buffer = await getBuffer(`https://onlydevcity.xyz/PubgTourSerti3/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'pubgtourserti4':
                 
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
+                if (isLimit(sender)) return katalog(ind.limitend(pusname))
+                if (isBanned) return katalog('Maaf kamu sudah terbenned!')
+                if (args.length < 1) return katalog(`textnya mana om?`)
                 ct = body.slice(15)
-                reply(`Loading`)
+                katalog(`Loading`)
                 buffer = await getBuffer(`https://onlydevcity.xyz/PubgTourSerti4/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'pubgtourserti5':
                 
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
+                if (isLimit(sender)) return katalog(ind.limitend(pusname))
+                if (isBanned) return katalog('Maaf kamu sudah terbenned!')
+                if (args.length < 1) return katalog(`textnya mana om?`)
                 ct = body.slice(15)
-                reply(`Loading`)
+                katalog(`Loading`)
                 buffer = await getBuffer(`https://onlydevcity.xyz/PubgTourSerti5/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'mltourserti':
                 
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
+                if (isLimit(sender)) return katalog(ind.limitend(pusname))
+                if (isBanned) return katalog('Maaf kamu sudah terbenned!')
+                if (args.length < 1) return katalog(`textnya mana om?`)
                 ct = body.slice(12)
-                reply(`Loading`)
+                katalog(`Loading`)
                 buffer = await getBuffer(`https://onlydevcity.xyz/MLTourSerti1/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'mltourserti2':
                 
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
+                if (isLimit(sender)) return katalog(ind.limitend(pusname))
+                if (isBanned) return katalog('Maaf kamu sudah terbenned!')
+                if (args.length < 1) return katalog(`textnya mana om?`)
                 ct = body.slice(13)
-                reply(`Loading`)
+                katalog(`Loading`)
                 buffer = await getBuffer(`https://onlydevcity.xyz/MLTourSerti2/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'mltourserti3':
                 
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
+                if (isLimit(sender)) return katalog(ind.limitend(pusname))
+                if (isBanned) return katalog('Maaf kamu sudah terbenned!')
+                if (args.length < 1) return katalog(`textnya mana om?`)
                 ct = body.slice(13)
-                reply(`Loading`)
+                katalog(`Loading`)
                 buffer = await getBuffer(`https://onlydevcity.xyz/MLTourSerti3/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'mltourserti4':
                 
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
+                if (isLimit(sender)) return katalog(ind.limitend(pusname))
+                if (isBanned) return katalog('Maaf kamu sudah terbenned!')
+                if (args.length < 1) return katalog(`textnya mana om?`)
                 ct = body.slice(13)
-                reply(`Loading`)
+                katalog(`Loading`)
                 buffer = await getBuffer(`https://onlydevcity.xyz/MLTourSerti4/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
             case 'mltourserti5':
                 
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
+                if (isLimit(sender)) return katalog(ind.limitend(pusname))
+                if (isBanned) return katalog('Maaf kamu sudah terbenned!')
+                if (args.length < 1) return katalog(`textnya mana om?`)
                 ct = body.slice(13)
-                reply(`Loading`)
+                katalog(`Loading`)
                 buffer = await getBuffer(`https://onlydevcity.xyz/MLTourSerti5/img.php?nama=${ct}`)
                 ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
                 break
 	case 'vinta':
 			 
 			 
-			if (args.length < 1) return reply(ind.wrongf())
+			if (args.length < 1) return katalog(ind.wrongf())
 					vin = body.slice(7)
-					 reply(`[❕] Loading`)
+					 katalog(`[❕] Loading`)
 					vintage = await getBuffer(`https://m.ikyyz.my.id/api/textpro/realvintage?text=${vin}`)
 					ikyy.sendMessage(from, vintage, image, {caption: 'nih anjim ${vin}', quoted: mek})
 					await limitAdd(sender)
@@ -2273,9 +2273,9 @@ break
 					case 'summer':
 					 
 					 
-					if (args.length < 1) return reply(ind.wrongf())
+					if (args.length < 1) return katalog(ind.wrongf())
 					ikyy = body.slice(8)
-					 reply(`[❕] Loading`)
+					 katalog(`[❕] Loading`)
 					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/sandsummer?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
 					await limitAdd(sender)
@@ -2285,9 +2285,9 @@ break
 					case 'sandwrite':
 					 
 					 
-					if (args.length < 1) return reply(ind.wrongf())
+					if (args.length < 1) return katalog(ind.wrongf())
 					ikyy = body.slice(11)
-					 reply(`[❕] Loading`)
+					 katalog(`[❕] Loading`)
 					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/sandwrite?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
 					await limitAdd(sender)
@@ -2297,9 +2297,9 @@ break
 					case 'metaldark':
 					 
 					 
-					if (args.length < 1) return reply(ind.wrongf())
+					if (args.length < 1) return katalog(ind.wrongf())
 					ikyy = body.slice(11)
-					 reply(`[❕] Loading`)
+					 katalog(`[❕] Loading`)
 					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/metaldark?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
 					await limitAdd(sender)
@@ -2309,9 +2309,9 @@ break
 					case 'dropwater':
 					 
 					 
-					if (args.length < 1) return reply(ind.wrongf())
+					if (args.length < 1) return katalog(ind.wrongf())
 					ikyy = body.slice(11)
-					 reply(`[❕] Loading`)
+					 katalog(`[❕] Loading`)
 					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/dropwater?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
 					await limitAdd(sender)
@@ -2321,9 +2321,9 @@ break
 					case 'grenneon':
 					 
 					 
-					if (args.length < 1) return reply(ind.wrongf())
+					if (args.length < 1) return katalog(ind.wrongf())
 					ikyy = body.slice(10)
-					 reply(`[❕] Loading`)
+					 katalog(`[❕] Loading`)
 					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/greenneon?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
 					await limitAdd(sender)
@@ -2333,9 +2333,9 @@ break
 					case 'neontext':
 					 
 					 
-					if (args.length < 1) return reply(ind.wrongf())
+					if (args.length < 1) return katalog(ind.wrongf())
 					ikyy = body.slice(10)
-					 reply(`[❕] Loading`)
+					 katalog(`[❕] Loading`)
 					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/neontext?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
 					await limitAdd(sender)
@@ -2345,9 +2345,9 @@ break
 					case 'toxic':
 					 
 					 
-					if (args.length < 1) return reply(ind.wrongf())
+					if (args.length < 1) return katalog(ind.wrongf())
 					ikyy = body.slice(7)
-					 reply(`[❕] Loading`)
+					 katalog(`[❕] Loading`)
 					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/toxictext?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
 					await limitAdd(sender)
@@ -2357,9 +2357,9 @@ break
 					case 'sumery':
 					 
 					 
-					if (args.length < 1) return reply(ind.wrongf())
+					if (args.length < 1) return katalog(ind.wrongf())
 					ikyy = body.slice(8)
-					 reply(`[❕] Loading`)
+					 katalog(`[❕] Loading`)
 					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/sandsummery?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
 					await limitAdd(sender)
@@ -2369,9 +2369,9 @@ break
 					case 'blood':
 					 
 					 
-					if (args.length < 1) return reply(ind.wrongf())
+					if (args.length < 1) return katalog(ind.wrongf())
 					ikyy = body.slice(7)
-					 reply(`[❕] Loading`)
+					 katalog(`[❕] Loading`)
 					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/bloodtext?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
 					await limitAdd(sender)
@@ -2381,9 +2381,9 @@ break
 					case 'firework':
 					 
 					 
-					if (args.length < 1) return reply(ind.wrongf())
+					if (args.length < 1) return katalog(ind.wrongf())
 					ikyyzzz = body.slice(10)
-					 reply(`[❕] Loading`)
+					 katalog(`[❕] Loading`)
 					ikyyzzz = await getBuffer(`https://ikyyz.my.id/api/textpro/firework?text=${ikyyzzz}`)
 					ikyy.sendMessage(from, ikyyzzz, image, {caption: 'Nih kak', quoted: mek})
 					await limitAdd(sender)
@@ -2393,9 +2393,9 @@ break
 					case 'lava':
 					 
 					 
-					if (args.length < 1) return reply(ind.wrongf())
+					if (args.length < 1) return katalog(ind.wrongf())
 					ikyy = body.slice(6)
-					 reply(`[❕] Loading`)
+					 katalog(`[❕] Loading`)
 					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/lavatext?text=${ikyy}`)
 					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
 					await limitAdd(sender)
@@ -2409,8 +2409,8 @@ break
 				var gh = body.slice(9)
 				var porn = gh.split("|")[0];
 				var hub = gh.split("|")[1];
-				if (args.length < 1) return reply('「❗」Contoh : ${prefix}pornhub IKY & Hub')
-				 reply(`[❕] Loading`)
+				if (args.length < 1) return katalog('「❗」Contoh : ${prefix}pornhub IKY & Hub')
+				 katalog(`[❕] Loading`)
 				buffer = await getBuffer(`https://api.vhtear.com/pornlogo?text1=${porn}&text2=${hub}&apikey=genbotkey`)
 				ikyy.sendMessage(from, buffer, image, {quoted: mek})
 				await limitAdd(sender)
@@ -2425,8 +2425,8 @@ break
 					var gh = body.slice(12)
 					var gem = gh.split("&")[0];
 					var bok = gh.split("&")[1];
-					if (args.length < 1) return reply('[❗] Contoh : ${prefix}gemboktext 11 01 2021 & IKY dan Nadia')
-					 reply(`[❕] Loading`)
+					if (args.length < 1) return katalog('[❗] Contoh : ${prefix}gemboktext 11 01 2021 & IKY dan Nadia')
+					 katalog(`[❕] Loading`)
 					buffer = await getBuffer(`https://api.vhtear.com/padlock?text1=${gem}&text2=${bok}&apikey=genbotkey`)
 					ikyy.sendMessage(from, buffer, image, {quoted: mek})
 					await limitAdd(sender)
@@ -2441,8 +2441,8 @@ break
 					var gh = body.slice(12)
 					var gli = gh.split("&")[0];
 					var tch = gh.split("&")[1];
-					if (args.length < 1) return reply('[❗] Contoh : ${prefix}glitchtext IKY & Gans')
-					 reply(`[❕] Loading`)
+					if (args.length < 1) return katalog('[❗] Contoh : ${prefix}glitchtext IKY & Gans')
+					 katalog(`[❕] Loading`)
 					buffer = await getBuffer(`https://api.vhtear.com/glitchtext?text1=${gli}&text2=${tch}%20&apikey=genbotkey`)
 					ikyy.sendMessage(from, buffer, image, {quoted: mek})
 					await limitAdd(sender)
@@ -2457,8 +2457,8 @@ case 'bikinquote':
 					var quote = gh.split("&")[0];
 					var wm = gh.split("&")[1];
 					const pref = `yang mau dijadiin quote apaan, titit?\n\ncontoh : ${prefix}bikinquote aku bukan boneka & Kata IKY`
-					if (args.length < 1) return reply(pref)
-					 reply(`[❕] Loading`)
+					if (args.length < 1) return katalog(pref)
+					 katalog(`[❕] Loading`)
 					anu = await fetchJson(`https://terhambar.com/aw/qts/?kata=${quote}&author=${wm}&tipe=random`, {method: 'get'})
 					buffer = await getBuffer(anu.result)
 					ikyy.sendMessage(from, buffer, image, {caption: 'Nih kak >_<', quoted: mek})
@@ -2468,53 +2468,53 @@ case 'bikinquote':
 
 			  //********** SELF&PUBLIC THX ZITSRA**********//
 			  case 'self':
-			  if (!mek.key.fromMe) return reply('*Ente owner?_*')
+			  if (!mek.key.fromMe) return katalog('*Ente owner?_*')
 			    public = false
-			    return reply(  `*「 𝙈𝙊𝘿𝙀 : 𝙎𝙀𝙇𝙁 」*`, text)
+			    return katalog(  `*「 𝙈𝙊𝘿𝙀 : 𝙎𝙀𝙇𝙁 」*`, text)
 			    break
 			    
 			  case 'public':
-			    if (!mek.key.fromMe) return reply('*Ente owner?_*')
+			    if (!mek.key.fromMe) return katalog('*Ente owner?_*')
 			    public = true
-			    return reply(`*「 𝙈𝙊𝘿𝙀 : 𝙋𝙐𝘽𝙇𝙄𝘾 」*`, text)
+			    return katalog(`*「 𝙈𝙊𝘿𝙀 : 𝙋𝙐𝘽𝙇𝙄𝘾 」*`, text)
 			    break
 			    
 			  case 'status':
 			    const status = public ? '𝙋𝙐𝘽𝙇𝙄𝘾': '𝙎𝙀𝙇𝙁'
 			  const onlinee = offline ? '𝙊𝙁𝙁𝙇𝙄𝙉𝙀' : '𝙊𝙉𝙇𝙄𝙉𝙀'
-			    return reply(`*「 𝙎𝙏𝘼𝙏𝙐𝙎 𝘽𝙊𝙏 」*\n\n*Status : ${status}*\n*Status : ${onlinee}*`, text)
+			    return katalog(`*「 𝙎𝙏𝘼𝙏𝙐𝙎 𝘽𝙊𝙏 」*\n\n*Status : ${status}*\n*Status : ${onlinee}*`, text)
 			    
 			    break
 			    
 			    case 'on':
-          	if (!mek.key.fromMe) return reply('Owner bukan?')
+          	if (!mek.key.fromMe) return katalog('Owner bukan?')
           	offline = false
-          	return reply(`*ANDA SEKARANG ONLINE*`,text)
+          	return katalog(`*ANDA SEKARANG ONLINE*`,text)
           	break       
           	
       	case 'off':
-         	if (!mek.key.fromMe) return reply('Owner bukan?')
+         	if (!mek.key.fromMe) return katalog('Owner bukan?')
           	offline = true
           	waktuafk = Date.now()
           	anuu = args.join(" ") ? args.join(" ") : 'Tidur'
           	alasanafk = anuu
-          	return reply(`*ANDA SEKARANG OFFLINE*\n*DENGAN ALASAN : ${alasanafk}*`,text)
+          	return katalog(`*ANDA SEKARANG OFFLINE*\n*DENGAN ALASAN : ${alasanafk}*`,text)
           	break
 			    
 			    case 'unpin':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return katalog('*Ente owner?_*')
                 ikyy.modifyChat(from, ChatModification.unpin)
-                reply('*succes unpin this chat*')
+                katalog('*succes unpin this chat*')
                 console.log('unpin chat = ' + from)
                 break
             case 'pin':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return katalog('*Ente owner?_*')
                 ikyy.modifyChat(from, ChatModification.pin)
-                reply('*succes pin this chat*')
+                katalog('*succes pin this chat*')
                 console.log('pinned chat = ' + from)
                 break
             case 'unreadall':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return katalog('*Ente owner?_*')
                 var chats = await ikyy.chats.all()
                 chats.map( async ({ jid }) => {
                 await ikyy.chatRead(jid, 'unread')
@@ -2525,7 +2525,7 @@ case 'bikinquote':
 	        break
 	        
             case 'readall':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return katalog('*Ente owner?_*')
                 var chats = await ikyy.chats.all()
                 chats.map( async ({ jid }) => {
                 await ikyy.chatRead(jid)
@@ -2536,8 +2536,8 @@ case 'bikinquote':
 		break
 		
             case 'unarchiveall':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
-                reply('*succes unarchive all chat*')
+                if (!mek.key.fromMe) return katalog('*Ente owner?_*')
+                katalog('*succes unarchive all chat*')
                 console.log('succes unarchive chat = ' + from)
                 anu = await ikyy.chats.all()
                 for (let _ of anu) {
@@ -2546,24 +2546,24 @@ case 'bikinquote':
                 break
                 
             case 'archive':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
-                reply('*okey wait..*')
+                if (!mek.key.fromMe) return katalog('*Ente owner?_*')
+                katalog('*okey wait..*')
                 console.log('succes archive chat = ' + from)
                 await sleep(3000)
                 ikyy.modifyChat(from, ChatModification.archive)
                 break
                 
             case 'delthischat':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
-                reply('*succes delete this chat*')
+                if (!mek.key.fromMe) return katalog('*Ente owner?_*')
+                katalog('*succes delete this chat*')
                 console.log('succes delete chat = ' + from)
                 await sleep(4000)
                 ikyy.modifyChat(from, ChatModification.delete)
                 break
                 
                 case 'shutdown':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
-	        await ikyy.sendMessage(from, `_Bye..._\n_ikyy off dulu yaa.._`, text,{quoted : freply})
+                if (!mek.key.fromMe) return katalog('*Ente owner?_*')
+	        await ikyy.sendMessage(from, `_Bye..._\n_ikyy off dulu yaa.._`, text,{quoted : frply})
 		await sleep(1000)
                 ikyy.close()
 		break
@@ -2579,85 +2579,85 @@ case 'bikinquote':
            
 			  //********** SETTING BOT **********//
 			  case 'setleave':
-			    if (!mek.key.fromMe) return reply('*Ente owner?_*')
-			    if (args.length < 1) return reply('*Teks nya mana gan?*')
+			    if (!mek.key.fromMe) return katalog('*Ente owner?_*')
+			    if (args.length < 1) return katalog('*Teks nya mana gan?*')
                     ikyy.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
 					leave = body.slice(10)
-					ikyy.sendMessage(from,`\`\`\`Leave berhasil di ubah menjadi : ${body.slice(10)}\`\`\``, text,{quoted : freply})
+					ikyy.sendMessage(from,`\`\`\`Leave berhasil di ubah menjadi : ${body.slice(10)}\`\`\``, text,{quoted : frply})
 				break 
 				
 				case 'setpromote':
-				  if (!mek.key.fromMe) return reply('*Ente owner?_*')
-				  if (args.length < 1) return reply('*Teks nya mana gan?*')
+				  if (!mek.key.fromMe) return katalog('*Ente owner?_*')
+				  if (args.length < 1) return katalog('*Teks nya mana gan?*')
                     ikyy.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
 					promote = body.slice(11)
-					ikyy.sendMessage(from,`\`\`\`Promote berhasil di ubah menjadi : ${body.slice(11)}\`\`\``, text,{quoted : freply})
+					ikyy.sendMessage(from,`\`\`\`Promote berhasil di ubah menjadi : ${body.slice(11)}\`\`\``, text,{quoted : frply})
 				break 
 				
 					case 'setdemote':
-					  if (!mek.key.fromMe) return reply('*Ente owner?_*')
-					  if (args.length < 1) return reply('*Teks nya mana gan?*')
+					  if (!mek.key.fromMe) return katalog('*Ente owner?_*')
+					  if (args.length < 1) return katalog('*Teks nya mana gan?*')
                     ikyy.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
 					demote = body.slice(11)
-					ikyy.sendMessage(from ,`\`\`\`Demote berhasil di ubah menjadi : ${body.slice(11)}\`\`\``, text,{quoted : freply})
+					ikyy.sendMessage(from ,`\`\`\`Demote berhasil di ubah menjadi : ${body.slice(11)}\`\`\``, text,{quoted : frply})
 				break 
 				///GWE HAPUS
 				case 'setbodymenu':
-				  if (!mek.key.fromMe) return reply('*Ente owner?_*')
-				  if (args.length < 1) return reply('*_CONTOH :_*\n\n  *   : *menu*\n  ~   : ~menu~\n  _ : _menu_\n ```   : ```menu```\n\n\n\n Contoh penggunaan : .setbodymenu *')
+				  if (!mek.key.fromMe) return katalog('*Ente owner?_*')
+				  if (args.length < 1) return katalog('*_CONTOH :_*\n\n  *   : *menu*\n  ~   : ~menu~\n  _ : _menu_\n ```   : ```menu```\n\n\n\n Contoh penggunaan : .setbodymenu *')
                     ikyy.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
 					f = body.slice(13)
-					ikyy.sendMessage(from ,`\`\`\`Body menu berhasil di ubah menjadi : ${body.slice(13)}\`\`\``, text,{quoted : freply})
+					ikyy.sendMessage(from ,`\`\`\`Body menu berhasil di ubah menjadi : ${body.slice(13)}\`\`\``, text,{quoted : frply})
 				break 
 				
 					case 'setwelcome':
-					  if (!mek.key.fromMe) return reply('*Ente owner?_*')
-					  if (args.length < 1) return reply('*Teks nya mana gan?*')
+					  if (!mek.key.fromMe) return katalog('*Ente owner?_*')
+					  if (args.length < 1) return katalog('*Teks nya mana gan?*')
                     ikyy.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
 					join = body.slice(11)
-					ikyy.sendMessage(from ,`\`\`\`Welcome berhasil di ubah menjadi : ${body.slice(11)}\`\`\``, text,{quoted : freply})
+					ikyy.sendMessage(from ,`\`\`\`Welcome berhasil di ubah menjadi : ${body.slice(11)}\`\`\``, text,{quoted : frply})
 				break 
 				
 					  case 'setharga':
-					if(!mek.key.fromMe)return reply('*Ente owner?_*')
-					if (!q) return reply(mess.wrongFormat)
+					if(!mek.key.fromMe)return katalog('*Ente owner?_*')
+					if (!q) return katalog(mess.wrongFormat)
 					harga = q
 					fakegroup(`Succes Mengganti Harga Fake : ${q}`)
 					break
 						  case 'setmatauang':
-					if(!mek.key.fromMe)return reply('*Ente owner?_*')
-					if (!q) return reply(mess.wrongFormat)
+					if(!mek.key.fromMe)return katalog('*Ente owner?_*')
+					if (!q) return katalog(mess.wrongFormat)
 					matauang = q
 					fakegroup(`Succes Mengganti Matauang Fake : ${q}`)
 					break
-			  case 'setreply':
-					if(!mek.key.fromMe)return reply('*Ente owner?_*')
-					if (!q) return reply(mess.wrongFormat)
+			  case 'setkatalog':
+					if(!mek.key.fromMe)return katalog('*Ente owner?_*')
+					if (!q) return katalog(mess.wrongFormat)
 					fake = q
 					fakegroup(`Succes Mengganti Conversation Fake : ${q}`)
 					break
 
 				case 'setthumb':
-				  if (!mek.key.fromMe) return reply('*Ente owner?_*')
-				if (!isQuotedImage) return reply('Reply imagenya')
+				  if (!mek.key.fromMe) return katalog('*Ente owner?_*')
+				if (!isQuotedImage) return katalog('katalog imagenya')
 				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 				delb = await ikyy.downloadMediaMessage(boij)
 				fs.writeFileSync(`./media/ikyy.jpeg`, delb)
 				fs.writeFileSync('./media/img.json', JSON.stringify(imagenye))
-				reply(`\`\`\`Sukses Mengganti Thumbnail\`\`\``,text)
+				katalog(`\`\`\`Sukses Mengganti Thumbnail\`\`\``,text)
 				break
 				
 				case 'getbio':
                 var yy = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
                 var p = await ikyy.getStatus(`${yy}`, MessageType.text)
-                reply(p.status)
+                katalog(p.status)
                 if (p.status == 401) {
-                reply("Status Profile Not Found")
+                katalog("Status Profile Not Found")
                 }
                 break
 				
@@ -2671,21 +2671,21 @@ case 'bikinquote':
 					}
 					thumb = await getBuffer(pic)
 					ikyy.sendMessage(from, thumb, MessageType.image)
-				{quoted : freply}}
+				{quoted : frply}}
 				break
 				
 				  case 'join':
-				    if (!mek.key.fromMe) return reply('*Ente owner?_*')
-                           if (!q) return reply('Masukan link group')
+				    if (!mek.key.fromMe) return katalog('*Ente owner?_*')
+                           if (!q) return katalog('Masukan link group')
                            var codeInvite = body.slice(6).split('https://chat.whatsapp.com/')[1]
-                           if (!codeInvite) return reply ('pastikan link sudah benar!')
+                           if (!codeInvite) return katalog ('pastikan link sudah benar!')
                            var response = await ikyy.acceptInvite(codeInvite);
                            console.log(response);
-                           reply('*Udah masuk gan_*')
+                           katalog('*Udah masuk gan_*')
                            break                        					
 					case 'restart':
-if (!mek.key.fromMe) return reply('*Ente owner?_*')
-reply('_Restarting_')
+if (!mek.key.fromMe) return katalog('*Ente owner?_*')
+katalog('_Restarting_')
 exec(`node main`)
 setTimeout( () => {
 					ikyy.sendMessage(from, '_1_', text) // ur cods
@@ -2702,54 +2702,54 @@ setTimeout( () => {
 break
 
 case 'setfake':
-			 if (!mek.key.fromMe) return reply('Cmd Ini Khusus Owner')
+			 if (!mek.key.fromMe) return katalog('Cmd Ini Khusus Owner')
 			if (args[0] == 'chat') {
 				ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
-				reply(`*Berhasil ubah Fake reply menjadi Catalog*`, text)
+				katalog(`*Berhasil ubah Fake katalog menjadi Catalog*`, text)
 			} else if (args[0] == 'img') {
 				 ikyyyy = { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": fake, "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 500, "width": 500, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fakeimage, "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw==" } } } }
-				reply(`*Berhasil ubah Fake reply menjadi Gambar*`, text)
+				katalog(`*Berhasil ubah Fake katalog menjadi Gambar*`, text)
 			} else if (args[0] == 'troli') {
 				 ikyyyy = {quoted: {key: {remoteJid: "status@broadcast", participant: '0@s.whatsapp.net'}, message: {orderMessage: {itemCount: 10, status: 200, thumbnail: fakeimage, surface: 200, message: fake, orderTitle: 'ikyy', sellerJid: '0@s.whatsapp.net'} } } }
-				reply(`*Berhasil ubah Fake reply menjadi Troli*`, text)
+				katalog(`*Berhasil ubah Fake katalog menjadi Troli*`, text)
 			} else if (args[0] == 'toko'){
 			  ikyyyy = {quoted: {key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": fs.readFileSync(`./media/ikyy.jpeg`)}, "title": fake, "description": "ikyy", "currencyCode": matauang, "priceAmount1000": harga, "retailerId": "ikyyyy", "productImageCount": 1}, "businessOwnerJid": `+62 815-1558-9573@s.whatsapp.net`}}}}
-			reply(`*Berhasil ubah Fake reply menjadi Toko*`, text)
+			katalog(`*Berhasil ubah Fake katalog menjadi Toko*`, text)
 			} else if (args[0] == 'document'){
 			  ikyyyy = {quoted: {key:
 	 { fromMe: false,
 	 participant: `0@s.whatsapp.net`, ...(from ? 
 	 { remoteJid: "status@broadcast" } : {}) },
 	 message: { "documentMessage": { "title":fake,"h":fake, 'jpegThumbnail': fs.readFileSync('./media/ikyy.jpeg')}}}}
-	 reply('*Berhasil diubah menjadi Fake Documment*', text)
+	 katalog('*Berhasil diubah menjadi Fake Documment*', text)
 			} else if (args[0] == 'flokasi'){
 			  ikyyyy = {quoted: {key:
 	 { fromMe: false,
 	 participant: `0@s.whatsapp.net`, ...(from ? 
 	 { remoteJid: "status@broadcast" } : {}) },
 	 message: { "liveLocationMessage": { "title":"SELEP BOT","h": `${setting.fake}`, 'jpegThumbnail': fs.readFileSync('./media/ikyy.jpeg')}}}}
-	 reply('*Berhasil diubah menjadi Flocation*', text)
+	 katalog('*Berhasil diubah menjadi Flocation*', text)
 			} else if (args[0] == 'video'){
 			  ikyyyy = {quoted: {key:
 	 { fromMe: false,
 	 participant: `0@s.whatsapp.net`, ...(from ? 
 	 { remoteJid: "status@broadcast" } : {}) },
 	 message: { "videoMessage": { "title":"SELEP BOT","h":fake, 'jpegThumbnail': fs.readFileSync('./media/ikyy.jpeg')}}}}
-	 reply('*Berhasil diubah menjadi Fake Video*', text)
+	 katalog('*Berhasil diubah menjadi Fake Video*', text)
 			} else if (args[0] == 'lokasi'){
 			  ikyyyy = {quoted: {key:
 	 { fromMe: false,
 	 participant: `0@s.whatsapp.net`, ...(from ? 
 	 { remoteJid: "status@broadcast" } : {}) },
 	 message: { "locationMessage": { "title":fake,"h": fake, 'jpegThumbnail': fs.readFileSync('./media/ikyy.jpeg')}}}}
-	 reply('*Berhasil diubah menjadi fake location*', text)
+	 katalog('*Berhasil diubah menjadi fake location*', text)
 		} else {
- reply(`\`\`\`List Fake :\`\`\`\nimg\ndocument\ntroli\ntoko\nvideo\nflokasi\nlokasi\nchat\n\nCara penggunaan : ${prefix + command} troli`)
+ katalog(`\`\`\`List Fake :\`\`\`\nimg\ndocument\ntroli\ntoko\nvideo\nflokasi\nlokasi\nchat\n\nCara penggunaan : ${prefix + command} troli`)
 				  }
 				break
 				
 				case 'setthumbmenu':
-				if (!isQuotedImage) return reply('Reply imagenya')
+				if (!isQuotedImage) return katalog('katalog imagenya')
 				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 				delb = await ikyy.downloadMediaMessage(boij)
 				imagenye.push(`help`)
@@ -2760,22 +2760,22 @@ case 'setfake':
 
 				
 				           case 'setmenu':
-				if (!isOwner && !mek.key.fromMe) return reply('*Ente owner?*')
+				if (!isOwner && !mek.key.fromMe) return katalog('*Ente owner?*')
 		          if (args[0] == 'simple') {
 					  simple = true
-				  reply('*Berhasil mengubah tampilan menu!*')
+				  katalog('*Berhasil mengubah tampilan menu!*')
 				  } else if (args[0] == 'ori') {
 					  	  simple = false
-				  reply('*Berhasil mengubah tampilan menu!*')
+				  katalog('*Berhasil mengubah tampilan menu!*')
 				  } else {
-					  reply(`\`\`\`List Pilihan :\`\`\`\nori\nsimple\n\nCara penggunaan ${prefix + command} ori`)
+					  katalog(`\`\`\`List Pilihan :\`\`\`\nori\nsimple\n\nCara penggunaan ${prefix + command} ori`)
 				  }
 					break
 				
         //********** SYSTEM **********//
         case 'return':
         case '^':
-        if (!mek.key.fromMe) return reply('*OWNER? *') 
+        if (!mek.key.fromMe) return katalog('*OWNER? *') 
         return fakegroup(JSON.stringify(eval(args.join(''))))
          break
          case 'run':
@@ -2786,7 +2786,7 @@ break
                         let code = args.join(" ")
                     try {
     
-                    if (!code) return ikyy.reply(from, 'No JavaScript Code', )
+                    if (!code) return ikyy.katalog(from, 'No JavaScript Code', )
                     let evaled;
     
                     if (code.includes("--silent") && code.includes("--async")) {
@@ -2820,7 +2820,7 @@ break
                 ikyy.sendMessage(from, `${output}`, text, options)
                 } catch(err) {
                 console.error(err)
-                reply(err)
+                katalog(err)
                 }
                 function clean(text) {
                 if (typeof text === "string")
@@ -2847,19 +2847,19 @@ break
 					
 					//********** CONVERT **********//
 					case 'exif':
-	        if (!mek.key.fromMe) return reply('*Ente owner?_*')
-	        if (args.length < 1) return reply(`Penggunaan ${prefix}exif nama|autho`)
-		if (!arg.split('|')) return reply(`Penggunaan ${prefix}exif nama|author`)
+	        if (!mek.key.fromMe) return katalog('*Ente owner?_*')
+	        if (args.length < 1) return katalog(`Penggunaan ${prefix}exif nama|autho`)
+		if (!arg.split('|')) return katalog(`Penggunaan ${prefix}exif nama|author`)
 		    exif.create(arg.split('|')[0], arg.split('|')[1])
-		    reply('sukses')
+		    katalog('sukses')
 	        break
 	        
 	        case 'colong':
-		if (!isQuotedSticker) return reply(`Reply sticker dengan caption *${prefix}colong*`)
+		if (!isQuotedSticker) return katalog(`katalog sticker dengan caption *${prefix}colong*`)
 		const encmediia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 	        const meidia = await ikyy.downloadAndSaveMediaMessage(encmediia, `./sticker/${sender}`)
 		    exec(`webpmux -set exif ./sticker/data.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
-		    if (error) return reply('error')
+		    if (error) return katalog('error')
 		    ikyy.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), MessageType.sticker, {quoted: troli})
 					fs.unlinkSync(media)
 					fs.unlinkSync(`./sticker/takestick_${sender}.exif`)
@@ -2867,7 +2867,7 @@ break
 				break
 	        
 					case 'take':
-					if (!isQuotedSticker) return reply(`Reply sticker dengan caption *${prefix}takestick nama|author*`)
+					if (!isQuotedSticker) return katalog(`katalog sticker dengan caption *${prefix}takestick nama|author*`)
 					var pembawm = body.slice(6)
 					var encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					var media = await ikyy.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
@@ -2875,7 +2875,7 @@ break
 					var author = pembawm.split('|')[1]
 					exif.create(packname, author, `takestick_${sender}`)
 					exec(`webpmux -set exif ./sticker/takestick_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
-					if (error) return reply('Error')
+					if (error) return katalog('Error')
 					ikyy.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), MessageType.sticker, {quoted: troli})
 					fs.unlinkSync(media)
 					fs.unlinkSync(`./sticker/takestick_${sender}.exif`)
@@ -2885,8 +2885,8 @@ break
 				case 'togif':
 				ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
 				
-                                        if (!isQuotedSticker) return reply('Reply stiker nya')
-                                        reply('Loading.... ')
+                                        if (!isQuotedSticker) return katalog('katalog stiker nya')
+                                        katalog('Loading.... ')
                                         if (mek.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.isAnimated === true){
                                         const encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
                                         const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
@@ -2901,7 +2901,7 @@ break
 				/////WORK 
 				case 'tovideo':
 				case 'tovid':
-					reply('Proses Boskuh..')
+					katalog('Proses Boskuh..')
 					 if (mek.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.isAnimated === true){
                                         ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
 				
@@ -2970,7 +2970,7 @@ break
 					ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
 				
 if ((isMedia && !mek.videoMessage || isQuotedImage)) {
-    reply('Loading.... ')
+    katalog('Loading.... ')
 var encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace("quotedM", "m")).message.extendedTextMessage.contextInfo : mek
 var media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 anu = await imgbb("3ea1465ef91578a90ee81f7d41c59a1f", media)
@@ -2981,15 +2981,15 @@ ikyy.sendMessage(from, buff, image, {quoted: troli})
 break
 
  case 'sticknobg':
-									if (!isQuotedSticker) return reply('stickernya mana anjeng')
+									if (!isQuotedSticker) return katalog('stickernya mana anjeng')
 					if (isQuotedSticker) {
-												 if (mek.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.isAnimated) return reply('Reply sticker gambar!')
+												 if (mek.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.isAnimated) return katalog('katalog sticker gambar!')
 ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 ran = getRandom('.png')
 ehgmediabi = await ikyy.downloadAndSaveMediaMessage(ger)
 exec(`ffmpeg -i ${ehgmediabi} ${ran}`, (err) => {
 	fs.writeFileSync('sticknobg.png', fs.readFileSync(ran))
-						if (err) return reply('Error om')
+						if (err) return katalog('Error om')
 							ranp = getRandom('.png')
 					keyrmbg = '5LXrQ1MAYDnE1iib6B6NaHMv'
 							removeBackgroundFromImageFile({path: 'sticknobg.png', apiKey: keyrmbg, size: 'auto', type: 'auto', ranp})
@@ -2997,7 +2997,7 @@ exec(`ffmpeg -i ${ehgmediabi} ${ran}`, (err) => {
 								let buffur = Buffer.from(res.base64img, 'base64')
 								fs.writeFileSync(ranp, buffur)
 								var imgbb = require('imgbb-uploader')
-								reply('Loading.... ')
+								katalog('Loading.... ')
 								imgbb("68cb5bee517bce4f74b0e910a5d96346", ranp)
 								.then(anu => {
 								sendStickerUrl(from, anu.display_url)
@@ -3005,7 +3005,7 @@ exec(`ffmpeg -i ${ehgmediabi} ${ran}`, (err) => {
 							})
 					})
 					} else {
-						reply('Mana sticker nya?')
+						katalog('Mana sticker nya?')
 					}
 									break
 									
@@ -3015,7 +3015,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
  var ghs = body.slice(11)
 									if ((isMedia || isQuotedImage) && args.length == 0) {
 										   ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-                                        reply('Loading.... ')
+                                        katalog('Loading.... ')
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.jpg')
                                         teks = `${uploade.result.image}`
@@ -3023,7 +3023,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 										sendStickerUrl(from, buffer)
 									 } else if (isQuotedSticker && args.length == 0) {
 										   ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                        katalog('Loading.... ')
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -3036,7 +3036,7 @@ case 'stickwasted':
 									 var ghs = body.slice(13)
 									if ((isMedia || isQuotedImage) && args.length == 0) {
 										   ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-                                        reply('Loading.... ')
+                                        katalog('Loading.... ')
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.jpg')
                                         teks = `${uploade.result.image}`
@@ -3044,7 +3044,7 @@ case 'stickwasted':
 										sendStickerUrl(from, buffer)
 									 } else if (isQuotedSticker && args.length == 0) {
 										   ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                        katalog('Loading.... ')
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -3053,7 +3053,7 @@ case 'stickwasted':
 									 }
 									break
 case 'smeme': 
-reply('Loading.... ')
+katalog('Loading.... ')
 top = arg.split('|')[0]
 bottom = arg.split('|')[1]
 var imgbb = require('imgbb-uploader')
@@ -3067,7 +3067,7 @@ rano = getRandom('.webp')
 anu1 = `https://api.memegen.link/images/custom/${top}/${bottom}.png?background=${teks}`
 sendStickerUrl(from, `${anu1}`)
 } else {
-reply('Gunakan foto/stiker!')
+katalog('Gunakan foto/stiker!')
 }
 break
 
@@ -3076,7 +3076,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 									 var ghs = body.slice(11)
 									 if (mek.message.extendedTextMessage != undefined || mek.message.extendedTextMessage != null) {
                                           ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                        katalog('Loading.... ')
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -3089,7 +3089,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 									 var ghs = body.slice(12)
 									 if (mek.message.extendedTextMessage != undefined || mek.message.extendedTextMessage != null) {
                                           ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                        katalog('Loading.... ')
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -3103,10 +3103,10 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 				
 									 var tex1 = body.slice(12).split('|')[0]
 var tex2 = body.slice(12).split('|')[1]
-if (!tex2) return reply('Format salah!')
+if (!tex2) return katalog('Format salah!')
 									 if (mek.message.extendedTextMessage != undefined || mek.message.extendedTextMessage != null) {
                                           ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                        katalog('Loading.... ')
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -3115,7 +3115,7 @@ if (!tex2) return reply('Format salah!')
 									 }
 									break
 									case 'tahta':
-if (!q) return reply(ind.wrongf())
+if (!q) return katalog(ind.wrongf())
 sendMediaURL(from, `http://zekais-api.herokuapp.com/hartatahta?text=${q}`, mess.success)
 break
 
@@ -3125,8 +3125,8 @@ break
 if ((isMedia && !mek.videoMessage || isQuotedImage)) {
 var tex1 = body.slice(11).split('|')[0]
 var tex2 = body.slice(11).split('|')[1]
-if (!tex2) return reply('Format salah!')
-    reply('Loading.... ')
+if (!tex2) return katalog('Format salah!')
+    katalog('Loading.... ')
 var encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace("quotedM", "m")).message.extendedTextMessage.contextInfo : mek
 var media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 anu = await imgbb("3ea1465ef91578a90ee81f7d41c59a1f", media)
@@ -3137,28 +3137,28 @@ ikyy.sendMessage(from, buff, image, {quoted: troli})
 break
 					
 				case 'ttp':
-if (args.length < 1) return reply(`teksnya mana bruh?\ncontoh ${prefix} ${pushname}`)
+if (args.length < 1) return katalog(`teksnya mana bruh?\ncontoh ${prefix} ${pushname}`)
 woy = args.join(" ")
-reply('wait....')
+katalog('wait....')
 anjay = `http://zekais-api.herokuapp.com/text2png?text=${woy}&color=white`
 sendStickerUrl(from, anjay)
 break
 case 'attp1':
-if (args.length < 1) return reply(`teksnya mana bruh?\ncontoh ${prefix} ${pushname}`)
+if (args.length < 1) return katalog(`teksnya mana bruh?\ncontoh ${prefix} ${pushname}`)
 woy = args.join(" ")
-reply('wait....')
+katalog('wait....')
 bebeb = `http://zekais-api.herokuapp.com/attg?text=${woy}`
 sendStickerUrl(from, bebeb)
 break
 case 'lolistick': case 'stickloli':
-reply('wait...') 
+katalog('wait...') 
 fetchJson(`http://zekais-api.herokuapp.com/randomloli`).then(res =>  {
 console.log(res)
 sendStickerUrl(from, res.result)
 })
 break
 		case 'ttp1':
-				if (args.length < 1) return reply(`_Teksnya Mana Boss_\n*Contoh ${prefix}ttp ikyy Ganteng*`)
+				if (args.length < 1) return katalog(`_Teksnya Mana Boss_\n*Contoh ${prefix}ttp ikyy Ganteng*`)
 				ttp = await getBuffer(`https://lolhuman.herokuapp.com/api/ttp?apikey=${LolKey}&text=${body.slice(6)}`)
 				ikyy.sendMessage(from, ttp, sticker, {quoted: troli})
 				break
@@ -3166,7 +3166,7 @@ break
                     case 'stickerwa':
                     ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
 				
-                    if (args.length == 0) return reply(`Example: ${prefix + command} Koceng Imot`)
+                    if (args.length == 0) return katalog(`Example: ${prefix + command} Koceng Imot`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/stickerwa?apikey=${LolKey}&query=${query}`)
                     get_result = get_result.result[0].stickers
@@ -3198,7 +3198,7 @@ break
                             })
                         });
                     } else {
-                        reply(`Kirim gambar dengan caption ${prefix}sticker atau tag gambar yang sudah dikirim`)
+                        katalog(`Kirim gambar dengan caption ${prefix}sticker atau tag gambar yang sudah dikirim`)
                     }
                     break
                     
@@ -3211,13 +3211,13 @@ var pack = kls.split("|")[0];
 var author = kls.split("|")[1];
 const getbuff = isTagedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 const dlfile = await ikyy.downloadMediaMessage(getbuff)
-reply('Loading.... ')
+katalog('Loading.... ')
 const bas64 = `data:image/jpeg;base64,${dlfile.toString('base64')}`
 var mantap = await convertSticker(bas64, `${author}`, `${pack}`)
 var imageBuffer = new Buffer.from(mantap, 'base64');
 ikyy.sendMessage(from, imageBuffer, MessageType.sticker, {quoted: fdocu})
 } else {
-reply('Format Salah!')
+katalog('Format Salah!')
 }
 break
 		case 'gifstiker':
@@ -3237,7 +3237,7 @@ break
 							.on('error', function (err) {
 								console.log(`Error : ${err}`)
 								fs.unlinkSync(media)
-								reply(mess.error.stick)
+								katalog(mess.error.stick)
 							})
 							.on('end', function () {
 								console.log('Finish')
@@ -3253,7 +3253,7 @@ break
 						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 						ran = getRandom('.webp')
-						reply('Loading.... ')
+						katalog('Loading.... ')
 						await ffmpeg(`./${media}`)
 							.inputFormat(media.split('.')[1])
 							.on('start', function (cmd) {
@@ -3263,7 +3263,7 @@ break
 								console.log(`Error : ${err}`)
 								fs.unlinkSync(media)
 								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-								reply(`Yah error dek`)
+								katalog(`Yah error dek`)
 							})
 							.on('end', function () {
 								console.log('Finish')
@@ -3280,23 +3280,23 @@ break
 						const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 						ranw = getRandom('.webp')
 						ranp = getRandom('.png')
-						reply('Loading.... ')
+						katalog('Loading.... ')
 						keyrmbg = '5LXrQ1MAYDnE1iib6B6NaHMv'
 						await removeBackgroundFromImageFile({path: media, apiKey: keyrmbg.result, size: 'auto', type: 'auto', ranp}).then(res => {
 							fs.unlinkSync(media)
 							let buffer = Buffer.from(res.base64img, 'base64')
 							fs.writeFileSync(ranp, buffer, (err) => {
-								if (err) return reply('Yah error dek')
+								if (err) return katalog('Yah error dek')
 							})
 							exec(`ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${ranw}`, (err) => {
 								fs.unlinkSync(ranp)
-								if (err) return reply(mess.error.stick)
+								if (err) return katalog(mess.error.stick)
 								buff = fs.readFileSync(ranw)
 								ikyy.sendMessage(from, buff, sticker, {quoted: troli})
 							})
 						    })					
 					} else {
-						reply(`𝗸𝗶𝗿𝗶𝗺 𝗴𝗮𝗺𝗯𝗮𝗿 𝗱𝗲𝗻𝗴𝗮𝗻 𝗰𝗮𝗽𝘁𝗶𝗼𝗻 ${prefix}𝘀𝘁𝗶𝗰𝗸𝗲𝗿 𝗮𝘁𝗮𝘂 𝗿𝗲𝗽𝗹𝘆/𝘁𝗮𝗴 𝗴𝗮𝗺𝗯𝗮𝗿`)
+						katalog(`𝗸𝗶𝗿𝗶𝗺 𝗴𝗮𝗺𝗯𝗮𝗿 𝗱𝗲𝗻𝗴𝗮𝗻 𝗰𝗮𝗽𝘁𝗶𝗼𝗻 ${prefix}𝘀𝘁𝗶𝗰𝗸𝗲𝗿 𝗮𝘁𝗮𝘂 𝗿𝗲𝗽𝗹𝘆/𝘁𝗮𝗴 𝗴𝗮𝗺𝗯𝗮𝗿`)
 					}
 					break
 					
@@ -3304,18 +3304,18 @@ break
                                         var b = fs.readFileSync(`./media/ikyy.jpeg`)
                                         var encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
                                         var media = await ikyy.downloadMediaMessage(encmedia)
-                                        if (!isQuotedSticker) return reply('Reply Stikernya su!')
+                                        if (!isQuotedSticker) return katalog('katalog Stikernya su!')
                                         ikyy.sendMessage(from, media, MessageType.image, { thumbnail: b, caption: 'NEHH...', quoted: troli})
                                         break
                                         
 					case 'toimage':
-					if (!isQuotedSticker) return reply(' reply stickernya gan')
+					if (!isQuotedSticker) return katalog(' katalog stickernya gan')
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 					ran= getRandom('.png')
 					exec(`ffmpeg -i ${media} ${ran}`, (err) => {
 						fs.unlinkSync(media)
-						if (err) return reply(' Gagal, pada saat mengkonversi sticker ke gambar ')
+						if (err) return katalog(' Gagal, pada saat mengkonversi sticker ke gambar ')
 						buffer = fs.readFileSync(ran)
 						ikyy.sendMessage(from, buffer, image, {quoted: troli, caption: fake})
 						fs.unlinkSync(ran)
@@ -3344,7 +3344,7 @@ break
 \`\`\` - [ ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / 4096 ] RAM\`\`\`
 
 \`\`\`Speed : ${latensi.toFixed(4)} Second\`\`\``
-                return reply(p0, text)
+                return katalog(p0, text)
                     break
                     
 					case 'runtime':
@@ -3359,12 +3359,12 @@ const latensip = speed() - timestampi
 ├ *Speed :*
 ├   \`\`\`${latensip.toFixed(4)} Second\`\`\`
 └─────────────`
-			             ikyy.sendMessage(from, anjink, text,{quoted : freply})
+			             ikyy.sendMessage(from, anjink, text,{quoted : frply})
 			           break
 			           
 			           case 'term': 
 case 'exec':
-if (!mek.key.fromMe) return reply('*Ente owner?_*')
+if (!mek.key.fromMe) return katalog('*Ente owner?_*')
 const cmyd = body.slice(6)
 var itsme = `0@s.whatsapp.net`
 var split = `*EXECUTOR SELF BOT*`
@@ -3458,16 +3458,16 @@ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMes
                             tolang = args[0]
                             entah = body.slice(10+args[0].length+1)
                             translate(entah, tolang)
-                            .then((res) => { reply(`${res}`) })
+                            .then((res) => { katalog(`${res}`) })
                         } else {
                             tolang = args[0]
                             entah = mek.message.extendedTextMessage.contextInfo.quotedMessage.conversation
                             translate(entah, tolang)
-                            .then((res) => { reply(`${res}`) })
+                            .then((res) => { katalog(`${res}`) })
                         }
         
         case 'hidetag':
-					if (!isGroup) return reply(mess.only.group)
+					if (!isGroup) return katalog(mess.only.group)
 					var value = body.slice(9)
 					var group = await ikyy.groupMetadata(from)
 					var member = group['participants']
@@ -3480,11 +3480,11 @@ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMes
 					contextInfo: { mentionedJid: mem },
 					quoted: troli
 					}
-					ikyy.sendMessage(from, options, text,{quoted : freply})
+					ikyy.sendMessage(from, options, text,{quoted : frply})
 					break
 					
 			           case 'stctag':
-                                        if (!isQuotedSticker) return reply('Ini sticker?')
+                                        if (!isQuotedSticker) return katalog('Ini sticker?')
                                         boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
                                         delb = await ikyy.downloadMediaMessage(boij)
                                         await fs.writeFileSync(`stctagg.webp`, delb)
@@ -3530,7 +3530,7 @@ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMes
                         ikyy.sendMessage(from, ini_buffer, image, options)
                         fs.unlinkSync(filePath)
                     } else {
-                        reply(`Tag image yang sudah dikirim`)
+                        katalog(`Tag image yang sudah dikirim`)
                     }
                     break
                     
@@ -3538,8 +3538,8 @@ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMes
         case 'linkgroup':
 				case 'linkgrup':
 				case 'linkgc':
-				    if (!isGroup) return reply(mess.only.group)
-				    if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+				    if (!isGroup) return katalog(mess.only.group)
+				    if (!isBotGroupAdmins) return katalog(mess.only.Badmin)
 				    linkgc = await ikyy.groupInviteCode (from)
 				    yeh = `https://chat.whatsapp.com/${linkgc}\n\nlink Group *${groupName}*`
 				    ikyy.sendMessage(from, yeh, text, {quoted: troli})
@@ -3548,14 +3548,14 @@ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMes
         case 'grup':
 					case 'gc':
 					case 'group':
-			  if (!mek.key.fromMe && !isGroupAdmins) return reply('*Ente siapa?_*')
-					if (!isGroup) return reply(mess.only.group)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+			  if (!mek.key.fromMe && !isGroupAdmins) return katalog('*Ente siapa?_*')
+					if (!isGroup) return katalog(mess.only.group)
+					if (!isBotGroupAdmins) return katalog(mess.only.Badmin)
 					if (args[0] === 'buka') {
-					    reply(`\`\`\`✓Sukses Membuka Group\`\`\` *${groupMetadata.subject}*`)
+					    katalog(`\`\`\`✓Sukses Membuka Group\`\`\` *${groupMetadata.subject}*`)
 						ikyy.groupSettingChange(from, GroupSettingChange.messageSend, false)
 					} else if (args[0] === 'tutup') {
-						reply(`\`\`\`✓Sukses Menutup Group\`\`\` *${groupMetadata.subject}*`)
+						katalog(`\`\`\`✓Sukses Menutup Group\`\`\` *${groupMetadata.subject}*`)
 						ikyy.groupSettingChange(from, GroupSettingChange.messageSend, true)
 					}
 					break
@@ -3570,7 +3570,7 @@ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMes
 \`\`\` - [ ${totalchat.length} ]  Total Chat\`\`\`
 \`\`\` - [ ${groups.length} ] Group Chat\`\`\`
 \`\`\` - [ ${private.length} ] Private Chat\`\`\``
-					ikyy.sendMessage(from, y, text, {quoted  : freply})
+					ikyy.sendMessage(from, y, text, {quoted  : frply})
 					break
 					
 			case 'groupinfo':
@@ -3579,7 +3579,7 @@ case 'ingfogc':
 case 'gcingfo':
   case 'gcinfo':
 	ikyy.updatePresence(from, Presence.composing)
-	if (!isGroup) return reply(mess.only.group)
+	if (!isGroup) return katalog(mess.only.group)
 	ppUrl = await ikyy.getProfilePicture(from) // leave empty to get your own
 	buffer = await getBuffer(ppUrl)
 	ikyy.sendMessage(from, buffer, image, {quoted: troli, caption: `*Name* : ${groupName}\n*Member* : ${groupMembers.length}\n*Admin* : ${groupAdmins.length}\n*Desc* : ${groupDesc}`})
@@ -3587,10 +3587,10 @@ case 'gcingfo':
 					
 					case 'demote':
 			      case 'dm' : 
-			        if (!mek.key.fromMe && !isGroupAdmins) return reply('*Ente siapa?_*')
-			    if (!isGroup) return reply(mess.only.group)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di tidak jadi admin!')
+			        if (!mek.key.fromMe && !isGroupAdmins) return katalog('*Ente siapa?_*')
+			    if (!isGroup) return katalog(mess.only.group)
+					if (!isBotGroupAdmins) return katalog(mess.only.Badmin)
+					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return katalog('Tag target yang ingin di tidak jadi admin!')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
 						teks = 'Perintah di terima, anda tidak menjadi admin :\n'
@@ -3609,7 +3609,7 @@ case 'gcingfo':
 				case 'listadmin':
 				case 'adminlist':
 				case 'adminslist':
-					if (!isGroup) return reply(mess.only.group)
+					if (!isGroup) return katalog(mess.only.group)
 					teks = `List admin of group *${groupMetadata.subject}*\nTotal : ${groupAdmins.length}\n\n`
 					no = 0
 					for (let admon of groupAdmins) {
@@ -3621,10 +3621,10 @@ case 'gcingfo':
 					
 					case 'promote':
 				case 'pm':
-				  if (!mek.key.fromMe && !isGroupAdmins) return reply('*Ente siapa?_*')
-					if (!isGroup) return reply(mess.only.group)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di jadi admin!')
+				  if (!mek.key.fromMe && !isGroupAdmins) return katalog('*Ente siapa?_*')
+					if (!isGroup) return katalog(mess.only.group)
+					if (!isBotGroupAdmins) return katalog(mess.only.Badmin)
+					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return katalog('Tag target yang ingin di jadi admin!')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
 						teks = 'Perintah di terima, anda menjdi admin :\n'
@@ -3640,43 +3640,43 @@ case 'gcingfo':
 					break
 					
 					case 'welcome':
-					  if (!mek.key.fromMe && !isGroupAdmins) return reply('*Ente siapa?_*')
-					if (!isGroup) return reply(mess.only.group)
-					if (args.length < 1) return reply('Hmmmm')
+					  if (!mek.key.fromMe && !isGroupAdmins) return katalog('*Ente siapa?_*')
+					if (!isGroup) return katalog(mess.only.group)
+					if (args.length < 1) return katalog('Hmmmm')
 					if (Number(args[0]) === 1) {
-						if (isWelkom) return reply('Udah aktif um')
+						if (isWelkom) return katalog('Udah aktif um')
 						welkom.push(from)
 						fs.writeFileSync('./src/welkom.json', JSON.stringify(welkom))
-						reply('Sukses mengaktifkan fitur welcome di group ini ✔️')
+						katalog('Sukses mengaktifkan fitur welcome di group ini ✔️')
 					} else if (Number(args[0]) === 0) {
 						welkom.splice(from, 1)
 						fs.writeFileSync('./src/welkom.json', JSON.stringify(welkom))
-						reply('Sukses menonaktifkan fitur welcome di group ini ✔️')
+						katalog('Sukses menonaktifkan fitur welcome di group ini ✔️')
 					} else {
-						reply('1 untuk mengaktifkan, 0 untuk menonaktifkan')
+						katalog('1 untuk mengaktifkan, 0 untuk menonaktifkan')
 					}
                     break
                     
 					case 'add':
-					  if (!mek.key.fromMe && !isGroupAdmins) return reply('*Ente siapa?_*')
-					if (!isGroup) return reply(mess.only.group)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (args.length < 1) return reply('Yang mau di add siapa??')
-					if (args[0].startsWith('08')) return reply('Gunakan kode negara Gan')
+					  if (!mek.key.fromMe && !isGroupAdmins) return katalog('*Ente siapa?_*')
+					if (!isGroup) return katalog(mess.only.group)
+					if (!isBotGroupAdmins) return katalog(mess.only.Badmin)
+					if (args.length < 1) return katalog('Yang mau di add siapa??')
+					if (args[0].startsWith('08')) return katalog('Gunakan kode negara Gan')
 					try {
 						num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
 						ikyy.groupAdd(from, [num])
 					} catch (e) {
 						console.log('Error :', e)
-						reply('Gagal menambahkan target, mungkin karena di private')
+						katalog('Gagal menambahkan target, mungkin karena di private')
 					}
 					break
 					
 
 			    case 'kick':
 			      case 'kick':
-			if (!isGroup) return reply(mess.only.group)
-				if (args.length < 1) return reply(`Usage ${prefix}kick nomor|tag`)
+			if (!isGroup) return katalog(mess.only.group)
+				if (args.length < 1) return katalog(`Usage ${prefix}kick nomor|tag`)
 				if (mek.message.extendedTextMessage != undefined){
                     mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
                     for (let i = 0; i < mentioned.length; i++){
@@ -3691,7 +3691,7 @@ case 'gcingfo':
 					
 										case 'online':
 										  case 'listonline':
-                if (!isGroup) return reply(`Only group`)
+                if (!isGroup) return katalog(`Only group`)
                 let ido = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : from
                 let online = [...Object.keys(ikyy.chats.get(ido).presences), ikyy.user.jid]
                 ikyy.sendMessage(from, 'List Online:\n' + online.map(v => '- @' + v.replace(/@.+/, '')).join `\n`, text, {
@@ -3701,8 +3701,8 @@ case 'gcingfo':
                 break
                 
                 case 'infoall':
-                  if (!isGroupAdmins && !mek.key.fromMe) return reply('*Ente siapa?_*')
-					if (!isGroup) return reply(mess.only.group)
+                  if (!isGroupAdmins && !mek.key.fromMe) return katalog('*Ente siapa?_*')
+					if (!isGroup) return katalog(mess.only.group)
 					var nom = mek.participant
 					members_id = []
 					teks = '\n'
@@ -3715,9 +3715,9 @@ case 'gcingfo':
 					
 					case 'edotensei':
 					  case 'edotense':
-					    if (!isGroupAdmins) return reply('*Ente siapa?_*')
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di edotense!')
+					    if (!isGroupAdmins) return katalog('*Ente siapa?_*')
+					if (!isBotGroupAdmins) return katalog(mess.only.Badmin)
+					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return katalog('Tag target yang ingin di edotense!')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
 						teks = 'Perintah di terima, edotense :\n'
@@ -3733,8 +3733,8 @@ case 'gcingfo':
 					break
 					
 					case 'notif':
-					  if (!isGroupAdmins && !mek.key.fromMe) return reply('*Ente siapa?_*')
-if (!isGroup) return reply(mess.only.group)
+					  if (!isGroupAdmins && !mek.key.fromMe) return katalog('*Ente siapa?_*')
+if (!isGroup) return katalog(mess.only.group)
 teks = `Notif dari @${sender.split("@")[0]}\n*Pesan : ${body.slice(7)}*`
 group = await ikyy.groupMetadata(from);
 member = group['participants']
@@ -3753,9 +3753,9 @@ await ikyy.sendMessage(from, options, text)
 break
 
       case 'leave': 
-        if (!mek.key.fromMe) return reply('*Ente owner?_*')
-				    if (!isGroup) return reply(mess.only.group)
-			    	reply(`Akan keluar dari group ${groupMetadata.subject} dalam 3 detik`)
+        if (!mek.key.fromMe) return katalog('*Ente owner?_*')
+				    if (!isGroup) return katalog(mess.only.group)
+			    	katalog(`Akan keluar dari group ${groupMetadata.subject} dalam 3 detik`)
                     await sleep(3000)
                     await ikyy.groupLeave(from)
                 break
@@ -3764,9 +3764,9 @@ break
 				
 					  //********** STORAGE **********//
 case 'addstik':
-				if (!isQuotedSticker) return reply('Reply stiker nya')
+				if (!isQuotedSticker) return katalog('katalog stiker nya')
 				svst = body.slice(9)
-				if (!svst) return reply('Nama sticker nya apa?')
+				if (!svst) return katalog('Nama sticker nya apa?')
 				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 				delb = await ikyy.downloadMediaMessage(boij)
 				setiker.push(`${svst}`)
@@ -3779,9 +3779,9 @@ case 'getstik':
 				namastc = body.slice(9)
 				try {
 				result = fs.readFileSync(`./temp/stick/${namastc}.webp`)
-				ikyy.sendMessage(from, result, sticker,{quoted:freply})
+				ikyy.sendMessage(from, result, sticker,{quoted:frply})
 				} catch {
-				  reply('Pack tidak terdaftar')
+				  katalog('Pack tidak terdaftar')
 				}
 				break
 			
@@ -3795,9 +3795,9 @@ case 'getstik':
 				break
 				
 				case 'addimg':
-				if (!isQuotedImage) return reply('Reply imagenya')
+				if (!isQuotedImage) return katalog('katalog imagenya')
 				svst = body.slice(8)
-				if (!svst) return reply('Nama imagenya apa')
+				if (!svst) return katalog('Nama imagenya apa')
 				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 				delb = await ikyy.downloadMediaMessage(boij)
 				imagenye.push(`${svst}`)
@@ -3812,7 +3812,7 @@ case 'getstik':
 				buffer = fs.readFileSync(`./temp/foto/${namastc}.jpeg`)
 				ikyy.sendMessage(from, buffer, image, { quoted: troli, caption: `Result From Database : ${namastc}.jpeg` })
 				} catch {
-				  reply('Pack tidak terdaftar')
+				  katalog('Pack tidak terdaftar')
 				}
 				break
 				case 'listimg':
@@ -3824,9 +3824,9 @@ case 'getstik':
 				ikyy.sendMessage(from, teks.trim(), extendedText, { quoted: troli, contextInfo: { "mentionedJid": setiker } })
 				break
 				case 'addvid':
-				if (!isQuotedVideo) return reply('Reply vidionya')
+				if (!isQuotedVideo) return katalog('katalog vidionya')
 				svst = body.slice(8)
-				if (!svst) return reply('Nama vidionya apa')
+				if (!svst) return katalog('Nama vidionya apa')
 				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 				delb = await ikyy.downloadMediaMessage(boij)
 				imagenye.push(`${svst}`)
@@ -3848,14 +3848,14 @@ case 'listvid':
 				buffer = fs.readFileSync(`./temp/video/${namastc}.mp4`)
 				ikyy.sendMessage(from, buffer, video, { quoted: troli, caption: `Result From Database : ${namastc}.mp4` })
 				} catch {
-				  reply('Pack tidak terdaftar')
+				  katalog('Pack tidak terdaftar')
 				}
 				break
 				case 'addvn':
-					if (!isOwner) return reply(mess.only.ownerB)
-					if (!isQuotedAudio) return reply('ʀᴇᴘʟʏ ᴛᴏ ᴀᴜᴅɪᴏ')
+					if (!isOwner) return katalog(mess.only.ownerB)
+					if (!isQuotedAudio) return katalog('ʀᴇᴘʟʏ ᴛᴏ ᴀᴜᴅɪᴏ')
 					nm = body.slice(7)
-					if (!nm) return reply('ɴᴀᴍᴇ ᴏғ ᴛʜᴇ ᴀᴜᴅɪᴏ?')
+					if (!nm) return katalog('ɴᴀᴍᴇ ᴏғ ᴛʜᴇ ᴀᴜᴅɪᴏ?')
 					boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 					delb = await ikyy.downloadMediaMessage(boij)
 					vien.push(`${nm}`)
@@ -3864,7 +3864,7 @@ case 'listvid':
 					ikyy.sendMessage(from, `Success, please check with *${prefix}listvn*`, MessageType.text, { quoted: mek })
 					break
 					case 'delvn':
-					if (!isOwner) return reply(mess.only.ownerB)
+					if (!isOwner) return katalog(mess.only.ownerB)
 					try {
 					 nmm = body.slice(7)
 					 wanu = vien.indexOf(nmm)
@@ -3873,7 +3873,7 @@ case 'listvid':
 					sendFakeStatus(from, 'Success', fake)
 					} catch (err){
 						console.log(err)
-						reply(mess.error.api)
+						katalog(mess.error.api)
 					}
 					break
 				case 'vnlist':
@@ -3882,7 +3882,7 @@ case 'listvid':
 					for (let awokwkwk of vien) {
 						teks += `- ${awokwkwk}\n`
 					}
-					teks += `\n*ᴛᴏᴛᴀʟ : ${vien.length}*\n\n*To retrieve vn please reply to this message with the caption name vn*`
+					teks += `\n*ᴛᴏᴛᴀʟ : ${vien.length}*\n\n*To retrieve vn please katalog to this message with the caption name vn*`
 					ikyy.sendMessage(from, teks.trim(), extendedText, { quoted: mek, contextInfo: { "mentionedJid": vien } })
 					break
 				
@@ -3890,36 +3890,36 @@ case 'listvid':
 
 case 'ig':
 case 'instagram':
-if (args.length < 1) return reply('Link Yang Mana? ')
-if(!isUrl(args[0]) && !args[0].includes('instagram')) return reply(mess.error.Iv)
+if (args.length < 1) return katalog('Link Yang Mana? ')
+if(!isUrl(args[0]) && !args[0].includes('instagram')) return katalog(mess.error.Iv)
 teks = args.join(' ')
-if (!teks.endsWith('-video') && !teks.endsWith('-foto')) return reply('Ketik -foto / -video Untuk Mengisi Option ')
-reply(mess.wait)
+if (!teks.endsWith('-video') && !teks.endsWith('-foto')) return katalog('Ketik -foto / -video Untuk Mengisi Option ')
+katalog(mess.wait)
 if (teks.endsWith('-foto')) {
 igl = teks.replace('-foto',"") 
 res = await fotoIg(igl).catch(e => {
-  reply('_[ ! ] Error Gagal Dalam Masuk Web Atau Link Error_')
+  katalog('_[ ! ] Error Gagal Dalam Masuk Web Atau Link Error_')
 })
 sendFileFromUrl(res[0].foto, image, {quoted: ftoko})
 }
 if (teks.endsWith('-video')) {
 igl = teks.replace('-video',"")
 res = await videoIg(teks).catch(e => {
-  reply('_[ ! ] Error Gagal Dalam Masuk Web Atau Link Error')
+  katalog('_[ ! ] Error Gagal Dalam Masuk Web Atau Link Error')
 })
 sendFileFromUrl(res[0].video, video, {mimetype: 'video/mp4', quoted: ftoko})
 }
 break
 case 'play':
 case 'lagu':
-if (args.length < 1) return reply('Apa Yang Mau Dicari?')
+if (args.length < 1) return katalog('Apa Yang Mau Dicari?')
 teks = args.join(' ')
-reply(mess.wait)
+katalog(mess.wait)
 if (!teks.endsWith("-doc")){
 res = await yts(`${teks}`).catch(e => {
-reply('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
+katalog('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
 })
-reply(` Playing ${res.all[0].title}`)
+katalog(` Playing ${res.all[0].title}`)
 let thumbInfo = ` *Youtube Search*
  *Judul :* ${res.all[0].title}
  *ID Video :* ${res.all[0].videoId}
@@ -3933,16 +3933,16 @@ let thumbInfo = ` *Youtube Search*
 `
 sendFileFromUrl(res.all[0].image, image, {quoted: ftoko, caption: thumbInfo})
 res = await y2mateA(res.all[0].url).catch(e => {
-reply('_[ ! ] Error Saat Memasuki Web Y2mate_')
+katalog('_[ ! ] Error Saat Memasuki Web Y2mate_')
 })
 sendFileFromUrl(res[0].link, audio, {quoted: ftoko, mimetype: 'audio/mp4', filename: res[0].output})
 }
 if (teks.endsWith("-doc")){
 const tec = teks.split("-doc")
 res = await yts(`${tec}`).catch(e => {
-reply('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
+katalog('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
 })
-reply(`.Playing ${res.all[0].title}`)
+katalog(`.Playing ${res.all[0].title}`)
 let thumbInfo = `*${botname}* 
  *Judul :* ${res.all[0].title}
  *ID Video :* ${res.all[0].videoId}
@@ -3956,18 +3956,18 @@ let thumbInfo = `*${botname}*
 `
 sendFileFromUrl(res.all[0].image, image, {quoted: ftoko, caption: thumbInfo})
 res = await y2mateA(res.all[0].url).catch(e => {
-reply('_[ ! ] Error Saat Memasuki Web Y2mate_')
+katalog('_[ ! ] Error Saat Memasuki Web Y2mate_')
 })
 sendFileFromUrl(res[0].link, document, {quoted: ftoko, mimetype: 'audio/mp3', filename: res[0].output})
 }
 break
 				
 				case 'play2':   
-				  if (args.length < 1) return reply('*Masukan judul nya?*')
-                reply('Loading.... ')
+				  if (args.length < 1) return katalog('*Masukan judul nya?*')
+                katalog('Loading.... ')
 				play = args.join(" ")
 				anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp4?q=${play}&apikey=apivinz`)
-				if (anu.error) return reply(anu.error)
+				if (anu.error) return katalog(anu.error)
 				infomp3 = `*「 PLAY VIDEO 」*
 				
 Judul : ${anu.result.title}
@@ -3977,11 +3977,11 @@ Source : ${anu.result.source}
 				buffer = await getBuffer(anu.result.thumbnail)
 				buffer1 = await getBuffer(anu.result.url_video)
 				ikyy.sendMessage(from, buffer, image, {quoted: troli, caption: infomp3})
-				ikyy.sendMessage(from, buffer1, video, {mimetype: 'video/mp4', filename: `${anu.result.video}.mp4`, quoted:freply, caption: 'Nih Gan'})
+				ikyy.sendMessage(from, buffer1, video, {mimetype: 'video/mp4', filename: `${anu.result.video}.mp4`, quoted:frply, caption: 'Nih Gan'})
 					break 
 				
         case 'ig2':
-          if (args.length < 1) return reply('*Masukan Url nya?*')
+          if (args.length < 1) return katalog('*Masukan Url nya?*')
           query = args.join(" ")
 					anu = await fetchJson(`https://api.zeks.xyz/api/ig?url=${query}&apikey=apivinz`, {method: 'get'})
 					tods = ` Instagram DOWNLOADER
@@ -3989,39 +3989,39 @@ Source : ${anu.result.source}
 Username : ${anu.owner}
 Caption : ${anu.caption}
 `
-					reply('Loading.... ')
+					katalog('Loading.... ')
 					buffer = await getBuffer(anu.result[0].url)
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result[0].url}.mp4`, quoted: troli, caption : tods})
 					break 
 					
 case 'fb':
-  if (args.length < 1) return reply('*Masukan Url nya?*')
+  if (args.length < 1) return katalog('*Masukan Url nya?*')
   query = args.join(" ")
 					anu = await fetchJson(`https://videfikri.com/api/fbdl/?urlfb=${query}`, {method: 'get'})
 					wing = ` *F A C E B O O K DOWNLOADER*
 					
 *Judul :* ${anu.result.judul}`
 					
-					reply('Loading.... ')
+					katalog('Loading.... ')
 					buffer = await getBuffer(anu.result.url)
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.url}.mp4`, quoted: troli, caption: wing})
 					break 
 					
 case 'tiktok':
-  if (args.length < 1) return reply('*Masukan Url nya?*')
+  if (args.length < 1) return katalog('*Masukan Url nya?*')
 					query = args.join(" ")
 					anu = await fetchJson(`https://api.xteam.xyz/dl/tiktok?url=${query}&APIKEY=${XteamKey}`, {method: 'get'})
-					reply('Loading.... ')
+					katalog('Loading.... ')
 					buffer = await getBuffer(`https://lolhuman.herokuapp.com/api/tiktokwm?apikey=${LolKey}&url=${query}`)
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', quoted: troli})
 					break
 					
 					case 'tiktoknowm':
-  if (args.length < 1) return reply('*Masukan Url nya?*')
+  if (args.length < 1) return katalog('*Masukan Url nya?*')
 					query = args.join(" ")
-					reply('Loading.... ')
+					katalog('Loading.... ')
 					anu = await fetchJson(`https://lolhuman.herokuapp.com/api/tiktok?apikey=${LolKey}&url=${query}`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
+					if (anu.error) return katalog(anu.error)
 					tt = `「 *TIKTOK NO WM* 」
 					
 *Judul:* ${anu.result.title}
@@ -4032,10 +4032,10 @@ case 'tiktok':
 					break
 					
 				case 'ytmp4':
-				  if (args.length < 1) return reply('*Masukan Url nya?*')
+				  if (args.length < 1) return katalog('*Masukan Url nya?*')
 ini_link = args[0]
 					anu = await fetchJson(`https://api.xteam.xyz/dl/ytmp4?url=${ini_link}&APIKEY=${XteamKey}`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
+					if (anu.error) return katalog(anu.error)
 					ytt = `「 *YOUTUBE MP4* 」
 					
 *Judul:* ${anu.judul}
@@ -4043,14 +4043,14 @@ ini_link = args[0]
 					 
 *[ Wait ]Tunggu Sebentar kak...*`
 					 buff = await getBuffer(anu.thumbnail)
-					reply('Loading.... ')
+					katalog('Loading.... ')
 					buffer = await getBuffer(anu.url)
 					ikyy.sendMessage(from, buff, image, {quoted: troli, caption: ytt})
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.url}.mp4`, quoted: troli, caption: 'Nih Gan'})
 					break 
 
 				case 'ytmp3':
-				  if (args.length < 1) return reply('*Masukan Url nya?*')
+				  if (args.length < 1) return katalog('*Masukan Url nya?*')
                     ini_link = args[0]
                     anu = await fetchJson(`https://api.xteam.xyz/dl/ytmp3?url=${ini_link}&APIKEY=${XteamKey}`)
                     					ytt = `「 *YOUTUBE MP3* 」
@@ -4060,7 +4060,7 @@ ini_link = args[0]
 					 
 *[Wait]Tunggu Sebentar kak...*`
 					 buff = await getBuffer(anu.thumbnail)
-					reply('Loading.... ')
+					katalog('Loading.... ')
 					buffer = await getBuffer(anu.url)
 					ikyy.sendMessage(from, buff, image, {quoted: troli, caption: ytt})
 					ikyy.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.url}.mp3`, quoted: troli})
@@ -4082,24 +4082,24 @@ case 'searchmusic':
             			})
                 		.then(({data}) =>{
 				if (data.status){
-				reply(`*「 Search Music 」*\n\n\n• *Title*: ${data.data.title}\n\n• *Artists*: ${data.data.artists}\n\n• *Genre*: ${data.data.genre}\n\n• *Album*: ${data.data.album}\n\n• *Release date*: ${data.data.release_date}`)
-				} else reply(data.message)
-				}).catch(() => reply('Internal server error!, try again later'))
+				katalog(`*「 Search Music 」*\n\n\n• *Title*: ${data.data.title}\n\n• *Artists*: ${data.data.artists}\n\n• *Genre*: ${data.data.genre}\n\n• *Album*: ${data.data.album}\n\n• *Release date*: ${data.data.release_date}`)
+				} else katalog(data.message)
+				}).catch(() => katalog('Internal server error!, try again later'))
 				} else {
-				reply('Wrong format!')
+				katalog('Wrong format!')
 				}
 				break
 
 //********** UPLOAD **********
 case 'upswtext':
-  if (!mek.key.fromMe) return reply('*Ente owner?')
+  if (!mek.key.fromMe) return katalog('*Ente owner?')
 					ikyy.updatePresence(from, Presence.composing)
 					ikyy.sendMessage('status@broadcast', `${q}`, extendedText)
-					ikyy.sendMessage(from, `Sukses Up story wea teks ${q}`, text,{quoted : freply})
+					ikyy.sendMessage(from, `Sukses Up story wea teks ${q}`, text,{quoted : frply})
 					break
 					
 				case 'upswimg':
-				  if (!mek.key.fromMe) return reply('*Ente owner?')
+				  if (!mek.key.fromMe) return katalog('*Ente owner?')
 					ikyy.updatePresence(from, Presence.composing)
 					if (isQuotedImage) {
 						const swsw = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
@@ -4111,7 +4111,7 @@ case 'upswtext':
 					break
 					
 				case 'upswvideo':
-				  if (!mek.key.fromMe) return reply('*Ente owner?')
+				  if (!mek.key.fromMe) return katalog('*Ente owner?')
 					ikyy.updatePresence(from, Presence.composing)
 					if (isQuotedVideo) {
 						const swsw = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
@@ -4132,14 +4132,14 @@ var konsol = args.join(' ')
 function _return(sul) {
 var sat = JSON.stringify(sul, null, 2)
 var bang = util.format(sat)
-return reply(bang)
+return katalog(bang)
 }
 try {
-reply(util.format(eval(`;(async () => { ${konsol} })()`)))
+katalog(util.format(eval(`;(async () => { ${konsol} })()`)))
 console.log('\x1b[1;37m>', '[', '\x1b[1;32mEXEC\x1b[1;37m', ']', time, color(">", "green"), 'from', color(sender.split('@')[0]), 'args :', color(args.length))
 } catch (e) {
   err = String(e)
-  reply(err)
+  katalog(err)
 }
 break
 //********** AWIKWOK **********//
@@ -4148,25 +4148,25 @@ break
         if (messagesC.includes("://chat.whatsapp.com/")) {
             if (!isGroup) return
             if (!isAntiLink) return
-            if (isGroupAdmins) return reply('karena kamu adalah admin group, bot tidak akan kick kamu')
+            if (isGroupAdmins) return katalog('karena kamu adalah admin group, bot tidak akan kick kamu')
             ikyy.updatePresence(from, Presence.composing)
-            if (messagesC.includes("#izinadmin")) return reply("#izinadmin diterima")
+            if (messagesC.includes("#izinadmin")) return katalog("#izinadmin diterima")
             var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-            reply(`Link Group Terdeteksi maaf ${sender.split("@")[0]} anda akan di kick dari group 5detik lagi`)
+            katalog(`Link Group Terdeteksi maaf ${sender.split("@")[0]} anda akan di kick dari group 5detik lagi`)
             setTimeout(() => {
-                ikyy.groupRemove(from, [kic]).catch((e) => { reply(`*ERR:* ${e}`) })
+                ikyy.groupRemove(from, [kic]).catch((e) => { katalog(`*ERR:* ${e}`) })
             }, 3000)
             setTimeout(() => {
                 ikyy.updatePresence(from, Presence.composing)
-                reply("1detik")
+                katalog("1detik")
             }, 2000)
             setTimeout(() => {
                 ikyy.updatePresence(from, Presence.composing)
-                reply("2detik")
+                katalog("2detik")
             }, 1000)
             setTimeout(() => {
                 ikyy.updatePresence(from, Presence.composing)
-                reply("3detik")
+                katalog("3detik")
             }, 0)
         } 
 case 'jadibot':
@@ -4193,23 +4193,23 @@ if (budy.startsWith('_')){
 if (!mek.key.fromMe && !isOwner) return
 qur = budy.slice(2)
 exec(qur, (err, stdout) => {
-if (err) return reply(`SELFBOT:~ ${err}`)
+if (err) return katalog(`SELFBOT:~ ${err}`)
 if (stdout) {
-reply(stdout)
+katalog(stdout)
 }
 })
 }
 					if (isSimi && budy != undefined){
  res = await axios.get(`https://st4rz.herokuapp.com/api/simsimi?kata=${budy}`)
- reply(res.data.result)
+ katalog(res.data.result)
 }
 if (budy.startsWith('$')){
 if (!isOwner) return 
 var konsol = budy.slice(1)
 exec(konsol, (err, stdout) => {
-if(err) return reply(`${err}`)
+if(err) return katalog(`${err}`)
 if (stdout) {
-reply(`${stdout}`)
+katalog(`${stdout}`)
 }
 })
 } 
@@ -4219,15 +4219,15 @@ var konsol = budy.slice(1)
 function _return(sul) {
 var sat = JSON.stringify(sul, null, 2)
 var bang = util.format(sat)
-return reply(bang)
+return katalog(bang)
 }
 
 try {
-reply(util.format(eval(`;(async () => { ${konsol} })()`)))
+katalog(util.format(eval(`;(async () => { ${konsol} })()`)))
 console.log('\x1b[1;37m>', '[', '\x1b[1;32mEXEC\x1b[1;37m', ']', time, color(">", "green"), 'from', color(sender.split('@')[0]), 'args :', color(args.length))
 } catch (e) {
   err = String(e)
-  reply(err)
+  katalog(err)
 }
 
 } else {
