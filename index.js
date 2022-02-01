@@ -1104,7 +1104,6 @@ but = [
  sendButLocation(from, menu, menu2, thumbnail, but)
 break
 case 'stats'
-var nom = mek.participant
       var groups = ikyy.chats.array.filter(v => v.jid.endsWith('g.us'))
 				var privat = ikyy.chats.array.filter(v => v.jid.endsWith('s.whatsapp.net'))
 				var ram2 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
