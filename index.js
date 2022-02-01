@@ -69,6 +69,7 @@ const loli = new lolis()
 const Exif = require('./lib/exif');
 const exif = new Exif();
 const util = require('util')
+const xa = require('xfarr-api')
 const emoji = require('node-emoji')
 const {
   newsCnn
@@ -137,7 +138,7 @@ const {
 const { removeBackgroundFromImageFile } = require('remove.bg')
 const { color, bgcolor } = require('./lib/color')
 const { help } = require('./src/help')
-const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
+const { wait, weton, week, jmn, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const { fetchJson, fetchText } = require('./lib/fetcher')
 const { recognize } = require('./lib/ocr')
 const { exec } = require('child_process')
@@ -189,7 +190,6 @@ baterai = {
 	battery: "" || "blom sinkron",
 	isCharge: "" || false
 }
-
 
 //*********** VCARD  ***********//
 const vcard = 'BEGIN:VCARD\n'
@@ -417,7 +417,7 @@ ${demote}`
         if (urutan_pesan === 5000) {
       infomek.splice(0, 4300)
       fs.writeFileSync('./database/off.json', JSON.stringify(infomek, null, 2))
-    }
+    }    
     		global.prefix
     		mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
   			global.blocked
@@ -432,7 +432,7 @@ ${demote}`
            const cmd = (type === 'conversation' && mek.message.conversation) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text ? mek.message.extendedTextMessage.text : ''.slice(1).trim().split(/ +/).shift().toLowerCase()
 		   const prefix = /^[°•π÷×¶∆£¢€¥®™✓=|~zZ+×_*!#$%^&./\\©^]/.test(cmd) ? cmd.match(/^[°•π÷×¶∆£¢€¥®™✓=|~zZ+×_*!#$,|`÷?;:%abcdefghijklmnopqrstuvwxyz%^&./\\©^]/gi) : '-'
 		  
-			body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
+			body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : (type == "buttonsResponseMessage") && mek.message[type].selectedButtonId ? mek.message[type].selectedButtonId : ''
 			budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
 				const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
 				hit_today.push(command)
@@ -444,7 +444,7 @@ ${demote}`
 			
 
 			mess = {
-				wait: 'Waitt 1-2 menit....',
+				wait: '            *Bentar*         ',
 				success: '✔️ Success ✔️',
 				error: {
 					stick: '❌ Gagal, terjadi kesalahan saat mengkonversi gambar ke sticker ❌',
@@ -453,7 +453,7 @@ ${demote}`
 				only: {
 					group: '❌ Perintah ini hanya bisa di gunakan dalam group! ❌',
 					ownerG: '❌ Perintah ini hanya bisa di gunakan oleh owner group! ❌',
-					ownerB: '❌ Perintah ini hanya bisa di gunakan oleh owner bot! ❌',
+					ownerB: 'Bukan owner minggir',
 					admin: '❌ Perintah ini hanya bisa di gunakan oleh admin group! ❌',
 					Badmin: '❌ Perintah ini hanya bisa di gunakan ketika bot menjadi admin! ❌'
 				}
@@ -493,7 +493,7 @@ ${demote}`
 			}
 			
 				const sendImage = (teks) => {
-		    ikyy.sendMessage(from, teks, image, {quoted:freply})
+		    ikyy.sendMessage(from, teks, image, {quoted:ftroli})
 		    }
 		    
 		    const costum = (pesan, tipe, target, target2) => {
@@ -501,7 +501,7 @@ ${demote}`
 			}
 			
 		    const sendPtt = (teks) => {
-		    ikyy.sendMessage(from, audio, mp3, {quoted:freply})
+		    ikyy.sendMessage(from, audio, mp3, {quoted:ftroli})
 		    }
 			
 			const reply = (teks) => {
@@ -509,7 +509,11 @@ ${demote}`
 		    }
 			
 			const sendMess = (hehe, teks) => {
-				ikyy.sendMessage(hehe, teks, text,{quoted : freply})
+				ikyy.sendMessage(hehe, teks, text,{quoted : ftroli})
+			}
+			
+			const math = (teks) => {
+				return Math.floor(teks)
 			}
 			
 			const sendMediaURL = async(to, url, text="", mids=[]) =>{
@@ -624,49 +628,7 @@ const sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) =
 						headerType: 6
 						}
 						ikyy.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
-						}
-						  //KAN
-        var ase = new Date();
-                        var jamss = ase.getHours();
-                         switch(jamss){
-                case 0: jamss = "Midnight"; break;
-                case 1: jamss = "Midnight"; break;
-                case 2: jamss = "Midnight"; break;
-                case 3: jamss = "Midnight"; break;
-                case 4: jamss = "Midnight"; break;
-                case 5: jamss = "Dawn"; break;
-                case 6: jamss = "Morning"; break;
-                case 7: jamss = "Morning"; break;
-                case 8: jamss = "Morning"; break;
-                case 9: jamss = "Morning"; break;
-                case 10: jamss = "Morning"; break;
-                case 11: jamss = "Afternoon"; break;
-                case 12: jamss = "Zuhur"; break;
-                case 13: jamss = "Afternoon"; break;
-                case 14: jamss = "Afternoon"; break;
-                case 15: jamss = "Asr"; break;
-                case 16: jamss = "Afternoon"; break;
-                case 17: jamss = "Evening"; break;
-                case 18: jamss = "Maghrib"; break;
-                case 19: jamss = "Isha"; break;
-                case 20: jamss = "Night"; break;
-                case 21: jamss = "Night"; break;
-                case 22: jamss = "Midnight"; break;
-                case 23: jamss = "Midnight"; break;
-            }
-            var tampilUcapan = "" + jamss;
-            const jmn = moment.tz('Asia/Jakarta').format('HH:mm:ss')
-				let d = new Date
-				let locale = 'id'
-				let gmt = new Date(0).getTime() - new Date('1 Januari 2021').getTime()
-				const weton = ['Pahing', 'Pon','Wage','Kliwon','Legi'][Math.floor(((d * 1) + gmt) / 84600000) % 5]
-				const week = d.toLocaleDateString(locale, { weekday: 'long' })
-				const calender = d.toLocaleDateString(locale, {
-				day: 'numeric',
-				month: 'long',
-				year: 'numeric'
-		       })     
-                        
+						}              
     //////FAKE FAKE 
     const fgclink = {
 	"key": {
@@ -687,11 +649,11 @@ const sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) =
     
 const fdocu = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "documentMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "title": fake, "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('media/ikyy.jpeg')}}}
   
-const ftroli ={"key": {   "fromMe": false,"participant":"0@s.whatsapp.net",   "remoteJid": "6289523258649-1604595598@g.us"  }, "message": {orderMessage: {itemCount: 128,status: 200, thumbnail: thumbnail, surface: 200, message: `ᴄᴍᴅ ᴇxᴇᴄ : ${command}`, orderTitle: 'RamaXGans', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}                 
+const ftroli ={"key": {   "fromMe": false,"participant":"0@s.whatsapp.net",   "remoteJid": "6289523258649-1604595598@g.us"  }, "message": {orderMessage: {itemCount: 128,status: 200, thumbnail: thumbnail, surface: 200, message: `ᴄᴍᴅ ᴇxᴇᴄ : ${command}`, orderTitle: 'zeeoneofc', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}        
 
 const troli =  {key: { fromMe: false,remoteJid: "status@broadcast", participant: '0@s.whatsapp.net'}, message: {orderMessage: {itemCount: 999999, status: 200, thumbnail: fakeimage, surface: 200, message: fake, orderTitle: 'ikyy', sellerJid: '0@s.whatsapp.net'} } } 
 
-const freply = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": fake, "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync(`media/ikyy.jpeg`)} } }
+const frply = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": fake, "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync(`media/ikyy.jpeg`)} } }
 
 const ftoko = {
 key: {
@@ -716,6 +678,10 @@ key: {
 		}
 	}
 }
+const katalog = (teks) => {
+             res = ikyy.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 986, "message": teks, "footerText": "RamaGans", "thumbnail": thumbnail, "surface": 'CATALOG' }}, {quoted:ftroli})
+             ikyy.relayWAMessage(res)
+        }
    //********** FUNCTION OFF**********//
    
    if (!mek.key.remoteJid.endsWith('@g.us') && offline){
@@ -737,8 +703,9 @@ key: {
                         if (isAfk(mek.key.remoteJtext)) return
                         addafk(mek.key.remoteJtext)
             heheh = ms(Date.now() - waktuafk)
-            ikyy.sendMessage(mek.key.remoteJid,`*Mohon Maaf Gw Sedang Offline!*\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik lalu\n\nSilahkan hubungi lagi nanti`, MessageType.text,{contextInfo:{ mentionedJid: ['0@s.whatsapp.net'],'stanzaId': "B826873620DD5947E683E3ABE663F263", 'participant': "0@s.whatsapp.net", 'remoteJid': '6283136505591-1614953337@g.us', 'quotedMessage': {"imageMessage": {"caption": "*OFFLINE*", 'jpegThumbnail': fs.readFileSync(`./media/ikyy.jpeg`)}}}})
-      }      
+            ikyy.sendMessage(mek.key.remoteJid,`*Mohon Maaf gw Sedang Offline!*\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik lalu\n\nSilahkan hubungi lagi nanti`, MessageType.text,{contextInfo:{ mentionedJid: ['0@s.whatsapp.net'],'stanzaId': "B826873620DD5947E683E3ABE663F263", 'participant': "0@s.whatsapp.net", 'remoteJid': '6283136505591-1614953337@g.us', 'quotedMessage': {"imageMessage": {"caption": "*OFFLINE*", 'jpegThumbnail': fs.readFileSync(`./media/ikyy.jpeg`)}}}})
+      }
+        }
             }
           }
         }
@@ -894,8 +861,7 @@ return await ikyy.downloadMediaMessage(encmedia)
 				} else {	
 					last = len.toString(16)	
 				}	
-ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }} 
-
+ikyyyy = { quoted: ftroli }
 				const buf2 = Buffer.from(last, "hex")	
 				const buf3 = Buffer.from(bytes)	
 				const buf4 = Buffer.from(JSON.stringify(json))	
@@ -909,7 +875,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 			}
 
 const isBtMsg = (type == 'buttonsResponseMessage') ? mek.message.buttonsResponseMessage.selectedButtonId : ''
-const isStMsg = (type == 'listResponseMessage') ? mek.message.listResponseMessage.singleSelectReply.selectedRowId : ''
+const isStMsg = (type == 'listResponseMessage') ? mek.message.listResponseMessage.singleSelectreply.selectedRowId : ''
 
 			// Cmd Button Msg
 
@@ -919,18 +885,18 @@ if (!mek.key.fromMe && !isOwner) return
 if (banChats === false) return
 uptime = process.uptime()
 banChats = false
-freply(`「 *PUBLIC-MODE* 」`)
+ftroli(`「 *PUBLIC-MODE* 」`)
 break
 case 'selfmans':
 if (!mek.key.fromMe && !isOwner) return
 if (banChats === true) return
 uptime = process.uptime()
 banChats = true
-freply(`「 *SELF-MODE* 」`)
+reply(`「 *SELF-MODE* 」`)
 break   
 ////////
 //////
-  case 'menu':
+                  case 'menu':
                   case 'help':
                   case 'rm':
                   l = 1               
@@ -1175,7 +1141,7 @@ break
 ////////FITUR DARI BANG GALANG
 case 'loli':
 anu = await fetchJson('https://fdciabdul.tech/api/pinterest?keyword=loli', {method: 'get'})
-reply('wait....')
+reply(mess.wait)
 var n = JSON.parse(JSON.stringify(anu));
 var nimek =  n[Math.floor(Math.random() * n.length)];
 pok = await getBuffer(nimek)
@@ -1183,13 +1149,13 @@ ikyy.sendMessage(from, pok, image, {quoted: ftroli,  caption: `nih`})
 break 
 case 'phubkomen':
 				if (args.length < 1) return reply(`Textnya Mana Cuy?\nContoh ${prefix}phubkomen ikyy|yamette`)
-				reply('wait...')
+				reply(mess.wait)
 				ct = body.slice(10)
 				teks1 = ct.split("|")[0];
                 teks2 = ct.split("|")[1];
 				anu = await fetchJson(`https://api.zeks.xyz/api/phub?apikey=vuG6qRcrb1NzsZRHNBKEBrc7feD&img=https://1.bp.blogspot.com/-x8KhcOBG-yw/XiU4pi1yWVI/AAAAAAAADBA/gK8tsLyc1lQ808A348IKzDCjf6fUBKONwCLcBGAsYHQ/s1600/cara+buat+foto+profil+di+whatsapp+menjadi+unik.jpg&username=${teks1}&msg=${teks2}`)
 				teted = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, teted, image, { quoted: mek, caption: 'Nih kack' })
+				ikyy.sendMessage(from, teted, image, { quoted: ftroli, caption: 'Nih kack' })
 				break
 ////GA WORK
         //Random Images
@@ -1355,7 +1321,7 @@ case 'yts':
 case 'ytsearch':
 if (args.length < 1) return reply('Yang mau di cari apaan?')
 teks = args.join(' ')
-reply('Loading.... ')
+reply(mess.wait)
 res = await yts(`${teks}`)
 kant = ``
 for (let i of res.all) {
@@ -1373,12 +1339,12 @@ kant += `*Iky Ads*
 `
 }
 var akhir = kant.trim()
-sendFileFromUrl(res.all[0].image, image, {quoted: ftoko, caption: akhir})
+sendFileFromUrl(res.all[0].image, image, {quoted: ftroli, caption: akhir})
 break
 case 'gimage':
 case 'googleimage':
 if (args.length < 1) return reply('Apa Yang Mau Dicari?')
-reply('Loading.... ')
+reply(mess.wait)
 teks = args.join(' ')
 res = await googleImage(teks, google)
 function google(error, result){
@@ -1386,7 +1352,7 @@ if (error){ return reply('_[ ! ] Error Terjari Kesalahan Atau Hasil Tidak Ditemu
 else {
 var gugIm = result
 var random =  gugIm[Math.floor(Math.random() * gugIm.length)].url
-sendFileFromUrl(random, image, {quoted: ftoko, caption: `*Hasil Pencarian Dari :* ${teks}`})
+sendFileFromUrl(random, image, {quoted: ftroli, caption: `*Hasil Pencarian Dari :* ${teks}`})
 }
 }
 break
@@ -1444,7 +1410,7 @@ case 'googlesearch':
 case 'ggs':
 if (args.length < 1) return reply('Yang mau di cari apaan?')
 teks = args.join(' ')
-reply('Loading.... ')
+reply(mess.wait)
 res = await ggs({'query' : `${teks}`})
 kant = ``
 for (let i of res) {
@@ -1464,7 +1430,7 @@ case 'ocr':
 if ((isMedia && !mek.message.videoMessage || isTagedImage) && args.length == 0) {
 const encmedia = isTagedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
-reply('Loading.... ')
+reply(mess.wait)
 await recognize(media, {lang: 'eng+ind', oem: 1, psm: 3}).then(teks => {
 reply(teks.trim())
 fs.unlinkSync(media)
@@ -1487,7 +1453,6 @@ case 'tagall':
 					}
 					mentions(teks, members_id, true)
 					break
-       //MAKER MENU THX LOLHUMAN
 case 'buggc':
 await ikyy.toggleDisappearingMessages(from)
 reply("⤳𝙓ͯ𝙘ͨ𝙤ͦ𝙙ͩ𝙚ͤ 𝙬ⷠ𝙖ⷠ𝙨ⷠ 𝙝𝙚𝙧𝙚")
@@ -1499,46 +1464,10 @@ case 'bug':
 await ikyy.toggleDisappearingMessages(from, 0)
 }
 reply('Sukses Send Bug Sebanyak '+args.join(' '))
-					//////
- //maker By Rama,😅
-                   case 'bokeh':
-                   case 'brokenglass':
-                   case 'artpapercut':
-                   case 'neondevil':
-                   case '3dunderwater':
-                   case 'bearlogo':
-                   case 'biscuit':
-                   case 'abstragold':
-                   case 'rusymetal':
-                   case 'fruitjuice':
-                   case 'icecold':
-                   case 'marble':
-                   case 'horror':
-                   case 'plasticbagdrug':
-                   case 'honey':
-                   case 'christmas':
-                   case 'breakwall':
-                   case 'dropwater':
-                   case 'greenneon':
-                   case 'wood':
-                   case 'metalrainbow':
-                   case 'purplegame':
-                   case 'shinymetal':
-                   case 'yellowjewelry':
-                   case 'lava':
-                   case 'denim':
-                   case 'rock':
-                   reply(mess.wait)
-                    if (args.length == 0) return reply(`Example: ${prefix + command} Rama Gamtenk`) 
-                    ini_txt = args.join(" ")
-                    ini_buffer = await getBuffer(`https://api.dapuhy.xyz/api/textpro/${command}?text=${ini_txt}&apikey=${dapaapi}`)                                                
-                    ikyy.sendMessage(from, ini_buffer, image, { quoted: ftroli })
-                    break                   
-                 
+					//////                                    
+break
+
 case 'bikinquote':
-                 
-                 
-                 
                 var gh = body.slice(12)
 					var quote = gh.split("&")[0];
 					var wm = gh.split("&")[1];
@@ -1554,13 +1483,13 @@ case 'bikinquote':
 
 			  //********** SELF&PUBLIC THX ZITSRA**********//
 			  case 'self':
-			  if (!mek.key.fromMe) return reply('*Ente owner?_*')
+			  if (!mek.key.fromMe) return reply(only.ownerB)
 			    public = false
 			    return reply(  `*「 𝙈𝙊𝘿𝙀 : 𝙎𝙀𝙇𝙁 」*`, text)
 			    break
 			    
 			  case 'public':
-			    if (!mek.key.fromMe) return reply('*Ente owner?_*')
+			    if (!mek.key.fromMe) return reply(only.ownerB)
 			    public = true
 			    return reply(`*「 𝙈𝙊𝘿𝙀 : 𝙋𝙐𝘽𝙇𝙄𝘾 」*`, text)
 			    break
@@ -1588,19 +1517,19 @@ case 'bikinquote':
           	break
 			    
 			    case 'unpin':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return reply(only.ownerB)
                 ikyy.modifyChat(from, ChatModification.unpin)
                 reply('*succes unpin this chat*')
                 console.log('unpin chat = ' + from)
                 break
             case 'pin':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return reply(only.ownerB)
                 ikyy.modifyChat(from, ChatModification.pin)
                 reply('*succes pin this chat*')
                 console.log('pinned chat = ' + from)
                 break
             case 'unreadall':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return reply(only.ownerB)
                 var chats = await ikyy.chats.all()
                 chats.map( async ({ jid }) => {
                 await ikyy.chatRead(jid, 'unread')
@@ -1611,7 +1540,7 @@ case 'bikinquote':
 	        break
 	        
             case 'readall':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return reply(only.ownerB)
                 var chats = await ikyy.chats.all()
                 chats.map( async ({ jid }) => {
                 await ikyy.chatRead(jid)
@@ -1622,7 +1551,7 @@ case 'bikinquote':
 		break
 		
             case 'unarchiveall':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return reply(only.ownerB)
                 reply('*succes unarchive all chat*')
                 console.log('succes unarchive chat = ' + from)
                 anu = await ikyy.chats.all()
@@ -1632,7 +1561,7 @@ case 'bikinquote':
                 break
                 
             case 'archive':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return reply(only.ownerB)
                 reply('*okey wait..*')
                 console.log('succes archive chat = ' + from)
                 await sleep(3000)
@@ -1640,7 +1569,7 @@ case 'bikinquote':
                 break
                 
             case 'delthischat':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return reply(only.ownerB)
                 reply('*succes delete this chat*')
                 console.log('succes delete chat = ' + from)
                 await sleep(4000)
@@ -1648,8 +1577,8 @@ case 'bikinquote':
                 break
                 
                 case 'shutdown':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
-	        await ikyy.sendMessage(from, `_Bye..._\n_ikyy off dulu yaa.._`, text,{quoted : freply})
+                if (!mek.key.fromMe) return reply(only.ownerB)
+	        await ikyy.sendMessage(from, `_Bye..._\n_ikyy off dulu yaa.._`, text,{quoted : ftroli})
 		await sleep(1000)
                 ikyy.close()
 		break
@@ -1665,72 +1594,72 @@ case 'bikinquote':
            
 			  //********** SETTING BOT **********//
 			  case 'setleave':
-			    if (!mek.key.fromMe) return reply('*Ente owner?_*')
+			    if (!mek.key.fromMe) return reply(only.ownerB)
 			    if (args.length < 1) return reply('*Teks nya mana gan?*')
                     ikyy.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
 					leave = body.slice(10)
-					ikyy.sendMessage(from,`\`\`\`Leave berhasil di ubah menjadi : ${body.slice(10)}\`\`\``, text,{quoted : freply})
+					ikyy.sendMessage(from,`\`\`\`Leave berhasil di ubah menjadi : ${body.slice(10)}\`\`\``, text,{quoted : ftroli})
 				break 
 				
 				case 'setpromote':
-				  if (!mek.key.fromMe) return reply('*Ente owner?_*')
+				  if (!mek.key.fromMe) return reply(only.ownerB)
 				  if (args.length < 1) return reply('*Teks nya mana gan?*')
                     ikyy.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
 					promote = body.slice(11)
-					ikyy.sendMessage(from,`\`\`\`Promote berhasil di ubah menjadi : ${body.slice(11)}\`\`\``, text,{quoted : freply})
+					ikyy.sendMessage(from,`\`\`\`Promote berhasil di ubah menjadi : ${body.slice(11)}\`\`\``, text,{quoted : ftroli})
 				break 
 				
 					case 'setdemote':
-					  if (!mek.key.fromMe) return reply('*Ente owner?_*')
+					  if (!mek.key.fromMe) return reply(only.ownerB)
 					  if (args.length < 1) return reply('*Teks nya mana gan?*')
                     ikyy.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
 					demote = body.slice(11)
-					ikyy.sendMessage(from ,`\`\`\`Demote berhasil di ubah menjadi : ${body.slice(11)}\`\`\``, text,{quoted : freply})
+					ikyy.sendMessage(from ,`\`\`\`Demote berhasil di ubah menjadi : ${body.slice(11)}\`\`\``, text,{quoted : ftroli})
 				break 
 				///GWE HAPUS
 				case 'setbodymenu':
-				  if (!mek.key.fromMe) return reply('*Ente owner?_*')
+				  if (!mek.key.fromMe) return reply(only.ownerB)
 				  if (args.length < 1) return reply('*_CONTOH :_*\n\n  *   : *menu*\n  ~   : ~menu~\n  _ : _menu_\n ```   : ```menu```\n\n\n\n Contoh penggunaan : .setbodymenu *')
                     ikyy.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
 					f = body.slice(13)
-					ikyy.sendMessage(from ,`\`\`\`Body menu berhasil di ubah menjadi : ${body.slice(13)}\`\`\``, text,{quoted : freply})
+					ikyy.sendMessage(from ,`\`\`\`Body menu berhasil di ubah menjadi : ${body.slice(13)}\`\`\``, text,{quoted : ftroli})
 				break 
 				
 					case 'setwelcome':
-					  if (!mek.key.fromMe) return reply('*Ente owner?_*')
+					  if (!mek.key.fromMe) return reply(only.ownerB)
 					  if (args.length < 1) return reply('*Teks nya mana gan?*')
                     ikyy.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
 					join = body.slice(11)
-					ikyy.sendMessage(from ,`\`\`\`Welcome berhasil di ubah menjadi : ${body.slice(11)}\`\`\``, text,{quoted : freply})
+					ikyy.sendMessage(from ,`\`\`\`Welcome berhasil di ubah menjadi : ${body.slice(11)}\`\`\``, text,{quoted : ftroli})
 				break 
 				
 					  case 'setharga':
-					if(!mek.key.fromMe)return reply('*Ente owner?_*')
+					if(!mek.key.fromMe)return reply(only.ownerB)
 					if (!q) return reply(mess.wrongFormat)
 					harga = q
 					fakegroup(`Succes Mengganti Harga Fake : ${q}`)
 					break
 						  case 'setmatauang':
-					if(!mek.key.fromMe)return reply('*Ente owner?_*')
+					if(!mek.key.fromMe)return reply(only.ownerB)
 					if (!q) return reply(mess.wrongFormat)
 					matauang = q
 					fakegroup(`Succes Mengganti Matauang Fake : ${q}`)
 					break
 			  case 'setreply':
-					if(!mek.key.fromMe)return reply('*Ente owner?_*')
+					if(!mek.key.fromMe)return reply(only.ownerB)
 					if (!q) return reply(mess.wrongFormat)
 					fake = q
 					fakegroup(`Succes Mengganti Conversation Fake : ${q}`)
 					break
 
 				case 'setthumb':
-				  if (!mek.key.fromMe) return reply('*Ente owner?_*')
-				if (!isQuotedImage) return reply('Reply imagenya')
+				  if (!mek.key.fromMe) return reply(only.ownerB)
+				if (!isQuotedImage) return reply('reply imagenya')
 				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 				delb = await ikyy.downloadMediaMessage(boij)
 				fs.writeFileSync(`./media/ikyy.jpeg`, delb)
@@ -1757,42 +1686,21 @@ case 'bikinquote':
 					}
 					thumb = await getBuffer(pic)
 					ikyy.sendMessage(from, thumb, MessageType.image)
-				{quoted : freply}}
+				{quoted : ftroli}}
 				break
 				
 				  case 'join':
-				    if (!mek.key.fromMe) return reply('*Ente owner?_*')
+				    if (!mek.key.fromMe) return reply(only.ownerB)
                            if (!q) return reply('Masukan link group')
                            var codeInvite = body.slice(6).split('https://chat.whatsapp.com/')[1]
                            if (!codeInvite) return reply ('pastikan link sudah benar!')
                            var response = await ikyy.acceptInvite(codeInvite);
                            console.log(response);
                            reply('*Udah masuk gan_*')
-                           break
-                           
-                           
-                           case 'bc':
-					if (!mek.key.fromMe) return reply('*Ente owner?_*')
-					if (args.length < 1) return reply('.......')
-					anu = await ikyy.chats.all()
-					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : freply
-						bc = await ikyy.downloadMediaMessage(encmedia)
-						for (let _ of anu) {
-							ikyy.sendMessage(_.jid, bc, image, {caption: `*「 ZBROADCAST 」*\n\n${body.slice(4)}`})
-						}
-						reply('Suksess broadcast')
-					} else {
-						for (let _ of anu) {
-							sendMess(_.jid, `*「 ZBROADCAST 」*\n\n${body.slice(4)}`)
-						}
-						reply('Suksess broadcast')
-					}
-					break
-					
+                           break                        					
 					case 'restart':
-if (!mek.key.fromMe) return reply('*Ente owner?_*')
-reply('_Restarting BOT_')
+if (!mek.key.fromMe) return reply(only.ownerB)
+reply('_Restarting_')
 exec(`node main`)
 setTimeout( () => {
 					ikyy.sendMessage(from, '_1_', text) // ur cods
@@ -1856,7 +1764,7 @@ case 'setfake':
 				break
 				
 				case 'setthumbmenu':
-				if (!isQuotedImage) return reply('Reply imagenya')
+				if (!isQuotedImage) return reply('reply imagenya')
 				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 				delb = await ikyy.downloadMediaMessage(boij)
 				imagenye.push(`help`)
@@ -1954,7 +1862,7 @@ break
 					
 					//********** CONVERT **********//
 					case 'exif':
-	        if (!mek.key.fromMe) return reply('*Ente owner?_*')
+	        if (!mek.key.fromMe) return reply(only.ownerB)
 	        if (args.length < 1) return reply(`Penggunaan ${prefix}exif nama|autho`)
 		if (!arg.split('|')) return reply(`Penggunaan ${prefix}exif nama|author`)
 		    exif.create(arg.split('|')[0], arg.split('|')[1])
@@ -1962,7 +1870,7 @@ break
 	        break
 	        
 	        case 'colong':
-		if (!isQuotedSticker) return reply(`Reply sticker dengan caption *${prefix}colong*`)
+		if (!isQuotedSticker) return reply(`reply sticker dengan caption *${prefix}colong*`)
 		const encmediia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 	        const meidia = await ikyy.downloadAndSaveMediaMessage(encmediia, `./sticker/${sender}`)
 		    exec(`webpmux -set exif ./sticker/data.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
@@ -1974,7 +1882,7 @@ break
 				break
 	        
 					case 'take':
-					if (!isQuotedSticker) return reply(`Reply sticker dengan caption *${prefix}takestick nama|author*`)
+					if (!isQuotedSticker) return reply(`reply sticker dengan caption *${prefix}takestick nama|author*`)
 					var pembawm = body.slice(6)
 					var encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					var media = await ikyy.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
@@ -1992,8 +1900,8 @@ break
 				case 'togif':
 				ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
 				
-                                        if (!isQuotedSticker) return reply('Reply stiker nya')
-                                        reply('Loading.... ')
+                                        if (!isQuotedSticker) return reply('reply stiker nya')
+                                       reply(mess.wait)
                                         if (mek.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.isAnimated === true){
                                         const encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
                                         const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
@@ -2077,7 +1985,7 @@ break
 					ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
 				
 if ((isMedia && !mek.videoMessage || isQuotedImage)) {
-    reply('Loading.... ')
+   reply(mess.wait)
 var encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace("quotedM", "m")).message.extendedTextMessage.contextInfo : mek
 var media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 anu = await imgbb("3ea1465ef91578a90ee81f7d41c59a1f", media)
@@ -2090,7 +1998,7 @@ break
  case 'sticknobg':
 									if (!isQuotedSticker) return reply('stickernya mana anjeng')
 					if (isQuotedSticker) {
-												 if (mek.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.isAnimated) return reply('Reply sticker gambar!')
+												 if (mek.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.isAnimated) return reply('reply sticker gambar!')
 ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 ran = getRandom('.png')
 ehgmediabi = await ikyy.downloadAndSaveMediaMessage(ger)
@@ -2104,7 +2012,7 @@ exec(`ffmpeg -i ${ehgmediabi} ${ran}`, (err) => {
 								let buffur = Buffer.from(res.base64img, 'base64')
 								fs.writeFileSync(ranp, buffur)
 								var imgbb = require('imgbb-uploader')
-								reply('Loading.... ')
+								reply(mess.wait)
 								imgbb("68cb5bee517bce4f74b0e910a5d96346", ranp)
 								.then(anu => {
 								sendStickerUrl(from, anu.display_url)
@@ -2122,7 +2030,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
  var ghs = body.slice(11)
 									if ((isMedia || isQuotedImage) && args.length == 0) {
 										   ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-                                        reply('Loading.... ')
+                                       reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.jpg')
                                         teks = `${uploade.result.image}`
@@ -2130,7 +2038,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 										sendStickerUrl(from, buffer)
 									 } else if (isQuotedSticker && args.length == 0) {
 										   ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                       reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -2143,7 +2051,7 @@ case 'stickwasted':
 									 var ghs = body.slice(13)
 									if ((isMedia || isQuotedImage) && args.length == 0) {
 										   ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-                                        reply('Loading.... ')
+                                       reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.jpg')
                                         teks = `${uploade.result.image}`
@@ -2151,7 +2059,7 @@ case 'stickwasted':
 										sendStickerUrl(from, buffer)
 									 } else if (isQuotedSticker && args.length == 0) {
 										   ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                       reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -2160,7 +2068,7 @@ case 'stickwasted':
 									 }
 									break
 case 'smeme': 
-reply('Loading.... ')
+reply(mess.wait)
 top = arg.split('|')[0]
 bottom = arg.split('|')[1]
 var imgbb = require('imgbb-uploader')
@@ -2183,7 +2091,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 									 var ghs = body.slice(11)
 									 if (mek.message.extendedTextMessage != undefined || mek.message.extendedTextMessage != null) {
                                           ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                       reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -2196,7 +2104,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 									 var ghs = body.slice(12)
 									 if (mek.message.extendedTextMessage != undefined || mek.message.extendedTextMessage != null) {
                                           ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                       reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -2213,7 +2121,7 @@ var tex2 = body.slice(12).split('|')[1]
 if (!tex2) return reply('Format salah!')
 									 if (mek.message.extendedTextMessage != undefined || mek.message.extendedTextMessage != null) {
                                           ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                       reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -2224,24 +2132,7 @@ if (!tex2) return reply('Format salah!')
 									case 'tahta':
 if (!q) return reply(ind.wrongf())
 sendMediaURL(from, `http://zekais-api.herokuapp.com/hartatahta?text=${q}`, mess.success)
-break
-
-					case 'textmaker':
-					ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
-				
-if ((isMedia && !mek.videoMessage || isQuotedImage)) {
-var tex1 = body.slice(11).split('|')[0]
-var tex2 = body.slice(11).split('|')[1]
-if (!tex2) return reply('Format salah!')
-    reply('Loading.... ')
-var encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace("quotedM", "m")).message.extendedTextMessage.contextInfo : mek
-var media = await ikyy.downloadAndSaveMediaMessage(encmedia)
-anu = await imgbb("3ea1465ef91578a90ee81f7d41c59a1f", media)
-getUrl = `${anu.display_url}`
-buff = await getBuffer(`https://lolhuman.herokuapp.com/api/memegen?apikey=${LolKey}&texttop=${tex1}&textbottom=${tex2}&img=${getUrl}`)
-ikyy.sendMessage(from, buff, image, {quoted: ftroli})
-}
-break
+break					 
 					
 				case 'ttp':
 if (args.length < 1) return reply(`teksnya mana bruh?\ncontoh ${prefix} ${pushname}`)
@@ -2318,7 +2209,7 @@ var pack = kls.split("|")[0];
 var author = kls.split("|")[1];
 const getbuff = isTagedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 const dlfile = await ikyy.downloadMediaMessage(getbuff)
-reply('Loading.... ')
+reply(mess.wait)
 const bas64 = `data:image/jpeg;base64,${dlfile.toString('base64')}`
 var mantap = await convertSticker(bas64, `${author}`, `${pack}`)
 var imageBuffer = new Buffer.from(mantap, 'base64');
@@ -2349,7 +2240,7 @@ break
 							.on('end', function () {
 								console.log('Finish')
 								buff = fs.readFileSync(ran)
-								ikyy.sendMessage(from, fs.readFileSync(ran), sticker, { contextInfo: { participant: `${numbernye}@s.whatsapp.net`, quotedMessage: { conversation: '*ikyy-SELF*' } } }) 
+								ikyy.sendMessage(from, fs.readFileSync(ran), sticker, { contextInfo: { participant: `${numbernye}@s.whatsapp.net`, quotedMessage: { conversation: '*RAMASELF*' } } }) 
 								fs.unlinkSync(media)
 								fs.unlinkSync(ran)
 							})
@@ -2360,7 +2251,7 @@ break
 						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 						ran = getRandom('.webp')
-						reply('Loading.... ')
+						reply(mess.wait)
 						await ffmpeg(`./${media}`)
 							.inputFormat(media.split('.')[1])
 							.on('start', function (cmd) {
@@ -2387,7 +2278,7 @@ break
 						const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 						ranw = getRandom('.webp')
 						ranp = getRandom('.png')
-						reply('Loading.... ')
+						reply(mess.wait)
 						keyrmbg = '5LXrQ1MAYDnE1iib6B6NaHMv'
 						await removeBackgroundFromImageFile({path: media, apiKey: keyrmbg.result, size: 'auto', type: 'auto', ranp}).then(res => {
 							fs.unlinkSync(media)
@@ -2411,7 +2302,7 @@ break
                                         var b = fs.readFileSync(`./media/ikyy.jpeg`)
                                         var encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
                                         var media = await ikyy.downloadMediaMessage(encmedia)
-                                        if (!isQuotedSticker) return reply('Reply Stikernya su!')
+                                        if (!isQuotedSticker) return reply('reply Stikernya su!')
                                         ikyy.sendMessage(from, media, MessageType.image, { thumbnail: b, caption: 'NEHH...', quoted: ftroli})
                                         break
                                         
@@ -2459,19 +2350,19 @@ uptime = process.uptime()
 const timestampi = speed();
 const latensip = speed() - timestampi
 			             anjink =`◪ 𝗥𝘂𝗻𝘁𝗶𝗺𝗲
-├ *Nama bot : ikyy*
+├ *Nama bot : SELF*
 ├ *Server :* _*Baileys*_
 ├ *Runtime :*
 ├   \`\`\`${kyun(uptime)}\`\`\`
 ├ *Speed :*
 ├   \`\`\`${latensip.toFixed(4)} Second\`\`\`
 └─────────────`
-			             ikyy.sendMessage(from, anjink, text,{quoted : freply})
+			             ikyy.sendMessage(from, anjink, text,{quoted : ftroli})
 			           break
 			           
 			           case 'term': 
 case 'exec':
-if (!mek.key.fromMe) return reply('*Ente owner?_*')
+if (!mek.key.fromMe) return reply(only.ownerB)
 const cmyd = body.slice(6)
 var itsme = `0@s.whatsapp.net`
 var split = `*EXECUTOR SELF BOT*`
@@ -2587,7 +2478,7 @@ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMes
 					contextInfo: { mentionedJid: mem },
 					quoted: ftroli
 					}
-					ikyy.sendMessage(from, options, text,{quoted : freply})
+					ikyy.sendMessage(from, options, text,{quoted : ftroli})
 					break
 					
 			           case 'stctag':
@@ -2677,7 +2568,7 @@ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMes
 \`\`\` - [ ${totalchat.length} ]  Total Chat\`\`\`
 \`\`\` - [ ${groups.length} ] Group Chat\`\`\`
 \`\`\` - [ ${private.length} ] Private Chat\`\`\``
-					ikyy.sendMessage(from, y, text, {quoted  : freply})
+					ikyy.sendMessage(from, y, text, {quoted  : ftroli})
 					break
 					
 			case 'groupinfo':
@@ -2860,7 +2751,7 @@ await ikyy.sendMessage(from, options, text)
 break
 
       case 'leave': 
-        if (!mek.key.fromMe) return reply('*Ente owner?_*')
+        if (!mek.key.fromMe) return reply(only.ownerB)
 				    if (!isGroup) return reply(mess.only.group)
 			    	reply(`Akan keluar dari group ${groupMetadata.subject} dalam 3 detik`)
                     await sleep(3000)
@@ -2871,7 +2762,7 @@ break
 				
 					  //********** STORAGE **********//
 case 'addstik':
-				if (!isQuotedSticker) return reply('Reply stiker nya')
+				if (!isQuotedSticker) return reply('reply stiker nya')
 				svst = body.slice(9)
 				if (!svst) return reply('Nama sticker nya apa?')
 				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
@@ -2886,7 +2777,7 @@ case 'getstik':
 				namastc = body.slice(9)
 				try {
 				result = fs.readFileSync(`./temp/stick/${namastc}.webp`)
-				ikyy.sendMessage(from, result, sticker,{quoted:freply})
+				ikyy.sendMessage(from, result, sticker,{quoted:ftroli})
 				} catch {
 				  reply('Pack tidak terdaftar')
 				}
@@ -2902,7 +2793,7 @@ case 'getstik':
 				break
 				
 				case 'addimg':
-				if (!isQuotedImage) return reply('Reply imagenya')
+				if (!isQuotedImage) return reply('reply imagenya')
 				svst = body.slice(8)
 				if (!svst) return reply('Nama imagenya apa')
 				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
@@ -2931,7 +2822,7 @@ case 'getstik':
 				ikyy.sendMessage(from, teks.trim(), extendedText, { quoted: ftroli, contextInfo: { "mentionedJid": setiker } })
 				break
 				case 'addvid':
-				if (!isQuotedVideo) return reply('Reply vidionya')
+				if (!isQuotedVideo) return reply('reply vidionya')
 				svst = body.slice(8)
 				if (!svst) return reply('Nama vidionya apa')
 				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
@@ -3007,14 +2898,14 @@ igl = teks.replace('-foto',"")
 res = await fotoIg(igl).catch(e => {
   reply('_[ ! ] Error Gagal Dalam Masuk Web Atau Link Error_')
 })
-sendFileFromUrl(res[0].foto, image, {quoted: ftoko})
+sendFileFromUrl(res[0].foto, image, {quoted: ftroli})
 }
 if (teks.endsWith('-video')) {
 igl = teks.replace('-video',"")
 res = await videoIg(teks).catch(e => {
   reply('_[ ! ] Error Gagal Dalam Masuk Web Atau Link Error')
 })
-sendFileFromUrl(res[0].video, video, {mimetype: 'video/mp4', quoted: ftoko})
+sendFileFromUrl(res[0].video, video, {mimetype: 'video/mp4', quoted: ftroli})
 }
 break
 case 'play': case 'song':
@@ -3041,11 +2932,10 @@ sendButLocation(from, captions, '©', thumbyt, [{buttonId: `.ytmp4 ${mulaikah}`,
 			} catch (err) {
                         reply('error')
                         }
-                   break
-				
-				case 'play2':   
+                   break 
+              case 'play2':   
 				  if (args.length < 1) return reply('*Masukan judul nya?*')
-                reply('Loading.... ')
+               reply(mess.wait)
 				play = args.join(" ")
 				anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp4?q=${play}&apikey=apivinz`)
 				if (anu.error) return reply(anu.error)
@@ -3058,7 +2948,7 @@ Source : ${anu.result.source}
 				buffer = await getBuffer(anu.result.thumbnail)
 				buffer1 = await getBuffer(anu.result.url_video)
 				ikyy.sendMessage(from, buffer, image, {quoted: ftroli, caption: infomp3})
-				ikyy.sendMessage(from, buffer1, video, {mimetype: 'video/mp4', filename: `${anu.result.video}.mp4`, quoted:freply, caption: 'Nih Gan'})
+				ikyy.sendMessage(from, buffer1, video, {mimetype: 'video/mp4', filename: `${anu.result.video}.mp4`, quoted:ftroli, caption: 'Nih Gan'})
 					break 
 				
         case 'ig2':
@@ -3070,7 +2960,7 @@ Source : ${anu.result.source}
 Username : ${anu.owner}
 Caption : ${anu.caption}
 `
-					reply('Loading.... ')
+					reply(mess.wait)
 					buffer = await getBuffer(anu.result[0].url)
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result[0].url}.mp4`, quoted: ftroli, caption : tods})
 					break 
@@ -3083,7 +2973,7 @@ case 'fb':
 					
 *Judul :* ${anu.result.judul}`
 					
-					reply('Loading.... ')
+					reply(mess.wait)
 					buffer = await getBuffer(anu.result.url)
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.url}.mp4`, quoted: ftroli, caption: wing})
 					break 
@@ -3156,7 +3046,7 @@ ini_link = args[0]
 					 
 *[ Wait ]Tunggu Sebentar kak...*`
 					 buff = await getBuffer(anu.thumbnail)
-					reply('Loading.... ')
+					reply(mess.wait)
 					buffer = await getBuffer(anu.url)
 					ikyy.sendMessage(from, buff, image, {quoted: ftroli, caption: ytt})
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.url}.mp4`, quoted: ftroli, caption: 'Nih Gan'})
@@ -3173,7 +3063,7 @@ ini_link = args[0]
 					 
 *[Wait]Tunggu Sebentar kak...*`
 					 buff = await getBuffer(anu.thumbnail)
-					reply('Loading.... ')
+					reply(mess.wait)
 					buffer = await getBuffer(anu.url)
 					ikyy.sendMessage(from, buff, image, {quoted: ftroli, caption: ytt})
 					ikyy.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.url}.mp3`, quoted: ftroli})
@@ -3208,7 +3098,7 @@ case 'upswtext':
   if (!mek.key.fromMe) return reply('*Ente owner?')
 					ikyy.updatePresence(from, Presence.composing)
 					ikyy.sendMessage('status@broadcast', `${q}`, extendedText)
-					ikyy.sendMessage(from, `Sukses Up story wea teks ${q}`, text,{quoted : freply})
+					ikyy.sendMessage(from, `Sukses Up story wea teks ${q}`, text,{quoted : ftroli})
 					break
 					
 				case 'upswimg':
@@ -3299,9 +3189,17 @@ ltsm = [
 {title:'RESTART', description:'Klik ini untuk merestart bot', rowId:'restartmans'}
 ]
 sendList(from, `\`\`\`Hi Kak 👋.\`\`\``, `\`\`\`Use The Bot As Best You Can And Dont Misuse The Bot Feature\`\`\``, '© Creator : MyMans APIs', 'List Menu', [
-{title:'Subscribe Ikyy Ads', rows:ltsm}
+{title:'Kya _<', rows:ltsm}
 ], {quoted:mek})
 }
+if (budy.startsWith('Tes')){
+hlah = `Nyala Boss🍎`
+reply(hlah)
+}
+if (budy.startsWith('tes')){
+hlah = `Nyala Boss🍎`
+reply(hlah)
+}
 if (budy.startsWith('_')){
 if (!mek.key.fromMe && !isOwner) return
 qur = budy.slice(2)
