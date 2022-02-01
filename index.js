@@ -2947,9 +2947,8 @@ res = await videoIg(teks).catch(e => {
 sendFileFromUrl(res[0].video, video, {mimetype: 'video/mp4', quoted: ftroli})
 }
 break
-case 'play': 
-case 'song':
-			if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu_`)
+case 'play': case 'song':
+			if (args.length === 0) return katalog(`Kirim perintah *${prefix}play* _Judul lagu_`)
 			var srch = args.join(' ')
 			aramas = await yts(srch);
 			aramat = aramas.all 
@@ -2957,7 +2956,7 @@ case 'song':
 			try {
 				xa.Youtube(mulaikah).then(async (data) => {
 					if (Number(data.medias[7].formattedSize) >= 100000) return sendMediaURL(from, thumb, `*PLAY MUSIC*\n\n*Title* : ${title}\n*Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Untuk durasi lebih dari batas disajikan dalam bentuk link_`)
-						const captions = `*「 PLAY MUSIC 」*
+						const captions = `*---- 「 PLAY MUSIC 」----*
 						
 • Title : ${aramas.videos[0].title}
 • ID : ${aramas.videos[0].videoId}
@@ -2967,7 +2966,12 @@ case 'song':
 • Duration : ${aramas.videos[0].timestamp}
 • Url : ${aramas.videos[0].url}`
 var thumbyt = await getBuffer(aramas.videos[0].thumbnail)
-sendButLocation(from, captions, '©RAMAxGans ', thumbyt, [{buttonId: `.ytmp4 ${mulaikah}`, buttonText: {displayText: 'Video'}, type: 1},{buttonId: `.ytmp3 ${mulaikah}`, buttonText:{displayText: 'Audio'}, type: 1}], {quoted: mek})					 		 					 		 
+sendButLocation(from, captions, '©', thumbyt, [{buttonId: `.ytmp4 ${mulaikah}`, buttonText: {displayText: 'Video'}, type: 1},{buttonId: `.ytmp3 ${mulaikah}`, buttonText:{displayText: 'Audio'}, type: 1}], {quoted: mek})
+						})
+				} catch (e) {
+					reply('Terjadi kesalahan')
+					}
+			
              break				
 				case 'play2':   
 				  if (args.length < 1) return reply('*Masukan judul nya?*')
