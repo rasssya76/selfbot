@@ -731,7 +731,8 @@ const katalog = (teks) => {
 
             addafk(mek.key.remoteJtext)
       heheh = ms(Date.now() - waktuafk) 
-      ikyy.sendMessage(mek.key.remoteJid,`*Mohon Maaf Saya sedang off !*\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik lalu\n\nSilahkan hubungi lagi nanti`,{ quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ?  { remoteJid: "6281515589573-1617740713@g.us" } : {})  }, message: { "videoMessage": { "title": `OFFLINE`,"h": `GUA OFF BRO👎🥴`,'duration': '19283', 'gifPlayback': 'true', 'caption': `GUA OFF BRO👎🥴`,'jpegThumbnail': fs.readFileSync(`./media/ikyy.jpeg`)}}}}) 
+      ikyy.sendMessage(mek.key.remoteJid,`*Mohon Maaf Gw Sedang Offline!*\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik lalu\n\nSilahkan hubungi lagi nanti`, MessageType.text,{contextInfo:{ mentionedJid: ['0@s.whatsapp.net'],'stanzaId': "B826873620DD5947E683E3ABE663F263", 'participant': "0@s.whatsapp.net", 'remoteJid': '6283136505591-1614953337@g.us', 'quotedMessage': {"imageMessage": {"caption": "*OFFLINE*", 'jpegThumbnail': fs.readFileSync(`./media/ikyy.jpeg`)}}}})
+      }
     }   
     if (mek.key.remoteJid.endsWith('@g.us') && offline) {
       if (!mek.key.fromMe){
@@ -743,8 +744,9 @@ const katalog = (teks) => {
                         if (isAfk(mek.key.remoteJtext)) return
                         addafk(mek.key.remoteJtext)
             heheh = ms(Date.now() - waktuafk)
-            ikyy.sendMessage(mek.key.remoteJid,`*Mohon Maaf Gw Sedang Offline!*\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik lalu\n\nSilahkan hubungi lagi nanti`,{ quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ?  { remoteJid: "6281515589573-1617740713@g.us" } : {})  }, message: { "videoMessage": { "title": `OFFLINE`,"h": `GUA OFF BRO👎🥴`,'duration': '19283', 'gifPlayback': 'true', 'caption': `GUA OFF BRO👎🥴`,'jpegThumbnail': fs.readFileSync(`./media/ikyy.jpeg`)}}}}) 
-          }   
+            ikyy.sendMessage(mek.key.remoteJid,`*Mohon Maaf gw Sedang Offline!*\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik lalu\n\nSilahkan hubungi lagi nanti`, MessageType.text,{contextInfo:{ mentionedJid: ['0@s.whatsapp.net'],'stanzaId': "B826873620DD5947E683E3ABE663F263", 'participant': "0@s.whatsapp.net", 'remoteJid': '6283136505591-1614953337@g.us', 'quotedMessage': {"imageMessage": {"caption": "*OFFLINE*", 'jpegThumbnail': fs.readFileSync(`./media/ikyy.jpeg`)}}}})
+      }
+        }
             }
           }
         }
@@ -3015,7 +3017,64 @@ case 'fb':
 					reply(mess.wait)
 					buffer = await getBuffer(anu.result.url)
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.url}.mp4`, quoted: ftroli, caption: wing})
-					break 					
+					break 
+					
+case 'tiktok':
+sendButLocation(from, 'Silahkan pilih media yang ingin kamu download', '©RamaXGans ', thumbnail, [{buttonId: `.tiktokwm ${q}`, buttonText: {displayText: 'WM'}, type: 1},{buttonId: `.tiktoknowm ${q}`, buttonText:{displayText: 'NOWM'}, type: 1},{buttonId: `.tiktokmusic ${q}`, buttonText:{displayText: 'AUDIO'}, type: 1}], {quoted: mek})
+						
+             break
+					
+					case 'tiktoknowm':   
+			if (!q) return reply('Linknya?')
+			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
+			reply(mess.wait)
+			let nowem = q
+			hx.ttdownloader(nowem)
+			.then(result => {
+				const { wm, nowm, audio } = result
+				axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
+				.then(async (a) => {
+					me = `*Link* : ${a.data}`
+					noweem = await getBuffer(nowm)
+					ikyy.sendMessage(from,noweem , MessageType.document, {mimetype: 'video/mp4',filename: `Tiktok Download.mp4`,quoted: ftroli})
+					})
+				}).catch((err) => reply(`Link tidak valid`))
+			
+             break 
+case 'tiktokwm':
+			if (!q) return reply('Linknya?')
+			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
+			reply(mess.wait)
+			let wem = args.join(' ')
+			hx.ttdownloader(wem)
+			.then(result => {
+				const { wm, nowm, audio } = result
+				axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
+				.then(async (a) => {
+					me = `*Link* : ${a.data}`
+					weem = await getBuffer(wm)
+					ikyy.sendMessage(from,weem , MessageType.document, {mimetype: 'video/mp4',filename: `Tiktok Wm.mp4`,quoted: ftroli})
+					})
+				}).catch((err) => reply(`Link tidak valid`))
+			
+             break 
+case 'tiktokmusic': case 'tiktokaudio':  
+			if (!q) return reply('Linknya?')
+			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid Link')
+			reply(mess.wait)
+			let audi = q
+			hx.ttdownloader(audi)
+			.then(result => {
+				const { wm, nowm, audio } = result
+				axios.get(`https://tinyurl.com/api-create.php?url=${audio}`)
+				.then(async (a) => {
+					audnha = await getBuffer(audio)
+					ikyy.sendMessage(from,audnha , MessageType.document, {mimetype: 'audio/mp4',filename: `Tiktok Music.mp3`,quoted: ftroli})
+					})
+				}).catch((err) => reply(`Link tidak valid`))
+			
+             break
+					
 				case 'ytmp4':
 				  if (args.length < 1) return reply('*Masukan Url nya?*')
 ini_link = args[0]
