@@ -1142,6 +1142,7 @@ Wa Version: _${ikyy.user.phone.wa_version}_
 Os Version: _${ikyy.user.phone.os_version}_
 `
 reply(stamtus)
+
 break
 case 'textpro':
 textpr0o = ` 
@@ -1171,9 +1172,10 @@ textpr0o = `
 → ${prefix}shinymetal
 → ${prefix}lava
 → ${prefix}rock
-→ ${prefix}denim`
-
+→ ${prefix}denim
+`
 reply(textpr0o)
+
 break
 ////////FITUR DARI BANG GALANG
 case 'loli':
@@ -1503,40 +1505,7 @@ await ikyy.toggleDisappearingMessages(from, 0)
 reply('Sukses Send Bug Sebanyak '+args.join(' '))
 					//////                                    
 break
-//maker By Rama,😅
-                   case 'bokeh':
-                   case 'brokenglass':
-                   case 'artpapercut':
-                   case 'neondevil':
-                   case '3dunderwater':
-                   case 'bearlogo':
-                   case 'biscuit':
-                   case 'abstragold':
-                   case 'rusymetal':
-                   case 'fruitjuice':
-                   case 'icecold':
-                   case 'marble':
-                   case 'horror':
-                   case 'plasticbagdrug':
-                   case 'honey':
-                   case 'christmas':
-                   case 'breakwall':
-                   case 'dropwater':
-                   case 'greenneon':
-                   case 'wood':
-                   case 'metalrainbow':
-                   case 'purplegame':
-                   case 'shinymetal':
-                   case 'yellowjewelry':
-                   case 'lava':
-                   case 'denim':
-                   case 'rock':
-                   reply(mess.wait)
-                    if (args.length == 0) return reply(`Example: ${prefix + command} Rama Gamtenk`) 
-                    ini_txt = args.join(" ")
-                    ini_buffer = await getBuffer(`https://api.dapuhy.xyz/api/textpro/${command}?text=${ini_txt}&apikey=${dapaapi}`)                                                
-                    ikyy.sendMessage(from, ini_buffer, image, { quoted: ftroli })
-                    break
+
 case 'bikinquote':
                 var gh = body.slice(12)
 					var quote = gh.split("&")[0];
@@ -2998,11 +2967,7 @@ case 'play': case 'song':
 • Url : ${aramas.videos[0].url}`
 var thumbyt = await getBuffer(aramas.videos[0].thumbnail)
 sendButLocation(from, captions, '©RAMAxGans ', thumbyt, [{buttonId: `.ytmp4 ${mulaikah}`, buttonText: {displayText: 'Video'}, type: 1},{buttonId: `.ytmp3 ${mulaikah}`, buttonText:{displayText: 'Audio'}, type: 1}], {quoted: mek})
-						})
-				} catch (err) {
-					reply('Terjadi kesalahan')
-					}
-			
+						})				 
              break
 				
 				case 'play2':   
