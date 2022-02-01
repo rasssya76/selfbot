@@ -444,11 +444,7 @@ ${demote}`
 			
 
 			mess = {
-				wait: '
-
-			*BENTAR*            
-
-',
+				wait: '            *Bentar*         ',
 				success: '✔️ Success ✔️',
 				error: {
 					stick: '❌ Gagal, terjadi kesalahan saat mengkonversi gambar ke sticker ❌',
