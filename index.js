@@ -2947,7 +2947,8 @@ res = await videoIg(teks).catch(e => {
 sendFileFromUrl(res[0].video, video, {mimetype: 'video/mp4', quoted: ftroli})
 }
 break
-case 'play': case 'song':
+case 'play': 
+case 'song':
 			if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu_`)
 			var srch = args.join(' ')
 			aramas = await yts(srch);
@@ -2966,10 +2967,8 @@ case 'play': case 'song':
 • Duration : ${aramas.videos[0].timestamp}
 • Url : ${aramas.videos[0].url}`
 var thumbyt = await getBuffer(aramas.videos[0].thumbnail)
-sendButLocation(from, captions, '©RAMAxGans ', thumbyt, [{buttonId: `.ytmp4 ${mulaikah}`, buttonText: {displayText: 'Video'}, type: 1},{buttonId: `.ytmp3 ${mulaikah}`, buttonText:{displayText: 'Audio'}, type: 1}], {quoted: mek})
-						})				 
-             break
-				
+sendButLocation(from, captions, '©RAMAxGans ', thumbyt, [{buttonId: `.ytmp4 ${mulaikah}`, buttonText: {displayText: 'Video'}, type: 1},{buttonId: `.ytmp3 ${mulaikah}`, buttonText:{displayText: 'Audio'}, type: 1}], {quoted: mek})					 		 					 		 
+             break				
 				case 'play2':   
 				  if (args.length < 1) return reply('*Masukan judul nya?*')
                reply(mess.wait)
