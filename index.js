@@ -2947,6 +2947,31 @@ res = await videoIg(teks).catch(e => {
 sendFileFromUrl(res[0].video, video, {mimetype: 'video/mp4', quoted: ftroli})
 }
 break
+case 'play': case 'song':
+			if (args.length === 0) return katalog(`Kirim perintah *${prefix}play* _Judul lagu_`)
+			var srch = args.join(' ')
+			aramas = await yts(srch);
+			aramat = aramas.all 
+			var mulaikah = aramat[0].url
+			try {
+				xa.Youtube(mulaikah).then(async (data) => {
+					if (Number(data.medias[7].formattedSize) >= 100000) return sendMediaURL(from, thumb, `*PLAY MUSIC*\n\n*Title* : ${title}\n*Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Untuk durasi lebih dari batas disajikan dalam bentuk link_`)
+						const captions = `*---- 「 PLAY MUSIC 」----*
+						
+• Title : ${aramas.videos[0].title}
+• ID : ${aramas.videos[0].videoId}
+• Upload : ${aramas.videos[0].ago}
+• Size : ${data.medias[7].formattedSize}
+• Views: ${aramas.videos[0].views} 
+• Duration : ${aramas.videos[0].timestamp}
+• Url : ${aramas.videos[0].url}`
+var thumbyt = await getBuffer(aramas.videos[0].thumbnail)
+sendButLocation(from, captions, '©', thumbyt, [{buttonId: `.ytmp4 ${mulaikah}`, buttonText: {displayText: 'Video'}, type: 1},{buttonId: `.ytmp3 ${mulaikah}`, buttonText:{displayText: 'Audio'}, type: 1}], {quoted: mek})
+						})
+			} catch (err) {
+                        reply('error')
+                        }
+                   break 
               case 'play2':   
 				  if (args.length < 1) return reply('*Masukan judul nya?*')
                reply(mess.wait)
@@ -2996,57 +3021,7 @@ case 'tiktok':
 sendButLocation(from, 'Silahkan pilih media yang ingin kamu download', '©RamaXGans ', thumbnail, [{buttonId: `.tiktokwm ${q}`, buttonText: {displayText: 'WM'}, type: 1},{buttonId: `.tiktoknowm ${q}`, buttonText:{displayText: 'NOWM'}, type: 1},{buttonId: `.tiktokmusic ${q}`, buttonText:{displayText: 'AUDIO'}, type: 1}], {quoted: mek})
 						
              break
-					
-					case 'tiktoknowm':   
-			if (!q) return reply('Linknya?')
-			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
-			reply(mess.wait)
-			let nowem = q
-			hx.ttdownloader(nowem)
-			.then(result => {
-				const { wm, nowm, audio } = result
-				axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
-				.then(async (a) => {
-					me = `*Link* : ${a.data}`
-					noweem = await getBuffer(nowm)
-					ikyy.sendMessage(from,noweem , MessageType.document, {mimetype: 'video/mp4',filename: `Tiktok Download.mp4`,quoted: ftroli})
-					})
-				}).catch((err) => reply(`Link tidak valid`))
-			
-             break 
-case 'tiktokwm':
-			if (!q) return reply('Linknya?')
-			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
-			reply(mess.wait)
-			let wem = args.join(' ')
-			hx.ttdownloader(wem)
-			.then(result => {
-				const { wm, nowm, audio } = result
-				axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
-				.then(async (a) => {
-					me = `*Link* : ${a.data}`
-					weem = await getBuffer(wm)
-					ikyy.sendMessage(from,weem , MessageType.document, {mimetype: 'video/mp4',filename: `Tiktok Wm.mp4`,quoted: ftroli})
-					})
-				}).catch((err) => reply(`Link tidak valid`))
-			
-             break 
-case 'tiktokmusic': case 'tiktokaudio':  
-			if (!q) return reply('Linknya?')
-			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid Link')
-			reply(mess.wait)
-			let audi = q
-			hx.ttdownloader(audi)
-			.then(result => {
-				const { wm, nowm, audio } = result
-				axios.get(`https://tinyurl.com/api-create.php?url=${audio}`)
-				.then(async (a) => {
-					audnha = await getBuffer(audio)
-					ikyy.sendMessage(from,audnha , MessageType.document, {mimetype: 'audio/mp4',filename: `Tiktok Music.mp3`,quoted: ftroli})
-					})
-				}).catch((err) => reply(`Link tidak valid`))
-			
-             break
+										
 					
 				case 'ytmp4':
 				  if (args.length < 1) return reply('*Masukan Url nya?*')
