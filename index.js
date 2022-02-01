@@ -69,6 +69,7 @@ const loli = new lolis()
 const Exif = require('./lib/exif');
 const exif = new Exif();
 const util = require('util')
+const xa = require('xfarr-api')
 const emoji = require('node-emoji')
 const {
   newsCnn
@@ -175,6 +176,7 @@ harga = 0
 matauang = 'USD'
 blocked = []
 fake = '@RamaGans'
+dapaapi =' RamaGans'
 fakeimage = fs.readFileSync(`./media/ikyy.jpeg`)
 let thumbnail = fs.readFileSync(`./media/ikyy.jpeg`)
 numbernye = '0'
@@ -430,7 +432,7 @@ ${demote}`
            const cmd = (type === 'conversation' && mek.message.conversation) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text ? mek.message.extendedTextMessage.text : ''.slice(1).trim().split(/ +/).shift().toLowerCase()
 		   const prefix = /^[°•π÷×¶∆£¢€¥®™✓=|~zZ+×_*!#$%^&./\\©^]/.test(cmd) ? cmd.match(/^[°•π÷×¶∆£¢€¥®™✓=|~zZ+×_*!#$,|`÷?;:%abcdefghijklmnopqrstuvwxyz%^&./\\©^]/gi) : '-'
 		  
-			body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
+			body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : (type == "buttonsResponseMessage") && mek.message[type].selectedButtonId ? mek.message[type].selectedButtonId : ''
 			budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
 				const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
 				hit_today.push(command)
@@ -442,7 +444,11 @@ ${demote}`
 			
 
 			mess = {
-				wait: 'Waitt 1-2 menit....',
+				wait: '
+
+			*BENTAR*            
+
+',
 				success: '✔️ Success ✔️',
 				error: {
 					stick: '❌ Gagal, terjadi kesalahan saat mengkonversi gambar ke sticker ❌',
@@ -451,7 +457,7 @@ ${demote}`
 				only: {
 					group: '❌ Perintah ini hanya bisa di gunakan dalam group! ❌',
 					ownerG: '❌ Perintah ini hanya bisa di gunakan oleh owner group! ❌',
-					ownerB: '❌ Perintah ini hanya bisa di gunakan oleh owner bot! ❌',
+					ownerB: 'Bukan owner minggir',
 					admin: '❌ Perintah ini hanya bisa di gunakan oleh admin group! ❌',
 					Badmin: '❌ Perintah ini hanya bisa di gunakan ketika bot menjadi admin! ❌'
 				}
@@ -729,8 +735,23 @@ const katalog = (teks) => {
 
             addafk(mek.key.remoteJtext)
       heheh = ms(Date.now() - waktuafk) 
-      ikyy.sendMessage(mek.key.remoteJid,`*Mohon Maaf Saya sedang !*\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik lalu\n\nSilahkan hubungi lagi nanti`, MessageType.text,{contextInfo:{ mentionedJid: ['0@s.whatsapp.net'],'stanzaId': "B826873620DD5947E683E3ABE663F263", 'participant': "0@s.whatsapp.net", 'remoteJid': '6283136505591-1614953337@g.us', 'quotedMessage': {"imageMessage": {"caption": "*OFFLINE*", 'jpegThumbnail': fs.readFileSync(`./media/ikyy.jpeg`)}}}})
-      }
+      ikyy.sendMessage(mek.key.remoteJid,`*Mohon Maaf Saya sedang off !*\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik lalu\n\nSilahkan hubungi lagi nanti`,{ quoted: {
+	 key: { 
+         fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(from ? 
+	 { remoteJid: "6281515589573-1617740713@g.us" } : {}) 
+                },
+	 message: { 
+                 "videoMessage": { 
+                 "title": `OFFLINE`,
+                 "h": `GUA OFF BRO👎🥴`,
+                 'duration': '19283', 
+                 'gifPlayback': 'true', 
+                 'caption': `GUA OFF BRO👎🥴`,
+                 'jpegThumbnail': thumbnail
+                        }
+                       }
+	                  } 
     }   
     if (mek.key.remoteJid.endsWith('@g.us') && offline) {
       if (!mek.key.fromMe){
@@ -742,8 +763,20 @@ const katalog = (teks) => {
                         if (isAfk(mek.key.remoteJtext)) return
                         addafk(mek.key.remoteJtext)
             heheh = ms(Date.now() - waktuafk)
-            ikyy.sendMessage(mek.key.remoteJid,`*Mohon Maaf ikyy Sedang Offline!*\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik lalu\n\nSilahkan hubungi lagi nanti`, MessageType.text,{contextInfo:{ mentionedJid: ['0@s.whatsapp.net'],'stanzaId': "B826873620DD5947E683E3ABE663F263", 'participant': "0@s.whatsapp.net", 'remoteJid': '6283136505591-1614953337@g.us', 'quotedMessage': {"imageMessage": {"caption": "*OFFLINE*", 'jpegThumbnail': fs.readFileSync(`./media/ikyy.jpeg`)}}}})
-      }
+            ikyy.sendMessage(mek.key.remoteJid,`*Mohon Maaf Gw Sedang Offline!*\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik lalu\n\nSilahkan hubungi lagi nanti`,{ quoted: {
+	 key: { 
+         fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(from ? 
+	 { remoteJid: "6281515589573-1617740713@g.us" } : {}) 
+                },
+	 message: { 
+                 "videoMessage": { 
+                 "title": `GUA OFF BRO👎🥴`,
+                 "h": `GUA OFF BRO👎🥴`,
+                 'duration': '99999', 
+                 'gifPlayback': 'true', 
+                 'caption': `GUA OFF BRO👎🥴`,
+                 'jpegThumbnail': thumbnail                                              	                  
         }
             }
           }
@@ -938,9 +971,174 @@ break
                   case 'menu':
                   case 'help':
                   case 'rm':
-                  l = 1
-               var nom = mek.participant
-               var groups = ikyy.chats.array.filter(v => v.jid.endsWith('g.us'))
+                  l = 1               
+		menu = `「 *SELF-BOT* 」
+
+*Info Covid* 
+*Kasus Covid-19 Indonesia* 
+*Terinfeksi* : _${copid[0].kasus}_
+*Kematian* : _${copid[0].kematian}_
+*Sembuh* : _${copid[0].sembuh}_`
+ menu2 = `                                   
+    𝗠𝗔𝗞𝗘𝗥
+→ ${prefix}ꜱᴛɪᴄᴋᴇʀ ʀᴇᴘʟʏ ɪᴍɢ
+→ ${prefix}ʀꜱᴛɪᴄᴋᴇʀ ʀᴇᴘʟʏ ɪᴍɢ
+→ ${prefix}ꜱᴛɪᴄᴋᴇʀɢɪꜰ ʀᴇᴘʟʏ ᴠɪᴅᴇᴏ
+→ ${prefix}ꜱᴛɪᴄᴋᴇʀᴡᴀ Qᴜᴇʀʏ
+→ ${prefix}ꜱᴛɪᴄᴋᴇʀᴡᴍ ɴᴀᴍᴀ|ᴀᴜᴛʜᴏʀ
+→ ${prefix}ꜱᴛɪᴄᴋᴍᴇᴍᴇ ᴛᴇᴋꜱ
+→ ${prefix}ꜱᴛɪᴄᴋᴍᴇᴍᴇ2 ᴛᴇᴋꜱ
+→ ${prefix}ꜱᴛɪᴄᴋᴍᴇᴍᴇ3 ᴛᴋꜱ ᴀᴛꜱ|ᴛᴋꜱ ʙᴡʜ
+→ ${prefix}ꜱᴛɪᴄᴋᴡᴀꜱᴛᴇᴅ ʀᴘʟʏ ꜱᴛᴋ
+→ ${prefix}ꜱᴛɪᴄᴋꜰʟɪᴘ ʀᴘʟʏ ꜱᴛᴋ
+→ ${prefix}ꜱᴛɪᴄᴋɴᴏʙɢ 
+→ ${prefix}ɴᴏʙɢ ʀᴇᴘʟʏ ɪᴍɢ
+→ ${prefix}ᴛᴛᴘ ᴛᴇxᴛ
+→ ${prefix}ᴛᴛᴘ1ᴛᴇxᴛ
+→ ${prefix}ᴛᴀᴋᴇ ɴᴀᴍᴀ|ᴀᴜᴛʜᴏʀ
+→ ${prefix}ᴇxɪꜰ ɴᴀᴍᴀ|ᴀᴜᴛʜᴏʀ
+→ ${prefix}ᴄᴏʟᴏɴɢ
+
+   *ᴄᴏɴᴠᴇʀᴛ*
+→ ${prefix}ᴛᴇxᴛᴍᴀᴋᴇʀ ᴀᴛᴀꜱ|ʙᴀᴡᴀʜ
+→ ${prefix}ꜰᴅᴇꜰᴀᴄᴇ ᴜʀʟ|ᴛɪᴛʟᴇ|ᴅᴇꜱᴋ
+→ ${prefix}ꜰᴀᴋᴇ ᴜʀʟ|ᴛɪᴛʟᴇ|ᴅᴇꜱᴋ
+→ ${prefix}ᴛᴏɢɪꜰ ʀᴇᴘʟʏ ꜱᴛɪᴄᴋᴇʀɢɪꜰ
+→ ${prefix}ᴛᴏᴠɪᴅᴇᴏ ʀᴇᴘʟʏ ꜱᴛɪᴄᴋᴇʀ
+→ ${prefix}ᴛᴏɪᴍɢ ʀᴇᴘʟʏ ꜱᴛɪᴄᴋᴇʀ
+→ ${prefix}ᴛᴏɪᴍᴀɢᴇ ʀᴇᴘʟʏ ꜱᴛɪᴄᴋᴇʀ
+
+    𝗦𝗬𝗦𝗧𝗘𝗠
+→ ${prefix}ꜱᴛᴀᴛᴜꜱ
+→ ${prefix}ꜱᴇʟꜰ
+→ ${prefix}ᴘᴜʙʟɪᴄ
+→ ${prefix}ᴏɴ
+→ ${prefix}ᴏꜰꜰ ᴀʟᴀꜱᴀɴ
+→ ${prefix}ʀᴜɴᴛɪᴍᴇ
+→ ${prefix}ᴘɪɴɢ
+→ ${prefix}ᴛᴇʀᴍ
+→ ${prefix}ʙʟᴏᴄᴋʟɪꜱᴛ
+→ ${prefix}ʀᴜɴ
+→ ${prefix}ᴄʜᴀᴛʟɪꜱᴛ
+→ ${prefix}ᴊᴏɪɴ ʟɪɴᴋɢʀᴏᴜᴘ
+→ ${prefix}ɢᴇᴛᴘɪᴄ @ᴛᴀɢ
+→ ${prefix}ɢᴇᴛʙɪᴏ @ᴛᴀɢ
+
+   𝗔𝗗𝗩𝗔𝗡𝗖𝗘
+→ ${prefix}ᴘɪɴ
+→ ${prefix}ᴜɴᴘɪɴ
+→ ${prefix}ᴀʀᴄʜɪᴠᴇ
+→ ${prefix}ᴜɴᴀʀᴄʜɪᴠᴇᴀʟʟ
+→ ${prefix}ʀᴇᴀᴅᴀʟʟ
+→ ${prefix}ᴜɴʀᴇᴀᴅᴀʟʟ
+→ ${prefix}ᴅᴇʟᴛʜɪꜱᴄʜᴀᴛ
+→ ${prefix}ꜱʜᴜᴛᴅᴏᴡɴ
+→ ${prefix}ᴊᴀᴅɪʙᴏᴛ
+→ ${prefix}ʀᴇꜱᴛᴀʀᴛ
+
+   𝗧𝗔𝗚
+→ ${prefix}ꜱᴇɴᴅᴋᴏɴᴛᴀɢ ɴᴀᴍᴀ
+→ ${prefix}ʜɪᴅᴇᴛᴀɢ ᴛᴇxᴛ
+→ ${prefix}ꜱᴛᴄᴛᴀɢ ᴛᴀɢ ꜱᴛᴄ
+→ ${prefix}ɪᴍɢᴛᴀɢ ᴛᴀɢ ɪᴍɢ
+→ ${prefix}ᴋᴏɴᴛᴀᴋ ɴᴀᴍᴀ|ɴᴏᴍᴏʀ
+→ ${prefix}ᴋᴏɴᴛᴀɢ ɴᴀᴍᴀ|ɴᴏᴍᴏʀ
+
+   𝗖𝗥𝗘𝗔𝗧𝗢𝗥
+→ ${prefix}ꜱᴇᴛꜰᴀᴋᴇ
+→ ${prefix}ꜱᴇᴛᴍᴇɴᴜ
+→ ${prefix}ꜱᴇᴛᴛʜᴜᴍʙ
+→ ${prefix}ꜱᴇᴛᴛʜᴜᴍʙᴍᴇɴᴜ
+→ ${prefix}ꜱᴇᴛʀᴇᴘʟʏ
+→ ${prefix}ꜱᴇᴛᴍᴀᴛᴀᴜᴀɴɢ
+→ ${prefix}ꜱᴇᴛʜᴀʀɢᴀ
+→ ${prefix}ꜱᴇᴛʙᴏᴅʏᴍᴇɴᴜ
+→ ${prefix}ꜱᴇᴛᴡᴇʟᴄᴏᴍᴇ
+→ ${prefix}ꜱᴇᴛʟᴇᴀᴠᴇ
+→ ${prefix}ꜱᴇᴛᴘʀᴏᴍᴏᴛᴇ
+→ ${prefix}ꜱᴇᴛᴅᴇᴍᴏᴛᴇ
+
+    𝗨𝗣𝗦𝗪
+→ ${prefix}ᴜᴘꜱᴡᴛᴇxᴛ
+→ ${prefix}ᴜᴘꜱᴡɪᴍɢ
+→ ${prefix}ᴜᴘꜱᴡᴠɪᴅᴇᴏ
+
+    𝗚𝗥𝗢𝗨𝗣
+→ ${prefix}ᴡᴇʟᴄᴏᴍᴇ 1/0
+→ ${prefix}ʟɪɴᴋɢʀᴏᴜᴘ
+→ ${prefix}ɢʀᴏᴜᴘ ᴛᴜᴛᴜᴘ/ʙᴜᴋᴀ
+→ ${prefix}ᴀᴅᴅ 6281xxx
+→ ${prefix}ᴋɪᴄᴋ @ᴛᴀɢ
+→ ${prefix}ᴘʀᴏᴍᴏᴛᴇ @ᴛᴀɢ
+→ ${prefix}ᴅᴇᴍᴏᴛᴇ @ᴛᴀɢᴀᴅᴍɪɴ
+→ ${prefix}ᴅᴇᴍᴏᴛᴇᴀʟʟ
+→ ${prefix}ᴇᴅᴏᴛᴇɴꜱᴇɪ @ᴛᴀɢ
+→ ${prefix}ʟɪꜱᴛᴀᴅᴍɪɴ
+→ ${prefix}ɢᴄɪɴɢꜰᴏ
+→ ${prefix}ᴏɴʟɪɴᴇ
+→ ${prefix}ɪɴꜰᴏᴀʟʟ
+→ ${prefix}ɴᴏᴛɪꜰ
+→ ${prefix}ʟᴇᴀᴠᴇ
+
+   *KHUSUS OWNER*
+→ ${prefix}ᴀᴅᴅꜱᴛɪᴋ ᴏᴘᴛɪᴏɴᴀʟ
+→ ${prefix}ᴀᴅɪᴍɢ ᴏᴘᴛɪᴏɴᴀʟ
+→ ${prefix}ᴀᴅᴅᴠɪᴅ ᴏᴘᴛɪᴏɴᴀʟ
+→ ${prefix}ᴀᴅᴅᴠɴ ᴏᴘᴛɪᴏɴᴀʟ
+→ ${prefix}ɢᴇᴛꜱᴛɪᴋ Qᴜᴇʀʏ
+→ ${prefix}ɢᴇᴛɪᴍɢ Qᴜᴇʀʏ
+→ ${prefix}ɢᴇᴛᴠɪᴅ Qᴜᴇʀʏ
+→ ${prefix}ɢᴇᴛᴠɴ Qᴜᴇʀʏ
+→ ${prefix}ʟɪꜱᴛꜱᴛɪᴄᴋ
+→ ${prefix}ʟɪꜱᴛɪᴍɢ
+→ ${prefix}ʟɪꜱᴛᴠɪᴅ
+→ ${prefix}ʟɪꜱᴛᴠɴ
+
+   𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
+→ ${prefix}ᴘʟᴀʏ Qᴜᴇʀʏ
+→ ${prefix}ᴘʟᴀʏ2 Qᴜᴇʀʏ
+→ ${prefix}ꜱᴇᴀʀᴄʜᴍᴜꜱɪᴄ ᴛᴀɢ ᴀᴜᴅɪᴏ
+→ ${prefix}ɪɢ2ᴜʀʟ
+→ ${prefix}ꜰʙ ᴜʀʟ
+→ ${prefix}ᴛɪᴋᴛᴏᴋ ᴜʀʟ
+→ ${prefix}ᴛɪᴋᴛᴏᴋɴᴏᴡᴍ ᴜʀʟ
+→ ${prefix}ʏᴛᴍᴘ3 ᴜʀʟ
+→ ${prefix}ʏᴛᴍᴘ4 ᴜʀʟ
+
+   *ᴛᴀᴍʙᴀʜᴀɴ*
+→ ${prefix}ɪɢ
+→ ${prefix}ᴏᴄʀ
+→ ${prefix}ɢɪᴍᴀɢᴇ
+→ ${prefix}ɢᴏᴏɢʟᴇꜱᴇᴀʀᴄʜ
+→ ${prefix}ʏᴛꜱ
+→ ${prefix}ᴍᴀᴋᴇʀ
+→ ${prefix}ᴛᴀʜᴛᴀ
+→ ${prefix}ɴᴜʟɪs
+→ ${prefix}ɪɢsᴛᴀʟᴋ
+→ ${prefix}ɢʜsᴛᴀʟᴋ
+→ ${prefix}ᴛɪᴋᴛᴏᴋsᴛᴀʟᴋ
+→ ${prefix}ᴛᴇᴛxᴘʀᴏ
+
+
+  *ᴛq ᴛq*
+→ᴍʜᴀɴᴋʙᴀʀʙᴀʀ
+→ɢᴀʟᴀɴɢ ʏᴀɴᴜᴀʀ
+→ᴢɪᴛꜱʀᴀᴀ
+→ᴋᴇɴᴛᴀᴠ
+→ɪᴋʏʏ ᴀᴅs
+→ʀᴀᴍᴀɢᴀɴs
+→ᴀɴᴜ ᴛᴇᴀᴍ
+`
+but = [
+   { buttonId: '.kontag Rama|6281515589573', buttonText: {displayText: 'CREATOR'}, type: 1 },
+   { buttonId: '.stats', buttonText:{displayText: 'STATUS'}, type: 1 }
+    ],
+
+ sendButLocation(from, menu, menu2, thumbnail, but)
+break
+case 'stats'
+var nom = mek.participant
+      var groups = ikyy.chats.array.filter(v => v.jid.endsWith('g.us'))
 				var privat = ikyy.chats.array.filter(v => v.jid.endsWith('s.whatsapp.net'))
 				var ram2 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 					uptime = process.uptime()
@@ -950,380 +1148,70 @@ break
 					var total = math(`${groups.length} ${privat.length}`)
 					const { wa_version, mcc, mnc, os_version, device_manufacturer, device_model } = ikyy.user.phone				
            const statuss = public ? 'PUBLIC': 'SELF'
-		menu = `「 *${statuss} SELFBOT* 」
+stamtus = `
+→Info←
+Jam  : _${jam}_ WIB
+MODE : _${statuss}_
+Private Chat : _${privat.length}_
+Group Chat : _${groups.length}_
+Total Chat : _${totalChat.length}_
+Speed : _${latennsi.toFixed(4)} second_
+Runtime : _${kyun(uptime)}_
+Hit Today : _${hit_today.length}_
+Baterai : _${baterai.battery}_
+WA Version : _${ikyy.user.phone.wa_version}_ 
+Charged : _${baterai.isCharge}_
 
-「 Info Covid 」 
-*Kasus Covid-19 Indonesia  
-*Terinfeksi* : ${copid[0].kasus}
-*Kematian* : ${copid[0].kematian}
-*Sembuh* : ${copid[0].sembuh}
-
-「 Info  」
-Jam  : ${jam} WIB
-MODE : ${statuss}
-Private Chat : ${privat.length}
-Group Chat : ${groups.length}
-Total Chat : ${totalChat.length}
-Speed : ${latennsi.toFixed(4)} second
-Runtime : ${kyun(uptime)}
-Hit Today : ${hit_today.length}
-Baterai : ${baterai.battery}
-WA Version : ${ikyy.user.phone.wa_version} 
-Charged : ${baterai.isCharge}
-
-「 Info Plaform 」 
-Penggunaan Ram : ${ram2}
-Hostname : ${os.hostname()}
-Platform : ${os.platform()}
-Uptime : ${kyun(os.uptime())}
-MNC : ${mnc}
-MCC : ${mcc}
-Device Model: ${ikyy.user.phone.device_model}
-Device Manufactur : ${device_manufacturer}
-Wa Version: ${ikyy.user.phone.wa_version}
-Os Version: ${ikyy.user.phone.os_version}
+→Info Platform←
+Penggunaan Ram : _${ram2}_
+Hostname : _${os.hostname()}_
+Platform : _${os.platform()}_
+Uptime : _${kyun(os.uptime())}_
+MNC : _${mnc}_
+MCC : _${mcc}_
+Device Model: _${ikyy.user.phone.device_model}_
+Device Manufactur : _${device_manufacturer}_
+Wa Version: _${ikyy.user.phone.wa_version}_
+Os Version: _${ikyy.user.phone.os_version}_
 `
- menu2 = `                                 
-┏━━━•   
-┣◪ 𝗠𝗔𝗞𝗘𝗥
-┃
-┣❒ ${prefix}ꜱᴛɪᴄᴋᴇʀ ʀᴇᴘʟʏ ɪᴍɢ
-┣❒ ${prefix}ʀꜱᴛɪᴄᴋᴇʀ ʀᴇᴘʟʏ ɪᴍɢ
-┣❒ ${prefix}ꜱᴛɪᴄᴋᴇʀɢɪꜰ ʀᴇᴘʟʏ ᴠɪᴅᴇᴏ
-┣❒ ${prefix}ꜱᴛɪᴄᴋᴇʀᴡᴀ Qᴜᴇʀʏ
-┣❒ ${prefix}ꜱᴛɪᴄᴋᴇʀᴡᴍ ɴᴀᴍᴀ|ᴀᴜᴛʜᴏʀ
-┣❒ ${prefix}ꜱᴛɪᴄᴋᴍᴇᴍᴇ ᴛᴇᴋꜱ
-┣❒ ${prefix}ꜱᴛɪᴄᴋᴍᴇᴍᴇ2 ᴛᴇᴋꜱ
-┣❒ ${prefix}ꜱᴛɪᴄᴋᴍᴇᴍᴇ3 ᴛᴋꜱ ᴀᴛꜱ|ᴛᴋꜱ ʙᴡʜ
-┣❒ ${prefix}ꜱᴛɪᴄᴋᴡᴀꜱᴛᴇᴅ ʀᴘʟʏ ꜱᴛᴋ
-┣❒ ${prefix}ꜱᴛɪᴄᴋꜰʟɪᴘ ʀᴘʟʏ ꜱᴛᴋ
-┣❒ ${prefix}ꜱᴛɪᴄᴋɴᴏʙɢ 
-┣❒ ${prefix}ɴᴏʙɢ ʀᴇᴘʟʏ ɪᴍɢ
-┣❒ ${prefix}ᴛᴛᴘ ᴛᴇxᴛ
-┣❒ ${prefix}ᴛᴛᴘ1ᴛᴇxᴛ
-┣❒ ${prefix}ᴛᴀᴋᴇ ɴᴀᴍᴀ|ᴀᴜᴛʜᴏʀ
-┣❒ ${prefix}ᴇxɪꜰ ɴᴀᴍᴀ|ᴀᴜᴛʜᴏʀ
-┣❒ ${prefix}ᴄᴏʟᴏɴɢ
-┃
-┣◪ *ᴄᴏɴᴠᴇʀᴛ*
-┣❒ ${prefix}ᴛᴇxᴛᴍᴀᴋᴇʀ ᴀᴛᴀꜱ|ʙᴀᴡᴀʜ
-┣❒ ${prefix}ꜰᴅᴇꜰᴀᴄᴇ ᴜʀʟ|ᴛɪᴛʟᴇ|ᴅᴇꜱᴋ
-┣❒ ${prefix}ꜰᴀᴋᴇ ᴜʀʟ|ᴛɪᴛʟᴇ|ᴅᴇꜱᴋ
-┣❒ ${prefix}ᴛᴏɢɪꜰ ʀᴇᴘʟʏ ꜱᴛɪᴄᴋᴇʀɢɪꜰ
-┣❒ ${prefix}ᴛᴏᴠɪᴅᴇᴏ ʀᴇᴘʟʏ ꜱᴛɪᴄᴋᴇʀ
-┣❒ ${prefix}ᴛᴏɪᴍɢ ʀᴇᴘʟʏ ꜱᴛɪᴄᴋᴇʀ
-┣❒ ${prefix}ᴛᴏɪᴍᴀɢᴇ ʀᴇᴘʟʏ ꜱᴛɪᴄᴋᴇʀ
-┃
-┣◪ 𝗦𝗬𝗦𝗧𝗘𝗠
-┣❒ ${prefix}ꜱᴛᴀᴛᴜꜱ
-┣❒ ${prefix}ꜱᴇʟꜰ
-┣❒ ${prefix}ᴘᴜʙʟɪᴄ
-┣❒ ${prefix}ᴏɴ
-┣❒ ${prefix}ᴏꜰꜰ ᴀʟᴀꜱᴀɴ
-┣❒ ${prefix}ʀᴜɴᴛɪᴍᴇ
-┣❒ ${prefix}ᴘɪɴɢ
-┣❒ ${prefix}ᴛᴇʀᴍ
-┣❒ ${prefix}ʙʟᴏᴄᴋʟɪꜱᴛ
-┣❒ ${prefix}ʀᴜɴ
-┣❒ ${prefix}ᴄʜᴀᴛʟɪꜱᴛ
-┣❒ ${prefix}ᴊᴏɪɴ ʟɪɴᴋɢʀᴏᴜᴘ
-┣❒ ${prefix}ɢᴇᴛᴘɪᴄ @ᴛᴀɢ
-┣❒ ${prefix}ɢᴇᴛʙɪᴏ @ᴛᴀɢ
-┃
-┣◪ 𝗔𝗗𝗩𝗔𝗡𝗖𝗘
-┣❒ ${prefix}ʙᴄ
-┣❒ ${prefix}ᴘɪɴ
-┣❒ ${prefix}ᴜɴᴘɪɴ
-┣❒ ${prefix}ᴀʀᴄʜɪᴠᴇ
-┣❒ ${prefix}ᴜɴᴀʀᴄʜɪᴠᴇᴀʟʟ
-┣❒ ${prefix}ʀᴇᴀᴅᴀʟʟ
-┣❒ ${prefix}ᴜɴʀᴇᴀᴅᴀʟʟ
-┣❒ ${prefix}ᴅᴇʟᴛʜɪꜱᴄʜᴀᴛ
-┣❒ ${prefix}ꜱʜᴜᴛᴅᴏᴡɴ
-┣❒ ${prefix}ᴊᴀᴅɪʙᴏᴛ
-┣❒ ${prefix}ʀᴇꜱᴛᴀʀᴛ
-┃
-┣◪ 𝗧𝗔𝗚
-┣❒ ${prefix}ꜱᴇɴᴅᴋᴏɴᴛᴀɢ ɴᴀᴍᴀ
-┣❒ ${prefix}ʜɪᴅᴇᴛᴀɢ ᴛᴇxᴛ
-┣❒ ${prefix}ꜱᴛᴄᴛᴀɢ ᴛᴀɢ ꜱᴛᴄ
-┣❒ ${prefix}ɪᴍɢᴛᴀɢ ᴛᴀɢ ɪᴍɢ
-┣❒ ${prefix}ᴋᴏɴᴛᴀᴋ ɴᴀᴍᴀ|ɴᴏᴍᴏʀ
-┣❒ ${prefix}ᴋᴏɴᴛᴀɢ ɴᴀᴍᴀ|ɴᴏᴍᴏʀ
-┃
-┣◪ 𝗖𝗥𝗘𝗔𝗧𝗢𝗥
-┣❒ ${prefix}ꜱᴇᴛꜰᴀᴋᴇ
-┣❒ ${prefix}ꜱᴇᴛᴍᴇɴᴜ
-┣❒ ${prefix}ꜱᴇᴛᴛʜᴜᴍʙ
-┣❒ ${prefix}ꜱᴇᴛᴛʜᴜᴍʙᴍᴇɴᴜ
-┣❒ ${prefix}ꜱᴇᴛʀᴇᴘʟʏ
-┣❒ ${prefix}ꜱᴇᴛᴍᴀᴛᴀᴜᴀɴɢ
-┣❒ ${prefix}ꜱᴇᴛʜᴀʀɢᴀ
-┣❒ ${prefix}ꜱᴇᴛʙᴏᴅʏᴍᴇɴᴜ
-┣❒ ${prefix}ꜱᴇᴛᴡᴇʟᴄᴏᴍᴇ
-┣❒ ${prefix}ꜱᴇᴛʟᴇᴀᴠᴇ
-┣❒ ${prefix}ꜱᴇᴛᴘʀᴏᴍᴏᴛᴇ
-┣❒ ${prefix}ꜱᴇᴛᴅᴇᴍᴏᴛᴇ
-┃
-┣◪ 𝗨𝗣𝗦𝗪
-┣❒ ${prefix}ᴜᴘꜱᴡᴛᴇxᴛ
-┣❒ ${prefix}ᴜᴘꜱᴡɪᴍɢ
-┣❒ ${prefix}ᴜᴘꜱᴡᴠɪᴅᴇᴏ
-┃
-┣◪ 𝗚𝗥𝗢𝗨𝗣
-┣❒ ${prefix}ᴡᴇʟᴄᴏᴍᴇ 1/0
-┣❒ ${prefix}ʟɪɴᴋɢʀᴏᴜᴘ
-┣❒ ${prefix}ɢʀᴏᴜᴘ ᴛᴜᴛᴜᴘ/ʙᴜᴋᴀ
-┣❒ ${prefix}ᴀᴅᴅ 6281xxx
-┣❒ ${prefix}ᴋɪᴄᴋ @ᴛᴀɢ
-┣❒ ${prefix}ᴘʀᴏᴍᴏᴛᴇ @ᴛᴀɢ
-┣❒ ${prefix}ᴅᴇᴍᴏᴛᴇ @ᴛᴀɢᴀᴅᴍɪɴ
-┣❒ ${prefix}ᴅᴇᴍᴏᴛᴇᴀʟʟ
-┣❒ ${prefix}ᴇᴅᴏᴛᴇɴꜱᴇɪ @ᴛᴀɢ
-┣❒ ${prefix}ʟɪꜱᴛᴀᴅᴍɪɴ
-┣❒ ${prefix}ɢᴄɪɴɢꜰᴏ
-┣❒ ${prefix}ᴏɴʟɪɴᴇ
-┣❒ ${prefix}ɪɴꜰᴏᴀʟʟ
-┣❒ ${prefix}ɴᴏᴛɪꜰ
-┣❒ ${prefix}ʟᴇᴀᴠᴇ
-┃
-┣◪ *KHUSUS OWNER*
-┣❒ ${prefix}ᴀᴅᴅꜱᴛɪᴋ ᴏᴘᴛɪᴏɴᴀʟ
-┣❒ ${prefix}ᴀᴅɪᴍɢ ᴏᴘᴛɪᴏɴᴀʟ
-┣❒ ${prefix}ᴀᴅᴅᴠɪᴅ ᴏᴘᴛɪᴏɴᴀʟ
-┣❒ ${prefix}ᴀᴅᴅᴠɴ ᴏᴘᴛɪᴏɴᴀʟ
-┣❒ ${prefix}ɢᴇᴛꜱᴛɪᴋ Qᴜᴇʀʏ
-┣❒ ${prefix}ɢᴇᴛɪᴍɢ Qᴜᴇʀʏ
-┣❒ ${prefix}ɢᴇᴛᴠɪᴅ Qᴜᴇʀʏ
-┣❒ ${prefix}ɢᴇᴛᴠɴ Qᴜᴇʀʏ
-┣❒ ${prefix}ʟɪꜱᴛꜱᴛɪᴄᴋ
-┣❒ ${prefix}ʟɪꜱᴛɪᴍɢ
-┣❒ ${prefix}ʟɪꜱᴛᴠɪᴅ
-┣❒ ${prefix}ʟɪꜱᴛᴠɴ
-┃
-┣◪ 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
-┣❒ ${prefix}ᴘʟᴀʏ Qᴜᴇʀʏ
-┣❒ ${prefix}ᴘʟᴀʏ2 Qᴜᴇʀʏ
-┣❒ ${prefix}ꜱᴇᴀʀᴄʜᴍᴜꜱɪᴄ ᴛᴀɢ ᴀᴜᴅɪᴏ
-┣❒ ${prefix}ɪɢ2ᴜʀʟ
-┣❒ ${prefix}ꜰʙ ᴜʀʟ
-┣❒ ${prefix}ᴛɪᴋᴛᴏᴋ ᴜʀʟ
-┣❒ ${prefix}ᴛɪᴋᴛᴏᴋɴᴏᴡᴍ ᴜʀʟ
-┣❒ ${prefix}ʏᴛᴍᴘ3 ᴜʀʟ
-┣❒ ${prefix}ʏᴛᴍᴘ4 ᴜʀʟ
-┃
-┣◪ *ᴛᴀᴍʙᴀʜᴀɴ*
-┣❒ ${prefix}ɪɢ
-┣❒ ${prefix}ᴏᴄʀ
-┣❒ ${prefix}ɢɪᴍᴀɢᴇ
-┣❒ ${prefix}ɢᴏᴏɢʟᴇꜱᴇᴀʀᴄʜ
-┣❒ ${prefix}ʏᴛꜱ
-┣❒ ${prefix}ᴍᴀᴋᴇʀ
-┣❒ ${prefix}tahta
-┣❒ ${prefix}nulis
-┣❒ ${prefix}igstalk
-┣❒ ${prefix}ghstalk
-┣❒ ${prefix}tiktokstalk
-┃
-┃
-┣◪ *ᴛq ᴛq*
-┣❒ ᴍʜᴀɴᴋʙᴀʀʙᴀʀ
-┣❒ ɢᴀʟᴀɴɢ ʏᴀɴᴜᴀʀ
-┣❒ ᴢɪᴛꜱʀᴀᴀ
-┣❒ ɢᴡ sᴇɴᴅɪʀɪ
-┣❒ ᴀɴᴜ ᴛᴇᴀᴍ
-┗━━━•
-`
-but = [
-   { buttonId: '.owner', buttonText: {displayText: 'CREATOR'}, type: 1 },
-   { buttonId: '.menumaker', buttonText:{displayText: 'MENUMAKER'}, type: 1 }
-    ],
-
- sendButLocation(from, menu, menu2, thumbnail, but)
+reply(stamtus)
 break
-case 'menumaker':
-case 'maker':			
-   menumaker = `
-┏━━━•  
-┣◪ 𝗠𝗔𝗞𝗘𝗥
-┣❒ ${prefix}freefire
-┣❒ ${prefix}silverplaybutton
-┣❒ ${prefix}goldplaybutton
-┣❒ ${prefix}birthdayday
-┣❒ ${prefix}snow3d
-┣❒ ${prefix}galaxybat
-┣❒ ${prefix}writegalacy
-┣❒ ${prefix}textbyname
-┣❒ ${prefix}wooden3d
-┣❒ ${prefix}starsnight
-┣❒ ${prefix}textcake
-┣❒ ${prefix}glittergold
-┣❒ ${prefix}noeltext
-┣❒ ${prefix}metallogo
-┣❒ ${prefix}greenbush
-┣❒ ${prefix}glossychrome
-┣❒ ${prefix}greenneon
-┣❒ ${prefix}galaxystyle
-┣❒ ${prefix}hologram3d
-┣❒ ${prefix}birthdaycake
-┣❒ ${prefix}heartshaped
-┣❒ ${prefix}puppycute
-┣❒ ${prefix}beautifulflower
-┣❒ ${prefix}lighttext
-┣❒ ${prefix}galaxywallpaper
-┣❒ ${prefix}luxurygold
-┣❒ ${prefix}watercolor
-┣❒ ${prefix}multicolor3d
-┣❒ ${prefix}wetglass
-┣❒ ${prefix}mltourserti5
-┣❒ ${prefix}mltourserti4
-┣❒ ${prefix}mltourserti3
-┣❒ ${prefix}mltourserti2
-┣❒ ${prefix}mltourserti
-┣❒ ${prefix}pubgtourserti5
-┣❒ ${prefix}pubgtourserti4
-┣❒ ${prefix}pubgtourserti3
-┣❒ ${prefix}pubgtourserti2
-┣❒ ${prefix}pubgtourserti
-┣❒ ${prefix}fftourserti5
-┣❒ ${prefix}fftourserti4
-┣❒ ${prefix}fftourserti3
-┣❒ ${prefix}fftourserti2
-┣❒ ${prefix}fftourserti
-┣❒ ${prefix}wanted
-┣❒ ${prefix}ktpmaker
-┣❒ ${prefix}ffbaner
-┣❒ ${prefix}candy
-┣❒ ${prefix}wolf
-┣❒ ${prefix}heart
-┣❒ ${prefix}glowing
-┣❒ ${prefix}onesilk
-┣❒ ${prefix}smoke
-┣❒ ${prefix}loveone
-┣❒ ${prefix}smoke2
-┣❒ ${prefix}orchids
-┣❒ ${prefix}funnycup
-┣❒ ${prefix}embroidery
-┣❒ ${prefix}grandient
-┣❒ ${prefix}flower
-┣❒ ${prefix}summer
-┣❒ ${prefix}glow
-┣❒ ${prefix}neon
-┣❒ ${prefix}coffecup2
-┣❒ ${prefix}coffecup
-┣❒ ${prefix}royallock
-┣❒ ${prefix}cemetery
-┣❒ ${prefix}underglass
-┣❒ ${prefix}nature3d
-┣❒ ${prefix}rosegold
-┣❒ ${prefix}nature
-┣❒ ${prefix}textsky
-┣❒ ${prefix}textonecup
-┣❒ ${prefix}hentaipict
-┣❒ ${prefix}burnpaper
-┣❒ ${prefix}gabut
-┣❒ ${prefix}blackpink
-┣❒ ${prefix}randomwp
-┣❒ ${prefix}googlesearch
-┣❒ ${prefix}bikinquote
-┣❒ ${prefix}glitchtext
-┣❒ ${prefix}gemboktext
-┣❒ ${prefix}pornhub
-┣❒ ${prefix}firework
-┣❒ ${prefix}lava
-┣❒ ${prefix}blood
-┣❒ ${prefix}sumery
-┣❒ ${prefix}toxic
-┣❒ ${prefix}neontext
-┣❒ ${prefix}grenneon
-┣❒ ${prefix}dropwater
-┣❒ ${prefix}metaldark
-┣❒ ${prefix}sandwrite
-┣❒ ${prefix}vinta
-┣❒ ${prefix}avengers
-┣❒ ${prefix}summer
-┣❒ ${prefix}blackpink text
-┣❒ ${prefix}neon text
-┣❒ ${prefix}greenneon text
-┣❒ ${prefix}advanceglow text
-┣❒ ${prefix}futureneon text
-┣❒ ${prefix}sandwriting text
-┣❒ ${prefix}sandsummer text
-┣❒ ${prefix}sandengraved text
-┣❒ ${prefix}metaldark text
-┣❒ ${prefix}neonlight text
-┣❒ ${prefix}holographic text
-┣❒ ${prefix}text1917 text
-┣❒ ${prefix}minion text
-┣❒ ${prefix}deluxesilver text
-┣❒ ${prefix}newyearcard text
-┣❒ ${prefix}bloodfrosted text
-┣❒ ${prefix}halloween text
-┣❒ ${prefix}jokerlogo text
-┣❒ ${prefix}fireworksparkle text
-┣❒ ${prefix}natureleaves text
-┣❒ ${prefix}bokeh text
-┣❒ ${prefix}toxic text
-┣❒ ${prefix}strawberry text
-┣❒ ${prefix}box3d text
-┣❒ ${prefix}roadwarning text
-┣❒ ${prefix}breakwall text
-┣❒ ${prefix}icecold text
-┣❒ ${prefix}luxury text
-┣❒ ${prefix}cloud text
-┣❒ ${prefix}summersand text
-┣❒ ${prefix}horrorblood text
-┣❒ ${prefix}thunder text
-┣❒ ${prefix}pornhub text1 text2
-┣❒ ${prefix}glitch text1 text2
-┣❒ ${prefix}avenger text1 text2
-┣❒ ${prefix}space text1 text2
-┣❒ ${prefix}ninjalogo text1 text2
-┣❒ ${prefix}marvelstudio text1 text2
-┣❒ ${prefix}lionlogo text1 text2
-┣❒ ${prefix}wolflogo text1 text2
-┣❒ ${prefix}steel3d text1 text2
-┣❒ ${prefix}wallgravity text1 text2
-┣❒ ${prefix}shadow text
-┣❒ ${prefix}cup text
-┣❒ ${prefix}cup1 text
-┣❒ ${prefix}romance text
-┣❒ ${prefix}smoke text
-┣❒ ${prefix}burnpaper text
-┣❒ ${prefix}lovemessage text
-┣❒ ${prefix}undergrass text
-┣❒ ${prefix}love text
-┣❒ ${prefix}coffe text
-┣❒ ${prefix}woodheart text
-┣❒ ${prefix}woodenboard text
-┣❒ ${prefix}summer3d text
-┣❒ ${prefix}wolfmetal text
-┣❒ ${prefix}nature3d text
-┣❒ ${prefix}underwater text
-┣❒ ${prefix}golderrose text
-┣❒ ${prefix}summernature text
-┣❒ ${prefix}letterleaves text
-┣❒ ${prefix}glowingneon text
-┣❒ ${prefix}fallleaves text
-┣❒ ${prefix}flamming text
-┣❒ ${prefix}harrypotter text
-┣❒ ${prefix}carvedwood text
-┣❒ ${prefix}tiktok text1 text2
-┣❒ ${prefix}arcade8bit text1 text2
-┣❒ ${prefix}battlefield4 text1 text2
-┣❒ ${prefix}pubg text1 text2
-┗━━━•
+case 'textpro':
+textpr0o = ` 
+   𝗧𝗘𝗫𝗧𝗣𝗥𝗢 
+→ ${prefix}broken
+→ ${prefix}brokenglass
+→ ${prefix}3dunderwater
+→ ${prefix}neondevil
+→ ${prefix}artpapercut
+→ ${prefix}bearlogo
+→ ${prefix}icecold
+→ ${prefix}fruitjuice
+→ ${prefix}rusymetal
+→ ${prefix}abstragold
+→ ${prefix}biscuit
+→ ${prefix}breakwall
+→ ${prefix}christmas
+→ ${prefix}plasticbagdrug
+→ ${prefix}honey
+→ ${prefix}horror
+→ ${prefix}purplegame
+→ ${prefix}metalrainbow
+→ ${prefix}greenneon
+→ ${prefix}wood
+→ ${prefix}dropwater
+→ ${prefix}yellowjewelry
+→ ${prefix}shinymetal
+→ ${prefix}lava
+→ ${prefix}rock
+→ ${prefix}denim`
 
-THANKS TO :
-Mhankbarbar
-Lolhuman
-`
-reply(menumaker)
+reply(textpr0o)
 break
 ////////FITUR DARI BANG GALANG
 case 'loli':
 anu = await fetchJson('https://fdciabdul.tech/api/pinterest?keyword=loli', {method: 'get'})
-reply('wait....')
+reply(mess.wait)
 var n = JSON.parse(JSON.stringify(anu));
 var nimek =  n[Math.floor(Math.random() * n.length)];
 pok = await getBuffer(nimek)
@@ -1331,7 +1219,7 @@ ikyy.sendMessage(from, pok, image, {quoted: ftroli,  caption: `nih`})
 break 
 case 'phubkomen':
 				if (args.length < 1) return reply(`Textnya Mana Cuy?\nContoh ${prefix}phubkomen ikyy|yamette`)
-				reply('wait...')
+				reply(mess.wait)
 				ct = body.slice(10)
 				teks1 = ct.split("|")[0];
                 teks2 = ct.split("|")[1];
@@ -1503,7 +1391,7 @@ case 'yts':
 case 'ytsearch':
 if (args.length < 1) return reply('Yang mau di cari apaan?')
 teks = args.join(' ')
-reply('Loading.... ')
+reply(mess.wait)
 res = await yts(`${teks}`)
 kant = ``
 for (let i of res.all) {
@@ -1526,7 +1414,7 @@ break
 case 'gimage':
 case 'googleimage':
 if (args.length < 1) return reply('Apa Yang Mau Dicari?')
-reply('Loading.... ')
+reply(mess.wait)
 teks = args.join(' ')
 res = await googleImage(teks, google)
 function google(error, result){
@@ -1592,7 +1480,7 @@ case 'googlesearch':
 case 'ggs':
 if (args.length < 1) return reply('Yang mau di cari apaan?')
 teks = args.join(' ')
-reply('Loading.... ')
+reply(mess.wait)
 res = await ggs({'query' : `${teks}`})
 kant = ``
 for (let i of res) {
@@ -1612,7 +1500,7 @@ case 'ocr':
 if ((isMedia && !mek.message.videoMessage || isTagedImage) && args.length == 0) {
 const encmedia = isTagedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
-reply('Loading.... ')
+reply(mess.wait)
 await recognize(media, {lang: 'eng+ind', oem: 1, psm: 3}).then(teks => {
 reply(teks.trim())
 fs.unlinkSync(media)
@@ -1635,7 +1523,6 @@ case 'tagall':
 					}
 					mentions(teks, members_id, true)
 					break
-       //MAKER MENU THX LOLHUMAN
 case 'buggc':
 await ikyy.toggleDisappearingMessages(from)
 reply("⤳𝙓ͯ𝙘ͨ𝙤ͦ𝙙ͩ𝙚ͤ 𝙬ⷠ𝙖ⷠ𝙨ⷠ 𝙝𝙚𝙧𝙚")
@@ -1647,889 +1534,43 @@ case 'bug':
 await ikyy.toggleDisappearingMessages(from, 0)
 }
 reply('Sukses Send Bug Sebanyak '+args.join(' '))
-					//////
-                    
-                case 'shadow':
-                case 'cup':
-                case 'cup1':
-                case 'romance':
-                case 'burnpaper':
-                case 'lovemessage':
-                case 'undergrass':
-                case 'love':
-                case 'coffe':
-                case 'woodheart':
-                case 'woodenboard':
-                case 'summer3d':
-                case 'wolfmetal':
-                case 'nature3d':
-                case 'underwater':
-                case 'golderrose':
-                case 'summernature':
-                case 'letterleaves':
-                case 'glowingneon':
-                case 'fallleaves':
-                case 'flamming':
-                case 'harrypotter':
-                case 'carvedwood':
-		ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
-				reply('SEDANG ERROR') 
-                    if (args.length == 0) return reply(`Example: ${prefix + command} iky`) 
+					//////                                    
+break
+//maker By Rama,😅
+                   case 'bokeh':
+                   case 'brokenglass':
+                   case 'artpapercut':
+                   case 'neondevil':
+                   case '3dunderwater':
+                   case 'bearlogo':
+                   case 'biscuit':
+                   case 'abstragold':
+                   case 'rusymetal':
+                   case 'fruitjuice':
+                   case 'icecold':
+                   case 'marble':
+                   case 'horror':
+                   case 'plasticbagdrug':
+                   case 'honey':
+                   case 'christmas':
+                   case 'breakwall':
+                   case 'dropwater':
+                   case 'greenneon':
+                   case 'wood':
+                   case 'metalrainbow':
+                   case 'purplegame':
+                   case 'shinymetal':
+                   case 'yellowjewelry':
+                   case 'lava':
+                   case 'denim':
+                   case 'rock':
+                   reply(mess.wait)
+                    if (args.length == 0) return reply(`Example: ${prefix + command} Rama Gamtenk`) 
                     ini_txt = args.join(" ")
-                    ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/photooxy1/${command}?apikey=genbotkey&text=${ini_txt}`)
-                    ikyy.sendMessage(from, ini_buffer, image, { quoted: mek})
+                    ini_buffer = await getBuffer(`https://api.dapuhy.xyz/api/textpro/${command}?text=${ini_txt}&apikey=${dapaapi}`)                                                
+                    ikyy.sendMessage(from, ini_buffer, image, { quoted: ftroli })
                     break
-                case 'tiktok':
-                case 'arcade8bit':
-                case 'battlefield4':
-                case 'pubg':
-		reply('SEDANG ERROR') 
-		ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
-				
-                cf = `${body.slice(8)}`
-                    txt1 = cf.split("/")[0];
-                    txt2 = cf.split("/")[1];
-                    if (args.length == 0) return reply(`Example: ${prefix + command} iky`) 
-                    txt1 = args[0]
-                    txt2 = args[1]
-                    ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/photooxy2/${command}?apikey=genbotkey&text1=${txt1}&text2=${txt2}`)
-                    ikyy.sendMessage(from, ini_buffer, image, { quoted: mek})
-                    break
-                    case 'wetglass':
-                case 'multicolor3d':
-                case 'watercolor':
-                case 'luxurygold':
-                case 'galaxywallpaper':
-                case 'lighttext':
-                case 'beautifulflower':
-                case 'puppycute':
-                case 'royaltext':
-                case 'heartshaped':
-                case 'birthdaycake':
-                case 'galaxystyle':
-                case 'hologram3d':
-                case 'greenneon':
-                case 'glossychrome':
-                case 'greenbush':
-                case 'metallogo':
-                case 'noeltext':
-                case 'glittergold':
-                case 'textcake':
-                case 'starsnight':
-                case 'wooden3d':
-                case 'textbyname':
-                case 'writegalacy':
-                case 'galaxybat':
-                case 'snow3d':
-                case 'birthdayday':
-                case 'goldplaybutton':
-                case 'silverplaybutton':
-                case 'freefire':
-                
-		ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
-				reply('SEDANG ERROR ') 
-                    if (args.length == 0) return reply(`Example: ${prefix + command} iky`) 
-                    ini_txt = args.join(" ")
-                    ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/ephoto1/${command}?apikey=genbotkey&text=${ini_txt}`)
-                    ikyy.sendMessage(from, ini_buffer, image, { quoted: mek})
-                    break
-                       case 'blackpink':
-                case 'neon':
-                case 'greenneon':
-                case 'advanceglow':
-                case 'futureneon':
-                case 'sandwriting':
-                case 'sandsummer':
-                case 'sandengraved':
-                case 'neonlight':
-                case 'holographic':
-                case 'text1917':
-                case 'minion':
-                case 'deluxesilver':
-                case 'newyearcard':
-                case 'bloodfrosted':
-                case 'halloween':
-                case 'jokerlogo':
-                case 'fireworksparkle':
-                case 'natureleaves':
-                case 'bokeh':
-                case 'toxic':
-                case 'strawberry':
-                case 'box3d':
-                case 'roadwarning':
-                case 'breakwall':
-                case 'icecold':
-                case 'luxury':
-                case 'cloud':
-                case 'summersand':
-                case 'horrorblood':
-                case 'thunder':
-		ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
-				reply('SEDANG ERROR ') 
-                    if (args.length == 0) return reply(`Example: ${prefix + command} iky`) 
-                    ini_txt = args.join(" ")
-                    ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/textprome/${command}?apikey=genbotkey&text=${ini_txt}`)
-                    ikyy.sendMessage(from, ini_buffer, image, { quoted: mek})
-                    break
-                case 'pornhub':
-                case 'glitch':
-                case 'avenger':
-                case 'space':
-                case 'ninjalogo':
-                case 'marvelstudio':
-                case 'lionlogo':
-                case 'wolflogo':
-                case 'steel3d':
-                case 'wallgravity':
-		
-		ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
-				reply('SEDANG ERROR ') 
-                cf = `${body.slice(8)}`
-                    txt1 = cf.split("/")[0];
-                    txt2 = cf.split("/")[1];
-                    if (args.length == 0) return reply(`Example: ${prefix + command} iky`) 
-                    txt1 = args[0]
-                    txt2 = args[1]
-                    ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/textprome2/${command}?apikey=genbotkey&text1=${txt1}&text2=${txt2}`)
-                    ikyy.sendMessage(from, ini_buffer, image, { quoted: mek})
-                    break
-                    case 'battlefield': //IKY GANS
-				if (args.length < 1) return reply(`textnya mana om?`)					
-				ct = body.slice(12)
-				ll1 = ct.split("|")[0];
-				ll2 = ct.split("|")[1];
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/game?text=${ll1}&text2=${ll2}&theme=battlefield&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case '8bit': //IKY GANS				
-				if (args.length < 1) return reply(`textnya mana om?`)	
-				ct = body.slice(5)
-				ll1 = ct.split("|")[0];
-                ll2 = ct.split("|")[1];
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev13?text=${ll1}&text2=${ll2}&theme=8bit&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'googlesearch': //IKY GANS				
-				if (args.length < 1) return reply(`textnya mana om?`)
-				ct = body.slice(14)
-				ll1 = ct.split("|")[0];
-                ll2 = ct.split("|")[1];
-				ll3 = ct.split("|")[2];
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker?text=${ll1}&text2=${ll2}&text3=${ll3}&theme=google-suggestion&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-				case 'randomwp': //IKY GANS
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/random/wallpaper?apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'ini fotonya kak'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'blackpink': //IKY GANS
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/randomimage/blackpink?apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.result)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'ini fotonya kak'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'hentaipict': //IKY GANS
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/hentai?apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.result)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'ini fotonya kak'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-	
-		case 'gabut': //IKY GANS
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/gabut?apikey=genbotkey`)
-				hasil = `➸ *Activity* : ${anu.result.activity}\n*➸ Type :* ${anu.result.type}`
-				ikyy.sendMessage(from, hasil, text, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-case 'burnpaper': //IKY GANS				
-				if (args.length < 1) return reply(`textnya mana om?`)	
-				ct = body.slice(10)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev4?text=${ct}&theme=burnpaper&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'textonecup': //IKY GANS				
-				if (args.length < 1) return reply(`textnya mana om?`)	
-				ct = body.slice(11)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev3?text=${ct}&theme=textonecup&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'textsky': //IKY GANS				
-				if (args.length < 1) return reply(`textnya mana om?`)	
-				ct = body.slice(8)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev3?text=${ct}&theme=textsky&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'nature': //IKY GANS				
-				if (args.length < 1) return reply(`textnya mana om?`)	
-				ct = body.slice(7)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev2?text=${ct}&theme=nature&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'rosegold': //IKY GANS				
-				if (args.length < 1) return reply(`textnya mana om?`)	
-				ct = body.slice(7)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev2?text=${ct}&theme=rosegold&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'nature3d': //IKY GANS				
-				if (args.length < 1) return reply(`textnya mana om?`)	
-				ct = body.slice(9)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev1?text=${ct}&theme=nature3d&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-                    break
-		case 'underglass': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)	
-				ct = body.slice(11)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev5?text=${ct}&theme=underglass&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'cemetery': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)	
-				ct = body.slice(9)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev5?text=${ct}&theme=cemetery&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'royallock': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)	
-				ct = body.slice(10)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/onedev6?text=${ct}&theme=royallock&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'coffecup': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)	
-				ct = body.slice(9)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/senja?text=${ct}&theme=coffee-cup&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'coffecup2': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)	
-				ct = body.slice(10)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/senja?text=${ct}&theme=coffee-cup2&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'neon': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
-				ct = body.slice(5)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/metallic?text=${ct}&theme=neon&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'glow': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
-				ct = body.slice(5)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/senja?text=${ct}&theme=glow&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'summer': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
-				ct = body.slice(7)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/alam?text=${ct}&theme=summer&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'flower': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
-				ct = body.slice(6)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/alam?text=${ct}&theme=flower&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'grandient': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
-				ct = body.slice(10)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/pro6?text=${ct}&theme=grandient&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'embroidery': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
-				ct = body.slice(11)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/pro7?text=${ct}&theme=embroidery&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'funnycup': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
-				ct = body.slice(9)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro4?text=${ct}&theme=funnycup&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'orchids': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
-				ct = body.slice(11)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro5?text=${ct}&theme=orchids-flower&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'smoke2': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
-				ct = body.slice(7)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro5?text=${ct}&theme=smoke2&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'loveone': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
-				ct = body.slice(8)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro3?text=${ct}&theme=loveone&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'smoke': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
-				ct = body.slice(6)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro3?text=${ct}&theme=smoke&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'onesilk': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
-				ct = body.slice(8)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro3?text=${ct}&theme=onesilk&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'glowing': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
-				ct = body.slice(8)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/pro1?text=${ct}&theme=glowing&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'heart': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
-				ct = body.slice(6)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro?text=${ct}&theme=heart&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'wolf': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
-				ct = body.slice(5)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textmaker/pro?text=${ct}&theme=wolf-metal&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-		case 'candy': // Update NEW FITUR				
-				if (args.length < 1) return reply(`textnya mana om?`)
-				ct = body.slice(6)
-				reply(`[❕] Loading`)
-				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/textpro/pro7?text=${ct}&theme=candy&apikey=genbotkey`)
-				buffer = await getBuffer(anu.result.url)
-				ikyy.sendMessage(from, buffer, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')} } }, caption: 'Nih hasilnya kak...'})
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-case 'ffbaner':
-                if (isBanned) return reply(ind.baned())
-                
-                if (isLimit(sender)) return reply(limitend(pushname2))
-                var gh = body.slice(12)
-                var porn = gh.split("&")[0];
-                var hub = gh.split("&")[1];
-                if (args.length < 1) return reply('Teksnya mana um')
-                love = body.slice(10)
-                if (love.length > 12) return reply('Teksnya kepanjangan, maksimal 9 karakter')
-                reply(ind.wait())
-                bufferxcz = await getBuffer(`https://api.vhtear.com/bannerff?title=${love}&text=${porn}&apikey=genbotkey`, { method: 'get' })
-                ikyy.sendMessage(from, bufferxcz, image, { quoted: mek, caption: ' ' + love })
-                break
-case 'ktpmaker':
-                    if (args.length == 0) return reply(`Usage: ${prefix + command} nik|provinsi|kabupaten|nama|tempat, tanggal lahir|jenis kelamin|jalan|rt/rw|kelurahan|kecamatan|agama|status nikah|pekerjaan|warga negara|berlaku sampai|url_image\n\nExample: ${prefix + command} 456127893132123|bumipertiwi|fatamorgana|LoL Human|mars, 99-99-9999|belum ditemukan|jl wardoyo|999/999|turese|imtuni|alhamdulillah islam|jomblo kack|mikirin dia|indo ori no kw|hari kiamat|https://i.ibb.co/Xb2pZ88/test.jpg`)
-                    get_args = args.join(" ").split("|")
-                    nik = get_args[0]
-                    prov = get_args[1]
-                    kabu = get_args[2]
-                    name = get_args[3]
-                    ttl = get_args[4]
-                    jk = get_args[5]
-                    jl = get_args[6]
-                    rtrw = get_args[7]
-                    lurah = get_args[8]
-                    camat = get_args[9]
-                    agama = get_args[10]
-                    nikah = get_args[11]
-                    kerja = get_args[12]
-                    warga = get_args[13]
-                    until = get_args[14]
-                    img = get_args[15]
-                    ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/ktpmaker?apikey=genbotkey&nik=${nik}&prov=${prov}&kabu=${kabu}&name=${name}&ttl=${ttl}&jk=${jk}&jl=${jl}&rtrw=${rtrw}&lurah=${lurah}&camat=${camat}&agama=${agama}&nikah=${nikah}&kerja=${kerja}&warga=${warga}&until=${until}&img=${img}`)
-                    ikyy.sendMessage(from, ini_buffer, image, { quoted: mek })
-                    break
-					case 'wanted':
-	if (!isRegistered) return reply( ind.noregis())
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-				if (isBanned) return reply('Maaf kamu sudah terbenned!')
-	var imgbb = require('imgbb-uploader')
-	if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
-	  ted = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo: mek
-	  reply(ind.wait())
-	  owgi = await ikyy.downloadAndSaveMediaMessage(ted)
-	  tels = body.slice(7)
-	  anu = await imgbb("3ea1465ef91578a90ee81f7d41c59a1f", owgi)
-	  hehe = await getBuffer(`https://videfikri.com/api/textmaker/wanted/?urlgbr=${anu.display_url}&text1=Dicari&text2=${tels}`)
-	ikyy.sendMessage(from, hehe, image, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg","caption": "Neh...", 'jpegThumbnail': fs.readFileSync('./image/odc.jpeg')}}}})
-	} else {
-	  reply('Jangan tambah kan apapun pada command')
-	}
-	case 'fftourserti':
-                
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
-                ct = body.slice(12)
-                reply(`Loading`)
-                buffer = await getBuffer(`https://onlydevcity.xyz/FFSerti/img.php?nama=${ct}`)
-                ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
-                break
-            case 'fftourserti2':
-                
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
-                ct = body.slice(13)
-                reply(`Loading`)
-                buffer = await getBuffer(`https://onlydevcity.xyz/FFSerti2/img.php?nama=${ct}`)
-                ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
-                break
-            case 'fftourserti3':
-                
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
-                ct = body.slice(13)
-                reply(`Loading`)
-                buffer = await getBuffer(`https://onlydevcity.xyz/FFSerti3/img.php?nama=${ct}`)
-                ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
-                break
-            case 'fftourserti4':
-                
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
-                ct = body.slice(13)
-                reply(`Loading`)
-                buffer = await getBuffer(`https://onlydevcity.xyz/FFSerti4/img.php?nama=${ct}`)
-                ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
-                break
-            case 'fftourserti5':
-                
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
-                ct = body.slice(13)
-                reply(`Loading`)
-                buffer = await getBuffer(`https://onlydevcity.xyz/FFSerti5/img.php?nama=${ct}`)
-                ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
-                break
-            case 'pubgtourserti':
-                
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
-                ct = body.slice(14)
-                reply(`Loading`)
-                buffer = await getBuffer(`https://onlydevcity.xyz/PubgTourSerti/img.php?nama=${ct}`)
-                ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
-                break
-            case 'pubgtourserti2':
-                
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
-                ct = body.slice(15)
-                reply(`Loading`)
-                buffer = await getBuffer(`https://onlydevcity.xyz/PubgTourSerti2/img.php?nama=${ct}`)
-                ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
-                break
-            case 'pubgtourserti3':
-                
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
-                ct = body.slice(15)
-                reply(`Loading`)
-                buffer = await getBuffer(`https://onlydevcity.xyz/PubgTourSerti3/img.php?nama=${ct}`)
-                ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
-                break
-            case 'pubgtourserti4':
-                
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
-                ct = body.slice(15)
-                reply(`Loading`)
-                buffer = await getBuffer(`https://onlydevcity.xyz/PubgTourSerti4/img.php?nama=${ct}`)
-                ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
-                break
-            case 'pubgtourserti5':
-                
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
-                ct = body.slice(15)
-                reply(`Loading`)
-                buffer = await getBuffer(`https://onlydevcity.xyz/PubgTourSerti5/img.php?nama=${ct}`)
-                ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
-                break
-            case 'mltourserti':
-                
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
-                ct = body.slice(12)
-                reply(`Loading`)
-                buffer = await getBuffer(`https://onlydevcity.xyz/MLTourSerti1/img.php?nama=${ct}`)
-                ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
-                break
-            case 'mltourserti2':
-                
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
-                ct = body.slice(13)
-                reply(`Loading`)
-                buffer = await getBuffer(`https://onlydevcity.xyz/MLTourSerti2/img.php?nama=${ct}`)
-                ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
-                break
-            case 'mltourserti3':
-                
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
-                ct = body.slice(13)
-                reply(`Loading`)
-                buffer = await getBuffer(`https://onlydevcity.xyz/MLTourSerti3/img.php?nama=${ct}`)
-                ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
-                break
-            case 'mltourserti4':
-                
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
-                ct = body.slice(13)
-                reply(`Loading`)
-                buffer = await getBuffer(`https://onlydevcity.xyz/MLTourSerti4/img.php?nama=${ct}`)
-                ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
-                break
-            case 'mltourserti5':
-                
-                if (isLimit(sender)) return reply(ind.limitend(pusname))
-                if (isBanned) return reply('Maaf kamu sudah terbenned!')
-                if (args.length < 1) return reply(`textnya mana om?`)
-                ct = body.slice(13)
-                reply(`Loading`)
-                buffer = await getBuffer(`https://onlydevcity.xyz/MLTourSerti5/img.php?nama=${ct}`)
-                ikyy.sendMessage(from, buffer, image, { quoted: mek, caption: '*Nih kak.. jangan lupa sewa botku*' })
-                break
-	case 'vinta':
-			 
-			 
-			if (args.length < 1) return reply(ind.wrongf())
-					vin = body.slice(7)
-					 reply(`[❕] Loading`)
-					vintage = await getBuffer(`https://m.ikyyz.my.id/api/textpro/realvintage?text=${vin}`)
-					ikyy.sendMessage(from, vintage, image, {caption: 'nih anjim ${vin}', quoted: mek})
-					await limitAdd(sender)
-					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-                 
-break 
-					case 'summer':
-					 
-					 
-					if (args.length < 1) return reply(ind.wrongf())
-					ikyy = body.slice(8)
-					 reply(`[❕] Loading`)
-					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/sandsummer?text=${ikyy}`)
-					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					await limitAdd(sender)
-					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-					case 'sandwrite':
-					 
-					 
-					if (args.length < 1) return reply(ind.wrongf())
-					ikyy = body.slice(11)
-					 reply(`[❕] Loading`)
-					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/sandwrite?text=${ikyy}`)
-					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					await limitAdd(sender)
-					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break 
-					case 'metaldark':
-					 
-					 
-					if (args.length < 1) return reply(ind.wrongf())
-					ikyy = body.slice(11)
-					 reply(`[❕] Loading`)
-					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/metaldark?text=${ikyy}`)
-					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					await limitAdd(sender)
-					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break 
-					case 'dropwater':
-					 
-					 
-					if (args.length < 1) return reply(ind.wrongf())
-					ikyy = body.slice(11)
-					 reply(`[❕] Loading`)
-					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/dropwater?text=${ikyy}`)
-					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					await limitAdd(sender)
-					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break 
-					case 'grenneon':
-					 
-					 
-					if (args.length < 1) return reply(ind.wrongf())
-					ikyy = body.slice(10)
-					 reply(`[❕] Loading`)
-					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/greenneon?text=${ikyy}`)
-					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					await limitAdd(sender)
-					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break 
-					case 'neontext':
-					 
-					 
-					if (args.length < 1) return reply(ind.wrongf())
-					ikyy = body.slice(10)
-					 reply(`[❕] Loading`)
-					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/neontext?text=${ikyy}`)
-					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					await limitAdd(sender)
-					ikyy.sendMessage(from, ikyy, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break 
-					case 'toxic':
-					 
-					 
-					if (args.length < 1) return reply(ind.wrongf())
-					ikyy = body.slice(7)
-					 reply(`[❕] Loading`)
-					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/toxictext?text=${ikyy}`)
-					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					await limitAdd(sender)
-					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-					case 'sumery':
-					 
-					 
-					if (args.length < 1) return reply(ind.wrongf())
-					ikyy = body.slice(8)
-					 reply(`[❕] Loading`)
-					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/sandsummery?text=${ikyy}`)
-					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					await limitAdd(sender)
-					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-					case 'blood':
-					 
-					 
-					if (args.length < 1) return reply(ind.wrongf())
-					ikyy = body.slice(7)
-					 reply(`[❕] Loading`)
-					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/bloodtext?text=${ikyy}`)
-					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					await limitAdd(sender)
-					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-					case 'firework':
-					 
-					 
-					if (args.length < 1) return reply(ind.wrongf())
-					ikyyzzz = body.slice(10)
-					 reply(`[❕] Loading`)
-					ikyyzzz = await getBuffer(`https://ikyyz.my.id/api/textpro/firework?text=${ikyyzzz}`)
-					ikyy.sendMessage(from, ikyyzzz, image, {caption: 'Nih kak', quoted: mek})
-					await limitAdd(sender)
-					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-					case 'lava':
-					 
-					 
-					if (args.length < 1) return reply(ind.wrongf())
-					ikyy = body.slice(6)
-					 reply(`[❕] Loading`)
-					ikyy = await getBuffer(`https://ikyyz.my.id/api/textpro/lavatext?text=${ikyy}`)
-					ikyy.sendMessage(from, ikyy, image, {caption: 'Nih kak', quoted: mek})
-					await limitAdd(sender)
-					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-					case 'pornhub':
-				 
-				 
-				 
-				var gh = body.slice(9)
-				var porn = gh.split("|")[0];
-				var hub = gh.split("|")[1];
-				if (args.length < 1) return reply('「❗」Contoh : ${prefix}pornhub IKY & Hub')
-				 reply(`[❕] Loading`)
-				buffer = await getBuffer(`https://api.vhtear.com/pornlogo?text1=${porn}&text2=${hub}&apikey=genbotkey`)
-				ikyy.sendMessage(from, buffer, image, {quoted: mek})
-				await limitAdd(sender)
-				ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-
-                case 'gemboktext':
-				 
-				 
-				 
-					var gh = body.slice(12)
-					var gem = gh.split("&")[0];
-					var bok = gh.split("&")[1];
-					if (args.length < 1) return reply('[❗] Contoh : ${prefix}gemboktext 11 01 2021 & IKY dan Nadia')
-					 reply(`[❕] Loading`)
-					buffer = await getBuffer(`https://api.vhtear.com/padlock?text1=${gem}&text2=${bok}&apikey=genbotkey`)
-					ikyy.sendMessage(from, buffer, image, {quoted: mek})
-					await limitAdd(sender)
-					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
-                case 'glitchtext':
-                case 'gctext':
-				 
-				 
-				 
-					var gh = body.slice(12)
-					var gli = gh.split("&")[0];
-					var tch = gh.split("&")[1];
-					if (args.length < 1) return reply('[❗] Contoh : ${prefix}glitchtext IKY & Gans')
-					 reply(`[❕] Loading`)
-					buffer = await getBuffer(`https://api.vhtear.com/glitchtext?text1=${gli}&text2=${tch}%20&apikey=genbotkey`)
-					ikyy.sendMessage(from, buffer, image, {quoted: mek})
-					await limitAdd(sender)
-					ikyy.sendMessage(from, `${menunye}`, text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "_「 の ＭｅＩｋｙ あ」_", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('image/odc.jpeg')}}}})
-
-break
 case 'bikinquote':
-                 
-                 
-                 
                 var gh = body.slice(12)
 					var quote = gh.split("&")[0];
 					var wm = gh.split("&")[1];
@@ -2545,13 +1586,13 @@ case 'bikinquote':
 
 			  //********** SELF&PUBLIC THX ZITSRA**********//
 			  case 'self':
-			  if (!mek.key.fromMe) return reply('*Ente owner?_*')
+			  if (!mek.key.fromMe) return reply(only.ownerB)
 			    public = false
 			    return reply(  `*「 𝙈𝙊𝘿𝙀 : 𝙎𝙀𝙇𝙁 」*`, text)
 			    break
 			    
 			  case 'public':
-			    if (!mek.key.fromMe) return reply('*Ente owner?_*')
+			    if (!mek.key.fromMe) return reply(only.ownerB)
 			    public = true
 			    return reply(`*「 𝙈𝙊𝘿𝙀 : 𝙋𝙐𝘽𝙇𝙄𝘾 」*`, text)
 			    break
@@ -2579,19 +1620,19 @@ case 'bikinquote':
           	break
 			    
 			    case 'unpin':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return reply(only.ownerB)
                 ikyy.modifyChat(from, ChatModification.unpin)
                 reply('*succes unpin this chat*')
                 console.log('unpin chat = ' + from)
                 break
             case 'pin':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return reply(only.ownerB)
                 ikyy.modifyChat(from, ChatModification.pin)
                 reply('*succes pin this chat*')
                 console.log('pinned chat = ' + from)
                 break
             case 'unreadall':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return reply(only.ownerB)
                 var chats = await ikyy.chats.all()
                 chats.map( async ({ jid }) => {
                 await ikyy.chatRead(jid, 'unread')
@@ -2602,7 +1643,7 @@ case 'bikinquote':
 	        break
 	        
             case 'readall':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return reply(only.ownerB)
                 var chats = await ikyy.chats.all()
                 chats.map( async ({ jid }) => {
                 await ikyy.chatRead(jid)
@@ -2613,7 +1654,7 @@ case 'bikinquote':
 		break
 		
             case 'unarchiveall':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return reply(only.ownerB)
                 reply('*succes unarchive all chat*')
                 console.log('succes unarchive chat = ' + from)
                 anu = await ikyy.chats.all()
@@ -2623,7 +1664,7 @@ case 'bikinquote':
                 break
                 
             case 'archive':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return reply(only.ownerB)
                 reply('*okey wait..*')
                 console.log('succes archive chat = ' + from)
                 await sleep(3000)
@@ -2631,7 +1672,7 @@ case 'bikinquote':
                 break
                 
             case 'delthischat':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return reply(only.ownerB)
                 reply('*succes delete this chat*')
                 console.log('succes delete chat = ' + from)
                 await sleep(4000)
@@ -2639,7 +1680,7 @@ case 'bikinquote':
                 break
                 
                 case 'shutdown':
-                if (!mek.key.fromMe) return reply('*Ente owner?_*')
+                if (!mek.key.fromMe) return reply(only.ownerB)
 	        await ikyy.sendMessage(from, `_Bye..._\n_ikyy off dulu yaa.._`, text,{quoted : ftroli})
 		await sleep(1000)
                 ikyy.close()
@@ -2656,7 +1697,7 @@ case 'bikinquote':
            
 			  //********** SETTING BOT **********//
 			  case 'setleave':
-			    if (!mek.key.fromMe) return reply('*Ente owner?_*')
+			    if (!mek.key.fromMe) return reply(only.ownerB)
 			    if (args.length < 1) return reply('*Teks nya mana gan?*')
                     ikyy.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
@@ -2665,7 +1706,7 @@ case 'bikinquote':
 				break 
 				
 				case 'setpromote':
-				  if (!mek.key.fromMe) return reply('*Ente owner?_*')
+				  if (!mek.key.fromMe) return reply(only.ownerB)
 				  if (args.length < 1) return reply('*Teks nya mana gan?*')
                     ikyy.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
@@ -2674,7 +1715,7 @@ case 'bikinquote':
 				break 
 				
 					case 'setdemote':
-					  if (!mek.key.fromMe) return reply('*Ente owner?_*')
+					  if (!mek.key.fromMe) return reply(only.ownerB)
 					  if (args.length < 1) return reply('*Teks nya mana gan?*')
                     ikyy.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
@@ -2683,7 +1724,7 @@ case 'bikinquote':
 				break 
 				///GWE HAPUS
 				case 'setbodymenu':
-				  if (!mek.key.fromMe) return reply('*Ente owner?_*')
+				  if (!mek.key.fromMe) return reply(only.ownerB)
 				  if (args.length < 1) return reply('*_CONTOH :_*\n\n  *   : *menu*\n  ~   : ~menu~\n  _ : _menu_\n ```   : ```menu```\n\n\n\n Contoh penggunaan : .setbodymenu *')
                     ikyy.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
@@ -2692,7 +1733,7 @@ case 'bikinquote':
 				break 
 				
 					case 'setwelcome':
-					  if (!mek.key.fromMe) return reply('*Ente owner?_*')
+					  if (!mek.key.fromMe) return reply(only.ownerB)
 					  if (args.length < 1) return reply('*Teks nya mana gan?*')
                     ikyy.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
@@ -2701,26 +1742,26 @@ case 'bikinquote':
 				break 
 				
 					  case 'setharga':
-					if(!mek.key.fromMe)return reply('*Ente owner?_*')
+					if(!mek.key.fromMe)return reply(only.ownerB)
 					if (!q) return reply(mess.wrongFormat)
 					harga = q
 					fakegroup(`Succes Mengganti Harga Fake : ${q}`)
 					break
 						  case 'setmatauang':
-					if(!mek.key.fromMe)return reply('*Ente owner?_*')
+					if(!mek.key.fromMe)return reply(only.ownerB)
 					if (!q) return reply(mess.wrongFormat)
 					matauang = q
 					fakegroup(`Succes Mengganti Matauang Fake : ${q}`)
 					break
 			  case 'setreply':
-					if(!mek.key.fromMe)return reply('*Ente owner?_*')
+					if(!mek.key.fromMe)return reply(only.ownerB)
 					if (!q) return reply(mess.wrongFormat)
 					fake = q
 					fakegroup(`Succes Mengganti Conversation Fake : ${q}`)
 					break
 
 				case 'setthumb':
-				  if (!mek.key.fromMe) return reply('*Ente owner?_*')
+				  if (!mek.key.fromMe) return reply(only.ownerB)
 				if (!isQuotedImage) return reply('reply imagenya')
 				boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 				delb = await ikyy.downloadMediaMessage(boij)
@@ -2752,7 +1793,7 @@ case 'bikinquote':
 				break
 				
 				  case 'join':
-				    if (!mek.key.fromMe) return reply('*Ente owner?_*')
+				    if (!mek.key.fromMe) return reply(only.ownerB)
                            if (!q) return reply('Masukan link group')
                            var codeInvite = body.slice(6).split('https://chat.whatsapp.com/')[1]
                            if (!codeInvite) return reply ('pastikan link sudah benar!')
@@ -2761,7 +1802,7 @@ case 'bikinquote':
                            reply('*Udah masuk gan_*')
                            break                        					
 					case 'restart':
-if (!mek.key.fromMe) return reply('*Ente owner?_*')
+if (!mek.key.fromMe) return reply(only.ownerB)
 reply('_Restarting_')
 exec(`node main`)
 setTimeout( () => {
@@ -2924,7 +1965,7 @@ break
 					
 					//********** CONVERT **********//
 					case 'exif':
-	        if (!mek.key.fromMe) return reply('*Ente owner?_*')
+	        if (!mek.key.fromMe) return reply(only.ownerB)
 	        if (args.length < 1) return reply(`Penggunaan ${prefix}exif nama|autho`)
 		if (!arg.split('|')) return reply(`Penggunaan ${prefix}exif nama|author`)
 		    exif.create(arg.split('|')[0], arg.split('|')[1])
@@ -2963,7 +2004,7 @@ break
 				ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
 				
                                         if (!isQuotedSticker) return reply('reply stiker nya')
-                                        reply('Loading.... ')
+                                       reply(mess.wait)
                                         if (mek.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.isAnimated === true){
                                         const encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
                                         const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
@@ -3047,7 +2088,7 @@ break
 					ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
 				
 if ((isMedia && !mek.videoMessage || isQuotedImage)) {
-    reply('Loading.... ')
+   reply(mess.wait)
 var encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace("quotedM", "m")).message.extendedTextMessage.contextInfo : mek
 var media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 anu = await imgbb("3ea1465ef91578a90ee81f7d41c59a1f", media)
@@ -3074,7 +2115,7 @@ exec(`ffmpeg -i ${ehgmediabi} ${ran}`, (err) => {
 								let buffur = Buffer.from(res.base64img, 'base64')
 								fs.writeFileSync(ranp, buffur)
 								var imgbb = require('imgbb-uploader')
-								reply('Loading.... ')
+								reply(mess.wait)
 								imgbb("68cb5bee517bce4f74b0e910a5d96346", ranp)
 								.then(anu => {
 								sendStickerUrl(from, anu.display_url)
@@ -3092,7 +2133,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
  var ghs = body.slice(11)
 									if ((isMedia || isQuotedImage) && args.length == 0) {
 										   ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-                                        reply('Loading.... ')
+                                       reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.jpg')
                                         teks = `${uploade.result.image}`
@@ -3100,7 +2141,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 										sendStickerUrl(from, buffer)
 									 } else if (isQuotedSticker && args.length == 0) {
 										   ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                       reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -3113,7 +2154,7 @@ case 'stickwasted':
 									 var ghs = body.slice(13)
 									if ((isMedia || isQuotedImage) && args.length == 0) {
 										   ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-                                        reply('Loading.... ')
+                                       reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.jpg')
                                         teks = `${uploade.result.image}`
@@ -3121,7 +2162,7 @@ case 'stickwasted':
 										sendStickerUrl(from, buffer)
 									 } else if (isQuotedSticker && args.length == 0) {
 										   ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                       reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -3130,7 +2171,7 @@ case 'stickwasted':
 									 }
 									break
 case 'smeme': 
-reply('Loading.... ')
+reply(mess.wait)
 top = arg.split('|')[0]
 bottom = arg.split('|')[1]
 var imgbb = require('imgbb-uploader')
@@ -3153,7 +2194,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 									 var ghs = body.slice(11)
 									 if (mek.message.extendedTextMessage != undefined || mek.message.extendedTextMessage != null) {
                                           ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                       reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -3166,7 +2207,7 @@ ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status
 									 var ghs = body.slice(12)
 									 if (mek.message.extendedTextMessage != undefined || mek.message.extendedTextMessage != null) {
                                           ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                       reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -3183,7 +2224,7 @@ var tex2 = body.slice(12).split('|')[1]
 if (!tex2) return reply('Format salah!')
 									 if (mek.message.extendedTextMessage != undefined || mek.message.extendedTextMessage != null) {
                                           ger = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                                        reply('Loading.... ')
+                                       reply(mess.wait)
 					owgi = await ikyy.downloadAndSaveMediaMessage(ger)
 					 var uploade = await uploadimg(owgi, Date.now() + '.webp')
                                         teks = `${uploade.result.image}`
@@ -3194,24 +2235,7 @@ if (!tex2) return reply('Format salah!')
 									case 'tahta':
 if (!q) return reply(ind.wrongf())
 sendMediaURL(from, `http://zekais-api.herokuapp.com/hartatahta?text=${q}`, mess.success)
-break
-
-					case 'textmaker':
-					ikyyyy = { quoted: { key: { participant: '0@s.whatsapp.net', remoteJid: '"status@broadcast"', "stanzaId": from, "fromMe": false, "id": "0D5EAADD1166F55012EB42395DE58D61" }, "message": { "productMessage": { "product": { "productImage": { "url": "https://mmg.whatsapp.net/d/f/AsFENZUsypKYO29kpNR2SrgcoBit6mDiApzGccFAPIAq.enc", "mimetype": "image/jpeg", "fileSha256": "iRrEuDPCvNe6NtOv/n+DARqlS1i2UbWqc25iw+qcwwo=", "fileLength": "19247", "height": 500, "width": 500, "mediaKey": "zvebSUI7DcnK9QHuUCJpNAtTsKai0MkvzrcNSYE5pHo=", "fileEncSha256": "t6pd+X7iNV/bwtti0KaOOjGBfOVhxPpnwnTs/QnD0Uw=", "directPath": "/v/t62.7118-24/29158005_1025181757972162_6878749864442314383_n.enc?oh=c97d5aea20257c3971a7248b339ee42d&oe=60504AC8", "mediaKeyTimestamp": "1613162019", "jpegThumbnail": fakeimage }, "productId": "3958959877488517", "title": fake, "description": "Kepoluah", "currencyCode": "IDR", "priceAmount1000": 100, "retailerId": "Kepolu", "url": "https://youtube.com/c/ikyy", "productImageCount": 2 }, "businessOwnerJid": numbernye } }, "messageTimestamp": "1613442626", "status": "PENDING" }}
-				
-if ((isMedia && !mek.videoMessage || isQuotedImage)) {
-var tex1 = body.slice(11).split('|')[0]
-var tex2 = body.slice(11).split('|')[1]
-if (!tex2) return reply('Format salah!')
-    reply('Loading.... ')
-var encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace("quotedM", "m")).message.extendedTextMessage.contextInfo : mek
-var media = await ikyy.downloadAndSaveMediaMessage(encmedia)
-anu = await imgbb("3ea1465ef91578a90ee81f7d41c59a1f", media)
-getUrl = `${anu.display_url}`
-buff = await getBuffer(`https://lolhuman.herokuapp.com/api/memegen?apikey=${LolKey}&texttop=${tex1}&textbottom=${tex2}&img=${getUrl}`)
-ikyy.sendMessage(from, buff, image, {quoted: ftroli})
-}
-break
+break					 
 					
 				case 'ttp':
 if (args.length < 1) return reply(`teksnya mana bruh?\ncontoh ${prefix} ${pushname}`)
@@ -3288,7 +2312,7 @@ var pack = kls.split("|")[0];
 var author = kls.split("|")[1];
 const getbuff = isTagedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 const dlfile = await ikyy.downloadMediaMessage(getbuff)
-reply('Loading.... ')
+reply(mess.wait)
 const bas64 = `data:image/jpeg;base64,${dlfile.toString('base64')}`
 var mantap = await convertSticker(bas64, `${author}`, `${pack}`)
 var imageBuffer = new Buffer.from(mantap, 'base64');
@@ -3319,7 +2343,7 @@ break
 							.on('end', function () {
 								console.log('Finish')
 								buff = fs.readFileSync(ran)
-								ikyy.sendMessage(from, fs.readFileSync(ran), sticker, { contextInfo: { participant: `${numbernye}@s.whatsapp.net`, quotedMessage: { conversation: '*ikyy-SELF*' } } }) 
+								ikyy.sendMessage(from, fs.readFileSync(ran), sticker, { contextInfo: { participant: `${numbernye}@s.whatsapp.net`, quotedMessage: { conversation: '*RAMASELF*' } } }) 
 								fs.unlinkSync(media)
 								fs.unlinkSync(ran)
 							})
@@ -3330,7 +2354,7 @@ break
 						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 						ran = getRandom('.webp')
-						reply('Loading.... ')
+						reply(mess.wait)
 						await ffmpeg(`./${media}`)
 							.inputFormat(media.split('.')[1])
 							.on('start', function (cmd) {
@@ -3357,7 +2381,7 @@ break
 						const media = await ikyy.downloadAndSaveMediaMessage(encmedia)
 						ranw = getRandom('.webp')
 						ranp = getRandom('.png')
-						reply('Loading.... ')
+						reply(mess.wait)
 						keyrmbg = '5LXrQ1MAYDnE1iib6B6NaHMv'
 						await removeBackgroundFromImageFile({path: media, apiKey: keyrmbg.result, size: 'auto', type: 'auto', ranp}).then(res => {
 							fs.unlinkSync(media)
@@ -3441,7 +2465,7 @@ const latensip = speed() - timestampi
 			           
 			           case 'term': 
 case 'exec':
-if (!mek.key.fromMe) return reply('*Ente owner?_*')
+if (!mek.key.fromMe) return reply(only.ownerB)
 const cmyd = body.slice(6)
 var itsme = `0@s.whatsapp.net`
 var split = `*EXECUTOR SELF BOT*`
@@ -3830,7 +2854,7 @@ await ikyy.sendMessage(from, options, text)
 break
 
       case 'leave': 
-        if (!mek.key.fromMe) return reply('*Ente owner?_*')
+        if (!mek.key.fromMe) return reply(only.ownerB)
 				    if (!isGroup) return reply(mess.only.group)
 			    	reply(`Akan keluar dari group ${groupMetadata.subject} dalam 3 detik`)
                     await sleep(3000)
@@ -3987,61 +3011,36 @@ res = await videoIg(teks).catch(e => {
 sendFileFromUrl(res[0].video, video, {mimetype: 'video/mp4', quoted: ftroli})
 }
 break
-case 'play':
-case 'lagu':
-if (args.length < 1) return reply('Apa Yang Mau Dicari?')
-teks = args.join(' ')
-reply(mess.wait)
-if (!teks.endsWith("-doc")){
-res = await yts(`${teks}`).catch(e => {
-reply('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
-})
-reply(` Playing ${res.all[0].title}`)
-let thumbInfo = ` *Youtube Search*
- *Judul :* ${res.all[0].title}
- *ID Video :* ${res.all[0].videoId}
- *Diupload Pada :* ${res.all[0].ago}
- *Views :* ${res.all[0].views}
- *Durasi :* ${res.all[0].timestamp}
- *Channel :* ${res.all[0].author.name}
-*Link Channel :* ${res.all[0].author.url}
-
-*_Tunggu Proses Upload....._*
-`
-sendFileFromUrl(res.all[0].image, image, {quoted: ftroli, caption: thumbInfo})
-res = await y2mateA(res.all[0].url).catch(e => {
-reply('_[ ! ] Error Saat Memasuki Web Y2mate_')
-})
-sendFileFromUrl(res[0].link, audio, {quoted: ftroli, mimetype: 'audio/mp4', filename: res[0].output})
-}
-if (teks.endsWith("-doc")){
-const tec = teks.split("-doc")
-res = await yts(`${tec}`).catch(e => {
-reply('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
-})
-reply(`.Playing ${res.all[0].title}`)
-let thumbInfo = `*${botname}* 
- *Judul :* ${res.all[0].title}
- *ID Video :* ${res.all[0].videoId}
- *Diupload Pada :* ${res.all[0].ago}
- *Views :* ${res.all[0].views}
- *Durasi :* ${res.all[0].timestamp}
- *Channel :* ${res.all[0].author.name}
-*Link Channel :* ${res.all[0].author.url}
-
-*_Tunggu Proses Upload....._*
-`
-sendFileFromUrl(res.all[0].image, image, {quoted: ftroli, caption: thumbInfo})
-res = await y2mateA(res.all[0].url).catch(e => {
-reply('_[ ! ] Error Saat Memasuki Web Y2mate_')
-})
-sendFileFromUrl(res[0].link, document, {quoted: ftroli, mimetype: 'audio/mp3', filename: res[0].output})
-}
-break
+case 'play': case 'song':
+			if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu_`)
+			var srch = args.join(' ')
+			aramas = await yts(srch);
+			aramat = aramas.all 
+			var mulaikah = aramat[0].url
+			try {
+				xa.Youtube(mulaikah).then(async (data) => {
+					if (Number(data.medias[7].formattedSize) >= 100000) return sendMediaURL(from, thumb, `*PLAY MUSIC*\n\n*Title* : ${title}\n*Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Untuk durasi lebih dari batas disajikan dalam bentuk link_`)
+						const captions = `*「 PLAY MUSIC 」*
+						
+• Title : ${aramas.videos[0].title}
+• ID : ${aramas.videos[0].videoId}
+• Upload : ${aramas.videos[0].ago}
+• Size : ${data.medias[7].formattedSize}
+• Views: ${aramas.videos[0].views} 
+• Duration : ${aramas.videos[0].timestamp}
+• Url : ${aramas.videos[0].url}`
+var thumbyt = await getBuffer(aramas.videos[0].thumbnail)
+sendButLocation(from, captions, '©RAMAxGans ', thumbyt, [{buttonId: `.ytmp4 ${mulaikah}`, buttonText: {displayText: 'Video'}, type: 1},{buttonId: `.ytmp3 ${mulaikah}`, buttonText:{displayText: 'Audio'}, type: 1}], {quoted: mek})
+						})
+				} catch (err) {
+					reply('Terjadi kesalahan')
+					}
+			
+             break
 				
 				case 'play2':   
 				  if (args.length < 1) return reply('*Masukan judul nya?*')
-                reply('Loading.... ')
+               reply(mess.wait)
 				play = args.join(" ")
 				anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp4?q=${play}&apikey=apivinz`)
 				if (anu.error) return reply(anu.error)
@@ -4066,7 +3065,7 @@ Source : ${anu.result.source}
 Username : ${anu.owner}
 Caption : ${anu.caption}
 `
-					reply('Loading.... ')
+					reply(mess.wait)
 					buffer = await getBuffer(anu.result[0].url)
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result[0].url}.mp4`, quoted: ftroli, caption : tods})
 					break 
@@ -4079,34 +3078,66 @@ case 'fb':
 					
 *Judul :* ${anu.result.judul}`
 					
-					reply('Loading.... ')
+					reply(mess.wait)
 					buffer = await getBuffer(anu.result.url)
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.url}.mp4`, quoted: ftroli, caption: wing})
 					break 
 					
 case 'tiktok':
-  if (args.length < 1) return reply('*Masukan Url nya?*')
-					query = args.join(" ")
-					anu = await fetchJson(`https://api.xteam.xyz/dl/tiktok?url=${query}&APIKEY=${XteamKey}`, {method: 'get'})
-					reply('Loading.... ')
-					buffer = await getBuffer(`https://lolhuman.herokuapp.com/api/tiktokwm?apikey=${LolKey}&url=${query}`)
-					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', quoted: ftroli})
-					break
+sendButLocation(from, 'Silahkan pilih media yang ingin kamu download', '©RamaXGans ', thumbnail, [{buttonId: `.tiktokwm ${q}`, buttonText: {displayText: 'WM'}, type: 1},{buttonId: `.tiktoknowm ${q}`, buttonText:{displayText: 'NOWM'}, type: 1},{buttonId: `.tiktokmusic ${q}`, buttonText:{displayText: 'AUDIO'}, type: 1}], {quoted: mek})
+						
+             break
 					
-					case 'tiktoknowm':
-  if (args.length < 1) return reply('*Masukan Url nya?*')
-					query = args.join(" ")
-					reply('Loading.... ')
-					anu = await fetchJson(`https://lolhuman.herokuapp.com/api/tiktok?apikey=${LolKey}&url=${query}`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
-					tt = `「 *TIKTOK NO WM* 」
-					
-*Judul:* ${anu.result.title}
-*Keywords:* ${anu.result.keywords}
-*Desc:* ${anu.result.description}`
- buff = await getBuffer(anu.result.link)
- ikyy.sendMessage(from, buff, video, {mimetype: 'video/mp4', quoted: ftroli,caption : tt})
-					break
+					case 'tiktoknowm':   
+			if (!q) return reply('Linknya?')
+			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
+			reply(mess.wait)
+			let nowem = q
+			hx.ttdownloader(nowem)
+			.then(result => {
+				const { wm, nowm, audio } = result
+				axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
+				.then(async (a) => {
+					me = `*Link* : ${a.data}`
+					noweem = await getBuffer(nowm)
+					ikyy.sendMessage(from,noweem , MessageType.document, {mimetype: 'video/mp4',filename: `Tiktok Download.mp4`,quoted: ftroli})
+					})
+				}).catch((err) => reply(`Link tidak valid`))
+			
+             break 
+case 'tiktokwm':
+			if (!q) return reply('Linknya?')
+			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
+			reply(mess.wait)
+			let wem = args.join(' ')
+			hx.ttdownloader(wem)
+			.then(result => {
+				const { wm, nowm, audio } = result
+				axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
+				.then(async (a) => {
+					me = `*Link* : ${a.data}`
+					weem = await getBuffer(wm)
+					ikyy.sendMessage(from,weem , MessageType.document, {mimetype: 'video/mp4',filename: `Tiktok Wm.mp4`,quoted: ftroli})
+					})
+				}).catch((err) => reply(`Link tidak valid`))
+			
+             break 
+case 'tiktokmusic': case 'tiktokaudio':  
+			if (!q) return reply('Linknya?')
+			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid Link')
+			reply(mess.wait)
+			let audi = q
+			hx.ttdownloader(audi)
+			.then(result => {
+				const { wm, nowm, audio } = result
+				axios.get(`https://tinyurl.com/api-create.php?url=${audio}`)
+				.then(async (a) => {
+					audnha = await getBuffer(audio)
+					ikyy.sendMessage(from,audnha , MessageType.document, {mimetype: 'audio/mp4',filename: `Tiktok Music.mp3`,quoted: ftroli})
+					})
+				}).catch((err) => reply(`Link tidak valid`))
+			
+             break
 					
 				case 'ytmp4':
 				  if (args.length < 1) return reply('*Masukan Url nya?*')
@@ -4120,7 +3151,7 @@ ini_link = args[0]
 					 
 *[ Wait ]Tunggu Sebentar kak...*`
 					 buff = await getBuffer(anu.thumbnail)
-					reply('Loading.... ')
+					reply(mess.wait)
 					buffer = await getBuffer(anu.url)
 					ikyy.sendMessage(from, buff, image, {quoted: ftroli, caption: ytt})
 					ikyy.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.url}.mp4`, quoted: ftroli, caption: 'Nih Gan'})
@@ -4137,7 +3168,7 @@ ini_link = args[0]
 					 
 *[Wait]Tunggu Sebentar kak...*`
 					 buff = await getBuffer(anu.thumbnail)
-					reply('Loading.... ')
+					reply(mess.wait)
 					buffer = await getBuffer(anu.url)
 					ikyy.sendMessage(from, buff, image, {quoted: ftroli, caption: ytt})
 					ikyy.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.url}.mp3`, quoted: ftroli})
